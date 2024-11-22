@@ -1,0 +1,1001 @@
+region,contract,buyer,supplier,amount,award_date,start_date,end_date,link
+Federal,Other professional services not elsewhere specified,National Defence,WSP Canada Inc,"$92,195","Dec. 22, 2021","Dec. 22, 2021","Apr. 22, 2022",https://theijf.org/procurement/76448_dnd
+Federal,Information technology and telecommunications consultants,"Immigration, Refugees and Citizenship Canada",ADGA GROUP CONSULTANTS INC,"$11,498","Feb. 15, 2022","Apr. 1, 2022","Apr. 22, 2022",https://theijf.org/procurement/7116546_cic
+Federal,Purchase of training packages and courses,Global Affairs Canada,Biztactics Limited,"$10,505","Mar. 22, 2022","Mar. 15, 2022","Apr. 22, 2022",https://theijf.org/procurement/7439044_dfatd
+Federal,"Office furniture and furnishings, including parts",Royal Canadian Mounted Police,ADVANCED BUSINESS INTERIORS,"$18,209","Jan. 28, 2022","Jan. 28, 2022","Apr. 22, 2022",https://theijf.org/procurement/7255648_rcmp
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,INDIVIOR UK LTD,"$38,500","Apr. 18, 2022","Apr. 18, 2022","Apr. 22, 2022",https://theijf.org/procurement/21501_23_4082530_csc
+Federal,Temporary help services,Canada Energy Regulator,Altis Human Resources,"$39,155","Mar. 3, 2022","May 25, 2021","Apr. 22, 2022",https://theijf.org/procurement/21_0056_cer
+Federal,Non-professional Personal Service Contracts not Elsewhere Specified,Correctional Service of Canada,SOUL MECHANICAL LTD,"$68,808","Mar. 4, 2022","Mar. 4, 2022","Apr. 22, 2022",https://theijf.org/procurement/21540_22_4011500_csc
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$10,160","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106704639_dnd
+Federal,Aviation fuel,National Defence,AEG,"$33,295","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106706463_dnd
+Federal,Aviation fuel,National Defence,WOODWARD AVIATION,"$20,962","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106706541_dnd
+Federal,Aviation fuel,National Defence,AEG,"$56,290","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106711676_dnd
+Federal,Management consulting,Treasury Board of Canada Secretariat,Baiame Technology and Consulting,"$39,917","Apr. 7, 2021","Apr. 7, 2021","Apr. 22, 2022",https://theijf.org/procurement/2406221323_tbs
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$14,724","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106711761_dnd
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$24,145","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106716505_dnd
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$41,991","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106716512_dnd
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$19,892","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106716519_dnd
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,MCKESSON CANADA CORPORATION,"$20,443","Mar. 23, 2022","Mar. 23, 2022","Apr. 22, 2022",https://theijf.org/procurement/21501_22_4068184_csc
+Federal,Aviation fuel,National Defence,AEG,"$26,669","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106752059_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$64,769","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106808317_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$59,437","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106808326_dnd
+Federal,Aviation fuel,National Defence,AEG,"$25,071","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/2106734474_dnd
+Federal,Information technology and telecommunications consultants,Canada Border Services Agency,CORADIX Technology Consulting Ltd,"$196,193","Apr. 20, 2021","Apr. 22, 2021","Apr. 22, 2022",https://theijf.org/procurement/2022000090_cbsa
+Federal,License/Maintenance fees for Application Software (including COTS) and Application Development and Delivery Software,Correctional Service of Canada,TELUS HEALTH SOLUTIONS,"$52,616","Apr. 23, 2020","Apr. 23, 2020","Apr. 22, 2022",https://theijf.org/procurement/21120_20_3497102_csc
+Federal,Heavy fuel oil,National Defence,TR Petroleum,"$78,028","Apr. 20, 2022","Apr. 20, 2022","Apr. 22, 2022",https://theijf.org/procurement/4502410703_dnd
+Federal,Temporary help services,Health Canada,MAXSYS STAFFING AND CONSULTING INC,"$330,522","Dec. 14, 2020","Dec. 14, 2020","Apr. 22, 2022",https://theijf.org/procurement/4500418065_hc
+Federal,Rental of motor and other vehicles,National Defence,Golden Arrow,"$10,080","Apr. 12, 2022","Apr. 18, 2022","Apr. 22, 2022",https://theijf.org/procurement/4502407336_dnd
+Federal,Aviation fuel,National Defence,Harnois Energies,"$131,780","Apr. 13, 2022","Apr. 13, 2022","Apr. 22, 2022",https://theijf.org/procurement/4502407932_dnd
+Federal,Aviation fuel,National Defence,Flight Fuels LP,"$649,443","Apr. 13, 2022","Apr. 13, 2022","Apr. 22, 2022",https://theijf.org/procurement/4502408603_dnd
+Federal,Heavy fuel oil,National Defence,TR Petroleum,"$77,963","Apr. 19, 2022","Apr. 19, 2022","Apr. 22, 2022",https://theijf.org/procurement/4502409951_dnd
+Federal,Temporary help services,Health Canada,ALTIS HUMAN RESOURCES,"$322,397","Dec. 14, 2020","Dec. 14, 2020","Apr. 22, 2022",https://theijf.org/procurement/4500418064_hc
+Federal,Diesel fuel,National Defence,Parkland Corporation,"$17,923","Apr. 20, 2022","Apr. 20, 2022","Apr. 22, 2022",https://theijf.org/procurement/4502410468_dnd
+Federal,Aviation fuel,National Defence,Parkland Corporation,"$23,436","Apr. 20, 2022","Apr. 20, 2022","Apr. 22, 2022",https://theijf.org/procurement/4502410565_dnd
+Federal,Printing services,Public Health Agency of Canada,CABI PUBLISHING,"$19,844","Oct. 5, 2021","Oct. 5, 2021","Apr. 22, 2022",https://theijf.org/procurement/4500430890_phac
+Federal,Diesel fuel,National Defence,Maritime Fuels,"$64,714","Apr. 22, 2022","Apr. 22, 2022","Apr. 22, 2022",https://theijf.org/procurement/4502407951_dnd
+Federal,Aviation fuel,National Defence,Imperial Oil,"$1,983,868","Apr. 13, 2022","Apr. 19, 2022","Apr. 22, 2022",https://theijf.org/procurement/4502408162_dnd
+Federal,Heavy fuel oil,National Defence,TR Petroleum,"$77,726","Apr. 19, 2022","Apr. 19, 2022","Apr. 22, 2022",https://theijf.org/procurement/4502409939_dnd
+Federal,Rental of image/video communications equipment**,Health Canada,BALDWIN PRESENTATION SYSTEMS,"$15,217","Apr. 8, 2022","Apr. 8, 2022","Apr. 22, 2022",https://theijf.org/procurement/4500439262_hc
+Federal,Miscellaneous manufactured articles,National Defence,Super Channel International Corp.,"$146,832","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/4502402385_dnd
+Federal,Aviation fuel,National Defence,Harnois Energies,"$57,450","Mar. 21, 2022","Mar. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/4502385195_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,P.C. McNeill Contracting Ltd.,"$62,006","Dec. 16, 2021","Dec. 16, 2021","Apr. 21, 2022",https://theijf.org/procurement/4502361020_dnd
+Federal,Scientific consultants ,Health Canada,CONSULTANT PATRICK POULIN INC,"$25,934","Jan. 27, 2022","Feb. 4, 2022","Apr. 21, 2022",https://theijf.org/procurement/4500435400_hc
+Federal,Gasoline,National Defence,MACEWEN PETROLEUM,"$12,898","Apr. 19, 2022","Apr. 19, 2022","Apr. 21, 2022",https://theijf.org/procurement/4502409692_dnd
+Federal,Waste disposal,National Defence,GFL ENVIRONMENTAL INC. 2019,"$15,960","Apr. 21, 2021","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/4502249271_dnd
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",National Research Council Canada,MICHAEL RONALD BROTHERS,"$11,227","Mar. 17, 2022","Mar. 17, 2022","Apr. 21, 2022",https://theijf.org/procurement/988147_nrc
+Federal,Residential buildings,National Defence,C & S Builders Ltd.,"$1,509,682","Sep. 23, 2021","Sep. 23, 2021","Apr. 21, 2022",https://theijf.org/procurement/mj22603_76109_dnd
+Federal,Conference fees,Prairies Economic Development Canada,Absolute Combustion International Inc.,"$10,500","Apr. 14, 2022","Apr. 20, 2022","Apr. 21, 2022",https://theijf.org/procurement/c_2022_2023_q1_00014_prairiescan
+Federal,License/Maintenance fees for client software related to Distributed Computing Environment (DCE),Shared Services Canada,SOFTCHOICE CORPORATION,"$31,111","Apr. 22, 2021","Apr. 22, 2021","Apr. 21, 2022",https://theijf.org/procurement/p000021367_ssc
+Federal,License/Maintenance fees for client software related to Distributed Computing Environment (DCE),Shared Services Canada,HG 197 INC,"$15,741","Apr. 22, 2020","Apr. 22, 2020","Apr. 21, 2022",https://theijf.org/procurement/p000014322_ssc
+Federal,License/Maintenance fees for client software related to Distributed Computing Environment (DCE),Shared Services Canada,SOFTCHOICE CORPORATION,"$171,184","Apr. 22, 2021","Apr. 22, 2021","Apr. 21, 2022",https://theijf.org/procurement/p000024440_ssc
+Federal,"Computer equipment related to production and operations (P&O) environment-All servers, storage, printers, etc. (includes all related parts and peripherals)",National Defence,Acumentrics Inc.,"$38,676","Apr. 22, 2021","Apr. 22, 2021","Apr. 21, 2022",https://theijf.org/procurement/k000014069_dnd
+Federal,Aviation fuel,National Defence,AVJET,"$33,030","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/0102mn272195_dnd
+Federal,Non-Public servant travel-Support core mandate activities,Elections Canada,BEST WESTERN STONERIDGE INN & CONFEERENCE CENTRE INC.,"$14,343","Apr. 18, 2022","Apr. 18, 2022","Apr. 21, 2022",https://theijf.org/procurement/3000747533_elections
+Federal,Marine installations,Fisheries and Oceans Canada,HARBOUR AUTHORITY BAY ST. LAWRENCE,"$49,450","Apr. 12, 2022","Apr. 13, 2022","Apr. 21, 2022",https://theijf.org/procurement/4500024346_dfo
+Federal,Marine installations,Fisheries and Oceans Canada,HARBOUR AUTHORITY OF AULD'S COVE,"$48,818","Apr. 12, 2022","Apr. 13, 2022","Apr. 21, 2022",https://theijf.org/procurement/4500024347_dfo
+Federal,Conference fees,Natural Resources Canada,CANADIAN GAS ASSOCIATION,"$35,000","Apr. 5, 2022","Apr. 5, 2022","Apr. 21, 2022",https://theijf.org/procurement/3000744664_nrcan
+Federal,"Meat, fish and their preparations",National Defence,GFS VICTORIA BC,"$11,580","Apr. 14, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/sy1242202300011_dnd
+Federal,Aircraft parts,National Defence,JHT Defense Inc,"$31,720","Feb. 15, 2022","Feb. 15, 2022","Apr. 21, 2022",https://theijf.org/procurement/w8485_226866_001_dap4_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Couture Logistics Inc,"$20,869","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/w6447npcc22_0045_dnd
+Federal,Miscellaneous Chemical products,National Defence,SUEZ WATER TECHNOLOGIES & SOLUTIONS,"$17,085","Jan. 14, 2022","Jan. 14, 2022","Apr. 21, 2022",https://theijf.org/procurement/w6895_4502367047_dnd
+Federal,Engineering services not elsewhere specified,National Defence,General Dynamices Ordanance & Tactical Systems Canada Inc,"$405,129","Oct. 15, 2021","Oct. 15, 2021","Apr. 21, 2022",https://theijf.org/procurement/w8476_216461_dnd
+Federal,Aviation fuel,National Defence,Exxonmobil,"$160,509","Apr. 11, 2022","Apr. 11, 2022","Apr. 21, 2022",https://theijf.org/procurement/w107y_4502406808_dnd
+Federal,Aviation fuel,National Defence,Exxonmobil,"$160,284","Apr. 11, 2022","Apr. 11, 2022","Apr. 21, 2022",https://theijf.org/procurement/w107y_4502406561_dnd
+Federal,Residential buildings,National Defence,Barron's Refrigeration & Heating Ltd.,"$15,355","Mar. 25, 2022","Apr. 4, 2022","Apr. 21, 2022",https://theijf.org/procurement/w6895_4502400293_dnd
+Federal,"Office furniture and furnishings, including parts",National Defence,DIVERSE ELECTRONIQUE INC,"$10,190","Jan. 27, 2022","Jan. 27, 2022","Apr. 21, 2022",https://theijf.org/procurement/w1985_4502369198_dnd
+Federal,Diesel fuel,National Defence,Maritime Fuels,"$10,242","Apr. 14, 2022","Apr. 14, 2022","Apr. 21, 2022",https://theijf.org/procurement/w0100_4502408775_dnd
+Federal,Gasoline,National Defence,Maritime Fuels Ltd,"$23,517","Apr. 1, 2022","Apr. 1, 2022","Apr. 21, 2022",https://theijf.org/procurement/w0100_4502402409_dnd
+Federal,Wood and articles of wood,National Defence,kent bldg,"$12,365","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/w355b4502411496_dnd
+Federal,Ferrous metals,National Defence,SOURCE ATLANTIC RADDALL,"$16,910","Mar. 30, 2022","Mar. 30, 2022","Apr. 21, 2022",https://theijf.org/procurement/w355b_4502401334_dnd
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$21,351","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/2106706588_dnd
+Federal,Aviation fuel,National Defence,AVJET HOLDING,"$11,692","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/2106709531_dnd
+Federal,Aviation fuel,National Defence,AEG,"$26,516","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/2106716666_dnd
+Federal,Aviation fuel,National Defence,AEG,"$24,294","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/2106734492_dnd
+Federal,Aviation fuel,National Defence,AEG,"$25,642","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/2106734494_dnd
+Federal,Aviation fuel,National Defence,AEG,"$29,772","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/2106872453_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$21,223","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/2106742302_dnd
+Federal,Aviation fuel,National Defence,AEG,"$24,427","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/2106716617_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$178,137","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/2106810622_dnd
+Federal,Aviation fuel,National Defence,IRVING OIL,"$52,761","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/2106704705_dnd
+Federal,Diesel Fuel,Parks Canada,PARKLAND CORPORATION,"$21,000","Apr. 21, 2022","Apr. 21, 2022","Apr. 21, 2022",https://theijf.org/procurement/45448293_pc
+Federal,Computer equipment related to Distributed Computing Environment (DCE) - Desktop/personal/portable (includes all related parts and peripherals),Office of the Superintendent of Financial Institutions Canada,DELL CANADA INC.,"$20,345","Jan. 10, 2022","Feb. 26, 2022","Apr. 21, 2022",https://theijf.org/procurement/8050978_osfi
+Federal,Research contracts,"Innovation, Science and Economic Development Canada",MARINELABS DATA SYSTEMS INC.,"$519,960","Oct. 20, 2021","Oct. 20, 2021","Apr. 21, 2022",https://theijf.org/procurement/9203180101_ic
+Federal,Hospitality,Global Affairs Canada,Smith & Wollensky,"$10,482","Mar. 31, 2022","Mar. 31, 2022","Apr. 21, 2022",https://theijf.org/procurement/7439330_dfatd
+Federal,Computer equipment related to distributed computing environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),Royal Canadian Mounted Police,NEWCOMP ANALYTICS INC,"$10,114","Apr. 21, 2021","Apr. 21, 2021","Apr. 20, 2022",https://theijf.org/procurement/7250086_rcmp
+Federal,Road motor vehicles - non-military,Royal Canadian Mounted Police,CRAFTSMAN COLLISION (1981) LTD.,"$28,278","Mar. 1, 2022","Mar. 1, 2022","Apr. 20, 2022",https://theijf.org/procurement/7256329_rcmp
+Federal,Aircraft parts,Royal Canadian Mounted Police,AIRBUS HELICOPTERS CANADA LIMITED,"$95,582","Jan. 11, 2022","Jan. 11, 2022","Apr. 20, 2022",https://theijf.org/procurement/7255263_rcmp
+Federal,Aircraft parts,Royal Canadian Mounted Police,AIRBUS HELICOPTERS CANADA LIMITED,"$25,023","Jan. 11, 2022","Jan. 11, 2022","Apr. 20, 2022",https://theijf.org/procurement/7255261_rcmp
+Federal,Other furniture and fixtures including parts,Global Affairs Canada,TOK & STOK,"$23,032","Mar. 23, 2022","Mar. 23, 2022","Apr. 20, 2022",https://theijf.org/procurement/7439064_dfatd
+Federal,Marine installations,Fisheries and Oceans Canada,LES ENTREPRISES PEC INC,"$90,300","Jan. 19, 2022","Jan. 19, 2022","Apr. 20, 2022",https://theijf.org/procurement/4500019820_dfo
+Federal,Marine installations,Fisheries and Oceans Canada,HARBOUR AUTHORITY OF LIVINGSTONE'S COVE,"$22,977","Mar. 23, 2022","Mar. 24, 2022","Apr. 20, 2022",https://theijf.org/procurement/4500023223_dfo
+Federal,Marine installations,Fisheries and Oceans Canada,HARBOUR AUTHORITY JUDIQUE BAXTER,"$59,225","Mar. 22, 2022","Mar. 24, 2022","Apr. 20, 2022",https://theijf.org/procurement/4500023221_dfo
+Federal,Marine installations,Fisheries and Oceans Canada,HARBOUR AUTHORITY OF SKINNER'S COVE,"$19,176","Mar. 23, 2022","Mar. 24, 2022","Apr. 20, 2022",https://theijf.org/procurement/4500023222_dfo
+Federal,"Miscellaneous food, food materials and food preparations",National Defence,GORDON FOOD SERVICE,"$17,826","Apr. 7, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/op0168202300024_dnd
+Federal,AIRCRAFT,Transport Canada,DART AEROSPACE,"$48,410","Apr. 20, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/asr_2059_043398_tc
+Federal,"Computer equipment related to production and operations (P&O) environment-All servers, storage, printers, etc. (includes all related parts and peripherals)",Shared Services Canada,COMPUCOM CANADA CO.,"$31,127","Apr. 21, 2021","Apr. 21, 2021","Apr. 20, 2022",https://theijf.org/procurement/p000024912_ssc
+Federal,"Meat, fish and their preparations",National Defence,MULDER MEATS (1983),"$11,854","Apr. 19, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/jy0105202300087_dnd
+Federal,"Meat, fish and their preparations",National Defence,GORDON FOOD SERVICE,"$31,997","Apr. 7, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/op0168202300026_dnd
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",National Research Council Canada,GAMMA-TIAL TECHNOLOGIES,"$22,022","Apr. 12, 2022","Apr. 12, 2022","Apr. 20, 2022",https://theijf.org/procurement/988930_nrc
+Federal,"Miscellaneous food, food materials and food preparations",National Defence,GORDON FOOD SERVICES PRAIRIES INC.,"$14,752","Apr. 19, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/ca0168202300033_dnd
+Federal,Other furniture and fixtures including parts,Privy Council Office,GLOBAL CONVENTION SERVICES LTD,"$27,111","Nov. 23, 2021","Nov. 23, 2021","Apr. 20, 2022",https://theijf.org/procurement/mcc_027_pco
+Federal,AIRCRAFT PARTS,Transport Canada,BELL TEXTRON CANADA LIMITED/BELL TEXTRON CANADA LIMITEE,"$27,829","Apr. 6, 2022","Apr. 6, 2022","Apr. 20, 2022",https://theijf.org/procurement/as_2095_0071778_tc
+Federal,"Miscellaneous food, food materials and food preparations",National Defence,SYSCO-SERCA FOOD SERVICES-ATLANTIC INC.,"$10,013","Apr. 19, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/jy0105202300083_dnd
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,National Research Council Canada,MENTOR GRAPHICS (CANADA) LTD.,"$17,534","Apr. 20, 2021","Apr. 20, 2021","Apr. 20, 2022",https://theijf.org/procurement/970456_nrc
+Federal,Gasoline,National Defence,Maritime Fuels,"$34,312","Apr. 7, 2022","Apr. 7, 2022","Apr. 20, 2022",https://theijf.org/procurement/4502405524_dnd
+Federal,Rental of image/video communications equipment**,Health Canada,BALDWIN PRESENTATION SYSTEMS,"$15,217","Apr. 13, 2022","Apr. 13, 2022","Apr. 20, 2022",https://theijf.org/procurement/4500439061_hc
+Federal,Aviation fuel,National Defence,Flight Fuel,"$46,309","Apr. 5, 2022","Apr. 5, 2022","Apr. 20, 2022",https://theijf.org/procurement/4502404162_dnd
+Federal,"Miscellaneous textiles, headgear, umbrellas, etc.",National Defence,Rampart International Corp,"$86,066","Apr. 20, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/4502401866_dnd
+Federal,Aviation fuel,National Defence,Flight Fuel,"$45,323","Apr. 11, 2022","Apr. 11, 2022","Apr. 20, 2022",https://theijf.org/procurement/4502406990_dnd
+Federal,Industrial buildings,National Defence,Big T Trucking Ltd.,"$18,111","Mar. 25, 2022","Mar. 25, 2022","Apr. 20, 2022",https://theijf.org/procurement/4502409890_dnd
+Federal,Other buildings,National Defence,Black & MacDonald,"$489,610","Dec. 15, 2021","Dec. 15, 2021","Apr. 20, 2022",https://theijf.org/procurement/4502360438_dnd
+Federal,Diesel fuel,National Defence,PARKLAND CORPORATION O/A BLUEWAVE ENERGY,"$29,906","Apr. 20, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/4502409181_dnd
+Federal,"Live animals, including their fodder",National Defence,TR Petroleum,"$77,032","Apr. 14, 2022","Apr. 14, 2022","Apr. 20, 2022",https://theijf.org/procurement/4502409127_dnd
+Federal,"Printed matter, including books, newspapers, pictures, manuscripts and forms",National Defence,PSYCHOMETRICS CANADA,"$22,733","Apr. 15, 2022","Apr. 15, 2022","Apr. 20, 2022",https://theijf.org/procurement/4502409118_dnd
+Federal,Scientific consultants,Health Canada,ROBIN WALKER,"$79,281","Aug. 27, 2021","Aug. 27, 2021","Apr. 20, 2022",https://theijf.org/procurement/4500429316_hc
+Federal,"Electric lighting, distribution and control equipment and Parts",National Defence,WESCO,"$13,815","Jan. 18, 2022","Jan. 19, 2022","Apr. 20, 2022",https://theijf.org/procurement/4502362972_dnd
+Federal,Aviation fuel,National Defence,IRVING,"$15,819","Apr. 20, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/0102mn16520633_dnd
+Federal,Diesel Fuel,Parks Canada,PARKLAND CORPORATION,"$15,750","Apr. 4, 2022","Apr. 4, 2022","Apr. 20, 2022",https://theijf.org/procurement/45448247_pc
+Federal,"Other Mineral Fuels, Oils and Products",Parks Canada,IMPERIAL OIL,"$12,600","Apr. 7, 2022","Apr. 7, 2022","Apr. 20, 2022",https://theijf.org/procurement/45448248_pc
+Federal,Other Engineering Works,Parks Canada,SHEAROCK CONSTRUCTION GROUP INC.,"$1,074,743","Sep. 28, 2021","Sep. 28, 2021","Apr. 20, 2022",https://theijf.org/procurement/45442667_pc
+Federal,Management consulting,Public Services and Procurement Canada,LESLIE JAMES,"$22,075","Jun. 3, 2021","Jun. 3, 2021","Apr. 20, 2022",https://theijf.org/procurement/700587441_pwgsc
+Federal,O-Professional Services not Elsewhere Specified,Public Services and Procurement Canada,Carla Dupras,"$13,280","Dec. 7, 2021","Dec. 6, 2021","Apr. 20, 2022",https://theijf.org/procurement/700620412_pwgsc
+Federal,Transportation of things not elsewhere specified,National Defence,Action aexpress Ltd,"$91,350","Apr. 6, 2022","Apr. 11, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0014_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,CroosRoads Logistics Inc,"$148,050","Apr. 7, 2022","Apr. 12, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0031_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Edge Tansportation services,"$81,375","Apr. 6, 2022","Apr. 8, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0015_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,CRE Transport,"$81,375","Apr. 6, 2022","Apr. 11, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0017_dnd
+Federal,Aircraft parts,National Defence,Aero Technical Components,"$28,051","Feb. 10, 2022","Feb. 10, 2022","Apr. 20, 2022",https://theijf.org/procurement/w8485_226878_003_dap4_dnd
+Federal,Pharmaceutical and other medicinal products,National Defence,MCKESSON,"$16,940","Apr. 19, 2022","Apr. 19, 2022","Apr. 20, 2022",https://theijf.org/procurement/w010h3d017_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,T-LaneTransportation & Logistics,"$13,650","Apr. 8, 2022","Apr. 13, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0034_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,CRE Transport,"$97,650","Apr. 6, 2022","Apr. 14, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0020_dnd
+Federal,Rental of aircraft,National Defence,Momentum Decisive Solutions Canada Inc,"$779,298","Jan. 27, 2022","Feb. 14, 2022","Apr. 20, 2022",https://theijf.org/procurement/w2022_a028p_dnd
+Federal,Other equipment and Parts,National Defence,Source Atlantic,"$12,385","Mar. 25, 2022","Mar. 25, 2022","Apr. 20, 2022",https://theijf.org/procurement/w355b_4502400137_dnd
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,Canadian Transportation Agency,VEEAM Software,"$24,577","Feb. 24, 2021","Feb. 24, 2021","Apr. 20, 2022",https://theijf.org/procurement/y211021012_cta
+Federal,Transportation of things not elsewhere specified,National Defence,T-LANE TRANSPORTATION & LOGISTICS,"$14,500","Apr. 4, 2022","Apr. 13, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0035_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,CRE Transport,"$34,650","Apr. 11, 2022","Apr. 12, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0036_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Action Express Ltd,"$63,000","Apr. 6, 2022","Apr. 8, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0025_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,CRE Transport,"$97,650","Apr. 6, 2022","Apr. 14, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0021_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Besner,"$70,560","Apr. 8, 2022","Apr. 11, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0027_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Besner,"$92,978","Apr. 6, 2022","Apr. 7, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0012_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Besner,"$74,196","Apr. 8, 2022","Apr. 9, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0039_dnd
+Federal,Other vehicles,National Defence,Liftking Manufacturing Corp,"$1,101,379","Apr. 20, 2021","Apr. 20, 2021","Apr. 20, 2022",https://theijf.org/procurement/w8476_216400_001_sv_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Besner,"$132,300","Apr. 8, 2022","Apr. 11, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0032_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Besner,"$70,560","Apr. 8, 2022","Apr. 11, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0028_dnd
+Federal,Diesel fuel,National Defence,Maritime Fuels,"$15,356","Apr. 11, 2022","Apr. 11, 2022","Apr. 20, 2022",https://theijf.org/procurement/w0100_4502406614_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,CRE Transport,"$81,375","Apr. 6, 2022","Apr. 13, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0019_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,BESNER,"$79,695","Apr. 6, 2022","Apr. 8, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0013_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,CDE Transport,"$81,375","Apr. 6, 2022","Apr. 12, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0018_dnd
+Federal,Miscellaneous manufactured articles,National Defence,GAB-INDUSPAC,"$39,589","Apr. 20, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/w1941_4502410069_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,BESNER,"$67,200","Apr. 8, 2022","Apr. 12, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0029_dnd
+Federal,Other equipment and Parts,National Defence,J.W. Bird and Company Limited,"$18,748","Apr. 11, 2022","Apr. 11, 2022","Apr. 20, 2022",https://theijf.org/procurement/w2037_23_0008_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Besner,"$90,825","Apr. 8, 2022","Apr. 9, 2022","Apr. 20, 2022",https://theijf.org/procurement/w6447npcc22_0030_dnd
+Federal,Aviation fuel,National Defence,AVJET HOLDING,"$45,761","Apr. 20, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/2106702279_dnd
+Federal,Visual exhibition concept,The National Battlefields Commission,Récréation,"$19,238","Jan. 26, 2022","Jan. 26, 2022","Apr. 20, 2022",https://theijf.org/procurement/21_1964_nbc
+Federal,"Miscellaneous Food, Food Materials and Food Preparations, Including Beverages and Tobacco",Correctional Service of Canada,ALIMENTS CHICOINE INC,"$20,954","Apr. 13, 2022","Apr. 13, 2022","Apr. 20, 2022",https://theijf.org/procurement/21307_23_4081268_csc
+Federal,Aviation fuel,National Defence,AEG,"$92,853","Apr. 20, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/2106709447_dnd
+Federal,Aviation fuel,National Defence,AEG,"$71,877","Apr. 20, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/2106709450_dnd
+Federal,Aviation fuel,National Defence,IRVING OIL,"$27,777","Apr. 20, 2022","Apr. 20, 2022","Apr. 20, 2022",https://theijf.org/procurement/2106704692_dnd
+Federal,Information Technology Consultants,Canada Border Services Agency,Veritaaq Technology House Inc.,"$22,435","Apr. 19, 2022","Oct. 1, 2021","Mar. 31, 2022",https://theijf.org/procurement/2023001646_cbsa
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$34,403","Apr. 19, 2022","Apr. 19, 2022","Apr. 19, 2022",https://theijf.org/procurement/2106726684_dnd
+Federal,Aviation fuel,National Defence,AEG,"$41,874","Apr. 19, 2022","Apr. 19, 2022","Apr. 19, 2022",https://theijf.org/procurement/2106709439_dnd
+Federal,Application software (including COTS) and application development and delivery software,Employment and Social Development Canada,MICROSOFT CANADA INC.,"$63,479","Apr. 19, 2022","Mar. 1, 2022","Mar. 1, 2022",https://theijf.org/procurement/2bs020487_esdc
+Federal,Translation Services,Canada Border Services Agency,Nations Translation Group Inc.,"$21,431","Apr. 15, 2022","Mar. 30, 2022","Apr. 19, 2022",https://theijf.org/procurement/2022037443_cbsa
+Federal,"Rental of computer equipment related to production and operations (P&O) environment - All servers, storage, printers, etc. (includes all related parts and peripherals)",Employment and Social Development Canada,MICROSOFT CANADA INC.,"$1,148,646","Apr. 19, 2022","Mar. 14, 2022","Mar. 14, 2022",https://theijf.org/procurement/2bs020713_esdc
+Federal,"Rental of computer equipment related to production and operations (P&O) environment - All servers, storage, printers, etc. (includes all related parts and peripherals)",Employment and Social Development Canada,MICROSOFT CANADA INC.,"$15,894","Apr. 19, 2022","Mar. 14, 2022","Mar. 31, 2022",https://theijf.org/procurement/2bs020715_esdc
+Federal,Aviation fuel,National Defence,World Fuel Services,"$35,542","Apr. 19, 2022","Apr. 19, 2022","Apr. 19, 2022",https://theijf.org/procurement/2106711744_dnd
+Federal,Aviation fuel,National Defence,AVJET HOLDING,"$81,187","Apr. 19, 2022","Apr. 19, 2022","Apr. 19, 2022",https://theijf.org/procurement/2106699908_dnd
+Federal,Public servant travel-Support core mandate activ,Fisheries and Oceans Canada,BEAVER AIR CHARTER CONSULTANTS LTD.,"$60,247","Apr. 19, 2022","Apr. 18, 2022","Apr. 19, 2022",https://theijf.org/procurement/4500025341_dfo
+Federal,Gasoline,National Defence,Canada LTD,"$14,627","Apr. 5, 2022","Apr. 5, 2022","Apr. 19, 2022",https://theijf.org/procurement/4502404244_dnd
+Federal,Heavy fuel oil,National Defence,Canada LTD,"$51,851","Apr. 4, 2022","Apr. 4, 2022","Apr. 19, 2022",https://theijf.org/procurement/4502404241_dnd
+Federal,Other clothing,National Defence,LINE OF FIRE DEFENCE SYSTEMS,"$19,218","Feb. 8, 2022","Feb. 8, 2022","Apr. 19, 2022",https://theijf.org/procurement/4502377927_dnd
+Federal,Rental of motor and other vehicles,National Defence,CAPITOL INDUSTRIAL SALES AND SERVICE LTD,"$13,174","Mar. 11, 2022","Mar. 11, 2022","Apr. 19, 2022",https://theijf.org/procurement/4502395390_dnd
+Federal,Other buildings,National Defence,PRO-FIT RENOVATIONS AND PROPERTY,"$46,202","Mar. 21, 2022","Mar. 21, 2022","Apr. 19, 2022",https://theijf.org/procurement/4502398289_dnd
+Federal,Other equipment and Parts,National Defence,Glamox Inc,"$11,272","Mar. 8, 2022","Mar. 8, 2022","Apr. 19, 2022",https://theijf.org/procurement/4502392971_dnd
+Federal,Pharmaceutical and other medicinal products,National Defence,Tenquip Limited,"$12,468","Apr. 4, 2022","Apr. 4, 2022","Apr. 19, 2022",https://theijf.org/procurement/4502403000_dnd
+Federal,Public servant travel-Support core mandate activ,Fisheries and Oceans Canada,BEAVER AIR CHARTER CONSULTANTS LTD.,"$52,299","Mar. 30, 2022","Mar. 30, 2022","Apr. 19, 2022",https://theijf.org/procurement/4500023847_dfo
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Natural Resources Canada,ECOLE DE LANGUES VCP LTEE,"$14,448","Jan. 10, 2022","Jan. 10, 2022","Apr. 19, 2022",https://theijf.org/procurement/3000739322_nrcan
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",National Research Council Canada,FISHER SCIENTIFIC LTD.,"$33,864","Jan. 26, 2022","Jan. 26, 2022","Apr. 19, 2022",https://theijf.org/procurement/3102917404_nrc
+Federal,"Live animals, including their fodder",Agriculture and Agri-Food Canada,MASTERFEEDS INC,"$11,384","Apr. 14, 2022","Apr. 14, 2022","Apr. 19, 2022",https://theijf.org/procurement/3000745185_aafc
+Federal,Information technology and telecommunications consultants,"Innovation, Science and Economic Development Canada",NRNS INCORPORATED,"$304,784","Jun. 10, 2020","Jun. 10, 2020","Apr. 19, 2022",https://theijf.org/procurement/8509121_ic
+Federal,Other professional services not elsewhere specified,Transportation Safety Board of Canada,WPP GROUP CANADA COMMUNICATIONS LTD,"$35,765","Jan. 25, 2022","Jan. 26, 2022","Apr. 19, 2022",https://theijf.org/procurement/8051103_tsb
+Federal,Engineering consultants-Construction,National Defence,Golder Associates Ltd,"$17,110","Jun. 22, 2021","Jun. 22, 2021","Apr. 19, 2022",https://theijf.org/procurement/75888_dnd
+Federal,Aircraft,Royal Canadian Mounted Police,LEVAERO AVIATION INC,"$144,026","Jan. 25, 2022","Jan. 25, 2022","Apr. 19, 2022",https://theijf.org/procurement/7255556_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FCA CANADA INC.,"$1,140,892","Oct. 26, 2021","Oct. 26, 2021","Apr. 19, 2022",https://theijf.org/procurement/7253777_rcmp
+Federal,Information technology and telecommunications consultants,"Innovation, Science and Economic Development Canada",NRNS INCORPORATED,"$296,393","Jun. 22, 2020","Jun. 22, 2020","Apr. 19, 2022",https://theijf.org/procurement/8509148_ic
+Federal,Aircraft parts,Royal Canadian Mounted Police,LEVAERO AVIATION INC,"$128,961","Mar. 29, 2022","Mar. 29, 2022","Apr. 19, 2022",https://theijf.org/procurement/7256846_rcmp
+Federal,"Office furniture and furnishings, including parts",Royal Canadian Mounted Police,KISIK COMMERCIAL INC,"$12,321","Jan. 27, 2022","Jan. 27, 2022","Apr. 19, 2022",https://theijf.org/procurement/7255600_rcmp
+Federal,Information technology and telecommunications consultants,"Innovation, Science and Economic Development Canada",NRNS INCORPORATED,"$246,984","Sep. 8, 2020","Sep. 8, 2020","Apr. 19, 2022",https://theijf.org/procurement/8509331_ic
+Federal,"Meat, fish and their preparations",National Defence,LES ALIMENTS GUY CHICOINE INC.,"$22,586","Apr. 12, 2022","Apr. 19, 2022","Apr. 19, 2022",https://theijf.org/procurement/by3380202300145_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,OPTIMUM SOLUTIONS INC,"$51,094","Apr. 12, 2022","Apr. 19, 2022","Apr. 19, 2022",https://theijf.org/procurement/jy0105202300061_dnd
+Federal,AIRCRAFT PARTS,Transport Canada,CANADA WEST AVIONICS LTD,"$11,831","Apr. 12, 2022","Apr. 12, 2022","Apr. 19, 2022",https://theijf.org/procurement/as_2101_0071827_tc
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",National Research Council Canada,MILLIPORE CANADA LTD,"$24,747","Jan. 28, 2022","Jan. 28, 2022","Apr. 19, 2022",https://theijf.org/procurement/985610_nrc
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",National Research Council Canada,ULINE CANADA,"$23,534","Apr. 8, 2022","Apr. 8, 2022","Apr. 19, 2022",https://theijf.org/procurement/988818_nrc
+Federal,Other equipment and Parts,National Research Council Canada,CGG VINYL SPECIALTIES,"$10,752","Mar. 24, 2022","Mar. 24, 2022","Apr. 19, 2022",https://theijf.org/procurement/988441_nrc
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",National Defence,SANCTON ACCESS,"$12,032","Apr. 19, 2022","Apr. 19, 2022","Apr. 19, 2022",https://theijf.org/procurement/w355b_4502409911_dnd
+Federal,Computer equipment related to Distributed Computing Environment —Desktop/personal/portable ,Crown-Indigenous Relations and Northern Affairs Canada,CDW CANADA INC.,"$13,745","Apr. 19, 2022","Mar. 1, 2022","Mar. 31, 2022",https://theijf.org/procurement/r74400_aandc
+Federal,Transportation of things not elsewhere specified,National Defence,Kindersley Transport,"$144,975","Mar. 24, 2022","Mar. 24, 2022","Apr. 19, 2022",https://theijf.org/procurement/w6447ilcc_0069_dnd
+Federal,Other professional services not elsewhere specified,National Defence,Leeham Co LLC,"$12,796","Mar. 28, 2022","Apr. 1, 2022","Apr. 19, 2022",https://theijf.org/procurement/w847a_220323_dnd
+Federal,Temporary help services,National Defence,Dynamic Staffing,"$399,851","Dec. 2, 2020","Dec. 2, 2020","Apr. 19, 2022",https://theijf.org/procurement/s3133782_dnd
+Federal,Miscellaneous Chemical products,National Defence,Suez,"$12,471","Jan. 28, 2022","Jan. 28, 2022","Apr. 19, 2022",https://theijf.org/procurement/w6888_4502373121_dnd
+Federal,"Electric lighting, distribution and control equipment and Parts",National Defence,JHT Defence Inc,"$13,739","Oct. 5, 2021","Oct. 5, 2021","Apr. 19, 2022",https://theijf.org/procurement/w8486_217840_002_as_dnd
+Federal,Office and stationers supplies,National Defence,DASCO STORAGE SOLUTIONS LTD,"$24,950","Apr. 6, 2022","Apr. 6, 2022","Apr. 19, 2022",https://theijf.org/procurement/w013m_4502404441_dnd
+Federal,Computer equipment related to distributed computing environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),National Defence,DELL CANADA INC,"$28,175","Dec. 7, 2021","Mar. 30, 2022","Apr. 19, 2022",https://theijf.org/procurement/w0213_4502355271_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,McMullen Cutom Transport,"$70,560","Apr. 6, 2022","Apr. 13, 2022","Apr. 19, 2022",https://theijf.org/procurement/w6447npcc22_0023_dnd
+Federal,Aviation fuel,National Defence,AVJET,"$40,425","Apr. 19, 2022","Apr. 19, 2022","Apr. 19, 2022",https://theijf.org/procurement/0102mn271638_dnd
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$27,106","Apr. 19, 2022","Apr. 19, 2022","Apr. 19, 2022",https://theijf.org/procurement/0102mn1411543036_dnd
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Financial Transactions and Reports Analysis Centre of Canada,Specialisterne,"$39,550","Apr. 20, 2021","Apr. 20, 2021","Apr. 19, 2022",https://theijf.org/procurement/6002220010_fintrac
+Federal,"Medical supplies, etc",Public Health Agency of Canada,SECHRIST INDUSTRIES INC.,"$170,574","Sep. 3, 2020","May 1, 2020","Apr. 19, 2022",https://theijf.org/procurement/6d0242101a_phac
+Federal,Rental - Other,Financial Transactions and Reports Analysis Centre of Canada,Microsoft,"$480,250","Dec. 17, 2021","Dec. 17, 2021","Apr. 19, 2022",https://theijf.org/procurement/6002220118_fintrac
+Federal,Protection Services,Public Services and Procurement Canada,Ottawa Division - Canadian Corps,"$45,391","Apr. 19, 2022","Sep. 21, 2021","Mar. 31, 2022",https://theijf.org/procurement/700606796_pwgsc
+Federal,Interpretation services,Immigration and Refugee Board of Canada,"ASGHAR, JAMEEL","$30,000","Apr. 19, 2020","Apr. 19, 2020","Apr. 18, 2022",https://theijf.org/procurement/6030066_irb
+Federal,"Explosives, Fireworks, and Pyrotechnic Products, etc.",Parks Canada,Signaux Evan Signals Inc,"$16,198","Apr. 8, 2022","Apr. 8, 2022","Apr. 18, 2022",https://theijf.org/procurement/45448032_pc
+Federal,Other equipment and Parts,Royal Canadian Mounted Police,MILLBROOK TACTICAL INC,"$10,235","Feb. 28, 2022","Feb. 28, 2022","Apr. 18, 2022",https://theijf.org/procurement/7256312_rcmp
+Federal,Rental of aircraft,Royal Canadian Mounted Police,GREAT SLAVE HELICOPTERS 2018 LTD.,"$19,454","Apr. 18, 2022","Apr. 18, 2022","Apr. 18, 2022",https://theijf.org/procurement/7257522_rcmp
+Federal,Other furniture and fixtures including parts,Global Affairs Canada,Chambers Workplace Solutions Inc.,"$20,290","Feb. 21, 2022","Feb. 21, 2022","Apr. 18, 2022",https://theijf.org/procurement/7438020_dfatd
+Federal,Other furniture and fixtures including parts,Global Affairs Canada,Nitam Solutions Inc,"$23,836","Feb. 21, 2022","Feb. 21, 2022","Apr. 18, 2022",https://theijf.org/procurement/7438021_dfatd
+Federal,Other furniture and fixtures including parts,Global Affairs Canada,"Tarkett, Inc","$24,323","Feb. 21, 2022","Feb. 21, 2022","Apr. 18, 2022",https://theijf.org/procurement/7438012_dfatd
+Federal,"House furnishing, excluding furniture",National Defence,Landmark Athletics,"$17,508","Apr. 11, 2022","Apr. 11, 2022","Apr. 18, 2022",https://theijf.org/procurement/4502406662_dnd
+Federal,Commercial buildings,National Defence,EPM MECANIC,"$12,012","Mar. 18, 2022","Mar. 18, 2022","Apr. 18, 2022",https://theijf.org/procurement/4502302130_dnd
+Federal,Aviation fuel,National Defence,AVJET HOLDING,"$72,626","Apr. 18, 2022","Apr. 18, 2022","Apr. 18, 2022",https://theijf.org/procurement/2106699672_dnd
+Federal,Aviation fuel,National Defence,AEG,"$33,088","Apr. 18, 2022","Apr. 18, 2022","Apr. 18, 2022",https://theijf.org/procurement/2106711695_dnd
+Federal,Information technology and telecommunications consultants,Treasury Board of Canada Secretariat,Maplesoft Consulting Inc.,"$1,874,670","Apr. 19, 2021","Apr. 19, 2021","Apr. 18, 2022",https://theijf.org/procurement/2406b21239_tbs
+Federal,Information technology and telecommunications consultants,Treasury Board of Canada Secretariat,MODIS CANADA INC,"$1,874,670","Apr. 19, 2021","Apr. 19, 2021","Apr. 18, 2022",https://theijf.org/procurement/2406a21239_tbs
+Federal,Aviation fuel,National Defence,AEG,"$52,489","Apr. 18, 2022","Apr. 18, 2022","Apr. 18, 2022",https://theijf.org/procurement/2106706470_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$18,388","Apr. 18, 2022","Apr. 18, 2022","Apr. 18, 2022",https://theijf.org/procurement/2106759667_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$70,311","Apr. 18, 2022","Apr. 18, 2022","Apr. 18, 2022",https://theijf.org/procurement/2106808295_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$70,942","Apr. 18, 2022","Apr. 18, 2022","Apr. 18, 2022",https://theijf.org/procurement/2106808297_dnd
+Federal,Services related to the remediation of contamina,Fisheries and Oceans Canada,SALTAIR MARINE BARGE SERVICES LTD,"$27,857","Mar. 23, 2022","Mar. 23, 2022","Apr. 18, 2022",https://theijf.org/procurement/4500023757_dfo
+Federal,Diesel fuel,Fisheries and Oceans Canada,SUNCOR ENERGY PRODUCTS PARTNERSHIP,"$24,104","Mar. 23, 2022","Mar. 23, 2022","Apr. 18, 2022",https://theijf.org/procurement/4500023373_dfo
+Federal,"Meat, fish and their preparations",National Defence,GORDON FOOD SERVICE,"$26,032","Apr. 7, 2022","Apr. 18, 2022","Apr. 18, 2022",https://theijf.org/procurement/op0168202300020_dnd
+Federal,AIRCRAFT PARTS,Transport Canada,BELL TEXTRON CANADA LIMITED/BELL TEXTRON CANADA LIMITEE,"$114,958","Apr. 14, 2022","Apr. 14, 2022","Apr. 18, 2022",https://theijf.org/procurement/as_2104_0071844_tc
+Federal,"Inorganic and organic chemicals, including plastics, rubber and products, and excluding tires and tubes",National Research Council Canada,PFANSTIEHL INC.,"$150,284","Mar. 8, 2022","Mar. 8, 2022","Apr. 18, 2022",https://theijf.org/procurement/987660_nrc
+Federal,Other equipment and Parts,National Research Council Canada,KURT J. LESKER CANADA INC.,"$23,716","Apr. 14, 2022","Apr. 14, 2022","Apr. 18, 2022",https://theijf.org/procurement/989091_nrc
+Federal,Tools and implements,National Research Council Canada,VWR INTERNATIONAL CO,"$13,495","Mar. 28, 2022","Mar. 28, 2022","Apr. 18, 2022",https://theijf.org/procurement/988487_nrc
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$58,668","Oct. 28, 2021","Oct. 28, 2021","Apr. 18, 2022",https://theijf.org/procurement/pw_21_011379_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$53,444","Oct. 28, 2021","Oct. 28, 2021","Apr. 18, 2022",https://theijf.org/procurement/pw_21_011384_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,Value Master Builders Ltd.,"$20,886","Apr. 1, 2022","Apr. 4, 2022","Apr. 18, 2022",https://theijf.org/procurement/w6895_4502396734_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,Value Master Builders Ltd.,"$43,078","Apr. 1, 2022","Apr. 4, 2022","Apr. 18, 2022",https://theijf.org/procurement/w6895_4502396726_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$106,848","Oct. 28, 2021","Oct. 28, 2021","Apr. 18, 2022",https://theijf.org/procurement/pw_21_011381_dnd
+Federal,Miscellaneous manufactured articles,National Defence,GMH Worldwide Limited,"$10,683","Oct. 25, 2021","Oct. 26, 2021","Apr. 18, 2022",https://theijf.org/procurement/w8482_229357_002_dmarp5_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,MLS (Overseas) Ltd,"$69,738","Apr. 16, 2022","Apr. 16, 2022","Apr. 18, 2022",https://theijf.org/procurement/w124423002_dnd
+Federal,Other machinery and parts,National Defence,Fluke Electronics,"$24,440","Jan. 12, 2022","Jan. 12, 2022","Apr. 18, 2022",https://theijf.org/procurement/w3555_4502365978_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$53,444","Oct. 28, 2021","Oct. 28, 2021","Apr. 18, 2022",https://theijf.org/procurement/pw_21_011382_dnd
+Federal,Computer equipment related to distributed computing environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),Royal Canadian Mounted Police,ADVANCED CHIPPEWA TECHNOLOGIES INC.,"$19,416","Mar. 31, 2022","Mar. 31, 2022","Apr. 18, 2022",https://theijf.org/procurement/s202206282_rcmp
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$56,177","Oct. 28, 2021","Oct. 28, 2021","Apr. 18, 2022",https://theijf.org/procurement/pw_21_011383_dnd
+Federal,Rental of motor and other vehicles,National Defence,United Rentals,"$226,528","Dec. 1, 2021","Dec. 6, 2021","Apr. 17, 2022",https://theijf.org/procurement/w3554_45023523852_dnd
+Federal,Rental of motor and other vehicles,National Defence,TOROMONT,"$33,018","Jan. 27, 2022","Feb. 4, 2022","Apr. 17, 2022",https://theijf.org/procurement/w3554_4502372101_dnd
+Federal,Rental of motor and other vehicles,National Defence,Atlantic Flush,"$10,245","Jan. 27, 2022","Mar. 10, 2022","Apr. 17, 2022",https://theijf.org/procurement/w3554_4502372343_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$39,464","Apr. 17, 2022","Apr. 17, 2022","Apr. 17, 2022",https://theijf.org/procurement/2106696371_dnd
+Federal,Aviation fuel,National Defence,AEG,"$53,382","Apr. 17, 2022","Apr. 17, 2022","Apr. 17, 2022",https://theijf.org/procurement/2106706465_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$18,367","Apr. 17, 2022","Apr. 17, 2022","Apr. 17, 2022",https://theijf.org/procurement/2106759656_dnd
+Federal,Usage of Inventory,Correctional Service of Canada,TUBE WAY INC,"$22,362","Mar. 21, 2022","Mar. 21, 2022","Apr. 17, 2022",https://theijf.org/procurement/21t46039_22_4061817_csc
+Federal,"0668 - Image/Video Communications Equipment (includes Telepresence/Video Conferencing Equipment, cabling, parts and peripherals)",Office of the Privacy Commissioner of Canada,Integra Networks Corporation,"$23,925","Feb. 22, 2021","Apr. 17, 2021","Apr. 17, 2022",https://theijf.org/procurement/2r008_21_0005_opc
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,MCKESSON CANADA CORPORATION,"$36,437","Mar. 21, 2022","Mar. 21, 2022","Apr. 17, 2022",https://theijf.org/procurement/21201_22_4064399_csc
+Federal,Aviation fuel,National Defence,AEG FUELS,"$72,007","Apr. 17, 2022","Apr. 17, 2022","Apr. 17, 2022",https://theijf.org/procurement/2106808339_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$69,696","Apr. 17, 2022","Apr. 17, 2022","Apr. 17, 2022",https://theijf.org/procurement/2106808301_dnd
+Federal,Information technology and telecommunications consultants,"Immigration, Refugees and Citizenship Canada",VERITAAQ TECHNOLOGY HOUSE/EXPERIS,"$300,085","Jan. 18, 2021","Jan. 18, 2021","Apr. 17, 2022",https://theijf.org/procurement/7114241_cic
+Federal,Information technology and telecommunications consultants,"Immigration, Refugees and Citizenship Canada",VERITAAQ TECHNOLOGY HOUSE/EXPERIS,"$358,722","Jan. 15, 2021","Jan. 18, 2021","Apr. 17, 2022",https://theijf.org/procurement/7114245_cic
+Federal,Information technology and telecommunications consultants,"Immigration, Refugees and Citizenship Canada",VERITAAQ TECHNOLOGY HOUSE/EXPERIS,"$227,975","Oct. 26, 2021","Oct. 26, 2021","Apr. 17, 2022",https://theijf.org/procurement/7115839_cic
+Federal,Other business services not elsewhere specified,National Research Council Canada,LINKEDIN IRELAND LIMITED,"$84,608","Apr. 12, 2022","Apr. 12, 2022","Apr. 17, 2022",https://theijf.org/procurement/988945_nrc
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",National Research Council Canada,LEV-CO,"$20,286","Mar. 3, 2022","Mar. 3, 2022","Apr. 17, 2022",https://theijf.org/procurement/987505_nrc
+Federal,"Heating, air-conditioning and refrigeration equipment",Environment and Climate Change Canada,JOHNSON CONTROLS LP,"$18,140","Mar. 30, 2022","Mar. 30, 2022","Apr. 17, 2022",https://theijf.org/procurement/3000744413_ec
+Federal,Other Business services not Elsewhere Specified,Natural Resources Canada,ATCO FRONTEC LTD.,"$14,821","Apr. 1, 2022","Apr. 1, 2022","Apr. 16, 2022",https://theijf.org/procurement/3000743671_nrcan
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,Environment and Climate Change Canada,ITEX INC.,"$13,220","Apr. 8, 2022","Apr. 8, 2022","Apr. 16, 2022",https://theijf.org/procurement/3000744826_ec
+Federal,Transportation of things not elsewhere specified,Natural Resources Canada,TUDJAAT CO-OP,"$10,629","Apr. 5, 2022","Apr. 5, 2022","Apr. 16, 2022",https://theijf.org/procurement/3000744670_nrcan
+Federal,Aviation fuel,National Defence,AVJET HOLDING,"$93,949","Apr. 16, 2022","Apr. 16, 2022","Apr. 16, 2022",https://theijf.org/procurement/2106699888_dnd
+Federal,Aviation fuel,National Defence,WORLD FUEL SERVICES CANADA,"$32,679","Apr. 16, 2022","Apr. 16, 2022","Apr. 16, 2022",https://theijf.org/procurement/2106702253_dnd
+Federal,Aviation fuel,National Defence,AEG,"$36,498","Apr. 16, 2022","Apr. 16, 2022","Apr. 16, 2022",https://theijf.org/procurement/2106709462_dnd
+Federal,Application software (including COTS) and application development and delivery software,Employment and Social Development Canada,INFORMATION MAPPING INC.,"$23,080","May 25, 2021","Apr. 16, 2021","Apr. 16, 2022",https://theijf.org/procurement/2bs188224_esdc
+Federal,Rental of Residential Buildings,Correctional Service of Canada,HOLIDAY INN,"$42,334","Apr. 4, 2022","Apr. 4, 2022","Apr. 16, 2022",https://theijf.org/procurement/21301_23_4045254_1_csc
+Federal,Aviation fuel,National Defence,AEG,"$59,882","Apr. 16, 2022","Apr. 16, 2022","Apr. 16, 2022",https://theijf.org/procurement/2106706468_dnd
+Federal,Aviation fuel,National Defence,AEG,"$53,241","Apr. 16, 2022","Apr. 16, 2022","Apr. 16, 2022",https://theijf.org/procurement/2106709457_dnd
+Federal,License/Maintenance fees for client software related to Distributed Computing Environment (DCE),Employment and Social Development Canada,INFORMATION MAPPING INC.,"$24,198","Jan. 21, 2021","Apr. 16, 2021","Apr. 16, 2022",https://theijf.org/procurement/2bs078960_esdc
+Federal,License/Maintenance fees for networking software,Office of the Secretary to the Governor General,IDS SYSTEMS CONSULTANTS INC.,"$11,761","Apr. 16, 2021","Apr. 17, 2021","Apr. 16, 2022",https://theijf.org/procurement/2bs187906_osgg
+Federal,Aviation fuel,National Defence,WOODWARD AVIATION,"$20,621","Apr. 16, 2022","Apr. 16, 2022","Apr. 16, 2022",https://theijf.org/procurement/2106704631_dnd
+Federal,Other equipment and Parts,National Defence,RIGHTWAY SANITATION,"$6,289","Dec. 2, 2021","Jan. 10, 2022","Apr. 16, 2022",https://theijf.org/procurement/4502353667_dnd
+Federal,Office buildings,Public Services and Procurement Canada,4TE INC.,"$194,034","Dec. 2, 2019","Dec. 2, 2019","Apr. 16, 2022",https://theijf.org/procurement/ep73101805_pwgsc
+Federal,Aviation fuel,National Defence,AEG FUELS,"$12,900","Apr. 16, 2022","Apr. 16, 2022","Apr. 16, 2022",https://theijf.org/procurement/0102mn1277645_dnd
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",Canadian Food Inspection Agency,LIFE TECHNOLOGIES INC.,"$68,076","Apr. 26, 2021","Apr. 26, 2021","Apr. 15, 2022",https://theijf.org/procurement/20210706a_cfia
+Federal,Other professional services not elsewhere specified,National Defence,QMR Consulting and Professional Staffing.,"$23,097","Dec. 14, 2021","Jan. 10, 2022","Apr. 15, 2022",https://theijf.org/procurement/2021_admhrciv_0059_dnd
+Federal,Professional Service,Canada Border Services Agency,Systemscope Inc.,"$198,196","Apr. 1, 2021","Apr. 1, 2021","Apr. 15, 2022",https://theijf.org/procurement/2021002818_cbsa
+Federal,Aviation fuel,National Defence,AEG,"$31,022","Apr. 15, 2022","Apr. 15, 2022","Apr. 15, 2022",https://theijf.org/procurement/2106716676_dnd
+Federal,Aviation fuel,National Defence,AEG,"$27,140","Apr. 15, 2022","Apr. 15, 2022","Apr. 15, 2022",https://theijf.org/procurement/2106716559_dnd
+Federal,Professional Service,Canada Border Services Agency,Systemscope Inc.,"$111,746","Sep. 1, 2021","Sep. 2, 2021","Apr. 15, 2022",https://theijf.org/procurement/2022010295_cbsa
+Federal,Management Consulting,Canada Border Services Agency,Université Sainte-Anne,"$29,472","Jun. 14, 2021","Jun. 14, 2021","Apr. 15, 2022",https://theijf.org/procurement/2022002078_cbsa
+Federal,Gasoline,Correctional Service of Canada,HUILES DESROCHES INC,"$11,992","Apr. 12, 2022","Apr. 12, 2022","Apr. 15, 2022",https://theijf.org/procurement/21321_23_4079681_csc
+Federal,"Inorganic and organic chemicals, including plastics, rubber and products, and excluding tires and tubes",National Defence,YEG FBO SERVICES INC.,"$18,163","Apr. 14, 2022","Apr. 14, 2022","Apr. 15, 2022",https://theijf.org/procurement/2106697089_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$15,291","Apr. 15, 2022","Apr. 15, 2022","Apr. 15, 2022",https://theijf.org/procurement/2106798449_dnd
+Federal,Other Professional Services not Elsewhere Specified,Correctional Service of Canada,PROACTIVE SECURITY INC,"$41,850","Apr. 28, 2021","Apr. 28, 2021","Apr. 15, 2022",https://theijf.org/procurement/21120_22_3790718_csc
+Federal,Other equipment and Parts,National Defence,Guillevin International Cie.,"$69,556","Feb. 1, 2022","Feb. 1, 2022","Apr. 15, 2022",https://theijf.org/procurement/w8486_4502374205_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,MANITOULIN TRANSPORT,"$41,042","Feb. 7, 2022","Feb. 7, 2022","Apr. 15, 2022",https://theijf.org/procurement/w6447ilcc22_0031_dnd
+Federal,Temporary help services,National Defence,Excel Human Resources Inc.,"$127,193","Oct. 4, 2021","Oct. 4, 2021","Apr. 15, 2022",https://theijf.org/procurement/s3581004_dnd
+Federal,Diesel fuel,National Defence,PARKLAND COOPERATION,"$24,382","Apr. 8, 2022","Apr. 11, 2022","Apr. 15, 2022",https://theijf.org/procurement/w0142_4502406265_dnd
+Federal,Ships and boats,National Defence,MONTREAL BRONZE LTD,"$380,496","Oct. 6, 2021","Oct. 6, 2021","Apr. 15, 2022",https://theijf.org/procurement/w8482_229413_001_dmarp4_dnd
+Federal,Heavy fuel oil,National Defence,Multnational Logistics Services LTD,"$32,878","Feb. 12, 2022","Apr. 13, 2022","Apr. 15, 2022",https://theijf.org/procurement/w010w22z006_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,MCMULLEN CUSTON TRANSPORT,"$17,967","Apr. 6, 2022","Apr. 14, 2022","Apr. 15, 2022",https://theijf.org/procurement/w6447npcc_22_0004_dnd
+Federal,Ships and boats,National Defence,ROLLAN TECH,"$170,393","Oct. 6, 2021","Oct. 6, 2021","Apr. 15, 2022",https://theijf.org/procurement/w8482_229411_001_dmarp4_dnd
+Federal,"Plumbing equipment and fittings, including parts",National Defence,Bardon Supplies,"$44,641","Mar. 31, 2022","Mar. 31, 2022","Apr. 15, 2022",https://theijf.org/procurement/w6854_4502402067_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$186,581","Oct. 26, 2021","Oct. 26, 2021","Apr. 15, 2022",https://theijf.org/procurement/pw_21_011369_dnd
+Federal,Ships and boats,National Defence,WESTERN WATER AND GAS PRODUCTS LTD,"$19,550","Oct. 7, 2021","Oct. 7, 2021","Apr. 15, 2022",https://theijf.org/procurement/w8482_229288_001_dmarp4_dnd
+Federal,"Office furniture and furnishings, including parts",National Defence,Acklands Grainger Inc,"$11,704","Feb. 9, 2022","Feb. 9, 2022","Apr. 15, 2022",https://theijf.org/procurement/w6854_4502378677_dnd
+Federal,OTHER PROFESSIONAL SERVICES NOT ELSEWHERE SPECIFIED,Transport Canada,ESSA TECHNOLOGIES LTD,"$28,207","Jan. 28, 2022","Jan. 28, 2022","Apr. 15, 2022",https://theijf.org/procurement/t8080_210432_tc
+Federal,Other professional services not elsewhere specified,National Defence,McMaster University,"$22,600","Nov. 22, 2021","Nov. 22, 2021","Apr. 15, 2022",https://theijf.org/procurement/w6399_22li72_001_sf_dnd
+Federal,Other equipment and Parts,National Defence,ALBERTA LAUNDRY SYSTEMS,"$11,351","Feb. 11, 2022","Feb. 11, 2022","Apr. 15, 2022",https://theijf.org/procurement/w0142_4502380707_dnd
+Federal,"Electric lighting, distribution and control equipment and Parts",National Defence,EB Horsman & Son,"$13,608","Feb. 18, 2022","Feb. 18, 2022","Apr. 15, 2022",https://theijf.org/procurement/w3555_4502384571_dnd
+Federal,Other equipment and Parts,National Defence,DSS MARINE INCORPORATED,"$109,314","Feb. 11, 2020","Apr. 15, 2020","Apr. 15, 2022",https://theijf.org/procurement/w8482_206546_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$168,785","Oct. 26, 2021","Oct. 26, 2021","Apr. 15, 2022",https://theijf.org/procurement/pw_21_011367_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$176,005","Oct. 26, 2021","Oct. 26, 2021","Apr. 15, 2022",https://theijf.org/procurement/pw_21_011363_dnd
+Federal,"Inorganic and organic chemicals, including plastics, rubber and products, and excluding tires and tubes",National Defence,Fisher Scientific,"$11,269","Feb. 8, 2022","Feb. 8, 2022","Apr. 15, 2022",https://theijf.org/procurement/w7702_4502378281_dnd
+Federal,Ships and boats,National Defence,MONTREAL BRONZE LTD,"$37,373","Oct. 6, 2021","Oct. 6, 2021","Apr. 15, 2022",https://theijf.org/procurement/w8482_229309_001_dmarp4_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,MCMULLEN CUSTOM TRANSPORT,"$23,520","Mar. 25, 2022","Apr. 8, 2022","Apr. 15, 2022",https://theijf.org/procurement/w0105_cmtt22_002_dnd
+Federal,TUITION FEES AND COSTS OF ATTENDING COURSES INCLUDING SEMINARS NOT ELSEWHERE SPECIFIED,Transport Canada,LANGUAGE RESEARCH DEVELOPMENT GROUP INC,"$15,425","Dec. 24, 2021","Jan. 10, 2022","Apr. 15, 2022",https://theijf.org/procurement/t8275_210414_tc
+Federal,"Office furniture and furnishings, including parts",Public Services and Procurement Canada,Knoll North America Corp,"$32,003","Jun. 10, 2021","Jun. 10, 2021","Apr. 15, 2022",https://theijf.org/procurement/700588975_pwgsc
+Federal,Electric Power Installations,Parks Canada,St. Andrews Electrical Ltd,"$35,180","Feb. 21, 2022","Feb. 21, 2022","Apr. 15, 2022",https://theijf.org/procurement/45446399_pc
+Federal,Wood and Articles of Wood,Parks Canada,953731 N W T LIMITED,"$10,097","Mar. 28, 2022","Mar. 28, 2022","Apr. 15, 2022",https://theijf.org/procurement/45447655_pc
+Federal,Other Machinery and Parts,Parks Canada,Nunatta Environmental Services Inc,"$14,121","Mar. 9, 2022","Mar. 9, 2022","Apr. 15, 2022",https://theijf.org/procurement/45447009_pc
+Federal,Interpretation services,Immigration and Refugee Board of Canada,"WASEEM, TAHERA","$30,000","Apr. 16, 2020","Apr. 16, 2020","Apr. 15, 2022",https://theijf.org/procurement/6029722_irb
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,"Innovation, Science and Economic Development Canada",LITTLE SORBONNE LANGUAGE SCHOOL,"$37,440","Jan. 17, 2022","Jan. 17, 2022","Apr. 15, 2022",https://theijf.org/procurement/5030648_ic
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Employment and Social Development Canada,GRAYBRIDGE MALKAM,"$22,480","Jan. 19, 2022","Jan. 24, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500009291_esdc
+Federal,Computer equipment related to Distributed Computin,Global Affairs Canada,Hypertec Direct,"$10,848","Feb. 9, 2022","Feb. 9, 2022","Apr. 15, 2022",https://theijf.org/procurement/4001842_dfatd
+Federal,Ships and boats,Fisheries and Oceans Canada,SPAR MARINE LTD.,"$10,970","Apr. 1, 2022","Apr. 4, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500023845_dfo
+Federal,Transportation of things not elsewhere specified,Fisheries and Oceans Canada,OCEAN NAVIGATION INC,"$138,915","Mar. 24, 2022","Mar. 30, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500023259_dfo
+Federal,Non-Public servant travel-Support core mandate activities,Elections Canada,NORTHLAND PROPERTIES CORPORATION,"$10,914","Apr. 12, 2022","Apr. 12, 2022","Apr. 15, 2022",https://theijf.org/procurement/3000749784_elections
+Federal,Other professional services not elsewhere specified,Administrative Tribunals Support Service of Canada,LEAN AGILITY INC.,"$39,550","Jul. 5, 2021","Jul. 5, 2021","Apr. 15, 2022",https://theijf.org/procurement/4002913_atssc
+Federal,Scientific services,Environment and Climate Change Canada,LIONBRIDGE LTD,"$39,996","Oct. 22, 2021","Oct. 22, 2021","Apr. 15, 2022",https://theijf.org/procurement/3000734870_ec
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Employment and Social Development Canada,GRAYBRIDGE MALKAM,"$22,480","Jan. 19, 2022","Jan. 24, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500009295_esdc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Employment and Social Development Canada,GRAYBRIDGE MALKAM,"$22,480","Jan. 19, 2022","Jan. 24, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500009294_esdc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Employment and Social Development Canada,GRAYBRIDGE MALKAM,"$22,480","Jan. 19, 2022","Jan. 24, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500009292_esdc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Employment and Social Development Canada,GRAYBRIDGE MALKAM,"$22,480","Jan. 19, 2022","Jan. 24, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500009290_esdc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Employment and Social Development Canada,GRAYBRIDGE MALKAM,"$44,960","Jan. 19, 2022","Jan. 24, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500009289_esdc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Employment and Social Development Canada,GRAYBRIDGE MALKAM,"$44,960","Jan. 19, 2022","Jan. 24, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500009288_esdc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Employment and Social Development Canada,GRAYBRIDGE MALKAM,"$22,480","Jan. 19, 2022","Jan. 24, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500009287_esdc
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",Agriculture and Agri-Food Canada,GENEQ INC,"$10,065","Jan. 25, 2022","Jan. 25, 2022","Apr. 15, 2022",https://theijf.org/procurement/3000740051_aafc
+Federal,Ships and boats,Fisheries and Oceans Canada,WAJAX POWER SYSTEMS,"$11,693","Mar. 29, 2022","Apr. 1, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500023786_dfo
+Federal,Special industry machinery,National Research Council Canada,INDUSTRIAL TRUCK SERVICE LTD.,"$36,955","Sep. 22, 2021","Sep. 22, 2021","Apr. 15, 2022",https://theijf.org/procurement/3100517100_nrc
+Federal,Special industry machinery,National Research Council Canada,INDUSTRIAL TRUCK SERVICE LTD.,"$36,955","Sep. 17, 2021","Sep. 17, 2021","Apr. 15, 2022",https://theijf.org/procurement/3100521700_nrc
+Federal,Ships and boats,Fisheries and Oceans Canada,GRIFFON HOVERWORK,"$20,705","Feb. 24, 2022","Feb. 25, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500021434_dfo
+Federal,Ships and boats,Fisheries and Oceans Canada,URGENCE MARINE INC,"$103,432","Apr. 15, 2022","Apr. 15, 2022","Apr. 15, 2022",https://theijf.org/procurement/f306521576_dfo
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,National Research Council Canada,DASSAULT SYSTEMES CANADA INC,"$21,102","Apr. 16, 2021","Apr. 16, 2021","Apr. 15, 2022",https://theijf.org/procurement/967628_nrc
+Federal,Engineering consultants-Construction,National Defence,AECOM Canada Ltd.,"$112,659","Dec. 17, 2021","Dec. 17, 2021","Apr. 15, 2022",https://theijf.org/procurement/kn76440_dnd
+Federal,Other engineering works,National Defence,Leighton Contracting,"$102,108","Feb. 24, 2021","Feb. 24, 2021","Apr. 15, 2022",https://theijf.org/procurement/cx201102_74565cn_dnd
+Federal,Miscellaneous chemical products,National Research Council Canada,CYGNUS TECHNOLOGIES,"$11,568","Mar. 15, 2022","Mar. 15, 2022","Apr. 15, 2022",https://theijf.org/procurement/988072_nrc
+Federal,Other professional services not elsewhere specified,Atlantic Canada Opportunities Agency,Samson RH Inc.,"$21,505","Dec. 20, 2021","Dec. 20, 2021","Apr. 15, 2022",https://theijf.org/procurement/p2200375_acoa
+Federal,Other engineering works,National Research Council Canada,WSP CANADA INC.,"$14,826","Jan. 31, 2022","Jan. 31, 2022","Apr. 15, 2022",https://theijf.org/procurement/985696_nrc
+Federal,AIRCRAFT PARTS,Transport Canada,AERO SUPPLIES INC.,"$10,307","Apr. 5, 2022","Apr. 5, 2022","Apr. 15, 2022",https://theijf.org/procurement/as_2094_0071745_tc
+Federal,AIRCRAFT PARTS,Transport Canada,AERO SUPPLIES INC.,"$15,939","Apr. 5, 2022","Apr. 5, 2022","Apr. 15, 2022",https://theijf.org/procurement/as_2094_0071735_tc
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,National Research Council Canada,ORACLE CANADA ULC,"$18,873","Apr. 1, 2021","Apr. 1, 2021","Apr. 15, 2022",https://theijf.org/procurement/969606_nrc
+Federal,Other equipment,Shared Services Canada,COMPUTACENTER TERAMACH INC.,"$10,679","Sep. 15, 2021","Sep. 15, 2021","Apr. 15, 2022",https://theijf.org/procurement/p000027925_ssc
+Federal,Other Business services not Elsewhere Specified,National Defence,ALIMENTS MARTEL,"$10,256","Apr. 13, 2022","Apr. 15, 2022","Apr. 15, 2022",https://theijf.org/procurement/cj0106202300067_dnd
+Federal,Data and database access services,Employment and Social Development Canada,GARTNER CANADA CO,"$530,663","Nov. 19, 2021","Nov. 22, 2021","Apr. 15, 2022",https://theijf.org/procurement/g929229713_esdc
+Federal,Tools and implements,National Defence,Bargreen Ellingson FoodService,"$10,450","Apr. 8, 2022","Apr. 8, 2022","Apr. 15, 2022",https://theijf.org/procurement/4502390771_dnd
+Federal,Other professional services not otherwise specified,Health Canada,2849786 ONTARIO INC.,"$339,000","Jan. 14, 2022","Jan. 15, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500434812_hc
+Federal,Other Business services not Elsewhere Specified,National Defence,H&H Construction Inc,"$19,300","Mar. 30, 2022","Mar. 30, 2022","Apr. 15, 2022",https://theijf.org/procurement/4502401370_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,AECOM Canada Ltd.,"$100,000","Dec. 17, 2021","Dec. 17, 2021","Apr. 15, 2022",https://theijf.org/procurement/4502367046_dnd
+Federal,Commercial buildings,National Defence,Bhullar's Construction,"$21,210","Mar. 31, 2022","Mar. 31, 2022","Apr. 15, 2022",https://theijf.org/procurement/4502401960_dnd
+Federal,Other professional services not otherwise specified,Public Health Agency of Canada,QUINTET CONSULTING CORPORATION,"$25,171","Feb. 9, 2022","Feb. 9, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500435922_phac
+Federal,Tools and implements,National Defence,Snap-On Tools,"$67,168","Dec. 3, 2021","Dec. 3, 2021","Apr. 15, 2022",https://theijf.org/procurement/4502355117_dnd
+Federal,Tuition fees and costs of attending courses,Health Canada,FAST FORWARD FRENCH INC,"$17,402","Feb. 1, 2022","Feb. 14, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500435595_hc
+Federal,OTHER PROFESSIONAL SERV. NOT ELSEWHERE SPECIFIED,Department of Justice Canada,LARRY CHARTRAND,"$20,000","Dec. 6, 2021","Dec. 6, 2021","Apr. 15, 2022",https://theijf.org/procurement/4500146411_jus
+Federal,Professional Services,Indigenous Services Canada,DEBORAH JELLY & ASSOCIATES INC.,"$35,087","Mar. 31, 2022","Mar. 31, 2022","Apr. 15, 2022",https://theijf.org/procurement/4500438986_isc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Royal Canadian Mounted Police,ECOLE DE LANGUES ABCE INC.,"$12,558","Apr. 9, 2021","Apr. 9, 2021","Apr. 15, 2022",https://theijf.org/procurement/7249890_rcmp
+Federal,Management consulting,Global Affairs Canada,CROSS GROUP,"$19,385","Apr. 4, 2022","Apr. 4, 2022","Apr. 15, 2022",https://theijf.org/procurement/7439370_dfatd
+Federal,"Office furniture and furnishings, including parts",Royal Canadian Mounted Police,KISIK COMMERCIAL INC,"$16,065","Jan. 27, 2022","Jan. 27, 2022","Apr. 15, 2022",https://theijf.org/procurement/7255603_rcmp
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Royal Canadian Mounted Police,ECOLE DE LANGUES ABCE INC.,"$12,324","Apr. 7, 2021","Apr. 7, 2021","Apr. 15, 2022",https://theijf.org/procurement/7249811_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,GENERAL MOTORS OF CANADA COMPANY,"$1,914,895","May 18, 2021","May 18, 2021","Apr. 15, 2022",https://theijf.org/procurement/7250680_rcmp
+Federal,Computer equipment related to distributed computing environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),Royal Canadian Mounted Police,SOFTCHOICE CORPORATION,"$14,726","Mar. 3, 2022","Mar. 3, 2022","Apr. 15, 2022",https://theijf.org/procurement/7256358_rcmp
+Federal,Weapons (including parts),Royal Canadian Mounted Police,WOLVERINE SUPPLIES,"$10,708","Jan. 12, 2022","Jan. 12, 2022","Apr. 15, 2022",https://theijf.org/procurement/7255295_rcmp
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Royal Canadian Mounted Police,ECOLE DE LANGUES ABCE INC.,"$18,486","Apr. 7, 2021","Apr. 7, 2021","Apr. 15, 2022",https://theijf.org/procurement/7249822_rcmp
+Federal,Information technology and telecommunications cons,Global Affairs Canada,Deloitte LLP,"$28,688","Mar. 4, 2022","Mar. 4, 2022","Apr. 15, 2022",https://theijf.org/procurement/7438499_dfatd
+Federal,Information technology and telecommunications consultants,"Innovation, Science and Economic Development Canada",IBISKA TELECOM INC,"$184,685","Feb. 8, 2021","Feb. 8, 2021","Apr. 15, 2022",https://theijf.org/procurement/8509611_ic
+Federal,Office buildings,Global Affairs Canada,Planar Yapi Anonim Sirketi,"$11,439","Mar. 11, 2022","Mar. 11, 2022","Apr. 15, 2022",https://theijf.org/procurement/7438722_dfatd
+Federal,Computer Equipment,Infrastructure Canada,LEO-PISCES SERVICES GROUP INC.,"$67,518","Nov. 1, 2021","Nov. 2, 2021","Apr. 15, 2022",https://theijf.org/procurement/8509880_infc
+Federal,Scientific consultants,Canadian Space Agency,THE LANSDOWNE CONSULTING GROUP INC.,"$22,995","Mar. 8, 2022","Mar. 8, 2022","Apr. 15, 2022",https://theijf.org/procurement/7015713_csa
+Federal,Management consulting,Global Affairs Canada,Christina Tector,"$37,064","Aug. 5, 2021","Aug. 5, 2021","Apr. 15, 2022",https://theijf.org/procurement/7432390_dfatd
+Federal,Road motor vehicles,Royal Canadian Mounted Police,GENERAL MOTORS OF CANADA COMPANY,"$2,924,150","Mar. 18, 2021","Mar. 18, 2021","Apr. 15, 2022",https://theijf.org/procurement/7249320_rcmp
+Federal,Computer Equipment,Infrastructure Canada,NORTHERN MICRO INC.,"$397,832","Feb. 28, 2022","Feb. 28, 2022","Apr. 15, 2022",https://theijf.org/procurement/9600704_infc
+Federal,Ammunition,Royal Canadian Mounted Police,CANADIAN AMMUNITION DISPOSAL SERVIC,"$10,763","Apr. 4, 2022","Apr. 4, 2022","Apr. 15, 2022",https://theijf.org/procurement/7257008_rcmp
+Federal,Public relations services,Global Affairs Canada,Rocky Mountain Innovation,"$37,467","Nov. 5, 2021","Nov. 5, 2021","Apr. 15, 2022",https://theijf.org/procurement/7435336_dfatd
+Federal,Other business services not elsewhere specified,Global Affairs Canada,David Spriggs,"$12,000","Feb. 20, 2021","Feb. 20, 2021","Apr. 15, 2022",https://theijf.org/procurement/7427892_dfatd
+Federal,Engineering consultants-Construction,National Defence,Aecom,"$16,430","Sep. 16, 2021","Sep. 16, 2021","Apr. 15, 2022",https://theijf.org/procurement/76268kn_dnd
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Royal Canadian Mounted Police,ECOLE DE LANGUES ABCE INC.,"$12,324","Apr. 7, 2021","Apr. 7, 2021","Apr. 15, 2022",https://theijf.org/procurement/7249820_rcmp
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Royal Canadian Mounted Police,ECOLE DE LANGUES ABCE INC.,"$30,810","Apr. 7, 2021","Apr. 7, 2021","Apr. 15, 2022",https://theijf.org/procurement/7249815_rcmp
+Federal,Sewer and water,Global Affairs Canada,Muhammad Riasat,"$11,479","Apr. 1, 2021","Apr. 1, 2021","Apr. 15, 2022",https://theijf.org/procurement/7429204_dfatd
+Federal,Road motor vehicles - non-military,Royal Canadian Mounted Police,PARAMOUNT AUTO BODY,"$14,593","Mar. 2, 2022","Mar. 2, 2022","Apr. 14, 2022",https://theijf.org/procurement/7256356_rcmp
+Federal,Road motor vehicles - non-military,Royal Canadian Mounted Police,LAKE CITY COLLISION,"$12,243","Feb. 27, 2022","Feb. 27, 2022","Apr. 14, 2022",https://theijf.org/procurement/7256300_rcmp
+Federal,Management consulting,Royal Canadian Mounted Police,SAVIK RAMKAY CONSULTING INC,"$26,442","Apr. 14, 2022","Apr. 14, 2022","Apr. 1, 2022",https://theijf.org/procurement/7257156_rcmp
+Federal,"Other Mineral Fuels, Oils and Products",Parks Canada,Larry Penner Enterprises Inc.,"$11,808","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/45448175_pc
+Federal,Road Motor Vehicles,Parks Canada,General Motors of Canada Company,"$27,893","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/45448187_pc
+Federal,Protection Services,Public Services and Procurement Canada,The Canadian Corps Of Commissionair,"$122,173","Apr. 14, 2022","Apr. 1, 2021","Mar. 31, 2022",https://theijf.org/procurement/700578269_pwgsc
+Federal,Management Consulting,Public Services and Procurement Canada,Bureau Veritas Canada (2019) Inc.,"$27,120","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/700644602_pwgsc
+Federal,Client Software Related To Distributed Computing Environment (DCE),Correctional Service of Canada,SOLIDCAD,"$20,816","Apr. 8, 2021","Apr. 15, 2021","Apr. 14, 2022",https://theijf.org/procurement/21120_21_3732608_csc
+Federal,Aviation fuel,National Defence,AEG FUELS,"$21,534","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/2106798454_dnd
+Federal,Aviation fuel,National Defence,AEG,"$130,504","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/2106706686_dnd
+Federal,Temporary help services,Canada Energy Regulator,Altis Human Resources,"$35,641","Mar. 3, 2022","May 17, 2021","Apr. 14, 2022",https://theijf.org/procurement/21_0051_cer
+Federal,Aviation fuel,National Defence,AEG,"$154,628","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/2106706474_dnd
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,MCKESSON CANADA CORPORATION,"$33,683","Mar. 18, 2022","Mar. 18, 2022","Apr. 14, 2022",https://theijf.org/procurement/21201_22_4063486_csc
+Federal,Aviation fuel,National Defence,AEG,"$55,416","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/2106706455_dnd
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$33,512","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/2106699662_dnd
+Federal,"Inorganic and organic chemicals, including plastics, rubber and products, and excluding tires and tubes",National Defence,DETON CHO LOGISTICS,"$19,082","Apr. 12, 2022","Apr. 12, 2022","Apr. 14, 2022",https://theijf.org/procurement/2106697117_dnd
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,MCKESSON CANADA CORPORATION,"$11,218","Apr. 7, 2022","Apr. 7, 2022","Apr. 14, 2022",https://theijf.org/procurement/21301_23_4078344_csc
+Federal,Aviation fuel,National Defence,AEG,"$35,064","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/2106757819_dnd
+Federal,"Office furniture and furnishings, including parts",Canada Revenue Agency,Nitam Solutions Inc.,"$63,930","Jan. 27, 2022","Jan. 27, 2022","Apr. 14, 2022",https://theijf.org/procurement/2022028542_cra
+Federal,Other business services not elsewhere specified,Impact Assessment Agency of Canada,A.S.A.P. REPORTING SERVICES INC.,"$101,700","Mar. 14, 2022","Mar. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/20221028a_iaac
+Federal,Research contracts,Global Affairs Canada,Kaeras Inc.,"$148,249","Apr. 15, 2021","Apr. 15, 2021","Apr. 14, 2022",https://theijf.org/procurement/20_0661_dfatd
+Federal,"Measuring, Controlling, Laboratory, Medical and Optical Equipment and Parts",Parks Canada,Vectronic Aerospace GmbH,"$32,334","Mar. 30, 2022","Mar. 30, 2022","Apr. 14, 2022",https://theijf.org/procurement/2021031100_pc
+Federal,"Medical supplies, instruments, and apparatus",Canadian Food Inspection Agency,BIO NUCLEAR DIAGNOSTICS INC,"$965,857","Apr. 15, 2021","Apr. 15, 2021","Apr. 14, 2022",https://theijf.org/procurement/20210694a_cfia
+Federal,Image/Video communications services (includes telepresence/video conferencing services),Environment and Climate Change Canada,RIVER VOICES PRODUCTIONS,"$34,493","Apr. 22, 2021","Apr. 22, 2021","Apr. 14, 2022",https://theijf.org/procurement/20210830a_ec
+Federal,Purchase of Client Software,Statistics Canada,ESRI Canada Limited,"$61,077","Apr. 29, 2021","Apr. 15, 2021","Apr. 14, 2022",https://theijf.org/procurement/000012373_statcan
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,National Defence,Mapbox Inc.,"$260,410","Apr. 15, 2021","Apr. 15, 2021","Apr. 14, 2022",https://theijf.org/procurement/w6399_21lg59_001_ee_dnd
+Federal,"Miscellaneous textiles, headgear, umbrellas, etc.",National Defence,Pattison Sign Group,"$77,381","Mar. 8, 2022","Mar. 8, 2022","Apr. 14, 2022",https://theijf.org/procurement/w8486_4502391237_dnd
+Federal,Other equipment and Parts,National Defence,GEA CANADA,"$11,647","Mar. 3, 2022","Mar. 3, 2022","Apr. 14, 2022",https://theijf.org/procurement/w8482_4502391202_dnd
+Federal,"Computer equipment related to production and operations (P&O) environment-All servers, storage, printers, etc. (includes all related parts and peripherals)",National Defence,TELECOM COMPUTER,"$317,030","Mar. 8, 2022","Mar. 8, 2022","Apr. 14, 2022",https://theijf.org/procurement/w6820_4502393273_dnd
+Federal,Other equipment and Parts,National Defence,ACKLANDS GRAINGER INC,"$13,793","Feb. 2, 2022","Feb. 2, 2022","Apr. 14, 2022",https://theijf.org/procurement/w8486_4502375174_dnd
+Federal,Other professional services not elsewhere specified,National Defence,Halpenny Insurance Brokers Ltd,"$108,790","Apr. 15, 2021","Apr. 16, 2021","Apr. 14, 2022",https://theijf.org/procurement/w8561_4502246847_dnd
+Federal,"Miscellaneous textiles, headgear, umbrellas, etc.",National Defence,Pattison Sign Group,"$130,254","Feb. 7, 2022","Feb. 7, 2022","Apr. 14, 2022",https://theijf.org/procurement/w8486_4502377317_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Couture Logistics Inc,"$66,360","Apr. 6, 2022","Apr. 11, 2022","Apr. 14, 2022",https://theijf.org/procurement/w6447npcc22_0024_dnd
+Federal,Ships and boats,National Defence,MacKinnon and Olding Ltd,"$23,121","Jan. 24, 2022","Jan. 31, 2022","Apr. 14, 2022",https://theijf.org/procurement/w3554_4502370337_dnd
+Federal,Heavy fuel oil,National Defence,Irving Oil Commercial G.P.,"$20,575","Apr. 8, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/w307b23a02_dnd
+Federal,Heavy fuel oil,National Defence,IRVING OIL COMMERCIAL G.P.,"$136,066","Apr. 7, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/w307b23a001_dnd
+Federal,Ships and boats,National Defence,MacKinnon and Olding LTD,"$13,218","Feb. 10, 2022","Feb. 28, 2022","Apr. 14, 2022",https://theijf.org/procurement/w3554_4502379255_dnd
+Federal,Computer equipment related to distributed computing environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),"Immigration, Refugees and Citizenship Canada",LAURIER COMPUTERS LIMITED,"$10,057","Feb. 23, 2022","Feb. 23, 2022","Apr. 14, 2022",https://theijf.org/procurement/req0075165_cic
+Federal,Miscellaneous manufactured articles,National Defence,GRAINGER CANADA,"$25,729","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/w3555_4502409069_dnd
+Federal,Ships and boats,National Defence,MacKinnon and Olding Ltd,"$16,352","Jan. 31, 2022","Feb. 10, 2022","Apr. 14, 2022",https://theijf.org/procurement/w3554_4502373215_dnd
+Federal,"Printed matter, including books, newspapers, pictures, manuscripts and forms",National Defence,MHS,"$10,989","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/4502409132_dnd
+Federal,Aviation fuel,National Defence,Imperial Oil,"$2,305,842","Apr. 7, 2022","Apr. 11, 2022","Apr. 14, 2022",https://theijf.org/procurement/4502405296_dnd
+Federal,"Inorganic and organic chemicals, including plastics, rubber and products, and excluding tires and tubes",National Defence,Chemtrade Chemicals Canada Ltd,"$10,812","Apr. 11, 2022","Apr. 11, 2022","Apr. 14, 2022",https://theijf.org/procurement/4502406436_dnd
+Federal,Office buildings,National Defence,AKM Group Limited,"$2,593,350","Sep. 17, 2020","Sep. 17, 2020","Apr. 14, 2022",https://theijf.org/procurement/45012148087_dnd
+Federal,Tuition fees and costs of attending courses,Health Canada,ECOLE CREUSOT,"$10,022","Nov. 18, 2021","Dec. 6, 2021","Apr. 14, 2022",https://theijf.org/procurement/4500432445_hc
+Federal,"Measuring, controlling, laboratory, medical and optical instruments, apparatus and accessories",Health Canada,AGILENT TECHNOLOGIES INC,"$49,724","Apr. 27, 2020","Apr. 27, 2020","Apr. 14, 2022",https://theijf.org/procurement/4500410880_hc
+Federal,Gasoline,National Defence,MACEWEN PETROLEUM,"$19,179","Apr. 4, 2022","Apr. 4, 2022","Apr. 14, 2022",https://theijf.org/procurement/4502402919_dnd
+Federal,Data and database access services,Natural Resources Canada,POLITICO LLC,"$37,827","Apr. 11, 2022","Apr. 11, 2022","Apr. 14, 2022",https://theijf.org/procurement/3000744918_nrcan
+Federal,Management consulting,Employment and Social Development Canada,ACOSYS CONSULTING SERVICES INC.,"$83,485","Dec. 3, 2021","Dec. 6, 2021","Apr. 14, 2022",https://theijf.org/procurement/4500009059_esdc
+Federal,Audio-visual services,Impact Assessment Agency of Canada,ENCORE OTTAWA GL CENTER,"$60,328","Feb. 17, 2022","Feb. 17, 2022","Apr. 14, 2022",https://theijf.org/procurement/3000741918_iaac
+Federal,Translation services,Natural Resources Canada,TECHNITRAD INC.,"$11,401","Apr. 14, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/3000745173_nrcan
+Federal,Non-Public servant travel-Support core mandate activities,Elections Canada,WILLIAMS HOTELS (2013) LIMITED (TOWNEPLACE SUITES BY MARRIOTT),"$13,007","Apr. 11, 2022","Apr. 11, 2022","Apr. 14, 2022",https://theijf.org/procurement/3000745923_elections
+Federal,"Rental of image/video communications equipment (includes telepresence/video conferencing equipment, cabling, parts and peripherals)",Privy Council Office,HALIFAX CONVENTION CENTRE CORPORATI,"$2,073,585","Nov. 26, 2021","Nov. 26, 2021","Apr. 14, 2022",https://theijf.org/procurement/3535210639_pco
+Federal,Management consulting,Employment and Social Development Canada,RANDSTAD INTERIM INC.,"$4,656","Feb. 25, 2022","Mar. 1, 2022","Apr. 14, 2022",https://theijf.org/procurement/4500009529_esdc
+Federal,Other Business services not Elsewhere Specified,National Defence,WHOLESOME CRAVINGS,"$19,162","Apr. 11, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/al0114202300041_dnd
+Federal,Audio visual services,Women and Gender Equality Canada,York University,"$39,361","Nov. 12, 2021","Nov. 12, 2021","Apr. 14, 2022",https://theijf.org/procurement/p2200038_wage
+Federal,AIRCRAFT PARTS,Transport Canada,BELL TEXTRON CANADA LIMITED/BELL TEXTRON CANADA LIMITEE,"$27,363","Apr. 6, 2022","Apr. 6, 2022","Apr. 14, 2022",https://theijf.org/procurement/as_2095_0071774_tc
+Federal,Engineering services not elsewhere specified,National Research Council Canada,ATCO FRONTEC LTD,"$1,072,383","Apr. 7, 2022","Apr. 7, 2022","Apr. 14, 2022",https://theijf.org/procurement/988773_nrc
+Federal,Other Business services not Elsewhere Specified,National Defence,CHEF BRANDZ INC,"$25,472","Apr. 7, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/jy0105202300042_dnd
+Federal,Audio-visual services,Crown-Indigenous Relations and Northern Affairs Canada,ARTLESS COLLECTIVE INC.,"$13,388","Nov. 5, 2021","Nov. 5, 2021","Apr. 14, 2022",https://theijf.org/procurement/a172613630_aandc
+Federal,"Vegetables and fruits, edible products, fats and preparations",National Defence,DIX ÉTOILES PLUS,"$11,255","Apr. 11, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/by3380202300123_dnd
+Federal,"Communications/Networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)",Shared Services Canada,IPSS INC.,"$57,671","Apr. 13, 2021","Apr. 13, 2021","Apr. 14, 2022",https://theijf.org/procurement/p000024148_ssc
+Federal,"Meat, fish and their preparations",National Defence,MULDER MEATS (1983),"$16,926","Apr. 13, 2022","Apr. 14, 2022","Apr. 14, 2022",https://theijf.org/procurement/jy0105202300066_dnd
+Federal,"Miscellaneous food, food materials and food preparations",National Defence,SYSCO-SERCA FOOD SERVICES-ATLANTIC INC.,"$12,132","Apr. 12, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/jy0105202300058_dnd
+Federal,"Miscellaneous food, food materials and food preparations",National Defence,GORDON FOOD SERVICE,"$28,478","Mar. 31, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/op0168202300014_dnd
+Federal,"Vegetables and fruits, edible products, fats and preparations",National Defence,GORDON FOOD SERVICE,"$15,877","Mar. 31, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/op0168202300016_dnd
+Federal,Dairy products and other animal products,National Defence,GORDON FOOD SERVICE,"$17,830","Mar. 31, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/op0168202300015_dnd
+Federal,Translation Services,Public Services and Procurement Canada,Compagnie Amplexor Canada Inc.,"$15,522","Dec. 10, 2021","Dec. 13, 2021","Apr. 13, 2022",https://theijf.org/procurement/200004757_pwgsc
+Federal,Translation services,"Innovation, Science and Economic Development Canada",FOX TRANSLATION LTD.,"$11,300","Apr. 16, 2021","Apr. 16, 2021","Apr. 13, 2022",https://theijf.org/procurement/5030296_ic
+Federal,Public relations services,Global Affairs Canada,"Endeavor Business Media, LLC","$30,462","Feb. 12, 2022","Feb. 12, 2022","Apr. 13, 2022",https://theijf.org/procurement/7437775_dfatd
+Federal,Other office equipment and Parts,Royal Canadian Mounted Police,DASCO STORAGE SOLUTIONS,"$23,704","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/7257135_rcmp
+Federal,Public relations services,Global Affairs Canada,Advanced Business Events,"$14,188","Apr. 1, 2022","Apr. 1, 2022","Apr. 13, 2022",https://theijf.org/procurement/7433639_dfatd
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$13,838","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106696523_dnd
+Federal,Aircraft,National Defence,AIR TINDI LTD,"$107,181","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106727258_dnd
+Federal,Aviation fuel,National Defence,AEG,"$65,552","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106709458_dnd
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,MCKESSON CANADA CORPORATION,"$20,190","Apr. 6, 2022","Apr. 6, 2022","Apr. 13, 2022",https://theijf.org/procurement/21301_23_4077001_csc
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$19,986","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106696520_dnd
+Federal,Aviation fuel,National Defence,WOODWARD AVIATION,"$30,586","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106702293_dnd
+Federal,Aviation fuel,National Defence,WOODWARD AVIATION,"$20,825","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106696510_dnd
+Federal,Aviation fuel,National Defence,AVJET HOLDING,"$29,910","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106696501_dnd
+Federal,Rental - Other,Canada Revenue Agency,Fairmont Chateau Laurier Hotel,"$128,778","Mar. 21, 2022","Mar. 21, 2022","Apr. 13, 2022",https://theijf.org/procurement/2023001257_cra
+Federal,Aviation fuel,National Defence,AEG FUELS,"$129,004","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106696429_dnd
+Federal,Aircraft,National Defence,AIR TINDI LTD,"$28,250","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106749768_dnd
+Federal,"Printed matter, including books, newspapers, pictures, manuscripts and forms",Canada Revenue Agency,Supremex Inc.,"$27,340","Mar. 22, 2022","Mar. 22, 2022","Apr. 13, 2022",https://theijf.org/procurement/2022036248_cra
+Federal,Aviation fuel,National Defence,AEG FUELS,"$28,497","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106828689_dnd
+Federal,Aviation fuel,National Defence,AEG,"$12,761","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106716571_dnd
+Federal,Aviation fuel,National Defence,AEG,"$31,963","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106709430_dnd
+Federal,Aviation fuel,National Defence,AEG,"$90,683","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106709460_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$33,206","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106808330_dnd
+Federal,"Miscellaneous food, food materials and food preparations",National Defence,Connect Air International,"$10,919","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/2106696892_dnd
+Federal,Non-Public servant travel-Support core mandate activities,Elections Canada,2093755 ONTARIO LTD. (HOLIDAY INN EXPRESS & SUITES TORONTO-MARKHAM),"$14,017","Apr. 10, 2022","Apr. 10, 2022","Apr. 13, 2022",https://theijf.org/procurement/3000746305_elections
+Federal,Diesel fuel,Fisheries and Oceans Canada,LE GROUPE HARNOIS INC,"$469,982","Mar. 24, 2022","Mar. 24, 2022","Apr. 13, 2022",https://theijf.org/procurement/4500023326_dfo
+Federal,Rental of aircraft,Environment and Climate Change Canada,8199400 CANADA INC.,"$56,959","Mar. 17, 2022","Mar. 17, 2022","Apr. 13, 2022",https://theijf.org/procurement/3000743734_ec
+Federal,Other equipment and Parts,National Defence,Wesco Distribution Canada LP,"$34,346","Dec. 23, 2021","Dec. 23, 2021","Apr. 13, 2022",https://theijf.org/procurement/w6854_4502362790_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,CRE TRANSPORT,"$11,550","Mar. 25, 2022","Mar. 25, 2022","Apr. 13, 2022",https://theijf.org/procurement/w6447ilcc22_0071_dnd
+Federal,Other professional services not elsewhere specified,National Defence,Gordon Group,"$24,917","Jan. 31, 2022","Jan. 31, 2022","Apr. 13, 2022",https://theijf.org/procurement/w4938_21_565s_dnd
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,National Defence,Telfer School of Management (UoO),"$10,710","Apr. 12, 2022","Apr. 12, 2022","Apr. 13, 2022",https://theijf.org/procurement/w847c_4502401871_dnd
+Federal,Computer equipment related to distributed computing environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),Royal Canadian Mounted Police,"ISP SUPPLIES, LLC","$58,511","Jan. 24, 2022","Jan. 24, 2022","Apr. 13, 2022",https://theijf.org/procurement/s202202482_rcmp
+Federal,Aviation fuel,National Defence,Exxonmobil,"$118,204","Apr. 6, 2022","Apr. 6, 2022","Apr. 13, 2022",https://theijf.org/procurement/w107y_4502404905_dnd
+Federal,Public servant travel-Support core mandate activ,Fisheries and Oceans Canada,EXACT AIR INC,"$13,535","Apr. 11, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/4500025676_dfo
+Federal,"Miscellaneous food, food materials and food prep",Fisheries and Oceans Canada,GFS ONTARIO INC,"$12,051","Apr. 13, 2022","Apr. 13, 2022","Apr. 13, 2022",https://theijf.org/procurement/4500027169_dfo
+Federal,Ferrous metals,National Defence,Metal Supermarkets,"$12,467","Mar. 30, 2022","Mar. 30, 2022","Apr. 13, 2022",https://theijf.org/procurement/4502401618_dnd
+Federal,Aviation fuel,National Defence,Flight Fuels LP,"$79,211","Apr. 12, 2022","Apr. 12, 2022","Apr. 13, 2022",https://theijf.org/procurement/4502407883_dnd
+Federal,Other buildings,National Defence,Proffesional Flooring,"$32,028","Apr. 12, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/4502397483_dnd
+Federal,Other equipment and Parts,National Defence,Gateway,"$24,321","Mar. 31, 2022","Mar. 31, 2022","Apr. 12, 2022",https://theijf.org/procurement/4502402160_dnd
+Federal,Other equipment and Parts,National Defence,RG DICK PLUMMER LIMITED,"$24,182","Mar. 10, 2022","Mar. 10, 2022","Apr. 12, 2022",https://theijf.org/procurement/4502394597_dnd
+Federal,Other buildings,National Defence,Profesisonal Flooring,"$27,991","Apr. 12, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/4502397487_dnd
+Federal,Gasoline,National Defence,Maritime Fuels,"$10,755","Mar. 29, 2022","Mar. 29, 2022","Apr. 12, 2022",https://theijf.org/procurement/4502400836_dnd
+Federal,Gasoline,National Defence,Maritime Fuels,"$33,533","Apr. 7, 2022","Apr. 7, 2022","Apr. 12, 2022",https://theijf.org/procurement/4502404427_dnd
+Federal,Aviation fuel,National Defence,IMPERIAL OIL AVIATION FUEL,"$759,616","Apr. 12, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/4502404510_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,CECC Roof Maintenance Solutions,"$580,029","Feb. 27, 2020","Feb. 27, 2020","Apr. 12, 2022",https://theijf.org/procurement/4502080353_dnd
+Federal,"Communications/Networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)",National Defence,HYPERTEC SYSTEMS INC,"$13,017","Mar. 8, 2022","Mar. 8, 2022","Apr. 12, 2022",https://theijf.org/procurement/4502393088_dnd
+Federal,Aviation fuel,National Defence,Flight Fuels LP,"$162,524","Apr. 8, 2022","Apr. 8, 2022","Apr. 12, 2022",https://theijf.org/procurement/4502406079_dnd
+Federal,Rental of aircraft,Royal Canadian Mounted Police,NORTH CARIBOO AIR,"$72,450","Mar. 25, 2021","Mar. 25, 2021","Apr. 12, 2022",https://theijf.org/procurement/7249588_rcmp
+Federal,Military and Royal Canadian Mounted Police (RCMP) members-Allowances and benefits,Royal Canadian Mounted Police,ST.JOSEPH PRINT GROUP INC.,"$12,314","Mar. 28, 2022","Mar. 28, 2022","Apr. 12, 2022",https://theijf.org/procurement/7256833_rcmp
+Federal,"Meat, fish and their preparations",National Defence,SYSCO,"$19,021","Apr. 11, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/ca0168202300021_dnd
+Federal,Architectural services,Public Services and Procurement Canada,CIVITAS ARCHITECTURE INC.,"$63,975","Dec. 8, 2020","Dec. 8, 2020","Apr. 12, 2022",https://theijf.org/procurement/ep75610198_pwgsc
+Federal,Other Business services not Elsewhere Specified,National Defence,OPTIMUM SOLUTIONS INC,"$48,488","Apr. 5, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/jy0105202300024_dnd
+Federal,Weapons (including parts),Royal Canadian Mounted Police,COLT CANADA,"$153,612","Dec. 13, 2021","Dec. 13, 2021","Apr. 12, 2022",https://theijf.org/procurement/m850021r32_rcmp
+Federal,"Meat, fish and their preparations",National Defence,LES ALIMENTS GUY CHICOINE INC.,"$16,331","Apr. 5, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/by3380202300104_dnd
+Federal,Marine Installations,Public Services and Procurement Canada,9244-3175 Québec Inc.,"$3,585,869","Apr. 12, 2022","Aug. 3, 2021","Mar. 31, 2022",https://theijf.org/procurement/ee51712696_pwgsc
+Federal,Information Technology Managed Services,Canadian Heritage,Recollective Inc.,"$16,447","Apr. 13, 2021","Apr. 13, 2021","Apr. 12, 2022",https://theijf.org/procurement/45437651_pch
+Federal,Hazard - Detecting Installation,Canada Border Services Agency,Smiths Detection,"$54,257","Apr. 13, 2021","Apr. 13, 2021","Apr. 12, 2022",https://theijf.org/procurement/4741916038_cbsa
+Federal,Other equipment,National Defence,Ketek group inc,"$52,759","Oct. 25, 2021","Oct. 29, 2021","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502332465_dnd
+Federal,Miscellaneous manufactured articles,National Defence,GRAINGER CANADA,"$14,996","Apr. 12, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/w3555_4502407514_dnd
+Federal,Miscellaneous manufactured articles,National Defence,HDT EXPEDITIONARY SYSTEMS INC,"$18,595","Apr. 9, 2022","Apr. 9, 2022","Apr. 12, 2022",https://theijf.org/procurement/w3555_4502406348_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,MLS (Overseas) Ltd.,"$132,028","Apr. 9, 2022","Apr. 9, 2022","Apr. 12, 2022",https://theijf.org/procurement/w124423001_dnd
+Federal,"Electric lighting, distribution and control equipment and Parts",National Defence,GAT Compressor Solutions Inc.,"$22,046","Mar. 8, 2022","Mar. 8, 2022","Apr. 12, 2022",https://theijf.org/procurement/w8482_229623_003_dmarp5_dnd
+Federal,Other buildings,National Defence,Jimcor Line Construction,"$24,106","Mar. 1, 2022","Mar. 7, 2022","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502389374_dnd
+Federal,Other equipment,National Defence,Ketek group inc,"$20,580","Oct. 25, 2021","Oct. 29, 2021","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502332534_dnd
+Federal,Road motor vehicles-Military,National Defence,CAMIONS VOLVO MONTRÉAL,"$38,054","Jul. 28, 2021","Jul. 28, 2021","Apr. 12, 2022",https://theijf.org/procurement/w1985_4502294716_dnd
+Federal,Other engineering works,National Defence,Electric Services,"$19,396","Feb. 8, 2022","Feb. 14, 2022","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502378213_dnd
+Federal,Other engineering works,National Defence,Electric Services,"$14,791","Feb. 8, 2022","Feb. 14, 2022","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502378205_dnd
+Federal,Aircraft parts,National Defence,JHT Defense Inc,"$17,052","Jul. 13, 2021","Jul. 13, 2021","Apr. 12, 2022",https://theijf.org/procurement/w8485_226597_001_dap4_dnd
+Federal,Other equipment and Parts,National Defence,ANIXTER CANADA INC,"$12,095","Mar. 29, 2022","Mar. 29, 2022","Apr. 12, 2022",https://theijf.org/procurement/w355b_4502400797_dnd
+Federal,Other equipment,National Defence,Smart electrical contractors,"$24,675","Feb. 7, 2022","Feb. 11, 2022","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502377161_dnd
+Federal,Electric power installations,National Defence,Jimcor Line Construction,"$99,501","Jun. 17, 2021","Jun. 22, 2021","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502276754_dnd
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,National Defence,ESRI Canada Limited,"$25,572","Apr. 12, 2021","Apr. 13, 2021","Apr. 12, 2022",https://theijf.org/procurement/w8484_210061_001_ee_dnd
+Federal,Other equipment,National Defence,Ketek group inc,"$36,011","Oct. 18, 2021","Oct. 22, 2021","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502329322_dnd
+Federal,Other equipment,National Defence,Ketek group inc,"$52,183","Oct. 18, 2021","Oct. 22, 2021","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502329312_dnd
+Federal,Other equipment,National Defence,Ketek group inc,"$42,918","Oct. 18, 2021","Oct. 22, 2021","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502329305_dnd
+Federal,Wood and articles of wood,National Defence,KENT BLDG,"$14,035","Apr. 12, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/w355b_4502407780_dnd
+Federal,Residential buildings,National Defence,Urlacher construction ltd,"$27,367","Mar. 30, 2022","Apr. 4, 2022","Apr. 12, 2022",https://theijf.org/procurement/w6895_4502304694_dnd
+Federal,Other Professional Services not Elsewhere Specified,Correctional Service of Canada,GENERATIV CA CONSULTANTS INC,"$39,595","Oct. 12, 2021","Oct. 12, 2021","Apr. 12, 2022",https://theijf.org/procurement/21120_22_3897287_csc
+Federal,Aviation fuel,National Defence,AVJET HOLDING,"$18,525","Apr. 12, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/2106695218_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$31,906","Apr. 12, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/2106742074_dnd
+Federal,Aviation fuel,National Defence,AVJET HOLDING,"$26,254","Apr. 12, 2022","Apr. 12, 2022","Apr. 12, 2022",https://theijf.org/procurement/2106696503_dnd
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,MCKESSON CANADA CORPORATION,"$11,903","Apr. 5, 2022","Apr. 5, 2022","Apr. 12, 2022",https://theijf.org/procurement/21301_23_4076242_csc
+Federal,Other Professional Services not Elsewhere Specified,Correctional Service of Canada,MAGUIRE STEPHEN,"$39,957","Apr. 13, 2021","Apr. 13, 2021","Apr. 12, 2022",https://theijf.org/procurement/21175_21_3773919_csc
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,Treasury Board of Canada Secretariat,Softchoice Corporation,"$11,276","Apr. 13, 2021","Apr. 13, 2021","Apr. 12, 2022",https://theijf.org/procurement/2406222044_tbs
+Federal,"Medical supplies, instruments, and apparatus",Fisheries and Oceans Canada,ABBOTT RAPID DIAGNOSTICS ULC,"$13,204","Apr. 4, 2022","Apr. 5, 2022","Apr. 12, 2022",https://theijf.org/procurement/4500023975_dfo
+Federal,Ships and boats,Fisheries and Oceans Canada,ALLIED SYSTEMS COMPANY,"$29,257","Mar. 8, 2022","Mar. 8, 2022","Apr. 12, 2022",https://theijf.org/procurement/4500022197_dfo
+Federal,Diesel fuel,Fisheries and Oceans Canada,LES HUILES DESROCHES INC,"$29,284","Mar. 30, 2022","Mar. 30, 2022","Apr. 12, 2022",https://theijf.org/procurement/4500023697_dfo
+Federal,Diesel fuel,Fisheries and Oceans Canada,LES HUILES DESROCHES INC,"$15,830","Mar. 30, 2022","Mar. 30, 2022","Apr. 11, 2022",https://theijf.org/procurement/4500023717_dfo
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Environment and Climate Change Canada,ECOLE DE LANGUES LA CITE,"$12,367","Apr. 11, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/3000744888_ec
+Federal,Diesel fuel,Agriculture and Agri-Food Canada,BLUEWAVE ENERGY,"$16,960","Apr. 4, 2022","Apr. 4, 2022","Apr. 11, 2022",https://theijf.org/procurement/3000744626_aafc
+Federal,Management consulting,"Innovation, Science and Economic Development Canada",PRECISIONIT INCORPORATED,"$187,288","Apr. 12, 2021","Apr. 12, 2021","Apr. 11, 2022",https://theijf.org/procurement/3518635_ic
+Federal,Rental of ships,Fisheries and Oceans Canada,OCEAN NAVIGATION INC,"$145,579","Apr. 8, 2022","Apr. 8, 2022","Apr. 11, 2022",https://theijf.org/procurement/4500024732_dfo
+Federal,"Measuring, controlling, laboratory, medical and optical instruments, apparatus and accessories",National Research Council Canada,J.L. RICHARDS & ASSOCIATES LIMITED,"$63,224","Mar. 11, 2022","Mar. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/987891_nrc
+Federal,Other equipment and Parts,National Defence,BARGREEN-ELLINGSON CANADA,"$18,346","Apr. 11, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/ab1754202300002_dnd
+Federal,"Meat, fish and their preparations",National Defence,GORDON FOOD SERVICE,"$49,799","Mar. 31, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/op0168202300011_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,ALIMENTS MARTEL,"$10,341","Apr. 7, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/cj0106202300033_dnd
+Federal,Other business services not elsewhere specified,National Research Council Canada,R.E. LOCK (QUEBEC) INC,"$43,202","Mar. 9, 2022","Mar. 9, 2022","Apr. 11, 2022",https://theijf.org/procurement/987731_nrc
+Federal,Management Consulting,Public Services and Procurement Canada,Pricewaterhousecoopers Llp,"$2,364,871","Apr. 11, 2022","Feb. 5, 2020","Mar. 31, 2022",https://theijf.org/procurement/en57802452_pwgsc
+Federal,"Vegetables and fruits, edible products, fats and preparations",National Defence,GORDON FOOD SERVICE,"$25,327","Mar. 31, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/op0168202300010_dnd
+Federal,"Meat, fish and their preparations",National Defence,SYSCO VICTORIA BC,"$10,757","Mar. 30, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/aa4877202300002_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,10647802 CANADA LIMITED - DEXTERRA,"$17,338","Oct. 26, 2021","Oct. 26, 2021","Apr. 11, 2022",https://theijf.org/procurement/4502333224_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,10647802 CANADA LIMITED - DEXTERRA,"$26,023","Oct. 20, 2021","Oct. 20, 2021","Apr. 11, 2022",https://theijf.org/procurement/4502330961_dnd
+Federal,Other professional services not elsewhere specified,National Defence,Ernest & Young Orenda Corporate,"$488,669","Mar. 10, 2021","Mar. 10, 2021","Apr. 11, 2022",https://theijf.org/procurement/4502240101_4502243149_74888_dnd
+Federal,Office and stationers supplies,National Defence,MBH TEKNION,"$13,533","Apr. 11, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/4502374953_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,10647802 CANADA LIMITED - DEXTERRA,"$21,590","May 13, 2021","May 13, 2021","Apr. 11, 2022",https://theijf.org/procurement/4502260969_dnd
+Federal,"Office furniture and furnishings, including parts",National Defence,Global Upholstery Co.,"$11,410","Mar. 1, 2022","Mar. 1, 2022","Apr. 11, 2022",https://theijf.org/procurement/4502376514_dnd
+Federal,Diesel fuel,National Defence,Harnois Energies Inc.,"$100,861","Mar. 16, 2022","Mar. 16, 2022","Apr. 11, 2022",https://theijf.org/procurement/4502396893_dnd
+Federal,Heavy fuel oil,National Defence,TR PETROLEUM,"$77,643","Apr. 7, 2022","Apr. 7, 2022","Apr. 11, 2022",https://theijf.org/procurement/4502405649_dnd
+Federal,"Office furniture and furnishings, including parts",National Defence,ErgoCentric,"$10,132","Dec. 7, 2021","Dec. 7, 2021","Apr. 11, 2022",https://theijf.org/procurement/4502401875_dnd
+Federal,Gasoline,National Defence,Maritime Fuels,"$135,442","Mar. 29, 2022","Mar. 29, 2022","Apr. 11, 2022",https://theijf.org/procurement/4502400831_dnd
+Federal,Computer equipment related to distributed computing environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),National Defence,Ciara Technologies,"$21,472","Apr. 11, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/4502407239_dnd
+Federal,License/Maintenance fees for Client Software,Parks Canada,ESRI CANADA LTD,"$449,456","Apr. 21, 2021","Apr. 12, 2021","Apr. 11, 2022",https://theijf.org/procurement/2020071100_pc
+Federal,Information Technology Managed Services,Parks Canada,ESRI CANADA LTD,"$31,814","May 4, 2021","Apr. 12, 2021","Apr. 11, 2022",https://theijf.org/procurement/2021001300_pc
+Federal,Information Technology Managed Services,Parks Canada,ESRI CANADA LTD,"$76,631","Apr. 11, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/2021034600_pc
+Federal,Translation services,Public Services and Procurement Canada,LIONBRIDGE LTD,"$287,438","Mar. 30, 2021","Apr. 12, 2021","Apr. 11, 2022",https://theijf.org/procurement/200004247_pwgsc
+Federal,Office buildings,Royal Canadian Mounted Police,PARKLAND CLEANERS & RESTORATIONS,"$18,209","Apr. 11, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/7258298_rcmp
+Federal,Aircraft parts,Royal Canadian Mounted Police,AIRBUS HELICOPTERS CANADA LIMITED,"$11,526","Feb. 7, 2022","Feb. 7, 2022","Apr. 11, 2022",https://theijf.org/procurement/7255831_rcmp
+Federal,Aircraft parts,Royal Canadian Mounted Police,LEVAERO AVIATION INC,"$29,780","Jan. 27, 2022","Jan. 27, 2022","Apr. 11, 2022",https://theijf.org/procurement/7255628_rcmp
+Federal,Aircraft parts,Royal Canadian Mounted Police,AIRBUS HELICOPTERS CANADA LIMITED,"$18,566","Feb. 8, 2022","Feb. 8, 2022","Apr. 11, 2022",https://theijf.org/procurement/7255865_rcmp
+Federal,Information technology and telecommunications consultants,"Innovation, Science and Economic Development Canada",DELOITTE INC,"$531,958","Jan. 10, 2022","Jan. 10, 2022","Apr. 11, 2022",https://theijf.org/procurement/8509983_ic
+Federal,Audio-visual services,Global Affairs Canada,SOLOTECH INC.,"$114,422","Apr. 9, 2022","Apr. 9, 2022","Apr. 11, 2022",https://theijf.org/procurement/7440027_dfatd
+Federal,Aircraft parts,Royal Canadian Mounted Police,AIRBUS HELICOPTERS CANADA LIMITED,"$20,398","Jan. 7, 2022","Jan. 7, 2022","Apr. 11, 2022",https://theijf.org/procurement/7255193_rcmp
+Federal,Aviation fuel,National Defence,AEG,"$26,336","Apr. 11, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/2106706461_dnd
+Federal,ADP Software - Installation,Canada Border Services Agency,Advanced Chippewa Technologies Inc.,"$25,000","Apr. 8, 2021","Apr. 12, 2021","Apr. 11, 2022",https://theijf.org/procurement/2b21356924_cbsa
+Federal,Aviation fuel,National Defence,AEG FUELS,"$90,955","Apr. 11, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/2106742073_dnd
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,MCKESSON CANADA CORPORATION,"$34,843","Apr. 4, 2022","Apr. 4, 2022","Apr. 11, 2022",https://theijf.org/procurement/21301_23_4075230_csc
+Federal,Aviation fuel,National Defence,AVJET HOLDING,"$16,461","Apr. 11, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/2106695205_dnd
+Federal,Computer equipment related to Distributed Computing Environment (DCE) - Desktop/personal/portable (includes all related parts and peripherals),Employment and Social Development Canada,CDW CANADA CORP.,"$13,797","Apr. 11, 2022","Jan. 17, 2022","Mar. 31, 2022",https://theijf.org/procurement/2bh110485a_esdc
+Federal,Aviation fuel,National Defence,AVJET HOLDING,"$11,764","Apr. 11, 2022","Apr. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/2106695220_dnd
+Federal,Advertising Services,Public Services and Procurement Canada,Acart Communications Inc.,"$16,916","Apr. 11, 2022","Feb. 16, 2022","Mar. 31, 2022",https://theijf.org/procurement/700642494_pwgsc
+Federal,Other business services not elsewhere specified,Immigration and Refugee Board of Canada,Danielle Arpin,"$37,942","Apr. 12, 2021","Apr. 12, 2021","Apr. 11, 2022",https://theijf.org/procurement/6034779_irb
+Federal,Diesel Fuel,Parks Canada,PARKLAND CORPORATION,"$21,000","Apr. 4, 2022","Apr. 4, 2022","Apr. 11, 2022",https://theijf.org/procurement/45448076_pc
+Federal,"Other Mineral Fuels, Oils and Products",Parks Canada,IMPERIAL OIL,"$18,900","Apr. 7, 2022","Apr. 7, 2022","Apr. 11, 2022",https://theijf.org/procurement/45448079_pc
+Federal,Computer equipment related to distributed computing environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),Royal Canadian Mounted Police,CDW CANADA INC.,"$10,504","Feb. 2, 2022","Feb. 2, 2022","Apr. 11, 2022",https://theijf.org/procurement/s202204586_rcmp
+Federal,Other equipment,National Defence,Jimcor LIne Construction,"$31,005","Aug. 24, 2021","Aug. 30, 2021","Apr. 11, 2022",https://theijf.org/procurement/w68985_4502305486_dnd
+Federal,Office buildings,National Defence,Bandit Fire Protection,"$39,900","Feb. 17, 2022","Feb. 23, 2022","Apr. 11, 2022",https://theijf.org/procurement/w6895_4502383538_dnd
+Federal,"Electric lighting, distribution and control equipment and Parts",National Defence,PRO22V29,"$38,000","Dec. 6, 2021","Dec. 6, 2021","Apr. 11, 2022",https://theijf.org/procurement/w8482_218747_002_dmarp5_dnd
+Federal,Other buildings,National Defence,Ketek group inc,"$12,938","Feb. 7, 2022","Feb. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/w6895_4502377153_dnd
+Federal,AIRCRAFT,Transport Canada,BELL TEXTRON CANADA LIMITED/BELL TEXTRON CANADA LIMITEE,"$22,486","Apr. 7, 2022","Apr. 7, 2022","Apr. 11, 2022",https://theijf.org/procurement/t8563_22_0002_tc
+Federal,Other equipment,National Defence,Jimcor Line Constrcution,"$24,999","Feb. 7, 2022","Feb. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/w6895_4502377227_dnd
+Federal,Other furniture and fixtures including parts,National Defence,ACT Equipment Sales Ltd,"$21,319","Feb. 9, 2022","Feb. 9, 2022","Apr. 11, 2022",https://theijf.org/procurement/w0133_4502379056_dnd
+Federal,Miscellaneous manufactured articles,National Defence,Unisource Technology Inc.,"$16,980","Dec. 13, 2021","Dec. 13, 2021","Apr. 11, 2022",https://theijf.org/procurement/w8482_229387_001_dmarp4_dnd
+Federal,Ferrous metals,National Defence,OVIS,"$16,763","Mar. 4, 2022","Mar. 4, 2022","Apr. 11, 2022",https://theijf.org/procurement/w3555_4502392266_dnd
+Federal,Other equipment,National Defence,Jimcor Line construction,"$13,125","Feb. 7, 2022","Feb. 11, 2022","Apr. 11, 2022",https://theijf.org/procurement/w6895_4502377240_dnd
+Federal,Other buildings,National Defence,Bandit Fire and Protection Ltd,"$84,000","Jan. 27, 2022","Feb. 7, 2022","Apr. 11, 2022",https://theijf.org/procurement/w6895_4502372474_dnd
+Federal,TUITION FEES AND COSTS OF ATTENDING COURSES INCLUDING SEMINARS NOT ELSEWHERE SPECIFIED,Transport Canada,ECOLE DE LANGUES CREUSOT,"$42,019","Apr. 28, 2021","Oct. 21, 2021","Apr. 11, 2022",https://theijf.org/procurement/t8080_210021_tc
+Federal,Miscellaneous manufactured articles,National Defence,GRAINGER CANADA,"$16,374","Jan. 21, 2022","Jan. 21, 2022","Apr. 11, 2022",https://theijf.org/procurement/w3555_4502369838_dnd
+Federal,Miscellaneous manufactured articles,National Defence,PREMIER FARNELL CANADA LIMITED,"$11,155","Sep. 10, 2021","Sep. 10, 2021","Apr. 11, 2022",https://theijf.org/procurement/w3555_4502312803_dnd
+Federal,Industrial buildings,National Defence,Bandit Fire and Protection Ltd,"$14,962","Jun. 16, 2021","Jun. 23, 2021","Apr. 11, 2022",https://theijf.org/procurement/w6895_4502276274_dnd
+Federal,Other professional services not elsewhere specified,National Defence,Yamnuska Mountain Adventures,"$21,473","Jan. 27, 2022","Feb. 7, 2022","Apr. 11, 2022",https://theijf.org/procurement/w3915_220052_dnd
+Federal,Electric power installations,National Defence,Jimcor Line Construction,"$15,241","Jul. 9, 2021","Jul. 13, 2021","Apr. 11, 2022",https://theijf.org/procurement/w6895_4502286222_dnd
+Federal,Electric power installations,National Defence,Jimcor Line Construction,"$50,472","Mar. 25, 2022","Mar. 30, 2022","Apr. 11, 2022",https://theijf.org/procurement/w6895_4502183527_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$116,623","Oct. 25, 2021","Oct. 25, 2021","Apr. 11, 2022",https://theijf.org/procurement/pw_21_011358_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$46,268","Oct. 25, 2021","Oct. 25, 2021","Apr. 11, 2022",https://theijf.org/procurement/pw_21_011354_dnd
+Federal,Aviation fuel,National Defence,Exxonmobil,"$118,160","Apr. 5, 2022","Apr. 5, 2022","Apr. 11, 2022",https://theijf.org/procurement/w107y_4502404151_dnd
+Federal,Miscellaneous Chemical products,National Defence,Source Atlantic Raddall,"$11,892","Mar. 25, 2022","Mar. 25, 2022","Apr. 11, 2022",https://theijf.org/procurement/w355b_4502400028_dnd
+Federal,Purchase of training packages and courses,National Defence,Testforce Systems Inc,"$19,538","Mar. 23, 2022","Mar. 23, 2022","Apr. 10, 2022",https://theijf.org/procurement/w7714_4502399207_dnd
+Federal,Other professional services not elsewhere specified,National Defence,Calian Ltd,"$28,209","Feb. 15, 2022","Mar. 1, 2022","Apr. 10, 2022",https://theijf.org/procurement/w8160_22_9003_t021_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Besner,"$563,000","Feb. 9, 2022","Feb. 15, 2022","Apr. 10, 2022",https://theijf.org/procurement/w6447npcc21_0499_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,Skelton Truck Lines,"$19,215","Mar. 31, 2022","Apr. 7, 2022","Apr. 10, 2022",https://theijf.org/procurement/w0107_22_jw05_dnd
+Federal,Translation services,Public Services and Procurement Canada,RADOSLAW SKABAS,"$19,431","Apr. 7, 2021","Apr. 7, 2021","Apr. 10, 2022",https://theijf.org/procurement/200004263_pwgsc
+Federal,O-Professional Services not Elsewhere Specified,Public Services and Procurement Canada,Bouthillette Parizeau Inc.,"$64,153","Apr. 8, 2022","Apr. 8, 2022","Apr. 10, 2022",https://theijf.org/procurement/ep75111987_pwgsc
+Federal,AIRCRAFT,Transport Canada,HOPE AERO PROPELLER & COMPONENTS,"$13,548","Apr. 10, 2022","Apr. 10, 2022","Apr. 10, 2022",https://theijf.org/procurement/asr_2067_000051_tc
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,National Research Council Canada,WIND RIVER INTERNATIONAL LIMITED,"$13,467","Apr. 11, 2021","Apr. 11, 2021","Apr. 10, 2022",https://theijf.org/procurement/967560_nrc
+Federal,Other professional services not elsewhere specified,National Defence,Wildfire Specialists Inc.,"$16,809","Feb. 28, 2022","Apr. 9, 2022","Apr. 10, 2022",https://theijf.org/procurement/4502412745_dnd
+Federal,Other equipment and Parts,National Defence,EECOL ELECTRIC CORP.,"$13,425","Feb. 9, 2022","Feb. 9, 2022","Apr. 10, 2022",https://theijf.org/procurement/4502378971_dnd
+Federal,Rental of aircraft,Royal Canadian Mounted Police,NORTH CARIBOO AIR,"$25,200","Apr. 6, 2022","Apr. 6, 2022","Apr. 10, 2022",https://theijf.org/procurement/7257046_rcmp
+Federal,Rental of aircraft,Royal Canadian Mounted Police,AIR NUNAVUT LTD,"$26,181","Apr. 8, 2022","Apr. 8, 2022","Apr. 10, 2022",https://theijf.org/procurement/7257287_rcmp
+Federal,Aircraft parts,Royal Canadian Mounted Police,LEVAERO AVIATION INC,"$42,848","Mar. 30, 2022","Mar. 30, 2022","Apr. 10, 2022",https://theijf.org/procurement/7256884_rcmp
+Federal,Aircraft parts,Royal Canadian Mounted Police,CANADIAN PROPELLER LTD,"$15,820","Feb. 25, 2022","Feb. 25, 2022","Apr. 10, 2022",https://theijf.org/procurement/7256284_rcmp
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$27,050","Apr. 10, 2022","Apr. 10, 2022","Apr. 10, 2022",https://theijf.org/procurement/2106709517_dnd
+Federal,Aviation fuel,National Defence,IRVING OIL,"$16,994","Apr. 10, 2022","Apr. 10, 2022","Apr. 10, 2022",https://theijf.org/procurement/2106688900_dnd
+Federal,Aviation fuel,National Defence,AEG,"$93,583","Apr. 10, 2022","Apr. 10, 2022","Apr. 10, 2022",https://theijf.org/procurement/2106709453_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$248,550","Apr. 10, 2022","Apr. 10, 2022","Apr. 10, 2022",https://theijf.org/procurement/2106696380_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$42,539","Apr. 10, 2022","Apr. 10, 2022","Apr. 10, 2022",https://theijf.org/procurement/2106696376_dnd
+Federal,Aviation fuel,National Defence,SHELL AVIATION,"$17,157","Apr. 10, 2022","Apr. 10, 2022","Apr. 10, 2022",https://theijf.org/procurement/2106699615_dnd
+Federal,Miscellaneous expenditures not Elsewhere Classified,National Defence,AEG Aviation Services,"$12,940","Apr. 10, 2022","Apr. 10, 2022","Apr. 10, 2022",https://theijf.org/procurement/2107034145_dnd
+Federal,Aviation fuel,National Defence,IRVING OIL,"$40,330","Apr. 10, 2022","Apr. 10, 2022","Apr. 10, 2022",https://theijf.org/procurement/2106688889_dnd
+Federal,Aviation fuel,National Defence,AEG,"$75,432","Apr. 10, 2022","Apr. 10, 2022","Apr. 10, 2022",https://theijf.org/procurement/2106716671_dnd
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,PROVIDENCE HEALTH CARE,"$25,179","Mar. 25, 2022","Mar. 25, 2022","Apr. 10, 2022",https://theijf.org/procurement/21807_22_4069698_csc
+Federal,Processing machinery,National Research Council Canada,RAITH AMERICA INC,"$216,707","Apr. 1, 2021","Apr. 1, 2021","Apr. 9, 2022",https://theijf.org/procurement/969595_nrc
+Federal,Transportation of things not elsewhere specified,National Defence,T-LANE TRANSPORTATION AND LOGISTICS,"$37,500","Mar. 25, 2022","Mar. 28, 2022","Apr. 9, 2022",https://theijf.org/procurement/w6447npcc21_0600_dnd
+Federal,Miscellaneous manufactured articles,National Defence,GUILLEVIN INTERNATIONAL,"$10,103","Jun. 24, 2021","Jun. 24, 2021","Apr. 9, 2022",https://theijf.org/procurement/w3555_4502280657_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$53,424","Oct. 25, 2021","Oct. 25, 2021","Apr. 9, 2022",https://theijf.org/procurement/pw_21_011345_dnd
+Federal,Non-Public servant travel-Support core mandate activities,Elections Canada,HILTON LAC-LEAMY HOTEL,"$26,457","Apr. 3, 2022","Apr. 3, 2022","Apr. 9, 2022",https://theijf.org/procurement/3000745920_elections
+Federal,Rental of aircraft,National Defence,Air Bravo Corp,"$18,877","Apr. 8, 2022","Apr. 9, 2022","Apr. 9, 2022",https://theijf.org/procurement/005_3crpg_22_23_dnd
+Federal,Aircraft parts,Royal Canadian Mounted Police,MAXCRAFT AVIONICS LTD,"$75,993","Apr. 5, 2022","Apr. 5, 2022","Apr. 9, 2022",https://theijf.org/procurement/7257018_rcmp
+Federal,Other equipment and Parts,National Defence,RIGHTWAY SANITATION,"$33,075","Dec. 3, 2021","Jan. 9, 2022","Apr. 9, 2022",https://theijf.org/procurement/4502354136_dnd
+Federal,Miscellaneous Chemical products,National Defence,WHISSELL LAND CORP,"$46,824","Mar. 4, 2022","Mar. 4, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502392255_dnd
+Federal,Rental of motor and other vehicles,National Defence,Spectra Power Sports Ltd,"$24,375","Jan. 21, 2022","Jan. 21, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502356496_dnd
+Federal,Diesel fuel,National Defence,Harnois Energies Inc.,"$100,580","Mar. 25, 2022","Mar. 25, 2022","Apr. 8, 2022",https://theijf.org/procurement/450200306_dnd
+Federal,Rental of motor and other vehicles,National Defence,RIVERSIDE HONDA & SKI-DOO SALES,"$23,537","Jan. 17, 2022","Jan. 17, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502351498_dnd
+Federal,Other equipment and Parts,National Defence,SNAP-ON TOOLS OF CANADA,"$10,889","Mar. 1, 2022","Mar. 1, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502389974_dnd
+Federal,Aviation fuel,National Defence,Exxonmobil Aviation Div,"$81,987","Mar. 25, 2022","Mar. 25, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502400079_dnd
+Federal,Aviation fuel,National Defence,Exxonmobil Aviation Div,"$79,789","Mar. 16, 2022","Mar. 16, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502396975_dnd
+Federal,Lubricating fuel and greases,National Defence,Sentinel Lubricants,"$11,917","Oct. 22, 2021","Oct. 22, 2021","Apr. 8, 2022",https://theijf.org/procurement/4502332060_dnd
+Federal,Lubricating fuel and greases,National Defence,Fastenal Canada Ltd,"$85,454","Mar. 7, 2022","Mar. 7, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502392649_dnd
+Federal,Aviation fuel,National Defence,Imperial Oil,"$346,646","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502406190_dnd
+Federal,Rental of motor and other vehicles,National Defence,RIVERSIDE HONDA & SKI-DOO SALES,"$31,474","Jan. 21, 2022","Jan. 21, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502369383_dnd
+Federal,Tools and implements,National Defence,DISTRIBUTION INDUSTRIELLE G.C. INC.,"$13,140","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502397414_dnd
+Federal,Diesel fuel,National Defence,Harnois Energies Inc.,"$100,638","Mar. 25, 2022","Mar. 25, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502400315_dnd
+Federal,Aviation fuel,National Defence,Exxonmobil Aviation Div,"$96,998","Mar. 25, 2022","Mar. 25, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502400271_dnd
+Federal,"Office furniture and furnishings, including parts",National Defence,Staples Professional,"$24,763","Feb. 4, 2022","Feb. 4, 2022","Apr. 8, 2022",https://theijf.org/procurement/4502376542_dnd
+Federal,Computer equipment related to production and ope,Fisheries and Oceans Canada,IMTECH MARINE CANADA INC.,"$18,541","Apr. 8, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500024174_dfo
+Federal,"Rental of image/video communications equipment (includes telepresence/video conferencing equipment, cabling, parts and peripherals)",Agriculture and Agri-Food Canada,LMB INTERPRETATION SYSTEMS SERVICES,"$30,826","Apr. 6, 2022","Apr. 6, 2022","Apr. 8, 2022",https://theijf.org/procurement/3000743792_aafc
+Federal,Tuition fees and costs of attending courses incl,Fisheries and Oceans Canada,CARON PROFESSIONAL & LINGUISTIC TRA,"$13,221","Dec. 9, 2021","Jan. 17, 2022","Apr. 8, 2022",https://theijf.org/procurement/4500016637_dfo
+Federal,Data and database access services,"Innovation, Science and Economic Development Canada",THOMSON REUTERS CANADA LIMITED,"$81,069","Apr. 9, 2021","Apr. 9, 2021","Apr. 8, 2022",https://theijf.org/procurement/3033273_ic
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",Agriculture and Agri-Food Canada,QIAGEN CANADA INC.,"$19,545","Feb. 16, 2022","Feb. 16, 2022","Apr. 8, 2022",https://theijf.org/procurement/3000741846_aafc
+Federal,Diesel fuel,Fisheries and Oceans Canada,IRVING OIL COMMERCIAL G.P.,"$335,545","Apr. 8, 2022","Mar. 30, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500023593_dfo
+Federal,Tuition fees and costs of attending courses incl,Fisheries and Oceans Canada,NATIONAL MARINE ELECTRONICS ASSOCIA TION,"$52,143","Jan. 17, 2022","Apr. 4, 2022","Apr. 8, 2022",https://theijf.org/procurement/4500018398_dfo
+Federal,Scientific services,Environment and Climate Change Canada,UNIVERSITE DE SHERBROOKE  SERVICES DES RESSOURCES FINANCIERES,"$33,094","Apr. 7, 2022","Apr. 7, 2022","Apr. 8, 2022",https://theijf.org/procurement/3000744809_ec
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Canadian Food Inspection Agency,DONALD A. BELLIVEAU & ASSOCIES,"$43,000","May 19, 2021","May 19, 2021","Apr. 8, 2022",https://theijf.org/procurement/3000727916_cfia
+Federal,"Miscellaneous food, food materials and food preparations",National Defence,SYSCO-SERCA FOOD SERVICES-ATLANTIC INC.,"$10,929","Apr. 7, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/jy0105202300038_dnd
+Federal,AIRCRAFT PARTS,Transport Canada,AERO SUPPLIES INC.,"$187,367","Apr. 4, 2022","Apr. 4, 2022","Apr. 8, 2022",https://theijf.org/procurement/as_2094_0071734_tc
+Federal,Engineering consultants-Construction,National Defence,Redem Contracting Ltd,"$197,000","Dec. 9, 2021","Dec. 9, 2021","Apr. 8, 2022",https://theijf.org/procurement/ga22802_76095_dnd
+Federal,"Measuring, controlling, laboratory, medical and optical instruments, apparatus and accessories",National Research Council Canada,ENVIRONMENTAL DYNAMICS LTD.,"$23,906","Jun. 25, 2021","Jun. 25, 2021","Apr. 8, 2022",https://theijf.org/procurement/974793_nrc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Canada Revenue Agency,Insights Learning & Development,"$10,804","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/ir000010040139743_87308_cra
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Canada Revenue Agency,Insights Learning & Development,"$11,072","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/ir000010040139747_87310_cra
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Shared Services Canada,Graybridge International Consulting,"$10,671","Feb. 28, 2022","Feb. 28, 2022","Apr. 8, 2022",https://theijf.org/procurement/p000030414_ssc
+Federal,Communications - Web Services Subscriptions,Health Canada,STRATUS AGRI-MARKETING INC.,"$290,048","Apr. 8, 2022","Jan. 1, 2022","Mar. 31, 2022",https://theijf.org/procurement/h502014573_hc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Shared Services Canada,Graybridge International Consulting,"$12,814","Oct. 18, 2021","Oct. 18, 2021","Apr. 8, 2022",https://theijf.org/procurement/p000027306_ssc
+Federal,Other Business services not Elsewhere Specified,National Defence,WHOLESOME CRAVINGS,"$18,130","Apr. 5, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/al0114202300021_dnd
+Federal,Other equipment and Parts,National Research Council Canada,"FUJIFILM IRVINE SCIENTIFIC, INC.","$10,868","Apr. 5, 2022","Apr. 5, 2022","Apr. 8, 2022",https://theijf.org/procurement/988697_nrc
+Federal,"Meat, fish and their preparations",National Defence,MULDER MEATS (1983),"$10,898","Apr. 7, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/jy0105202300039_dnd
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",National Research Council Canada,NOVA BIOMEDICAL CANADA LTD,"$492,522","Jan. 20, 2022","Jan. 20, 2022","Apr. 8, 2022",https://theijf.org/procurement/985125_nrc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Shared Services Canada,Graybridge International Consulting,"$12,814","Sep. 27, 2021","Sep. 27, 2021","Apr. 8, 2022",https://theijf.org/procurement/p000028427_ssc
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",National Research Council Canada,FISHER SCIENTIFIC LTD.,"$24,884","Mar. 28, 2022","Mar. 28, 2022","Apr. 8, 2022",https://theijf.org/procurement/988497_nrc
+Federal,"Meat, fish and their preparations",National Defence,GORDON FOOD SERVICE,"$46,184","Mar. 21, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/op0168202300007_dnd
+Federal,Engineering services not elsewhere specified,National Defence,Architecture49 Inc,"$63,550","Jan. 18, 2021","Jan. 24, 2022","Apr. 8, 2022",https://theijf.org/procurement/cxe20042_kn74652_cu07_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$24,753","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/2106688902_dnd
+Federal,Gasoline,National Defence,Macewen Petroleum Inc,"$11,895","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/22g12_dnd
+Federal,Aviation fuel,National Defence,AEG,"$73,403","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/2106706450_dnd
+Federal,ADP Software - Installation,Canada Border Services Agency,Advanced Chippewa Technologies Inc.,"$24,348","Mar. 28, 2021","Mar. 28, 2021","Apr. 8, 2022",https://theijf.org/procurement/2b21355891_cbsa
+Federal,Aviation fuel,National Defence,AEG FUELS,"$55,052","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/2106696367_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$18,569","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/2106696365_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$13,189","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/2106696363_dnd
+Federal,Aviation fuel,National Defence,AEG,"$20,464","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/2106745187_dnd
+Federal,Aviation fuel,National Defence,AEG,"$26,011","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/2107131360_dnd
+Federal,Forms and Publications Inventory (External Use),Canada Border Services Agency,The Tri-Co Group Inc.,"$15,594","Dec. 8, 2021","Dec. 10, 2021","Apr. 8, 2022",https://theijf.org/procurement/2022023281_cbsa
+Federal,Institutional Buildings,Correctional Service of Canada,HYBRID CONSTRUCTION,"$24,637","Mar. 24, 2022","Mar. 24, 2022","Apr. 8, 2022",https://theijf.org/procurement/21450_22_4069374_csc
+Federal,Miscellaneous expenditures not Elsewhere Classified,National Defence,AEG Aviation Services,"$12,235","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/2106747086_dnd
+Federal,Office buildings,National Defence,Smart electrical contractors ltd,"$41,167","Aug. 31, 2021","Sep. 6, 2021","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502335974_dnd
+Federal,Other equipment,National Defence,Ketek group inc,"$41,139","Oct. 18, 2021","Oct. 22, 2021","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502305264_dnd
+Federal,Other equipment,National Defence,Ketek group inc,"$25,410","Aug. 24, 2021","Aug. 30, 2021","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502305456_dnd
+Federal,Electric power installations,National Defence,Electric Services,"$59,955","Mar. 3, 2022","Mar. 9, 2022","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502392277_dnd
+Federal,TRAINING CONSULTANTS,Transport Canada,GRAYBRIDGE MALKAM,"$11,500","Sep. 29, 2021","Oct. 18, 2021","Apr. 8, 2022",https://theijf.org/procurement/t8080_210237_tc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,National Defence,Graybridge Malkam,"$19,064","May 3, 2021","Jul. 26, 2021","Apr. 8, 2022",https://theijf.org/procurement/w0152_22_aa018_dnd
+Federal,Ships and boats,National Defence,PATLON AIRCRAFT LTD,"$255,856","Sep. 24, 2021","Sep. 27, 2021","Apr. 8, 2022",https://theijf.org/procurement/w8482_229292_001_dmarp4_dnd
+Federal,Other buildings,National Defence,Electric Services,"$14,791","Mar. 11, 2022","Mar. 16, 2022","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502395376_dnd
+Federal,Ships and boats,National Defence,CONTRO VALVE INC,"$92,550","Sep. 24, 2021","Sep. 27, 2021","Apr. 8, 2022",https://theijf.org/procurement/w8482_229153_001_dmarp4_dnd
+Federal,Other professional services not elsewhere specified,National Defence,Newfound Recruiting Corporation,"$39,989","Oct. 20, 2021","Oct. 26, 2021","Apr. 8, 2022",https://theijf.org/procurement/s3661292_dnd
+Federal,Residential buildings,National Defence,Electric Services,"$27,019","Mar. 11, 2022","Mar. 16, 2022","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502395368_dnd
+Federal,Diesel fuel,National Defence,Suncor,"$91,421","Apr. 6, 2022","Apr. 6, 2022","Apr. 8, 2022",https://theijf.org/procurement/w5eaa_4502406494_dnd
+Federal,TUITION FEES AND COSTS OF ATTENDING COURSES INCLUDING SEMINARS NOT ELSEWHERE SPECIFIED,Transport Canada,BERLITZ CANADA,"$11,322","Jan. 4, 2022","Jan. 4, 2022","Apr. 8, 2022",https://theijf.org/procurement/t8080_210456_tc
+Federal,Transportation of things not elsewhere specified,National Defence,Kindersley Transport Ltd,"$14,944","Mar. 30, 2022","Mar. 30, 2022","Apr. 8, 2022",https://theijf.org/procurement/w1955_1n22_0011_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$113,278","Oct. 25, 2021","Oct. 25, 2021","Apr. 8, 2022",https://theijf.org/procurement/pw_21_011336_dnd
+Federal,Ships and boats,National Defence,BLUMETRIC ENVIRONMENTAL INC,"$255,349","Jan. 20, 2022","Jan. 25, 2022","Apr. 8, 2022",https://theijf.org/procurement/w8482_229634_001_dmarp4_dnd
+Federal,Road motor vehicles,National Defence,Ford Motor Company of Canada Ltd,"$114,372","Oct. 25, 2021","Oct. 25, 2021","Apr. 8, 2022",https://theijf.org/procurement/pw_21_011338_dnd
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,National Defence,HyperiON Consulting Services Incorporated,"$34,406","Mar. 8, 2021","Mar. 9, 2021","Apr. 8, 2022",https://theijf.org/procurement/w8484_210030_dnd
+Federal,Heavy fuel oil,National Defence,IRVING OIL COMMERCIAL G.P.,"$211,809","Mar. 30, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/w307b23d001_dnd
+Federal,Ferrous metals,National Defence,MSC INDUSTRIAL SUPPLY,"$31,589","Mar. 23, 2022","Mar. 23, 2022","Apr. 8, 2022",https://theijf.org/procurement/w355b_4502399334_dnd
+Federal,Other buildings,National Defence,Bardon Supplies Ltd.,"$66,105","Dec. 21, 2021","Dec. 21, 2021","Apr. 8, 2022",https://theijf.org/procurement/w6854_4502362000_dnd
+Federal,Other equipment and Parts,National Defence,Super Channel International Corp.,"$20,103","Oct. 16, 2020","Oct. 1, 2021","Apr. 8, 2022",https://theijf.org/procurement/w8486_195676_001_hs_dnd
+Federal,Other equipment,National Defence,Ketek group inc,"$42,966","Oct. 25, 2021","Oct. 29, 2021","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502332511_dnd
+Federal,Electric power installations,National Defence,Ketek group inc,"$23,793","Nov. 17, 2021","Nov. 22, 2021","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502344932_dnd
+Federal,Engineering consultants-Other,National Defence,ABB Inc.,"$765,662","Jan. 28, 2021","Mar. 1, 2021","Apr. 8, 2022",https://theijf.org/procurement/w7714_217835_001_sv1_dnd
+Federal,Other engineering works,National Defence,Ketek group Inc,"$25,897","Nov. 17, 2021","Nov. 22, 2021","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502320004_dnd
+Federal,Other equipment,National Defence,Ketek group Inc,"$24,041","Mar. 24, 2022","Mar. 29, 2022","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502399908_dnd
+Federal,Other buildings,National Defence,Electric Services,"$59,838","Mar. 10, 2022","Mar. 15, 2022","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502394633_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,Kristian Electric ltd,"$11,351","Mar. 28, 2022","Apr. 1, 2022","Apr. 8, 2022",https://theijf.org/procurement/w6895_4502400538_dnd
+Federal,Research contracts,"Innovation, Science and Economic Development Canada",AVSS-AERIAL VEHICLE SAFETY SOLUTION,"$1,321,843","Jan. 4, 2022","Jan. 4, 2022","Apr. 8, 2022",https://theijf.org/procurement/9203204101_ic
+Federal,Road motor vehicles - non-military,Royal Canadian Mounted Police,KEY CHEVROLET CADILLAC BUICK GMC IN,"$10,958","Jan. 7, 2022","Jan. 7, 2022","Apr. 8, 2022",https://theijf.org/procurement/7255206_rcmp
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Royal Canadian Mounted Police,UNIVERSITE SAINTE-ANNE,"$17,280","Nov. 15, 2021","Nov. 15, 2021","Apr. 8, 2022",https://theijf.org/procurement/7254186_rcmp
+Federal,Medical supplies. instruments. and apparatus,"Immigration, Refugees and Citizenship Canada",AF POLLUTION ABATEMENT SYSTEMS INC.,"$20,340","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/7116953_cic
+Federal,"License/Maintenance fees for operating system and utility software related to servers, storage, peripherals and components",Shared Services Canada,IBM CANADA LTD.,"$28,568","Apr. 8, 2022","Apr. 8, 2022","Apr. 8, 2022",https://theijf.org/procurement/700643357_ssc
+Federal,Management Consulting Services,Canada Border Services Agency,Gartner Canada Co.,"$410,888","Nov. 23, 2021","Nov. 23, 2021","Apr. 8, 2022",https://theijf.org/procurement/4741927352_cbsa
+Federal,Research contracts,Privy Council Office,YVON DANDURAND,"$35,840","Feb. 9, 2022","Feb. 9, 2022","Apr. 8, 2022",https://theijf.org/procurement/6038081_pco
+Federal,Diesel fuel,National Defence,Harnois Energies Inc.,"$88,966","Mar. 16, 2022","Mar. 16, 2022","Apr. 8, 2022",https://theijf.org/procurement/450296795_dnd
+Federal,Advertising Services,Parks Canada,HARPER STREET PUBLISHING,"$13,016","Apr. 5, 2022","Apr. 5, 2022","Apr. 8, 2022",https://theijf.org/procurement/45447936_pc
+Federal,Rental of Aircraft,Parks Canada,CANADIAN HELICOPTERS LTD.,"$24,688","Mar. 3, 2021","Mar. 3, 2021","Apr. 8, 2022",https://theijf.org/procurement/45436462_pc
+Federal,Research contracts,Global Affairs Canada,Meaglow Ltd.,"$86,290","Apr. 9, 2021","Apr. 9, 2021","Apr. 8, 2022",https://theijf.org/procurement/20_0660_dfatd
+Federal,Translation Services,Public Services and Procurement Canada,2961-3403 Quebec Inc.,"$21,558","Feb. 21, 2022","Feb. 21, 2022","Apr. 8, 2022",https://theijf.org/procurement/200004910_pwgsc
+Federal,PRINTING SERVICES,Statistics Canada,CANADIAN PRINTING RESOURCES INC.,"$26,838","Feb. 9, 2022","Feb. 9, 2022","Apr. 8, 2022",https://theijf.org/procurement/000012945_statcan
+Federal,Purchase of Client Software,Statistics Canada,TIDAL MIGRATIONS,"$35,515","Apr. 9, 2021","Apr. 9, 2021","Apr. 8, 2022",https://theijf.org/procurement/000012327_statcan
+Federal,Aviation fuel,National Defence,AEG,"$17,913","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/2106729700_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$94,992","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/2106696360_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$57,307","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/2106688910_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$80,079","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/2106692900_dnd
+Federal,Informatics Professionals,Canada Border Services Agency,GCStrategies Inc.,"$6,723,500","Apr. 8, 2020","Apr. 19, 2021","Apr. 7, 2022",https://theijf.org/procurement/2022000080_cbsa
+Federal,Aviation fuel,National Defence,AEG FUELS,"$19,998","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/2106759689_dnd
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,MCKESSON CANADA CORPORATION,"$10,861","Apr. 1, 2022","Apr. 1, 2022","Apr. 7, 2022",https://theijf.org/procurement/21301_23_4074329_csc
+Federal,Aviation fuel,National Defence,AEG FUELS,"$13,972","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/2106739126_dnd
+Federal,"Office Furniture and Furnishings, Including Parts",Correctional Service of Canada,OFFICE INTERIORS,"$16,147","Feb. 21, 2022","Feb. 21, 2022","Apr. 7, 2022",https://theijf.org/procurement/21280_22_4032662_csc
+Federal,License/Maintenance fees for image/video communications software (includes telepresence/video conferencing software),Canadian Grain Commission,COMPUGEN,"$17,839","Apr. 8, 2021","Apr. 8, 2021","Apr. 7, 2022",https://theijf.org/procurement/2bs0_85059_cgc
+Federal,Translation services,Agriculture and Agri-Food Canada,ENCORE GLOBAL EVENTS (CANADA),"$34,853","Mar. 9, 2022","Mar. 9, 2022","Apr. 7, 2022",https://theijf.org/procurement/3000743367_aafc
+Federal,Residential buildings,National Defence,All N All Construction,"$13,289","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/3622680_1_dnd
+Federal,Client software related to Distributed Computing,Fisheries and Oceans Canada,LLOYD'S REGISTER VOYAGE AS,"$42,810","Apr. 7, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500024200_dfo
+Federal,Client software related to Distributed Computing,Fisheries and Oceans Canada,MICROSOFT CANADA CO.,"$576,667","Apr. 7, 2022","Mar. 30, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500024123_dfo
+Federal,Data communications services,Fisheries and Oceans Canada,KOMUTEL COMMUNICATION - SOLUTIONS,"$15,997","Apr. 7, 2022","Aug. 1, 2021","Mar. 31, 2022",https://theijf.org/procurement/4500024127_dfo
+Federal,Tools and implements,National Defence,DISTRIBUTION INDUSTRIELLE G.C. INC.,"$12,313","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/4502395819_dnd
+Federal,Aviation fuel,National Defence,Imperial Oil,"$1,685,104","Mar. 31, 2022","Apr. 4, 2022","Apr. 7, 2022",https://theijf.org/procurement/4502401920_dnd
+Federal,Gasoline,National Defence,Maritime Fuels,"$67,360","Apr. 5, 2022","Apr. 5, 2022","Apr. 7, 2022",https://theijf.org/procurement/4502403458_dnd
+Federal,Other buildings,National Defence,Canadian Base Operators,"$16,435","Apr. 13, 2021","Apr. 13, 2021","Apr. 7, 2022",https://theijf.org/procurement/4502243266_dnd
+Federal,Aviation fuel,National Defence,Flight Fuels LP,"$83,298","Apr. 6, 2022","Apr. 6, 2022","Apr. 7, 2022",https://theijf.org/procurement/4502404887_dnd
+Federal,Miscellaneous manufactured articles,National Defence,WOLFPACK GEAR INC.,"$86,677","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/4502405706_dnd
+Federal,Tools and implements,National Defence,ACKLANDS,"$12,777","Mar. 24, 2022","Mar. 24, 2022","Apr. 7, 2022",https://theijf.org/procurement/4502399697_dnd
+Federal,Purchase of training packages and courses,National Defence,AFI EXPERTISE,"$19,875","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/4502390260_dnd
+Federal,Tools and implements,National Defence,DISTRIBUTION INDUSTRIELLE G.C. INC.,"$10,125","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/4502398885_dnd
+Federal,Other buildings,National Defence,Blunden Construction (1995) Limited,"$1,296,050","Jun. 11, 2021","Jun. 11, 2021","Apr. 7, 2022",https://theijf.org/procurement/cn75012_dnd
+Federal,Communications - Web Services Subscriptions,Health Canada,KYNETEC UK LIMITED,"$61,252","Apr. 7, 2022","Jan. 1, 2022","Mar. 31, 2022",https://theijf.org/procurement/h502014632_hc
+Federal,Safety and sanitation equipment and parts,Public Services and Procurement Canada,CONVERGINT TECHNOLOGIES LTD.,"$209,897","Apr. 7, 2021","Apr. 7, 2021","Apr. 7, 2022",https://theijf.org/procurement/ep75012579_pwgsc
+Federal,Other buildings,National Defence,Englobe Corp (Halifax),"$17,250","Aug. 5, 2021","Aug. 5, 2021","Apr. 7, 2022",https://theijf.org/procurement/kn76198_dnd
+Federal,License/Maintenance fees for client software related to Distributed Computing Environment (DCE),Public Services and Procurement Canada,SCOTT M MOODY,"$11,702","Apr. 14, 2021","Apr. 8, 2021","Apr. 7, 2022",https://theijf.org/procurement/700574279_pwgsc
+Federal,"Other Mineral Fuels, Oils and Products",Parks Canada,IMPERIAL OIL,"$33,600","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/45448009_pc
+Federal,Info. technology and telecommunication consultants,Canada Border Services Agency,GCStrategies Inc.,"$13,936,800","Apr. 27, 2020","Apr. 8, 2020","Apr. 7, 2022",https://theijf.org/procurement/4741912524_cbsa
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",Public Health Agency of Canada,LIFE TECHNOLOGIES INC.,"$1,007,990","Dec. 3, 2019","Dec. 3, 2019","Apr. 7, 2022",https://theijf.org/procurement/6d06392781_phac
+Federal,Heavy fuel oil,National Defence,IRVING OIL COMMERCIAL G.P.,"$680,024","Mar. 23, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/w305b23d001_dnd
+Federal,Other Utility services,National Defence,LES TRANSPORTEURS EN VRAC CHAUVEAU QUEBEC,"$39,999","Mar. 7, 2022","Mar. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/w6856_4502392740_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,ACTION EXPRESS LTD,"$142,020","Feb. 16, 2022","Feb. 24, 2022","Apr. 7, 2022",https://theijf.org/procurement/w6447npcc21_0495_dnd
+Federal,Road motor vehicles,National Defence,Diversco Supply Inc,"$260,426","Apr. 6, 2021","Apr. 7, 2021","Apr. 7, 2022",https://theijf.org/procurement/w8476_216413_001_sc_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,COUTURE LOGISTICS INC,"$17,310","Mar. 25, 2022","Apr. 1, 2022","Apr. 7, 2022",https://theijf.org/procurement/w6447npcc22_0002_dnd
+Federal,Other equipment and Parts,National Defence,EDDYFINDT,"$23,464","Feb. 23, 2022","Feb. 23, 2022","Apr. 7, 2022",https://theijf.org/procurement/w3474_4502385830_dnd
+Federal,Other equipment and Parts,National Defence,Anixter,"$10,361","Mar. 23, 2022","Mar. 23, 2022","Apr. 7, 2022",https://theijf.org/procurement/w355b_4502399023_dnd
+Federal,Ammunition,Royal Canadian Mounted Police,CANADIAN AMMUNITION DISPOSAL SERVIC,"$16,311","Apr. 5, 2022","Apr. 5, 2022","Apr. 7, 2022",https://theijf.org/procurement/7257017_rcmp
+Federal,Other Business services not Elsewhere Specified,Royal Canadian Mounted Police,DAVTECH ANALYTICAL SERVICES,"$14,442","Apr. 7, 2022","Apr. 7, 2022","Mar. 31, 2022",https://theijf.org/procurement/7257074_rcmp
+Federal,Audio-visual services,Global Affairs Canada,SOLOTECH INC.,"$114,975","Apr. 7, 2022","Apr. 7, 2022","Apr. 7, 2022",https://theijf.org/procurement/7439475_dfatd
+Federal,Management consulting,Global Affairs Canada,"AllMoving Consultoria, Comunicação","$12,586","Mar. 11, 2022","Mar. 11, 2022","Apr. 7, 2022",https://theijf.org/procurement/7438749_dfatd
+Federal,Public relations services,Global Affairs Canada,Space Foundation,"$19,459","Dec. 1, 2021","Dec. 1, 2021","Apr. 7, 2022",https://theijf.org/procurement/7436022_dfatd
+Federal,"Office furniture and furnishings, including parts",Military Grievances External Review Committee,CAPITAL OFFICE INTERIORS,"$10,714","Jan. 28, 2022","Jan. 28, 2022","Apr. 6, 2022",https://theijf.org/procurement/8051956_mgerc
+Federal,Other equipment and Parts,National Defence,MSC Industrial Supply,"$39,531","Dec. 2, 2021","Dec. 2, 2021","Apr. 6, 2022",https://theijf.org/procurement/4502353253_dnd
+Federal,Other buildings,National Defence,BLACK & MCDONALD LIMITED,"$26,197","Mar. 30, 2022","Mar. 30, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502401269_dnd
+Federal,Other equipment and Parts,National Defence,MSC Industrial Supply,"$39,957","Jan. 17, 2022","Jan. 17, 2022","Apr. 6, 2022",https://theijf.org/procurement/450237292_dnd
+Federal,Other equipment and Parts,National Defence,MSC Industrial Supply,"$13,458","Nov. 6, 2021","Nov. 6, 2021","Apr. 6, 2022",https://theijf.org/procurement/4502339932_dnd
+Federal,Other equipment and Parts,National Defence,MSC Industrial Supply,"$39,685","Dec. 20, 2021","Dec. 20, 2021","Apr. 6, 2022",https://theijf.org/procurement/4502361664_dnd
+Federal,Other equipment and Parts,National Defence,MSC Industrial Supply,"$28,689","Nov. 6, 2021","Nov. 6, 2021","Apr. 6, 2022",https://theijf.org/procurement/4502339934_dnd
+Federal,Other buildings,National Defence,BLACK & MCDONALD LIMITED,"$12,576","Mar. 30, 2022","Mar. 30, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502401272_dnd
+Federal,Other buildings,National Defence,BLACK & MCDONALD LIMITED,"$21,232","Mar. 30, 2022","Mar. 30, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502401295_dnd
+Federal,Other equipment and Parts,National Defence,BLACK & MCDONALD LIMITED,"$22,882","Mar. 30, 2022","Mar. 30, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502401297_dnd
+Federal,Other equipment and Parts,National Defence,MSC Industrial Supply,"$38,171","Feb. 2, 2022","Feb. 2, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502375299_dnd
+Federal,Other equipment and Parts,National Defence,MSC Inudstrial Supplies,"$39,534","Oct. 15, 2021","Oct. 15, 2021","Apr. 6, 2022",https://theijf.org/procurement/4502328557_dnd
+Federal,Rental of motor and other vehicles,National Defence,Driving Force,$462,"Nov. 10, 2021","Jan. 10, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502342269_dnd
+Federal,Image/Video communications equipment,Indigenous Services Canada,CBCI TELECOM CANADA INC.,"$25,396","Apr. 6, 2022","Mar. 15, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500439142_isc
+Federal,Other equipment and Parts,National Defence,MSC Industrial Supply,"$37,753","Feb. 8, 2022","Feb. 8, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502378225_dnd
+Federal,Rental-Other,National Defence,CANADIAN NATIONAL RAILWAY,"$38,701","Mar. 30, 2022","Mar. 30, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502401451_dnd
+Federal,Diesel fuel,Fisheries and Oceans Canada,STERLING FUELS,"$56,466","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/4500027173_dfo
+Federal,Waste disposal,National Defence,WASTE MANAGEMENT OF CANADA,"$131,335","Mar. 30, 2022","Mar. 30, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502401454_dnd
+Federal,Other equipment and Parts,National Defence,Guillevin International,"$22,891","Jan. 27, 2022","Jan. 27, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502350856_dnd
+Federal,Other equipment and Parts,National Defence,MSC Industrial Supply,"$39,881","Dec. 14, 2021","Dec. 14, 2021","Apr. 6, 2022",https://theijf.org/procurement/4502358987_dnd
+Federal,Other buildings,National Defence,Gateway Mechanical Services Inc,"$14,304","Mar. 23, 2022","Mar. 23, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502399375_dnd
+Federal,Other equipment and Parts,National Defence,MSC Inudstrial Supply,"$39,309","Nov. 24, 2021","Nov. 24, 2021","Apr. 6, 2022",https://theijf.org/procurement/4502348699_dnd
+Federal,Ferrous metals,National Defence,Encore Metals,"$14,884","Mar. 16, 2022","Mar. 16, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502396794_dnd
+Federal,Other equipment and Parts,National Defence,MSC industrial supply,"$20,986","Feb. 22, 2022","Feb. 22, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502385787_dnd
+Federal,Natural gas,National Defence,DIRECT ENERGY BUSINESS,"$1,082,482","Mar. 25, 2022","Mar. 25, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502400102_dnd
+Federal,Other buildings,National Defence,MANITOBA HYDRO,"$145,654","Mar. 31, 2022","Mar. 31, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502402077_dnd
+Federal,Electricity,National Defence,MANITOBA HYDRO,"$953,925","Mar. 21, 2022","Mar. 21, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502398193_dnd
+Federal,Other equipment and Parts,National Defence,MSC Industrial Supply,"$39,917","Jan. 17, 2022","Jan. 17, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502367304_dnd
+Federal,Other equipment and Parts,National Defence,MSC Industrial Supply,"$21,007","Mar. 4, 2022","Mar. 4, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502392032_dnd
+Federal,Other business services not elsewhere specified,Public Health Agency of Canada,FLUID ENERGY GROUP LTD.,"$442,893","Mar. 22, 2022","Mar. 7, 2022","Apr. 6, 2022",https://theijf.org/procurement/4500438288_phac
+Federal,Rental of motor and other vehicles,National Defence,Driving Force,$924,"Nov. 10, 2021","Jan. 10, 2022","Apr. 6, 2022",https://theijf.org/procurement/4502342264_dnd
+Federal,Protection Services,Correctional Service of Canada,GROUPE DE SECURITE GARDA SENC,"$27,120","Mar. 6, 2022","Mar. 7, 2022","Apr. 6, 2022",https://theijf.org/procurement/21423_22_4051486_csc
+Federal,"Miscellaneous Food, Food Materials and Food Preparations, Including Beverages and Tobacco",Correctional Service of Canada,ALIMENTS CHICOINE INC,"$30,433","Apr. 5, 2022","Apr. 5, 2022","Apr. 6, 2022",https://theijf.org/procurement/21307_23_4076439_csc
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",Environment and Climate Change Canada,COMFORT CARE INC.,"$90,264","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/20220684a_ec
+Federal,Computer Equipment - Client Computing Domain - Desktop / Personal / Portable (Includes related parts and peripherals),Correctional Service of Canada,DYNABOOK CANADA INC,"$1,392,595","Dec. 22, 2021","Jan. 10, 2022","Apr. 6, 2022",https://theijf.org/procurement/21120_22_3981953_csc
+Federal,Aviation fuel,National Defence,AEG FUELS,"$93,755","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/2106686162_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$23,634","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/2106759654_dnd
+Federal,Aviation fuel,National Defence,AEG,"$36,187","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/2106729781_dnd
+Federal,Aviation fuel,National Defence,AVJET,"$10,205","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/0102mn272128_dnd
+Federal,Transportation of things not elsewhere specified,Fisheries and Oceans Canada,AMERICAN BUREAU OF SHIPPING,"$52,715","Apr. 6, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500024079_dfo
+Federal,Diesel fuel,Fisheries and Oceans Canada,LES HUILES DESROCHES INC,"$20,537","Mar. 24, 2022","Mar. 24, 2022","Apr. 6, 2022",https://theijf.org/procurement/4500023354_dfo
+Federal,Diesel fuel,Fisheries and Oceans Canada,LE GROUPE HARNOIS INC,"$56,162","Apr. 6, 2022","Nov. 9, 2021","Mar. 31, 2022",https://theijf.org/procurement/4500024056_dfo
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",Natural Resources Canada,ENDRESS & HAUSER CANADA LTD,"$23,506","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/3000744743_nrcan
+Federal,Diesel fuel,Fisheries and Oceans Canada,LES HUILES DESROCHES INC,"$23,174","Apr. 6, 2022","Mar. 29, 2022","Mar. 29, 2022",https://theijf.org/procurement/4500024048_dfo
+Federal,Road motor vehicles Parts,Fisheries and Oceans Canada,PODOLINSKY EQUIPMENT LTD,"$152,191","Apr. 6, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500024053_dfo
+Federal,Rental of motor and other vehicles,National Defence,Avis Budget Group,"$26,060","Feb. 16, 2022","Feb. 16, 2022","Apr. 6, 2022",https://theijf.org/procurement/w0123_22_008_dnd
+Federal,Application software (including COTS) and application development and delivery software,National Defence,Solid CAD,"$67,429","Apr. 6, 2021","Apr. 6, 2021","Apr. 6, 2022",https://theijf.org/procurement/w3474_210043_001_kin_dnd
+Federal,"Miscellaneous textiles, headgear, umbrellas, etc.",National Defence,Resolution Fitness,"$10,229","Mar. 7, 2022","Mar. 22, 2022","Apr. 6, 2022",https://theijf.org/procurement/w0100_4502392350_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,Allied Projects Ltd,"$18,629","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/w684e_4502404698_dnd
+Federal,"Medical supplies, instruments, and apparatus",National Defence,Shasta Systems Limited Operating As: Meditek,"$449,175","Apr. 6, 2020","Apr. 6, 2020","Apr. 6, 2022",https://theijf.org/procurement/w6369_21a008_001_pv_dnd
+Federal,"Vegetables and fruits, edible products, fats and preparations",National Defence,GORDON FOOD SERVICE,"$23,046","Mar. 21, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/op0168202300005_dnd
+Federal,AIRCRAFT,Transport Canada,BELL TEXTRON CANADA LIMITED/BELL TEXTRON CANADA LIMITEE,"$20,375","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/asr_1293_042993_tc
+Federal,"Vegetables and fruits, edible products, fats and preparations",National Defence,GORDON FOOD SERVICE,"$10,420","Mar. 21, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/op0168202300006_dnd
+Federal,"Measuring, controlling, laboratory, medical and optical instruments, apparatus and accessories",National Research Council Canada,MSPARTS INC.,"$24,438","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/988749_nrc
+Federal,Construction Services,Public Services and Procurement Canada,Carmichael Engineering Ltd.,"$125,203","Apr. 6, 2022","Feb. 24, 2021","Apr. 1, 2022",https://theijf.org/procurement/ep75612084_pwgsc
+Federal,Miscellaneous chemical products,National Research Council Canada,AUDUBON BIOSCIENCES,"$14,557","Mar. 14, 2022","Mar. 14, 2022","Apr. 6, 2022",https://theijf.org/procurement/987948_nrc
+Federal,Information technology and telecommunications consultants,Employment and Social Development Canada,GARTNER CANADA CO,"$332,175","Nov. 30, 2021","Dec. 1, 2021","Apr. 6, 2022",https://theijf.org/procurement/g929229734_esdc
+Federal,License/Maintenance fees for client software related to Distributed Computing Environment (DCE),Public Services and Procurement Canada,ORANGUTECH INC.,"$153,017","Mar. 26, 2021","Apr. 7, 2021","Apr. 6, 2022",https://theijf.org/procurement/e62zr12211_pwgsc
+Federal,AIRCRAFT PARTS,Transport Canada,CANADA WEST AVIONICS LTD,"$17,632","Apr. 4, 2022","Apr. 4, 2022","Apr. 6, 2022",https://theijf.org/procurement/as_2094_0071730_tc
+Federal,Electronic subscriptions and electronic publications,Office of the Auditor General of Canada,Thomson Reuters Canada Limited,"$21,154","Apr. 1, 2021","Apr. 7, 2021","Apr. 6, 2022",https://theijf.org/procurement/p2200070_oag
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,National Research Council Canada,"COBALT SOLUTIONS, LLC.","$19,495","Mar. 25, 2021","Mar. 25, 2021","Apr. 6, 2022",https://theijf.org/procurement/969403_nrc
+Federal,AIRCRAFT,Transport Canada,BELL TEXTRON CANADA LIMITED/BELL TEXTRON CANADA LIMITEE,"$20,437","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/asr_1236_000015_1_tc
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Canada Revenue Agency,Association of Certified Fraud Exam,"$13,073","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/ir000010030449101_86678_cra
+Federal,Other Business services not Elsewhere Specified,National Defence,OPTIMUM SOLUTIONS INC,"$48,427","Mar. 30, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/jy0105202300003_dnd
+Federal,"Measuring, controlling, laboratory, medical and optical instruments, apparatus and accessories",National Research Council Canada,MSPARTS INC.,"$21,505","Apr. 6, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/988748_nrc
+Federal,"Vegetables and fruits, edible products, fats and preparations",National Defence,GORDON FOOD SERVICES PRAIRIES INC.,"$11,231","Apr. 5, 2022","Apr. 6, 2022","Apr. 6, 2022",https://theijf.org/procurement/ca0168202300006_dnd
+Federal,Data and database access services,Office of the Superintendent of Financial Institutions Canada,HAVER ANALYTICS,"$22,677","Apr. 7, 2021","Apr. 7, 2021","Apr. 6, 2022",https://theijf.org/procurement/6034058_osfi
+Federal,License/Maintenance fees for client software related to Distributed Computing Environment (DCE),Indigenous Services Canada,INFO-TECH RESEARCH GROUP INC.,"$101,638","Apr. 6, 2021","Apr. 6, 2021","Apr. 5, 2022",https://theijf.org/procurement/5a10504672_isc
+Federal,Construction Services,Public Services and Procurement Canada,South Baffin Holdings Ltd.,"$21,394","Apr. 5, 2022","Apr. 1, 2021","Mar. 31, 2022",https://theijf.org/procurement/700641394_pwgsc
+Federal,O-Professional Services not Elsewhere Specified,Public Services and Procurement Canada,Arcadis Canada Inc.,"$241,411","Apr. 5, 2022","Jun. 23, 2021","Mar. 31, 2022",https://theijf.org/procurement/700592205_pwgsc
+Federal,Residential Buildings,Public Services and Procurement Canada,Bruce Mcarthur,"$19,038","Apr. 5, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/700641412_pwgsc
+Federal,Protection Services,Public Services and Procurement Canada,Corps Canadien Des Commissionnaires,"$120,430","Apr. 5, 2022","Apr. 1, 2021","Mar. 31, 2022",https://theijf.org/procurement/700578228_pwgsc
+Federal,Protection Services,Public Services and Procurement Canada,Corps Canadien Des Commissionnaires,"$1,328,314","Apr. 5, 2022","Apr. 30, 2021","Mar. 31, 2022",https://theijf.org/procurement/700579107_pwgsc
+Federal,Translation services,Public Services and Procurement Canada,UBIQUS OTTAWA INC.,"$287,438","Mar. 31, 2021","Apr. 6, 2021","Apr. 5, 2022",https://theijf.org/procurement/200004250_pwgsc
+Federal,Diesel fuel,National Defence,PARKLAND,"$32,536","Mar. 28, 2022","Mar. 28, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502400485_dnd
+Federal,"Plumbing equipment and fittings, including parts",National Defence,Andrew Sheret Limited,"$10,790","Feb. 14, 2022","Feb. 14, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502381364_dnd
+Federal,Diesel fuel,National Defence,Harnois Energies Inc.,"$86,196","Mar. 3, 2022","Mar. 3, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502391560_dnd
+Federal,Rental of motor and other vehicles,National Defence,THE DRIVING FORCE INC.,"$38,869","Oct. 25, 2021","Oct. 25, 2021","Apr. 5, 2022",https://theijf.org/procurement/4502331021_dnd
+Federal,Diesel fuel,National Defence,Harnois Energies Inc.,"$100,859","Mar. 23, 2022","Mar. 23, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502400289_dnd
+Federal,Other buildings,National Defence,ATCO POWER (2010) LTD.,"$57,388","Nov. 22, 2021","Nov. 22, 2021","Apr. 5, 2022",https://theijf.org/procurement/4502290256_dnd
+Federal,Other engineering works,National Defence,QUARRY HILLS EXCAVATION & GRAVEL,"$19,136","Mar. 30, 2022","Mar. 30, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502401318_dnd
+Federal,Other equipment and Parts,National Defence,Produits Pedlex,"$20,796","Jan. 25, 2022","Jan. 25, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502370753_dnd
+Federal,"Office furniture and furnishings, including parts",National Defence,GRAINGER,"$23,088","Feb. 8, 2022","Feb. 8, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502377898_dnd
+Federal,Gasoline,National Defence,Maritime Fuels,"$32,215","Mar. 29, 2022","Mar. 29, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502400838_dnd
+Federal,Miscellaneous Chemical products,National Defence,WEATHER ALL SHELTERS INC.,"$19,761","Mar. 11, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502395396_dnd
+Federal,"Miscellaneous textiles, headgear, umbrellas, etc.",National Defence,Rogue Canada,"$14,903","Feb. 8, 2022","Feb. 8, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502377906_dnd
+Federal,"Measuring, controlling, laboratory, medical and optical instruments, apparatus and accessories",Public Health Agency of Canada,HOLOGIC CANADA LTD.,"$45,150","Apr. 5, 2021","Apr. 5, 2021","Apr. 5, 2022",https://theijf.org/procurement/4500423040_phac
+Federal,Tools and implements,National Defence,Snap-On,"$11,095","Apr. 5, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502358160_dnd
+Federal,Aviation fuel,National Defence,IMPERIAL OIL AVIATION FUEL,"$390,656","Apr. 5, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/4502402235_dnd
+Federal,Membership fees,Canadian Grain Commission,CPA Manitoba,"$19,373","Apr. 5, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/900131092_cgc
+Federal,Computer equipment related to distributed computing environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),"Innovation, Science and Economic Development Canada",NOVA NETWORKS INC.,"$124,253","Apr. 6, 2021","Apr. 6, 2021","Apr. 5, 2022",https://theijf.org/procurement/9600520_ic
+Federal,Management consulting,Royal Canadian Mounted Police,INFO-TECH RESEARCH GROUP,"$328,136","Apr. 5, 2022","Apr. 5, 2022","Apr. 1, 2022",https://theijf.org/procurement/7257015_rcmp
+Federal,Information technology and telecommunications consultants,"Innovation, Science and Economic Development Canada",LUMINA IT INC.,"$311,875","Apr. 7, 2021","Apr. 7, 2021","Apr. 5, 2022",https://theijf.org/procurement/8509669_ic
+Federal,Information Technology Consultants,"Innovation, Science and Economic Development Canada",LUMINA IT INC.,"$162,178","Aug. 23, 2021","Aug. 23, 2021","Apr. 5, 2022",https://theijf.org/procurement/8509777_ic
+Federal,Ammunition,Royal Canadian Mounted Police,CANADIAN AMMUNITION DISPOSAL SERVIC,"$10,763","Apr. 4, 2022","Apr. 4, 2022","Apr. 5, 2022",https://theijf.org/procurement/7257009_rcmp
+Federal,License/Maintenance fees for client software related to Distributed Computing Environment (DCE),Employment and Social Development Canada,NET-WALL INTERNET SECURITY,"$40,200","Feb. 15, 2021","Apr. 6, 2021","Apr. 5, 2022",https://theijf.org/procurement/2bs17126_esdc
+Federal,Other Equipment and Parts,Correctional Service of Canada,STEVENS COMPANY LIMITED THE,"$12,267","Mar. 22, 2022","Mar. 22, 2022","Apr. 5, 2022",https://theijf.org/procurement/21421_22_4066055_csc
+Federal,Aviation fuel,National Defence,AEG FUELS,"$14,440","Apr. 5, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/2106696383_dnd
+Federal,"Meat, fish and their preparations",National Defence,SYSCO,"$125,783","Apr. 4, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/hn0100202300007_dnd
+Federal,"Meat, fish and their preparations",National Defence,LES ALIMENTS H.A VAILLANCOURT,"$26,576","Mar. 29, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/by3380202300031_dnd
+Federal,License/Maintenance fees for application software (including COTS) and application development and delivery software,National Research Council Canada,APPLIED CCM INC,"$22,939","Mar. 25, 2021","Mar. 25, 2021","Apr. 5, 2022",https://theijf.org/procurement/969401_nrc
+Federal,"Meat, fish and their preparations",National Defence,SYSCO,"$11,566","Apr. 4, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/ca0168202300004_dnd
+Federal,Waste disposal,National Research Council Canada,WM QUEBEC INC.,"$11,224","May 14, 2021","May 14, 2021","Apr. 5, 2022",https://theijf.org/procurement/972092_nrc
+Federal,Office and stationers supplies,National Defence,Buro & CO,"$16,049","Mar. 3, 2022","Mar. 3, 2022","Apr. 5, 2022",https://theijf.org/procurement/lpo21429_dnd
+Federal,Client software related to Distributed Computing,Fisheries and Oceans Canada,LLOYD'S REGISTER VOYAGE AS,"$52,534","Apr. 5, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500024050_dfo
+Federal,Diesel fuel,Fisheries and Oceans Canada,LE GROUPE HARNOIS INC,"$56,078","Apr. 5, 2022","Nov. 9, 2021","Mar. 31, 2022",https://theijf.org/procurement/4500023923_dfo
+Federal,Diesel fuel,Fisheries and Oceans Canada,PARKLAND FUEL CORPORATION,"$629,380","Mar. 23, 2022","Mar. 23, 2022","Apr. 5, 2022",https://theijf.org/procurement/4500023260_dfo
+Federal,"Meat, fish and their preparations",National Defence,GFS ATLANTIC INC,"$14,889","Mar. 9, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/sy6908202300004_dnd
+Federal,"Plumbing equipment and fittings, including parts",National Defence,Noble,"$17,602","Feb. 28, 2022","Feb. 28, 2022","Apr. 5, 2022",https://theijf.org/procurement/w0125_4502388680_dnd
+Federal,Non-professional personal service contracts not elsewhere specified,National Defence,Angela Vroom / Angie's Tailoring,"$4,419","Jan. 24, 2022","Feb. 1, 2022","Apr. 5, 2022",https://theijf.org/procurement/w0102_4502370321_dnd
+Federal,"Meat, fish and their preparations",National Defence,SYSCO,"$20,124","Mar. 9, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/sy6908202300009_dnd
+Federal,Gasoline,National Defence,Maritime Fuels Limited,"$3,060","Jul. 7, 2021","Jul. 7, 2021","Apr. 5, 2022",https://theijf.org/procurement/w0102_4502284423_dnd
+Federal,Ships and boats,National Defence,CONTRO VALVE EQUIPMENTS INC,"$12,133","Aug. 17, 2021","Aug. 17, 2021","Apr. 5, 2022",https://theijf.org/procurement/w8482_4502302429_dnd
+Federal,Ships and boats,National Defence,CONTRO VALVE INC,"$23,805","Sep. 21, 2021","Sep. 21, 2021","Apr. 5, 2022",https://theijf.org/procurement/w8482_229290_001_dmarp4_dnd
+Federal,Temporary help services,National Defence,CORADIX Technology Consulting Ltd.,"$366,120","Nov. 17, 2020","Nov. 18, 2020","Apr. 5, 2022",https://theijf.org/procurement/w6952a121055_dnd
+Federal,Pharmaceutical and other medicinal products,National Defence,MCKESSON,"$10,838","Apr. 4, 2022","Apr. 4, 2022","Apr. 5, 2022",https://theijf.org/procurement/w010h3d001_dnd
+Federal,Miscellaneous manufactured articles,National Defence,CASTER TOWN LTD,"$12,111","Apr. 5, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/w355_4502403388_dnd
+Federal,Rental of aircraft,National Defence,Air Charter Service (Canada) Passenger Corp.,"$84,293","Mar. 2, 2022","Mar. 2, 2022","Apr. 5, 2022",https://theijf.org/procurement/w2022_a036p_dnd
+Federal,Ships and boats,National Defence,MONTREAL BRONZE LTD,"$188,167","Sep. 22, 2021","Sep. 22, 2021","Apr. 5, 2022",https://theijf.org/procurement/w8482_229150_001_dmarp4_dnd
+Federal,Ships and boats,National Defence,MONTREAL BRONZE LTD,"$225,245","Sep. 22, 2021","Sep. 22, 2021","Apr. 5, 2022",https://theijf.org/procurement/w8482_229152_001_dmarp4_dnd
+Federal,Miscellaneous manufactured articles,National Defence,OUTDOOR OUTFITS,"$13,747","Apr. 5, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/w3555_4502403392_dnd
+Federal,Other equipment,National Defence,Jimcor Line Construction Ltd,"$238,435","Oct. 22, 2021","Oct. 26, 2021","Apr. 5, 2022",https://theijf.org/procurement/w6895_4502335978_dnd
+Federal,Ships and boats,National Defence,MONTREAL BRONZE LTD,"$72,783","Sep. 22, 2021","Sep. 22, 2021","Apr. 5, 2022",https://theijf.org/procurement/w8482_229151_001_dmarp4_dnd
+Federal,Miscellaneous manufactured articles,National Defence,Climb On Equipment,"$14,124","Apr. 4, 2022","Apr. 4, 2022","Apr. 5, 2022",https://theijf.org/procurement/w0133_4502403001_dnd
+Federal,"Meat, fish and their preparations",National Defence,EASTERN MEAT PURVEYORS LIMITED,"$12,600","Mar. 9, 2022","Apr. 5, 2022","Apr. 5, 2022",https://theijf.org/procurement/sy6908202300008_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,T-LANE TRANSPORTATION & LOGISTICS,"$30,800","Mar. 16, 2022","Mar. 27, 2022","Apr. 4, 2022",https://theijf.org/procurement/w6447npcc21_0563_dnd
+Federal,Footwear,National Defence,Millbrook Tactical Inc,"$24,804","Mar. 2, 2022","Mar. 2, 2022","Apr. 4, 2022",https://theijf.org/procurement/w353b_4502390810_dnd
+Federal,Other equipment and Parts,National Defence,J.W. BIRD AND COMPANY LIMITED,"$12,434","Mar. 21, 2022","Mar. 21, 2022","Apr. 4, 2022",https://theijf.org/procurement/w355b_4502397840_dnd
+Federal,"Electric lighting, distribution and control equipment and Parts",National Defence,WESCO DISTRIBUTION CANADA LP,"$10,833","Dec. 16, 2021","Dec. 16, 2021","Apr. 4, 2022",https://theijf.org/procurement/w6854_4502359817_dnd
+Federal,Other buildings,National Defence,Urlacher construction ltd,"$17,376","Mar. 23, 2022","Mar. 28, 2022","Apr. 4, 2022",https://theijf.org/procurement/w6895_4502382993_dnd
+Federal,Residential buildings,National Defence,DD Contracting & Construction,"$13,972","Nov. 24, 2021","Dec. 1, 2021","Apr. 4, 2022",https://theijf.org/procurement/w6895_4502348943_dnd
+Federal,Other professional services not elsewhere specified,National Defence,T-Lane,"$34,000","Mar. 16, 2022","Mar. 26, 2022","Apr. 4, 2022",https://theijf.org/procurement/w3446_tw22_0006_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,T-Lane Transportation and Logistics,"$26,000","Mar. 9, 2022","Mar. 27, 2022","Apr. 4, 2022",https://theijf.org/procurement/w6447npcc21_0534_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,BACROW TRANSPORT INC,"$22,770","Mar. 21, 2022","Mar. 21, 2022","Apr. 4, 2022",https://theijf.org/procurement/w6447ilcc22_0067_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,HELLMANN,"$15,750","Mar. 15, 2022","Mar. 27, 2022","Apr. 4, 2022",https://theijf.org/procurement/w6447npcc21_0549_dnd
+Federal,Transportation of things not elsewhere specified,National Defence,SYNERGIE CANADA INC.,"$34,776","Mar. 23, 2022","Mar. 23, 2022","Apr. 4, 2022",https://theijf.org/procurement/qc22_0036_dnd
+Federal,"Office furniture and furnishings, including parts",National Defence,Mill Supply Ltd,"$10,873","Nov. 30, 2021","Nov. 30, 2021","Apr. 4, 2022",https://theijf.org/procurement/w353b_4502351374_dnd
+Federal,Other equipment and Parts,National Defence,Bandit Fire and Protection Ltd,"$53,229","Apr. 20, 2021","Apr. 27, 2021","Apr. 4, 2022",https://theijf.org/procurement/w6895_4520048653_dnd
+Federal,"Communications/Networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)",National Defence,THALES CANADA,"$756,145","Feb. 4, 2021","Feb. 4, 2021","Apr. 4, 2022",https://theijf.org/procurement/w8482_4502214639_dnd
+Federal,Computer equipment related to distributed computing environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),Environment and Climate Change Canada,NISHA TECHNOLOGIES INC.,"$13,455","Mar. 23, 2022","Mar. 23, 2022","Apr. 4, 2022",https://theijf.org/procurement/80004831_ec
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FCA CANADA INC.,"$259,442","Nov. 30, 2021","Nov. 30, 2021","Apr. 4, 2022",https://theijf.org/procurement/7254539_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,GENERAL MOTORS OF CANADA COMPANY,"$3,401,108","Nov. 10, 2021","Nov. 10, 2021","Apr. 4, 2022",https://theijf.org/procurement/7254167_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,KIA CANADA INC.,"$194,510","Nov. 30, 2021","Nov. 30, 2021","Apr. 4, 2022",https://theijf.org/procurement/7254547_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$563,847","Oct. 27, 2021","Oct. 27, 2021","Apr. 4, 2022",https://theijf.org/procurement/7253776_rcmp
+Federal,Engineering consultants-Construction,National Defence,McElhanney Ltd,"$19,089","Oct. 1, 2020","Oct. 1, 2020","Apr. 4, 2022",https://theijf.org/procurement/74019_4502179848_dnd
+Federal,Road motor vehicles,Royal Canadian Mounted Police,GENERAL MOTORS OF CANADA COMPANY,"$113,491","Nov. 30, 2021","Nov. 30, 2021","Apr. 4, 2022",https://theijf.org/procurement/7254553_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$3,314,395","Nov. 3, 2021","Nov. 3, 2021","Apr. 4, 2022",https://theijf.org/procurement/7253951_rcmp
+Federal,Engineering consultants-Other,National Defence,Architecture 49 Inc,"$70,664","Sep. 29, 2021","Sep. 29, 2021","Apr. 4, 2022",https://theijf.org/procurement/73603kn_dnd
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",Canadian Grain Commission,ATS SCIENTIFIC INC,"$10,728","Jan. 5, 2022","Jan. 5, 2022","Apr. 4, 2022",https://theijf.org/procurement/8050950_cgc
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$3,274,868","Nov. 2, 2021","Nov. 2, 2021","Apr. 4, 2022",https://theijf.org/procurement/7253948_rcmp
+Federal,Commercial buildings,National Defence,Modern Niagara Alberta Inc,"$1,020,408","Oct. 5, 2020","Oct. 5, 2020","Apr. 4, 2022",https://theijf.org/procurement/73492_cn_dnd
+Federal,Public relations services,Global Affairs Canada,Robert SPIEGEL,"$14,403","Mar. 30, 2022","Mar. 30, 2022","Apr. 4, 2022",https://theijf.org/procurement/7439278_dfatd
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$2,707,073","Nov. 3, 2021","Nov. 3, 2021","Apr. 4, 2022",https://theijf.org/procurement/7253954_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$3,174,860","Nov. 2, 2021","Nov. 2, 2021","Apr. 4, 2022",https://theijf.org/procurement/7253950_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$3,369,379","Nov. 2, 2021","Nov. 2, 2021","Apr. 4, 2022",https://theijf.org/procurement/7253949_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$2,969,143","Nov. 10, 2021","Nov. 10, 2021","Apr. 4, 2022",https://theijf.org/procurement/7254142_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$1,174,572","Nov. 10, 2021","Nov. 10, 2021","Apr. 4, 2022",https://theijf.org/procurement/7254156_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$2,885,808","Nov. 10, 2021","Nov. 10, 2021","Apr. 4, 2022",https://theijf.org/procurement/7254155_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$2,894,604","Nov. 3, 2021","Nov. 3, 2021","Apr. 4, 2022",https://theijf.org/procurement/7253955_rcmp
+Federal,Rental of aircraft,Royal Canadian Mounted Police,NORTH CARIBOO AIR,"$25,200","Mar. 11, 2022","Mar. 11, 2022","Apr. 4, 2022",https://theijf.org/procurement/7256548_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$2,352,093","Nov. 10, 2021","Nov. 10, 2021","Apr. 4, 2022",https://theijf.org/procurement/7254152_rcmp
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$2,879,519","Nov. 3, 2021","Nov. 3, 2021","Apr. 4, 2022",https://theijf.org/procurement/7253952_rcmp
+Federal,Tuition fees and costs of attending courses including seminars not elsewhere specified,Royal Canadian Mounted Police,UNIVERSITY OF OTTAWA,"$11,865","Apr. 4, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/7256996_rcmp
+Federal,Engineering consultants - Construction,Global Affairs Canada,RAYMOND EMC ENCLOSURES LTD.,"$13,187","Dec. 3, 2021","Dec. 3, 2021","Apr. 4, 2022",https://theijf.org/procurement/7436111_dfatd
+Federal,Other engineering works,National Defence,Waterdon Construction Itd,"$27,550","Oct. 18, 2021","Oct. 18, 2021","Apr. 4, 2022",https://theijf.org/procurement/76487cn_dnd
+Federal,Road motor vehicles,Royal Canadian Mounted Police,FORD MOTOR COMPANY OF CANADA LTD.,"$2,416,533","Nov. 10, 2021","Nov. 10, 2021","Apr. 4, 2022",https://theijf.org/procurement/7254147_rcmp
+Federal,Aviation fuel,National Defence,WOODWARD,"$14,871","Apr. 4, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/0102mnyyr00013773_dnd
+Federal,Aviation fuel,National Defence,IRVING,"$22,320","Apr. 4, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/0102mn16473442_dnd
+Federal,Ships and Boats Parts,Parks Canada,YAMAHA MOTOR CANADA LTD.,"$51,934","Jan. 17, 2022","Jan. 17, 2022","Apr. 4, 2022",https://theijf.org/procurement/45445249_pc
+Federal,Audio-visual services,Department of Finance Canada,Encore (3627730 Canada Inc.),"$46,517","Apr. 4, 2022","Feb. 18, 2022","Feb. 28, 2022",https://theijf.org/procurement/6038899_fin
+Federal,Diesel Fuel,Parks Canada,PARKLAND CORPORATION,"$31,500","Apr. 4, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/45447914_pc
+Federal,Office Buildings,Public Services and Procurement Canada,Morguard Corporation,"$10,331","Apr. 4, 2022","Mar. 1, 2022","Mar. 31, 2022",https://theijf.org/procurement/700631886_pwgsc
+Federal,Gasoline,National Defence,Maritime Fuels,"$16,063","Mar. 29, 2022","Mar. 29, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502400850_dnd
+Federal,Other buildings,National Defence,Wahl Construction Ltd,"$236,852","Feb. 17, 2022","Feb. 17, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502385997_dnd
+Federal,"Miscellaneous textiles, headgear, umbrellas, etc.",National Defence,Forte Fitness LTD,"$15,683","Jan. 31, 2022","Jan. 31, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502373658_dnd
+Federal,Heavy fuel oil,National Defence,Canada LTD,"$40,942","Mar. 17, 2022","Mar. 17, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502397535_dnd
+Federal,Aviation fuel,National Defence,Flight Fuel,"$40,029","Mar. 21, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502398298_dnd
+Federal,Residential buildings,National Defence,Nails Enterprises (2007) Inc.,"$21,565","Mar. 7, 2022","Mar. 8, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502392919_dnd
+Federal,Aviation fuel,National Defence,Irving Oil Commercial,"$45,807","Mar. 4, 2022","Mar. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502391857_dnd
+Federal,Other equipment and Parts,National Defence,Rightway Sanitation,"$12,000","Jan. 10, 2022","Jan. 10, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502364688_dnd
+Federal,Other machinery and parts,National Defence,Canadian Engravers Supply,"$24,791","Mar. 3, 2022","Mar. 3, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502391667_dnd
+Federal,"Plumbing equipment and fittings, including parts",National Defence,WOLSELEY,"$11,634","Mar. 23, 2022","Mar. 23, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502399174_dnd
+Federal,Professional services,Crown-Indigenous Relations and Northern Affairs Canada,DUFF & PHELPS CANADA LIMITED,"$40,971","Sep. 15, 2020","Sep. 15, 2020","Apr. 4, 2022",https://theijf.org/procurement/4500415130_aandc
+Federal,Aviation fuel,National Defence,Canada LTD,"$14,688","Mar. 16, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502396992_dnd
+Federal,Gasoline,National Defence,MACEWEN PETROLUEM,"$11,017","Apr. 1, 2022","Apr. 1, 2022","Apr. 4, 2022",https://theijf.org/procurement/4502402341_dnd
+Federal,TUITION FEES & COSTS OF ATTENDING COURSES/SEMINARS,Public Prosecution Service of Canada,ALLIANCE FRANCAISE OF CALGARY,"$16,307","Jan. 21, 2022","Jan. 21, 2022","Apr. 4, 2022",https://theijf.org/procurement/4500146633_ppsc
+Federal,Operating system and utility software related to,Fisheries and Oceans Canada,JASCO APPLIED SCIENCES (CANADA) LTD,"$42,000","Apr. 4, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500023842_dfo
+Federal,License/Maintenance fees for client software rel,Fisheries and Oceans Canada,ESRI CANADA LTD,"$30,996","Apr. 4, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500023867_dfo
+Federal,Client software related to Distributed Computing,Fisheries and Oceans Canada,MICROSOFT CANADA CO.,"$14,768","Apr. 4, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500023901_dfo
+Federal,License/Maintenance fees for client software rel,Fisheries and Oceans Canada,SOLIDCAD,"$33,748","Apr. 4, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500023870_dfo
+Federal,Marine installations,Fisheries and Oceans Canada,A.P. DE L'ANSE-A-VALLEAU,"$16,161","Mar. 29, 2022","Mar. 29, 2022","Apr. 4, 2022",https://theijf.org/procurement/4500023823_dfo
+Federal,Lubricating fuel and greases,Fisheries and Oceans Canada,HARVEYS OIL,"$21,209","Apr. 4, 2022","Mar. 30, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500023897_dfo
+Federal,License/Maintenance fees for client software rel,Fisheries and Oceans Canada,ESRI CANADA LTD,"$139,482","Apr. 4, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500023848_dfo
+Federal,Computer equipment related to production and ope,Fisheries and Oceans Canada,FULLY MANAGED CORPORATION,"$25,526","Apr. 4, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500023907_dfo
+Federal,Diesel fuel,Fisheries and Oceans Canada,IRVING OIL COMMERCIAL G.P.,"$18,153","Mar. 31, 2022","Mar. 31, 2022","Apr. 4, 2022",https://theijf.org/procurement/4500023861_dfo
+Federal,License/Maintenance fees for client software rel,Fisheries and Oceans Canada,SOFTCHOICE CORPORATION,"$44,716","Apr. 4, 2022","Mar. 31, 2022","Mar. 31, 2022",https://theijf.org/procurement/4500023905_dfo
+Federal,Aviation fuel,National Defence,AEG FUELS,"$14,561","Apr. 4, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/2106742069_dnd
+Federal,Aviation fuel,National Defence,AEG,"$13,484","Apr. 4, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/2106729664_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$41,783","Apr. 4, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/2106686167_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$54,713","Apr. 4, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/2106686172_dnd
+Federal,Aviation fuel,National Defence,AEG,"$20,467","Apr. 4, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/2106729642_dnd
+Federal,Aviation fuel,National Defence,AEG,"$30,991","Apr. 4, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/2106716538_dnd
+Federal,Electronic subscriptions and electronic publicatio,Global Affairs Canada,Oxford Analytica Inc.,"$358,481","Jul. 1, 2021","Jul. 1, 2021","Apr. 4, 2022",https://theijf.org/procurement/221_0027_dfatd
+Federal,Other business services not elsewhere specified,National Research Council Canada,COMAIRCO,"$14,119","Mar. 16, 2022","Mar. 16, 2022","Apr. 4, 2022",https://theijf.org/procurement/988100_nrc
+Federal,"Miscellaneous food, food materials and food preparations",National Defence,GORDON FOOD SERVICE,"$24,714","Mar. 21, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/op0168202300002_dnd
+Federal,"Miscellaneous food, food materials and food preparations",National Defence,GORDON FOOD SERVICES PRAIRIES INC.,"$12,402","Apr. 1, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/ca0168202300003_dnd
+Federal,"Measuring, controlling, laboratory, medical and optical equipment and parts",National Research Council Canada,BUFFALO TUNGSTEN INC.,"$24,245","Mar. 9, 2022","Mar. 9, 2022","Apr. 4, 2022",https://theijf.org/procurement/987744_nrc
+Federal,"Office furniture and furnishings, including parts",National Defence,Buro & CO,"$21,629","Mar. 1, 2022","Mar. 1, 2022","Apr. 4, 2022",https://theijf.org/procurement/lpo21417_dnd
+Federal,"Computer equipment related to production and operations (P&O) environment-All servers, storage, printers, etc. (includes all related parts and peripherals)",Shared Services Canada,DECISIVE TECHNOLOGIES INC.,"$11,120","May 20, 2021","May 20, 2021","Apr. 4, 2022",https://theijf.org/procurement/p000025469_ssc
+Federal,Rental of aircraft,National Defence,Summit Air Ltd,"$63,126","Feb. 25, 2022","Apr. 1, 2022","Apr. 4, 2022",https://theijf.org/procurement/g4mov_22_01_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,CHEF BRANDZ INC,"$11,106","Mar. 28, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/jy0105202300001_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,ALIMENTS MARTEL,"$10,341","Mar. 31, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/cj0106202300001_dnd
+Federal,Other Business services not Elsewhere Specified,National Defence,CHEF BRANDZ INC,"$18,880","Mar. 31, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/al0114202202782_dnd
+Federal,"Meat, fish and their preparations",National Defence,GORDON FOOD SERVICE,"$25,449","Mar. 21, 2022","Apr. 4, 2022","Apr. 4, 2022",https://theijf.org/procurement/op0168202300001_dnd
+Federal,Residential buildings,National Defence,ETKA Construction Inc.,"$578,900","May 28, 2021","May 28, 2021","Apr. 3, 2022",https://theijf.org/procurement/hawpa34_75534_dnd
+Federal,Other professional services not elsewhere specified,Financial Consumer Agency of Canada,Nattiq,"$18,141","Mar. 14, 2022","Mar. 14, 2022","Apr. 3, 2022",https://theijf.org/procurement/6038589_fcac
+Federal,Electronic subscriptions and electronic publicatio,Global Affairs Canada,BEIJING QINABAISI ADVISORY COMPANY,"$11,609","Jun. 4, 2021","Jun. 4, 2021","Apr. 3, 2022",https://theijf.org/procurement/7430531_dfatd
+Federal,Public relations services,Global Affairs Canada,Kaboom Animation Festival,"$20,848","Mar. 17, 2022","Mar. 17, 2022","Apr. 3, 2022",https://theijf.org/procurement/7438915_dfatd
+Federal,Engineering consultants-Construction,National Defence,Smith & Anderson Consulting Engineering,"$47,413","Sep. 30, 2020","Sep. 30, 2020","Apr. 3, 2022",https://theijf.org/procurement/74018_4502179858_dnd
+Federal,Rental of aircraft,National Defence,Momentum Decisive Solutions Canada Inc,"$287,149","Feb. 25, 2022","Feb. 25, 2022","Apr. 3, 2022",https://theijf.org/procurement/w2022_a032p_dnd
+Federal,Aviation fuel,National Defence,AEG FUELS,"$32,796","Apr. 3, 2022","Apr. 3, 2022","Apr. 3, 2022",https://theijf.org/procurement/2106688890_dnd
+Federal,Pharmaceutical and Other Medicinal Products,Correctional Service of Canada,INDIVIOR UK LTD,"$89,424","Mar. 28, 2022","Mar. 28, 2022","Apr. 3, 2022",https://theijf.org/procurement/21807_22_4071328_csc
+Federal,Aviation fuel,National Defence,AEG,"$129,797","Apr. 2, 2022","Apr. 2, 2022","Apr. 2, 2022",https://theijf.org/procurement/2106706698_dnd
+Federal,Aviation fuel,National Defence,AEG,"$65,531","Apr. 2, 2022","Apr. 2, 2022","Apr. 2, 2022",https://theijf.org/procurement/2106706705_dnd
+Federal,Safety and Sanitation Equipment and Parts,Correctional Service of Canada,DORMAKABA CANADA INC,"$10,243","Mar. 31, 2022","Mar. 31, 2022","Apr. 2, 2022",https://theijf.org/procurement/21422_22_4073392_csc
+Federal,Aviation fuel,National Defence,AEG FUELS,"$12,358","Apr. 2, 2022","Apr. 2, 2022","Apr. 2, 2022",https://theijf.org/procurement/2106686196_dnd
