@@ -8,6 +8,7 @@
 # Any other information needed? [...UPDATE THIS...]
 
 # TODO Check that all of the scraped csv's are different!
+# TODO Check that all dates have no NA's, any missing means that data was lost in cleaning
 #### Workspace setup ####
 library(tidyverse)
 # [...UPDATE THIS...]
