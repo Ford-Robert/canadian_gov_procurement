@@ -1,11 +1,11 @@
 #### Preamble ####
-# Purpose: Downloads and saves the data from [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 11 February 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: A webscraper to grab ijf procurement awards data, and collate into one combined dataset
+# Author: Robert Ford
+# Date: 21 November 2024
+# Contact: robert.ford@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites: Docker, Firefox Web driver
+# See appendix _ for more details
 
 #### Workspace setup ####
 library(RSelenium)
@@ -14,14 +14,14 @@ library(dplyr)
 library(readr)
 library(readr)
 library(dplyr)
-#docker run -d -p 4444:4444 -p 5900:5900 -v /Users/robert_ford/canadian_gov_procurement/data/raw_data:/home/seluser/Downloads selenium/standalone-firefox:3.141.59
+#docker run -d -p 4444:4444 -p 5900:5900 -v /Users/NAME/canadian_gov_procurement/data/raw_data:/home/seluser/Downloads selenium/standalone-firefox:3.141.59
 
 # Paths
 # Path inside the container
 download_dir <- "/home/seluser/Downloads"
 
 # Path on the host
-host_download_dir <- "/Users/robert_ford/canadian_gov_procurement/data/raw_data"
+host_download_dir <- "/Users/NAME/canadian_gov_procurement/data/raw_data"
 
 # Set up Firefox profile with download preferences
 fprof <- makeFirefoxProfile(list(
