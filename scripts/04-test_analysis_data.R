@@ -69,3 +69,14 @@ test_that("Date columns are valid dates", {
   expect_true(all(!is.na(as.Date(data$start_date))))
   expect_true(all(!is.na(as.Date(data$end_date))))
 })
+
+# Test that 'start_date' and 'award_date' are not before 2015
+test_that("No 'start_date' or 'award_date' before 2015", {
+  expect_true(all(analysis_data$start_date >= as.Date("2015-01-01")))
+  expect_true(all(analysis_data$award_date >= as.Date("2015-01-01")))
+})
+
+# Test that 'end_date' is not beyond 2099
+test_that("No 'end_date' beyond 2099", {
+  expect_true(all(analysis_data$end_date <= as.Date("2099-12-31")))
+})
