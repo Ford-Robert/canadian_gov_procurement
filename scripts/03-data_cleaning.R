@@ -72,6 +72,7 @@ cleaned <- cleaned[cleaned$end_date <= as.Date("2099-12-31"), ]
 # Remove rows with any NA values
 cleaned <- na.omit(cleaned)
 
+
 duplicate_rows <- cleaned[duplicated(cleaned) | duplicated(cleaned, fromLast = TRUE), ]
 
 View(duplicate_rows)
@@ -79,6 +80,8 @@ View(duplicate_rows)
 # View the dataframe with duplicate rows
 head(duplicate_rows)
 
+
+cleaned <- unique(cleaned)
 
 View(cleaned)
 
