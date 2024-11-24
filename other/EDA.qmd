@@ -45,7 +45,11 @@ df <- df %>% select(-link)
 #| fig-cap: template
 #| fig-align: center
 
-kable(head(df, 5), caption = "Sample of the Data")
+df_table <- df %>% select(-contract, -start_date, -end_date)
+
+kable(head(df_table, 5), caption = "Sample of the Data") %>%
+  kable_styling(font_size = 10, latex_options = c("scale_down"))
+
 ```
 
 
@@ -58,11 +62,11 @@ This graph shows how much was awarded by month
 #| fig-align: center
 
 
-df <- df %>%
+df_fig <- df %>%
   mutate(year_month = floor_date(award_date, "month"))
 
 # Aggregate the amount by 'year_month'
-monthly_spending <- df %>%
+monthly_spending <- df_fig %>%
   group_by(year_month) %>%
   summarise(total_amount = sum(amount, na.rm = TRUE))
 
@@ -130,7 +134,11 @@ ggplot(amounts, aes(x = date, y = cumulative_amount)) +
 
 
 ```
+```{r}
 
+
+
+```
 
 ```{r fig-template3}
 #| message: false
@@ -139,7 +147,6 @@ ggplot(amounts, aes(x = date, y = cumulative_amount)) +
 #| fig-cap: template
 #| fig-align: center
 
-df$amount <- as.numeric(df$amount)
 
 # Summarize total amount spent by each buyer
 buyer_totals <- df %>%
@@ -197,40 +204,66 @@ ggplot(top_suppliers, aes(x = reorder(supplier, -total_amount), y = total_amount
 
 ```
 
-```{r fig-template1}
+
+```{r}
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: "Average Contract Length (Days) by Government Department (Top 10)"
 #| fig-align: center
 
-df <- df %>%
-  mutate(contract_length_days = as.numeric(difftime(end_date, start_date, units = "days")))
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
 
-# Group by buyer and calculate average length of contract and average contract size
-buyer_stats <- df %>%
+
+
+# Calculate average contract length per buyer (government department)
+avg_contract_length <- df %>%
+  mutate(contract_length_days = as.numeric(difftime(end_date, start_date, units = "days"))) %>%
   group_by(buyer) %>%
-  summarise(
-    `Average Length of Contract (Days)` = mean(contract_length_days, na.rm = TRUE),
-    `Average Contract Size` = mean(amount, na.rm = TRUE)
-  )
+  summarise(`Average Length of Contract (Days)` = mean(contract_length_days, na.rm = TRUE)) %>%
+  arrange(desc(`Average Length of Contract (Days)`)) %>%
+  slice_head(n = 10)  # Select top 10 departments
 
-# Reshape the data to have buyers as columns and metrics as rows
-buyer_stats_long <- buyer_stats %>%
-  pivot_longer(cols = -buyer, 
-               names_to = "Metric", 
-               values_to = "Value")
+# Create the bar chart
+ggplot(avg_contract_length, aes(x = reorder(buyer, `Average Length of Contract (Days)`), y = `Average Length of Contract (Days)`)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  coord_flip() +
+  labs(x = "Government Department", y = "Average Contract Length (Days)", title = "Average Contract Length (Days) by Government Department (Top 10)") +
+  theme_minimal()
 
-# Now pivot wider to have buyers as columns
-buyer_stats_wide <- buyer_stats_long %>%
-  pivot_wider(names_from = buyer, values_from = Value)
 
-# Optionally, format the numbers
-buyer_stats_wide <- buyer_stats_wide %>%
-  mutate(across(-Metric, ~ round(.x, 2)))
 
-# Display the table using knitr::kable
-kable(buyer_stats_wide, caption = "Average Length of Contract and Average Contract Size by Buyer")
+
+```
+
+```{r}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: "Average Contract Size by Government Department (Top 10)"
+#| fig-align: center
+
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+library(scales)  # For formatting currency
+
+# Calculate average contract size per buyer (government department)
+avg_contract_size <- df %>%
+  group_by(buyer) %>%
+  summarise(`Average Contract Size` = mean(amount, na.rm = TRUE)) %>%
+  arrange(desc(`Average Contract Size`)) %>%
+  slice_head(n = 10)  # Select top 10 departments
+
+# Create the bar chart
+ggplot(avg_contract_size, aes(x = reorder(buyer, `Average Contract Size`), y = `Average Contract Size`)) +
+  geom_bar(stat = "identity", fill = "darkgreen") +
+  coord_flip() +
+  scale_y_continuous(labels = dollar_format(prefix = "$")) +
+  labs(x = "Government Department", y = "Average Contract Size", title = "Average Contract Size by Government Department (Top 10)") +
+  theme_minimal()
 
 
 ```
