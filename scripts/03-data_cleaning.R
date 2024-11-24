@@ -12,6 +12,7 @@ library(tidyverse)
 #### Clean data ####
 combined <- read_csv("data/raw_data/combined_data.csv")
 
+View(combined)
 # Step 1: Create a copy of the original dataframe
 cleaned <- combined
 
@@ -42,9 +43,36 @@ cleaned$start_date[cleaned$start_date == "2204-08-01"] <- "2024-08-01"
 # Ensure the start_date column is still in Date format after the update
 cleaned$start_date <- as.Date(cleaned$start_date, format = "%Y-%m-%d")
 
+#View(cleaned)
+
+# Identify rows where start_day equals end_day
+same_day_indices <- which(cleaned$start_date == cleaned$end_date)
+
+# Increment end_day by 1 day where start_day equals end_day
+cleaned$end_date[same_day_indices] <- cleaned$end_date[same_day_indices] + 1
+
+# Amortize data over the length of the contract
+cleaned$duration_days <- as.numeric(cleaned$end_date - cleaned$start_date)
+
+# Calculate the per_day amount
+cleaned$per_day <- ifelse(cleaned$duration_days > 0, cleaned$amount / cleaned$duration_days, NA)
+
+cleaned <- cleaned[cleaned$duration_days > 0, ]
+
+cleaned <- cleaned[cleaned$amount > 0, ]
+
+# Remove rows with any NA values
+cleaned <- na.omit(cleaned)
+
+duplicate_rows <- cleaned[duplicated(cleaned) | duplicated(cleaned, fromLast = TRUE), ]
+
+View(duplicate_rows)
+
+# View the dataframe with duplicate rows
+head(duplicate_rows)
+
+
 View(cleaned)
-
-
 
 
 #### Save data ####
