@@ -61,6 +61,14 @@ cleaned <- cleaned[cleaned$duration_days > 0, ]
 
 cleaned <- cleaned[cleaned$amount > 0, ]
 
+# Filter out contracts with 'start_date' or 'award_date' before 2015
+cleaned <- cleaned[
+  cleaned$start_date >= as.Date("2015-01-01") &
+    cleaned$award_date >= as.Date("2015-01-01"), ]
+
+# Filter out contracts with 'end_date' beyond 2099
+cleaned <- cleaned[cleaned$end_date <= as.Date("2099-12-31"), ]
+
 # Remove rows with any NA values
 cleaned <- na.omit(cleaned)
 
