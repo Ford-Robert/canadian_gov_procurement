@@ -1,71 +1,71 @@
 #### Preamble ####
-# Purpose: Tests... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 26 September 2024 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: Tests cleaned_data set
+# Author: Robert Ford
+# Date: 22 November 2024
+# Contact: robert.ford@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
 
-# TODO Check that all of the scraped csv's are different!
+
 # TODO Check that all dates have no NA's, any missing means that data was lost in cleaning
 
 #### Workspace setup ####
 library(tidyverse)
 library(testthat)
 
-data <- read_csv("data/02-analysis_data/analysis_data.csv")
+data <- read_csv("data/analysis_data/cleaned_data.csv")
 
 
 #### Test data ####
-# Test that the dataset has 151 rows - there are 151 divisions in Australia
-test_that("dataset has 151 rows", {
-  expect_equal(nrow(analysis_data), 151)
+
+# Test that each column is the right data type
+test_that("Columns have the correct data types", {
+  expect_type(data$region, "character")
+  expect_type(data$contract, "character")
+  expect_type(data$buyer, "character")
+  expect_type(data$supplier, "character")
+  expect_type(data$amount, "double")  # or "integer" if amount is integer
+  expect_s3_class(data$award_date, "Date")
+  expect_s3_class(data$start_date, "Date")
+  expect_s3_class(data$end_date, "Date")
+  expect_type(data$link, "character")
+  expect_type(data$duration_days, "double")  # or "integer" if it's integer
+  expect_type(data$per_day, "double")
 })
 
-# Test that the dataset has 3 columns
-test_that("dataset has 3 columns", {
-  expect_equal(ncol(analysis_data), 3)
+# Test that 'duration_days' is greater than 0
+test_that("duration_days > 0", {
+  expect_true(all(data$duration_days > 0))
 })
 
-# Test that the 'division' column is character type
-test_that("'division' is character", {
-  expect_type(analysis_data$division, "character")
-})
-
-# Test that the 'party' column is character type
-test_that("'party' is character", {
-  expect_type(analysis_data$party, "character")
-})
-
-# Test that the 'state' column is character type
-test_that("'state' is character", {
-  expect_type(analysis_data$state, "character")
+# Test that 'amount' is greater than 0
+test_that("amount > 0", {
+  expect_true(all(data$amount > 0))
 })
 
 # Test that there are no missing values in the dataset
-test_that("no missing values in dataset", {
-  expect_true(all(!is.na(analysis_data)))
+test_that("No missing values in dataset", {
+  expect_true(all(!is.na(data)))
 })
 
-# Test that 'division' contains unique values (no duplicates)
-test_that("'division' column contains unique values", {
-  expect_equal(length(unique(analysis_data$division)), 151)
+# Test that there are no duplicate rows
+test_that("No duplicate rows", {
+  expect_equal(nrow(analysis_data), nrow(unique(analysis_data)))
 })
 
-# Test that 'state' contains only valid Australian state or territory names
-valid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia", "Western Australia", 
-                  "Tasmania", "Northern Territory", "Australian Capital Territory")
-test_that("'state' contains valid Australian state names", {
-  expect_true(all(analysis_data$state %in% valid_states))
+# Test that 'buyer' and 'supplier' are not empty strings
+test_that("'buyer' and 'supplier' are not empty", {
+  expect_true(all(nzchar(analysis_data$buyer)))
+  expect_true(all(nzchar(analysis_data$supplier)))
 })
 
-# Test that there are no empty strings in 'division', 'party', or 'state' columns
-test_that("no empty strings in 'division', 'party', or 'state' columns", {
-  expect_false(any(analysis_data$division == "" | analysis_data$party == "" | analysis_data$state == ""))
+# Test that 'per_day' is greater than 0
+test_that("per_day > 0", {
+  expect_true(all(analysis_data$per_day > 0))
 })
 
-# Test that the 'party' column contains at least 2 unique values
-test_that("'party' column contains at least 2 unique values", {
-  expect_true(length(unique(analysis_data$party)) >= 2)
+# Test that date columns are valid dates
+test_that("Date columns are valid dates", {
+  expect_true(all(!is.na(as.Date(analysis_data$award_date))))
+  expect_true(all(!is.na(as.Date(analysis_data$start_date))))
+  expect_true(all(!is.na(as.Date(analysis_data$end_date))))
 })
