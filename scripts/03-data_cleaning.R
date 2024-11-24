@@ -36,8 +36,15 @@ cleaned$start_date <- as.Date(cleaned$start_date, format = date_format)
 # Convert 'end_date' to Date
 cleaned$end_date <- as.Date(cleaned$end_date, format = date_format)
 
+# Fixing typo in on of the entries
+cleaned$start_date[cleaned$start_date == "2204-08-01"] <- "2024-08-01"
+
+# Ensure the start_date column is still in Date format after the update
+cleaned$start_date <- as.Date(cleaned$start_date, format = "%Y-%m-%d")
 
 View(cleaned)
+
+
 
 
 #### Save data ####
