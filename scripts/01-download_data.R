@@ -5,8 +5,8 @@
 # Contact: robert.ford@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: Docker, Firefox Web driver
-# See appendix _ for more details
-# Data was collected on: 21 November 2024
+# See appendix TODO for more details
+# Data was collected on: 24 November 2024
 
 #TODO RE-RUN!
 
@@ -47,22 +47,22 @@ remDr <- remoteDriver(
 remDr$open()
 
 # Navigate to the website
-url <- "https://theijf.org/procurement/records?table=awards&region=Federal&status=AWARDED"
+url <- "https://theijf.org/procurement/records?table=awards&region=Federal&status=AWARDED&dir=asc&sort=min_date"
 remDr$navigate(url)
 # Wait for the page to load
 Sys.sleep(5)
 
 # Total number of pages to scrape
-total_pages <- 330
+total_pages <- 329
 
-for (page in 143:total_pages) {
+for (page in 1:total_pages) {
   print(page)
-  Sys.sleep(2)
+  Sys.sleep(3)
   # Click the "Download" button
   tryCatch({
     download_button <- remDr$findElement(using = "xpath", "//button[@aria-label='Download data']")
     download_button$clickElement()
-    Sys.sleep(3)  # Wait for the download to complete
+    Sys.sleep(5)  # Wait for the download to complete
   }, error = function(e) {
     message("Error on page ", page, ": ", e$message)
     next  # Skip to the next iteration
