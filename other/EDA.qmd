@@ -17,8 +17,9 @@ library(lubridate)
 library(scales)
 library(knitr)
 library(kableExtra)
+library(zoo)
 
-df <- read_csv(here::here("data/analysis_data/augment_data.csv"))
+df <- read_csv(here::here("data/analysis_data/cleaned_data.csv"))
 
 df <- df %>% select(-link)
 
@@ -85,44 +86,47 @@ ggplot(monthly_spending, aes(x = year_month, y = total_amount)) +
 #| fig-cap: template
 #| fig-align: center
 
-df$amount <- as.numeric(df$amount)
+start_date_min <- min(df$start_date)
+end_date_max <- as.Date("2030-12-31")
 
-# Ensure 'award_date' is in Date format (if not already)
-# df$award_date <- as.Date(df$award_date, format="%Y-%m-%d")  # Commented out since it's already a Date
+# Create events at start dates (add per_day amount)
+events_start <- data.frame(date = df$start_date, amount = df$per_day)
 
-# Identify the top 5 buyers by total amount awarded
-top_buyers <- df %>%
-  group_by(buyer) %>%
-  summarise(total_amount = sum(amount, na.rm = TRUE)) %>%
-  arrange(desc(total_amount)) %>%
-  slice_head(n = 3) %>%
-  pull(buyer)
+# Create events at end dates + 1 day (subtract per_day amount)
+events_end <- data.frame(date = df$end_date + 1, amount = -df$per_day)
 
-# Filter the data for only the top 5 buyers
-df_top_buyers <- df %>%
-  filter(buyer %in% top_buyers)
+# Combine start and end events
+events <- rbind(events_start, events_end)
 
-# Create a 'year_month' column using lubridate
-df_top_buyers <- df_top_buyers %>%
-  mutate(year_month = floor_date(award_date, "month"))
+# Aggregate amounts by date
+events <- aggregate(amount ~ date, data = events, sum)
 
-# Aggregate the amount by 'year_month' and 'buyer'
-monthly_spending <- df_top_buyers %>%
-  group_by(year_month, buyer) %>%
-  summarise(total_amount = sum(amount, na.rm = TRUE), .groups = 'drop')
+# Sort events by date
+events <- events[order(events$date), ]
 
-# Plot the line graph
-ggplot(monthly_spending, aes(x = year_month, y = total_amount, color = buyer, group = buyer)) +
-  geom_line(size = 1) +
-  geom_point(size = 2) +
-  labs(title = "Amount Spent Each Month by Top 5 Buyers",
-       x = "Time",
-       y = "Amount Awarded",
-       color = "Buyer") +
-  scale_x_date(date_labels = "%Y-%m", date_breaks = "1 month") +
+# Compute cumulative sum of amounts to get the total per_day amount active on each date
+events$cumulative_amount <- cumsum(events$amount)
+
+# Create a full sequence of dates from the earliest start date to the latest end date
+date_seq <- seq(start_date_min, end_date_max, by = "day")
+
+# Merge cumulative amounts with the full date sequence
+amounts <- data.frame(date = date_seq)
+amounts <- merge(amounts, events[, c("date", "cumulative_amount")], by = "date", all.x = TRUE)
+
+# Carry forward the last observed cumulative_amount to fill in missing dates
+amounts$cumulative_amount <- na.locf(amounts$cumulative_amount, na.rm = FALSE)
+amounts$cumulative_amount[is.na(amounts$cumulative_amount)] <- 0
+
+# Plot the line chart using ggplot2
+library(ggplot2)
+ggplot(amounts, aes(x = date, y = cumulative_amount)) +
+  geom_line(color = "blue") +
+  labs(title = "Total Amount Spent Over Time",
+       x = "Date",
+       y = "Total Amount Spent per Day") +
   scale_y_continuous(labels = comma) +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme_minimal()
 
 
 ```
