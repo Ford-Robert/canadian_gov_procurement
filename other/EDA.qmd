@@ -1,0 +1,232 @@
+---
+title: "EDA"
+author: 
+  - Robert Ford
+format: pdf
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(scales)
+library(knitr)
+library(kableExtra)
+
+df <- read_csv(here::here("data/analysis_data/augment_data.csv"))
+
+df <- df %>% select(-link)
+
+```
+
+
+```{r fig-template}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+
+
+```
+
+
+```{r fig-head}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+kable(head(df, 5), caption = "Sample of the Data")
+```
+
+
+This graph shows how much was awarded by month
+```{r fig-award-amount-month}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+
+df <- df %>%
+  mutate(year_month = floor_date(award_date, "month"))
+
+# Aggregate the amount by 'year_month'
+monthly_spending <- df %>%
+  group_by(year_month) %>%
+  summarise(total_amount = sum(amount, na.rm = TRUE))
+
+# Plot the line graph with formatted y-axis labels
+ggplot(monthly_spending, aes(x = year_month, y = total_amount)) +
+  geom_line(color = "blue") +
+  labs(title = "Amount Spent Each Month",
+       x = "Time",
+       y = "Amount Awarded") +
+  scale_x_date(date_labels = "%Y-%m", date_breaks = "1 month") +
+  scale_y_continuous(labels = comma) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+```{r fig-template4}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+df$amount <- as.numeric(df$amount)
+
+# Ensure 'award_date' is in Date format (if not already)
+# df$award_date <- as.Date(df$award_date, format="%Y-%m-%d")  # Commented out since it's already a Date
+
+# Identify the top 5 buyers by total amount awarded
+top_buyers <- df %>%
+  group_by(buyer) %>%
+  summarise(total_amount = sum(amount, na.rm = TRUE)) %>%
+  arrange(desc(total_amount)) %>%
+  slice_head(n = 3) %>%
+  pull(buyer)
+
+# Filter the data for only the top 5 buyers
+df_top_buyers <- df %>%
+  filter(buyer %in% top_buyers)
+
+# Create a 'year_month' column using lubridate
+df_top_buyers <- df_top_buyers %>%
+  mutate(year_month = floor_date(award_date, "month"))
+
+# Aggregate the amount by 'year_month' and 'buyer'
+monthly_spending <- df_top_buyers %>%
+  group_by(year_month, buyer) %>%
+  summarise(total_amount = sum(amount, na.rm = TRUE), .groups = 'drop')
+
+# Plot the line graph
+ggplot(monthly_spending, aes(x = year_month, y = total_amount, color = buyer, group = buyer)) +
+  geom_line(size = 1) +
+  geom_point(size = 2) +
+  labs(title = "Amount Spent Each Month by Top 5 Buyers",
+       x = "Time",
+       y = "Amount Awarded",
+       color = "Buyer") +
+  scale_x_date(date_labels = "%Y-%m", date_breaks = "1 month") +
+  scale_y_continuous(labels = comma) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+```
+
+
+```{r fig-template3}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+df$amount <- as.numeric(df$amount)
+
+# Summarize total amount spent by each buyer
+buyer_totals <- df %>%
+  group_by(buyer) %>%
+  summarise(total_amount = sum(amount, na.rm = TRUE)) %>%
+  arrange(desc(total_amount))
+
+# Select the top ten buyers
+top_ten_buyers <- buyer_totals %>%
+  slice_head(n = 10)
+
+# Plot the bar chart
+ggplot(top_ten_buyers, aes(x = reorder(buyer, total_amount), y = total_amount)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  coord_flip() +
+  labs(title = "Top 10 Buyers by Total Amount Spent",
+       x = "Buyer",
+       y = "Total Amount Spent") +
+  scale_y_continuous(labels = comma) +
+  theme_minimal()
+
+```
+
+```{r fig-template2}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+supplier_totals <- df %>%
+  group_by(supplier) %>%
+  summarise(total_amount = sum(amount, na.rm = TRUE)) %>%
+  arrange(desc(total_amount))
+
+# Select the top ten suppliers
+top_suppliers <- supplier_totals %>%
+  slice_head(n = 10)
+
+# Wrap supplier names for better legibility
+top_suppliers$supplier <- str_wrap(top_suppliers$supplier, width = 15)
+
+# Plot the bar chart
+ggplot(top_suppliers, aes(x = reorder(supplier, -total_amount), y = total_amount)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Amount Awarded to Top 10 Suppliers",
+       x = "Supplier",
+       y = "Total Amount Awarded") +
+  scale_y_continuous(labels = comma) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.margin = unit(c(1, 1, 1, 2), "cm")  # Adjust margins if necessary
+  )
+
+```
+
+```{r fig-template1}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+df <- df %>%
+  mutate(contract_length_days = as.numeric(difftime(end_date, start_date, units = "days")))
+
+# Group by buyer and calculate average length of contract and average contract size
+buyer_stats <- df %>%
+  group_by(buyer) %>%
+  summarise(
+    `Average Length of Contract (Days)` = mean(contract_length_days, na.rm = TRUE),
+    `Average Contract Size` = mean(amount, na.rm = TRUE)
+  )
+
+# Reshape the data to have buyers as columns and metrics as rows
+buyer_stats_long <- buyer_stats %>%
+  pivot_longer(cols = -buyer, 
+               names_to = "Metric", 
+               values_to = "Value")
+
+# Now pivot wider to have buyers as columns
+buyer_stats_wide <- buyer_stats_long %>%
+  pivot_wider(names_from = buyer, values_from = Value)
+
+# Optionally, format the numbers
+buyer_stats_wide <- buyer_stats_wide %>%
+  mutate(across(-Metric, ~ round(.x, 2)))
+
+# Display the table using knitr::kable
+kable(buyer_stats_wide, caption = "Average Length of Contract and Average Contract Size by Buyer")
+
+
+```
