@@ -6,7 +6,7 @@
 # License: MIT
 
 
-# TODO Check that all dates have no NA's, any missing means that data was lost in cleaning
+
 
 #### Workspace setup ####
 library(tidyverse)
@@ -49,23 +49,23 @@ test_that("No missing values in dataset", {
 
 # Test that there are no duplicate rows
 test_that("No duplicate rows", {
-  expect_equal(nrow(analysis_data), nrow(unique(analysis_data)))
+  expect_equal(nrow(data), nrow(unique(data)))
 })
 
 # Test that 'buyer' and 'supplier' are not empty strings
 test_that("'buyer' and 'supplier' are not empty", {
-  expect_true(all(nzchar(analysis_data$buyer)))
-  expect_true(all(nzchar(analysis_data$supplier)))
+  expect_true(all(nzchar(data$buyer)))
+  expect_true(all(nzchar(data$supplier)))
 })
 
 # Test that 'per_day' is greater than 0
 test_that("per_day > 0", {
-  expect_true(all(analysis_data$per_day > 0))
+  expect_true(all(data$per_day > 0))
 })
 
 # Test that date columns are valid dates
 test_that("Date columns are valid dates", {
-  expect_true(all(!is.na(as.Date(analysis_data$award_date))))
-  expect_true(all(!is.na(as.Date(analysis_data$start_date))))
-  expect_true(all(!is.na(as.Date(analysis_data$end_date))))
+  expect_true(all(!is.na(as.Date(data$award_date))))
+  expect_true(all(!is.na(as.Date(data$start_date))))
+  expect_true(all(!is.na(as.Date(data$end_date))))
 })
