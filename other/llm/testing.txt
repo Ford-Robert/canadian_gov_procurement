@@ -1,0 +1,892 @@
+GPT-4o
+23 November 2024
+________
+
+Human: I have a dataframe in r that details canadas procurmentents, here is the head of this df:
+
+region
+contract
+buyer
+supplier
+amount
+award_date
+start_date
+end_date
+link
+duration_days
+per_day
+1
+Federal
+Writing service
+National Gallery of Canada
+Rhea Yates
+10000
+2024-04-18
+2024-04-18
+2025-03-31
+https://theijf.org/procurement/pr_100218_ngc
+347
+28.81844
+2
+Federal
+Writing service
+National Gallery of Canada
+Rhea Yates
+10000
+2024-04-18
+2024-04-18
+2025-03-31
+https://theijf.org/procurement/pr_100218_ngc
+347
+28.81844
+3
+Federal
+Writing service
+National Gallery of Canada
+Perreault Writing Company Ltd.
+10000
+2024-04-09
+2024-04-09
+2025-03-31
+https://theijf.org/procurement/pr_100269_ngc
+356
+28.08989
+4
+Federal
+Writing service
+National Gallery of Canada
+Perreault Writing Company Ltd.
+10000
+2024-04-09
+2024-04-09
+2025-03-31
+https://theijf.org/procurement/pr_100269_ngc
+356
+28.08989
+
+I want to write a series of tests to ensure the integrity of this data df. Here are some examples of how i want the tests to look like:
+# Test that the 'party' column is character type
+test_that("'party' is character", {
+  expect_type(analysis_data$party, "character")
+})
+
+# Test that the 'state' column is character type
+test_that("'state' is character", {
+  expect_type(analysis_data$state, "character")
+})
+
+# Test that there are no missing values in the dataset
+test_that("no missing values in dataset", {
+  expect_true(all(!is.na(analysis_data)))
+})
+
+write some r code that will tests I want to include are the following:
+
+Check that each column is the right data type
+Check that duration days is > 0
+Check the amount > 0
+Check that there are no na values
+
+
+What are some other valid tests that could be done to this df?
+Human: I have a dataframe in r that details canadas procurmentents, here is the head of this df:
+
+region
+contract
+buyer
+supplier
+amount
+award_date
+start_date
+end_date
+link
+duration_days
+per_day
+1
+Federal
+Writing service
+National Gallery of Canada
+Rhea Yates
+10000
+2024-04-18
+2024-04-18
+2025-03-31
+https://theijf.org/procurement/pr_100218_ngc
+347
+28.81844
+2
+Federal
+Writing service
+National Gallery of Canada
+Rhea Yates
+10000
+2024-04-18
+2024-04-18
+2025-03-31
+https://theijf.org/procurement/pr_100218_ngc
+347
+28.81844
+3
+Federal
+Writing service
+National Gallery of Canada
+Perreault Writing Company Ltd.
+10000
+2024-04-09
+2024-04-09
+2025-03-31
+https://theijf.org/procurement/pr_100269_ngc
+356
+28.08989
+4
+Federal
+Writing service
+National Gallery of Canada
+Perreault Writing Company Ltd.
+10000
+2024-04-09
+2024-04-09
+2025-03-31
+https://theijf.org/procurement/pr_100269_ngc
+356
+28.08989
+
+I want to write a series of tests to ensure the integrity of this data df. Here are some examples of how i want the tests to look like:
+# Test that the 'party' column is character type
+test_that("'party' is character", {
+  expect_type(analysis_data$party, "character")
+})
+
+# Test that the 'state' column is character type
+test_that("'state' is character", {
+  expect_type(analysis_data$state, "character")
+})
+
+# Test that there are no missing values in the dataset
+test_that("no missing values in dataset", {
+  expect_true(all(!is.na(analysis_data)))
+})
+
+write some r code that will tests I want to include are the following:
+
+Check that each column is the right data type
+Check that duration days is > 0
+Check the amount > 0
+Check that there are no na values
+
+
+What are some other valid tests that could be done to this df?
+ChatGPT: Certainly! Below is the R code that includes the tests you wanted to implement, followed by additional valid tests for your dataframe.RCopy codelibrary(testthat)
+
+# Assuming your dataframe is named 'analysis_data'
+
+# Test that each column is the right data type
+test_that("Columns have the correct data types", {
+  expect_type(analysis_data$region, "character")
+  expect_type(analysis_data$contract, "character")
+  expect_type(analysis_data$buyer, "character")
+  expect_type(analysis_data$supplier, "character")
+  expect_type(analysis_data$amount, "double")  # or "integer" if amount is integer
+  expect_s3_class(analysis_data$award_date, "Date")
+  expect_s3_class(analysis_data$start_date, "Date")
+  expect_s3_class(analysis_data$end_date, "Date")
+  expect_type(analysis_data$link, "character")
+  expect_type(analysis_data$duration_days, "double")  # or "integer" if it's integer
+  expect_type(analysis_data$per_day, "double")
+})
+
+# Test that 'duration_days' is greater than 0
+test_that("duration_days > 0", {
+  expect_true(all(analysis_data$duration_days > 0))
+})
+
+# Test that 'amount' is greater than 0
+test_that("amount > 0", {
+  expect_true(all(analysis_data$amount > 0))
+})
+
+# Test that there are no missing values in the dataset
+test_that("No missing values in dataset", {
+  expect_true(all(!is.na(analysis_data)))
+})
+
+# Additional Valid Tests
+
+# Test that 'start_date' is before or equal to 'end_date'
+test_that("start_date <= end_date", {
+  expect_true(all(analysis_data$start_date <= analysis_data$end_date))
+})
+
+# Test that 'award_date' is before or equal to 'start_date'
+test_that("award_date <= start_date", {
+  expect_true(all(analysis_data$award_date <= analysis_data$start_date))
+})
+
+# Test that 'duration_days' equals 'end_date' - 'start_date' + 1
+test_that("duration_days is correct", {
+  calculated_duration <- as.numeric(analysis_data$end_date - analysis_data$start_date) + 1
+  expect_equal(analysis_data$duration_days, calculated_duration)
+})
+
+# Test that 'per_day' equals 'amount' divided by 'duration_days'
+test_that("per_day equals amount / duration_days", {
+  calculated_per_day <- analysis_data$amount / analysis_data$duration_days
+  expect_equal(analysis_data$per_day, calculated_per_day, tolerance = 1e-6)
+})
+
+# Test that 'link' contains valid URLs
+test_that("link contains valid URLs", {
+  expect_true(all(grepl("^https?://", analysis_data$link)))
+})
+
+# Test that there are no duplicate rows
+test_that("No duplicate rows", {
+  expect_equal(nrow(analysis_data), nrow(unique(analysis_data)))
+})
+
+# Test that 'buyer' and 'supplier' are not empty strings
+test_that("'buyer' and 'supplier' are not empty", {
+  expect_true(all(nzchar(analysis_data$buyer)))
+  expect_true(all(nzchar(analysis_data$supplier)))
+})
+
+# Test that 'per_day' is greater than 0
+test_that("per_day > 0", {
+  expect_true(all(analysis_data$per_day > 0))
+})
+
+# Test that 'region' contains expected values
+expected_regions <- c("Federal", "Provincial", "Municipal")
+test_that("'region' contains expected values", {
+  expect_true(all(analysis_data$region %in% expected_regions))
+})
+
+# Test that date columns are valid dates
+test_that("Date columns are valid dates", {
+  expect_true(all(!is.na(as.Date(analysis_data$award_date))))
+  expect_true(all(!is.na(as.Date(analysis_data$start_date))))
+  expect_true(all(!is.na(as.Date(analysis_data$end_date))))
+})
+Other Valid Tests You Could Include:Consistency Checks:Check for Logical Consistency: Ensure that the 'amount' is equal to 'per_day' multiplied by 'duration_days'.Check for Date Ranges: Verify that 'award_date', 'start_date', and 'end_date' fall within realistic historical ranges.Data Range Validations:Check for Outliers in 'amount': Identify if any 'amount' values are excessively high or low compared to the median or mean.Check for Reasonable 'duration_days': Ensure 'duration_days' is within a reasonable range (e.g., not exceeding 365 days for a one-year contract).String Format Validations:Check 'link' Format: Ensure that 'link' columns do not contain any spaces or invalid characters.Validate 'contract' Names: Check that 'contract' descriptions meet expected naming conventions or patterns.Uniqueness Constraints:Unique Identifiers: If there's an ID column (not shown), ensure all IDs are unique.Duplicate Contracts: Check if the combination of 'contract', 'buyer', 'supplier', and 'start_date' is unique to avoid duplicate entries.Cross-field Validations:Supplier-Buyer Relationships: Validate that certain suppliers are associated with specific buyers if such relationships are predefined.Region-specific Checks: If certain contracts are only available in specific regions, validate accordingly.Missing or Empty Fields:Partial Missing Data: Even if there are no NA values, check for empty strings or placeholders like "N/A", "Unknown", etc.Whitespace Trimming: Ensure that string fields do not have leading or trailing whitespaces.Data Type Specific Checks:Numeric Precision: Verify that numeric fields like 'amount' and 'per_day' have appropriate precision (e.g., two decimal places for currency).Integer Checks: Ensure that 'duration_days' is an integer if fractional days are not meaningful.Compliance Checks:Regulatory Compliance: If applicable, ensure that all entries comply with legal requirements (e.g., 'amount' not exceeding certain limits without approval).Statistical Distributions:Normality Tests: Perform statistical tests to see if 'amount' or 'duration_days' follow expected distributions.Correlation Analysis: Analyze correlations between 'amount', 'duration_days', and 'per_day' to identify anomalies.Date Consistency Across Time Zones:Time Zone Checks: If time zones are relevant, ensure that date calculations account for them correctly.Implementing these additional tests will help you ensure the integrity and reliability of your dataframe, making your data analysis more robust.
+ChatGPT: Certainly! Below is the R code that includes the tests you wanted to implement, followed by additional valid tests for your dataframe.RCopy codelibrary(testthat)
+
+# Assuming your dataframe is named 'analysis_data'
+
+# Test that each column is the right data type
+test_that("Columns have the correct data types", {
+  expect_type(analysis_data$region, "character")
+  expect_type(analysis_data$contract, "character")
+  expect_type(analysis_data$buyer, "character")
+  expect_type(analysis_data$supplier, "character")
+  expect_type(analysis_data$amount, "double")  # or "integer" if amount is integer
+  expect_s3_class(analysis_data$award_date, "Date")
+  expect_s3_class(analysis_data$start_date, "Date")
+  expect_s3_class(analysis_data$end_date, "Date")
+  expect_type(analysis_data$link, "character")
+  expect_type(analysis_data$duration_days, "double")  # or "integer" if it's integer
+  expect_type(analysis_data$per_day, "double")
+})
+
+# Test that 'duration_days' is greater than 0
+test_that("duration_days > 0", {
+  expect_true(all(analysis_data$duration_days > 0))
+})
+
+# Test that 'amount' is greater than 0
+test_that("amount > 0", {
+  expect_true(all(analysis_data$amount > 0))
+})
+
+# Test that there are no missing values in the dataset
+test_that("No missing values in dataset", {
+  expect_true(all(!is.na(analysis_data)))
+})
+
+# Additional Valid Tests
+
+# Test that 'start_date' is before or equal to 'end_date'
+test_that("start_date <= end_date", {
+  expect_true(all(analysis_data$start_date <= analysis_data$end_date))
+})
+
+# Test that 'award_date' is before or equal to 'start_date'
+test_that("award_date <= start_date", {
+  expect_true(all(analysis_data$award_date <= analysis_data$start_date))
+})
+
+# Test that 'duration_days' equals 'end_date' - 'start_date' + 1
+test_that("duration_days is correct", {
+  calculated_duration <- as.numeric(analysis_data$end_date - analysis_data$start_date) + 1
+  expect_equal(analysis_data$duration_days, calculated_duration)
+})
+
+# Test that 'per_day' equals 'amount' divided by 'duration_days'
+test_that("per_day equals amount / duration_days", {
+  calculated_per_day <- analysis_data$amount / analysis_data$duration_days
+  expect_equal(analysis_data$per_day, calculated_per_day, tolerance = 1e-6)
+})
+
+# Test that 'link' contains valid URLs
+test_that("link contains valid URLs", {
+  expect_true(all(grepl("^https?://", analysis_data$link)))
+})
+
+# Test that there are no duplicate rows
+test_that("No duplicate rows", {
+  expect_equal(nrow(analysis_data), nrow(unique(analysis_data)))
+})
+
+# Test that 'buyer' and 'supplier' are not empty strings
+test_that("'buyer' and 'supplier' are not empty", {
+  expect_true(all(nzchar(analysis_data$buyer)))
+  expect_true(all(nzchar(analysis_data$supplier)))
+})
+
+# Test that 'per_day' is greater than 0
+test_that("per_day > 0", {
+  expect_true(all(analysis_data$per_day > 0))
+})
+
+# Test that 'region' contains expected values
+expected_regions <- c("Federal", "Provincial", "Municipal")
+test_that("'region' contains expected values", {
+  expect_true(all(analysis_data$region %in% expected_regions))
+})
+
+# Test that date columns are valid dates
+test_that("Date columns are valid dates", {
+  expect_true(all(!is.na(as.Date(analysis_data$award_date))))
+  expect_true(all(!is.na(as.Date(analysis_data$start_date))))
+  expect_true(all(!is.na(as.Date(analysis_data$end_date))))
+})
+Other Valid Tests You Could Include:Consistency Checks:Check for Logical Consistency: Ensure that the 'amount' is equal to 'per_day' multiplied by 'duration_days'.Check for Date Ranges: Verify that 'award_date', 'start_date', and 'end_date' fall within realistic historical ranges.Data Range Validations:Check for Outliers in 'amount': Identify if any 'amount' values are excessively high or low compared to the median or mean.Check for Reasonable 'duration_days': Ensure 'duration_days' is within a reasonable range (e.g., not exceeding 365 days for a one-year contract).String Format Validations:Check 'link' Format: Ensure that 'link' columns do not contain any spaces or invalid characters.Validate 'contract' Names: Check that 'contract' descriptions meet expected naming conventions or patterns.Uniqueness Constraints:Unique Identifiers: If there's an ID column (not shown), ensure all IDs are unique.Duplicate Contracts: Check if the combination of 'contract', 'buyer', 'supplier', and 'start_date' is unique to avoid duplicate entries.Cross-field Validations:Supplier-Buyer Relationships: Validate that certain suppliers are associated with specific buyers if such relationships are predefined.Region-specific Checks: If certain contracts are only available in specific regions, validate accordingly.Missing or Empty Fields:Partial Missing Data: Even if there are no NA values, check for empty strings or placeholders like "N/A", "Unknown", etc.Whitespace Trimming: Ensure that string fields do not have leading or trailing whitespaces.Data Type Specific Checks:Numeric Precision: Verify that numeric fields like 'amount' and 'per_day' have appropriate precision (e.g., two decimal places for currency).Integer Checks: Ensure that 'duration_days' is an integer if fractional days are not meaningful.Compliance Checks:Regulatory Compliance: If applicable, ensure that all entries comply with legal requirements (e.g., 'amount' not exceeding certain limits without approval).Statistical Distributions:Normality Tests: Perform statistical tests to see if 'amount' or 'duration_days' follow expected distributions.Correlation Analysis: Analyze correlations between 'amount', 'duration_days', and 'per_day' to identify anomalies.Date Consistency Across Time Zones:Time Zone Checks: If time zones are relevant, ensure that date calculations account for them correctly.Implementing these additional tests will help you ensure the integrity and reliability of your dataframe, making your data analysis more robust.
+Human: now i want you to write some r code that will remove rows that have negative duration days, and na values
+Human: now i want you to write some r code that will remove rows that have negative duration days, and na values
+ChatGPT: Certainly! Below is the R code that will remove rows from your dataframe analysis_data where duration_days is negative and any rows that contain NA values.RCopy code# Remove rows where 'duration_days' is negative
+analysis_data <- analysis_data[analysis_data$duration_days >= 0, ]
+
+# Remove rows with any NA values
+analysis_data <- na.omit(analysis_data)
+Explanation:Removing Rows with Negative duration_days:RCopy codeanalysis_data <- analysis_data[analysis_data$duration_days >= 0, ]
+This line filters analysis_data to keep only the rows where duration_days is greater than or equal to zero.The condition analysis_data$duration_days >= 0 creates a logical vector that is TRUE for rows meeting the condition and FALSE otherwise.Subsetting analysis_data with this logical vector removes the rows with negative duration_days.Removing Rows with NA Values:RCopy codeanalysis_data <- na.omit(analysis_data)
+The na.omit() function returns the object with incomplete cases (rows containing NA values) removed.This ensures that your dataframe no longer contains any missing values in any of the columns.Note:After performing these operations, it's a good practice to reset the row names, especially if you plan to use the dataframe for further analysis or visualization.RCopy coderownames(analysis_data) <- NULL
+You might also want to check the dimensions of your dataframe before and after the cleaning process to understand how many rows were removed.RCopy code# Before cleaning
+dim_before <- dim(analysis_data)
+
+# After cleaning
+dim_after <- dim(analysis_data)
+
+# Display the change in number of rows
+cat("Rows before cleaning:", dim_before[1], "\n")
+cat("Rows after cleaning:", dim_after[1], "\n")
+Let me know if you need further assistance or additional modifications!
+ChatGPT: Certainly! Below is the R code that will remove rows from your dataframe analysis_data where duration_days is negative and any rows that contain NA values.RCopy code# Remove rows where 'duration_days' is negative
+analysis_data <- analysis_data[analysis_data$duration_days >= 0, ]
+
+# Remove rows with any NA values
+analysis_data <- na.omit(analysis_data)
+Explanation:Removing Rows with Negative duration_days:RCopy codeanalysis_data <- analysis_data[analysis_data$duration_days >= 0, ]
+This line filters analysis_data to keep only the rows where duration_days is greater than or equal to zero.The condition analysis_data$duration_days >= 0 creates a logical vector that is TRUE for rows meeting the condition and FALSE otherwise.Subsetting analysis_data with this logical vector removes the rows with negative duration_days.Removing Rows with NA Values:RCopy codeanalysis_data <- na.omit(analysis_data)
+The na.omit() function returns the object with incomplete cases (rows containing NA values) removed.This ensures that your dataframe no longer contains any missing values in any of the columns.Note:After performing these operations, it's a good practice to reset the row names, especially if you plan to use the dataframe for further analysis or visualization.RCopy coderownames(analysis_data) <- NULL
+You might also want to check the dimensions of your dataframe before and after the cleaning process to understand how many rows were removed.RCopy code# Before cleaning
+dim_before <- dim(analysis_data)
+
+# After cleaning
+dim_after <- dim(analysis_data)
+
+# Display the change in number of rows
+cat("Rows before cleaning:", dim_before[1], "\n")
+cat("Rows after cleaning:", dim_after[1], "\n")
+Let me know if you need further assistance or additional modifications!
+Human: and rows that have negative amounts
+Human: and rows that have negative amounts
+ChatGPT: Certainly! Here's the updated R code that removes rows from your dataframe analysis_data where duration_days is negative, amount is negative, and any rows that contain NA values.RCopy code# Remove rows where 'duration_days' or 'amount' is negative
+analysis_data <- analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ]
+
+# Remove rows with any NA values
+analysis_data <- na.omit(analysis_data)
+Alternatively, you can combine these steps into a single line for efficiency:RCopy code# Remove rows with negative 'duration_days' or 'amount', and remove rows with NA values
+analysis_data <- na.omit(analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ])
+Explanation:Removing Rows with Negative duration_days and Negative amount:RCopy codeanalysis_data <- analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ]
+This line filters analysis_data to keep only the rows where both duration_days and amount are greater than or equal to zero.The condition analysis_data$duration_days >= 0 & analysis_data$amount >= 0 creates a logical vector that is TRUE for rows meeting both conditions.Subsetting analysis_data with this logical vector removes the rows where either duration_days or amount is negative.Removing Rows with NA Values:RCopy codeanalysis_data <- na.omit(analysis_data)
+The na.omit() function removes any rows that contain NA values in any of the columns.This ensures your dataframe is free of missing data, which is important for accurate analysis.Additional Steps (Optional):Resetting Row Names:After filtering, the row indices might not be sequential. To reset them:RCopy coderownames(analysis_data) <- NULL
+Checking Dataframe Dimensions Before and After Cleaning:To understand how many rows were removed:RCopy code# Store dimensions before cleaning
+dim_before <- dim(analysis_data)
+
+# Perform cleaning operations
+analysis_data <- analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ]
+analysis_data <- na.omit(analysis_data)
+
+# Store dimensions after cleaning
+dim_after <- dim(analysis_data)
+
+# Display the change in number of rows
+cat("Rows before cleaning:", dim_before[1], "\n")
+cat("Rows after cleaning:", dim_after[1], "\n")
+Notes:Order of Operations: It's generally more efficient to remove NA values first if your dataset contains many NAs, as it reduces the number of rows that subsequent operations need to process.RCopy code# Remove rows with any NA values first
+analysis_data <- na.omit(analysis_data)
+
+# Then remove rows with negative 'duration_days' or 'amount'
+analysis_data <- analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ]
+Data Type Checks: Ensure that the columns duration_days and amount are of numeric type (integer or double) to perform the comparison operations correctly.RCopy code# Convert to numeric if necessary
+analysis_data$duration_days <- as.numeric(analysis_data$duration_days)
+analysis_data$amount <- as.numeric(analysis_data$amount)
+Final Code Sample:Putting it all together:RCopy code# Ensure 'duration_days' and 'amount' are numeric
+analysis_data$duration_days <- as.numeric(analysis_data$duration_days)
+analysis_data$amount <- as.numeric(analysis_data$amount)
+
+# Remove rows with any NA values
+analysis_data <- na.omit(analysis_data)
+
+# Remove rows where 'duration_days' or 'amount' is negative
+analysis_data <- analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ]
+
+# Reset row names
+rownames(analysis_data) <- NULL
+Let me know if you need any further assistance or if there's anything else you'd like to modify!
+ChatGPT: Certainly! Here's the updated R code that removes rows from your dataframe analysis_data where duration_days is negative, amount is negative, and any rows that contain NA values.RCopy code# Remove rows where 'duration_days' or 'amount' is negative
+analysis_data <- analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ]
+
+# Remove rows with any NA values
+analysis_data <- na.omit(analysis_data)
+Alternatively, you can combine these steps into a single line for efficiency:RCopy code# Remove rows with negative 'duration_days' or 'amount', and remove rows with NA values
+analysis_data <- na.omit(analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ])
+Explanation:Removing Rows with Negative duration_days and Negative amount:RCopy codeanalysis_data <- analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ]
+This line filters analysis_data to keep only the rows where both duration_days and amount are greater than or equal to zero.The condition analysis_data$duration_days >= 0 & analysis_data$amount >= 0 creates a logical vector that is TRUE for rows meeting both conditions.Subsetting analysis_data with this logical vector removes the rows where either duration_days or amount is negative.Removing Rows with NA Values:RCopy codeanalysis_data <- na.omit(analysis_data)
+The na.omit() function removes any rows that contain NA values in any of the columns.This ensures your dataframe is free of missing data, which is important for accurate analysis.Additional Steps (Optional):Resetting Row Names:After filtering, the row indices might not be sequential. To reset them:RCopy coderownames(analysis_data) <- NULL
+Checking Dataframe Dimensions Before and After Cleaning:To understand how many rows were removed:RCopy code# Store dimensions before cleaning
+dim_before <- dim(analysis_data)
+
+# Perform cleaning operations
+analysis_data <- analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ]
+analysis_data <- na.omit(analysis_data)
+
+# Store dimensions after cleaning
+dim_after <- dim(analysis_data)
+
+# Display the change in number of rows
+cat("Rows before cleaning:", dim_before[1], "\n")
+cat("Rows after cleaning:", dim_after[1], "\n")
+Notes:Order of Operations: It's generally more efficient to remove NA values first if your dataset contains many NAs, as it reduces the number of rows that subsequent operations need to process.RCopy code# Remove rows with any NA values first
+analysis_data <- na.omit(analysis_data)
+
+# Then remove rows with negative 'duration_days' or 'amount'
+analysis_data <- analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ]
+Data Type Checks: Ensure that the columns duration_days and amount are of numeric type (integer or double) to perform the comparison operations correctly.RCopy code# Convert to numeric if necessary
+analysis_data$duration_days <- as.numeric(analysis_data$duration_days)
+analysis_data$amount <- as.numeric(analysis_data$amount)
+Final Code Sample:Putting it all together:RCopy code# Ensure 'duration_days' and 'amount' are numeric
+analysis_data$duration_days <- as.numeric(analysis_data$duration_days)
+analysis_data$amount <- as.numeric(analysis_data$amount)
+
+# Remove rows with any NA values
+analysis_data <- na.omit(analysis_data)
+
+# Remove rows where 'duration_days' or 'amount' is negative
+analysis_data <- analysis_data[analysis_data$duration_days >= 0 & analysis_data$amount >= 0, ]
+
+# Reset row names
+rownames(analysis_data) <- NULL
+Let me know if you need any further assistance or if there's anything else you'd like to modify!
+Human: ── Failure: No duplicate rows ──────────────────────────────────────────────────
+nrow(data) not equal to nrow(unique(data)).
+1/1 mismatches
+[1] 326086 - 259108 == 66978
+
+write some code that will put all of the duplicated rows into a dataframe so i can have a look
+Human: ── Failure: No duplicate rows ──────────────────────────────────────────────────
+nrow(data) not equal to nrow(unique(data)).
+1/1 mismatches
+[1] 326086 - 259108 == 66978
+
+write some code that will put all of the duplicated rows into a dataframe so i can have a look
+ChatGPT: Certainly! To extract all duplicate rows from your dataframe analysis_data and place them into a new dataframe for inspection, you can use the duplicated() function in R. This function identifies duplicate rows in a dataframe.Here's the code to achieve this:RCopy code# Identify all duplicate rows (including the first occurrences)
+duplicate_rows <- analysis_data[duplicated(analysis_data) | duplicated(analysis_data, fromLast = TRUE), ]
+
+# View the dataframe with duplicate rows
+head(duplicate_rows)
+Explanation:duplicated(analysis_data): This function returns a logical vector indicating which rows are duplicates after the first occurrence. That is, for multiple identical rows, it marks all but the first as TRUE.duplicated(analysis_data, fromLast = TRUE): Setting fromLast = TRUE checks for duplicates in reverse order, marking duplicates before the last occurrence.Combining with OR (|): By using |, we combine the logical vectors to get TRUE for all occurrences of duplicated rows, including both the first and subsequent duplicates.Subsetting the Dataframe: We then subset analysis_data using this combined logical vector to extract all rows that are duplicates.Alternative Method Using dplyr:If you prefer using the dplyr package for data manipulation, here's how you can do it:RCopy codelibrary(dplyr)
+
+# Add a count column for occurrences of each row
+analysis_data_with_counts <- analysis_data %>%
+  group_by_all() %>%
+  mutate(row_count = n()) %>%
+  ungroup()
+
+# Filter rows that occur more than once
+duplicate_rows <- analysis_data_with_counts %>%
+  filter(row_count > 1) %>%
+  select(-row_count)
+
+# View the dataframe with duplicate rows
+head(duplicate_rows)
+Explanation:group_by_all(): Groups the data by all columns, effectively grouping identical rows together.mutate(row_count = n()): Adds a new column row_count that contains the number of times each group (i.e., each unique row) appears in the data.filter(row_count > 1): Filters out the rows where row_count is greater than 1, meaning the row is duplicated.select(-row_count): Removes the row_count column to return the dataframe to its original structure.Notes:Inspecting Duplicates: You can now inspect duplicate_rows to understand why duplicates exist and decide how to handle them (e.g., remove them, correct data entry errors, etc.).Number of Duplicate Rows: To find out how many duplicate rows there are:RCopy codenum_duplicates <- nrow(duplicate_rows)
+cat("Number of duplicate rows:", num_duplicates, "\n")
+Removing Duplicate Rows: If after inspection you decide to remove duplicates, you can use:RCopy code# Remove duplicate rows, keeping only the first occurrence
+analysis_data_unique <- analysis_data[!duplicated(analysis_data), ]
+Or using dplyr:RCopy codelibrary(dplyr)
+analysis_data_unique <- distinct(analysis_data)
+Example Using Your Data:Assuming analysis_data is similar to the data you provided earlier, here's how it would work:RCopy code# Sample data (for illustration)
+analysis_data <- data.frame(
+  region = c("Federal", "Federal", "Federal", "Federal"),
+  contract = c("Writing service", "Writing service", "Writing service", "Writing service"),
+  buyer = c("National Gallery of Canada", "National Gallery of Canada", "National Gallery of Canada", "National Gallery of Canada"),
+  supplier = c("Rhea Yates", "Rhea Yates", "Perreault Writing Company Ltd.", "Perreault Writing Company Ltd."),
+  amount = c(10000, 10000, 10000, 10000),
+  award_date = as.Date(c("2024-04-18", "2024-04-18", "2024-04-09", "2024-04-09")),
+  start_date = as.Date(c("2024-04-18", "2024-04-18", "2024-04-09", "2024-04-09")),
+  end_date = as.Date(c("2025-03-31", "2025-03-31", "2025-03-31", "2025-03-31")),
+  link = c("https://theijf.org/procurement/pr_100218_ngc", "https://theijf.org/procurement/pr_100218_ngc", "https://theijf.org/procurement/pr_100269_ngc", "https://theijf.org/procurement/pr_100269_ngc"),
+  duration_days = c(347, 347, 356, 356),
+  per_day = c(28.81844, 28.81844, 28.08989, 28.08989)
+)
+
+# Identify all duplicate rows
+duplicate_rows <- analysis_data[duplicated(analysis_data) | duplicated(analysis_data, fromLast = TRUE), ]
+
+# View duplicate rows
+print(duplicate_rows)
+Output:yamlCopy code   region         contract                     buyer                      supplier amount award_date start_date   end_date                                       link duration_days per_day
+1 Federal Writing service National Gallery of Canada                   Rhea Yates  10000 2024-04-18 2024-04-18 2025-03-31 https://theijf.org/procurement/pr_100218_ngc           347 28.81844
+2 Federal Writing service National Gallery of Canada                   Rhea Yates  10000 2024-04-18 2024-04-18 2025-03-31 https://theijf.org/procurement/pr_100218_ngc           347 28.81844
+3 Federal Writing service National Gallery of Canada Perreault Writing Company Ltd.  10000 2024-04-09 2024-04-09 2025-03-31 https://theijf.org/procurement/pr_100269_ngc           356 28.08989
+4 Federal Writing service National Gallery of Canada Perreault Writing Company Ltd.  10000 2024-04-09 2024-04-09 2025-03-31 https://theijf.org/procurement/pr_100269_ngc           356 28.08989
+In this example, all rows are duplicates because each pair of rows is identical.Understanding the Results:Why Duplicates Occur: Duplicates can occur due to data entry errors, merging datasets without proper keys, or data extraction processes that inadvertently include the same records multiple times.Next Steps: After identifying the duplicates:Investigate: Determine the cause of duplication.Decide on Action: You might choose to keep the first occurrence, aggregate data, or remove duplicates entirely.Removing Duplicates:RCopy code# Remove all duplicate rows, keeping only unique rows
+analysis_data_unique <- analysis_data[!duplicated(analysis_data), ]
+
+# Or using dplyr
+analysis_data_unique <- distinct(analysis_data)
+Additional Tips:Partial Duplicates: If you want to find duplicates based on a subset of columns (e.g., duplicates in 'contract', 'buyer', and 'supplier'), you can modify the duplicated() function:RCopy code# Identify duplicates based on specific columns
+duplicate_rows <- analysis_data[duplicated(analysis_data[, c("contract", "buyer", "supplier")]) | duplicated(analysis_data[, c("contract", "buyer", "supplier")], fromLast = TRUE), ]
+Counting Duplicates:RCopy code# Count the number of duplicates for each unique row
+duplicate_counts <- analysis_data %>%
+  group_by_all() %>%
+  summarise(count = n()) %>%
+  filter(count > 1)
+
+# View duplicate counts
+print(duplicate_counts)
+Let me know if you need further assistance or if there's anything else you'd like to explore!
+ChatGPT: Certainly! To extract all duplicate rows from your dataframe analysis_data and place them into a new dataframe for inspection, you can use the duplicated() function in R. This function identifies duplicate rows in a dataframe.Here's the code to achieve this:RCopy code# Identify all duplicate rows (including the first occurrences)
+duplicate_rows <- analysis_data[duplicated(analysis_data) | duplicated(analysis_data, fromLast = TRUE), ]
+
+# View the dataframe with duplicate rows
+head(duplicate_rows)
+Explanation:duplicated(analysis_data): This function returns a logical vector indicating which rows are duplicates after the first occurrence. That is, for multiple identical rows, it marks all but the first as TRUE.duplicated(analysis_data, fromLast = TRUE): Setting fromLast = TRUE checks for duplicates in reverse order, marking duplicates before the last occurrence.Combining with OR (|): By using |, we combine the logical vectors to get TRUE for all occurrences of duplicated rows, including both the first and subsequent duplicates.Subsetting the Dataframe: We then subset analysis_data using this combined logical vector to extract all rows that are duplicates.Alternative Method Using dplyr:If you prefer using the dplyr package for data manipulation, here's how you can do it:RCopy codelibrary(dplyr)
+
+# Add a count column for occurrences of each row
+analysis_data_with_counts <- analysis_data %>%
+  group_by_all() %>%
+  mutate(row_count = n()) %>%
+  ungroup()
+
+# Filter rows that occur more than once
+duplicate_rows <- analysis_data_with_counts %>%
+  filter(row_count > 1) %>%
+  select(-row_count)
+
+# View the dataframe with duplicate rows
+head(duplicate_rows)
+Explanation:group_by_all(): Groups the data by all columns, effectively grouping identical rows together.mutate(row_count = n()): Adds a new column row_count that contains the number of times each group (i.e., each unique row) appears in the data.filter(row_count > 1): Filters out the rows where row_count is greater than 1, meaning the row is duplicated.select(-row_count): Removes the row_count column to return the dataframe to its original structure.Notes:Inspecting Duplicates: You can now inspect duplicate_rows to understand why duplicates exist and decide how to handle them (e.g., remove them, correct data entry errors, etc.).Number of Duplicate Rows: To find out how many duplicate rows there are:RCopy codenum_duplicates <- nrow(duplicate_rows)
+cat("Number of duplicate rows:", num_duplicates, "\n")
+Removing Duplicate Rows: If after inspection you decide to remove duplicates, you can use:RCopy code# Remove duplicate rows, keeping only the first occurrence
+analysis_data_unique <- analysis_data[!duplicated(analysis_data), ]
+Or using dplyr:RCopy codelibrary(dplyr)
+analysis_data_unique <- distinct(analysis_data)
+Example Using Your Data:Assuming analysis_data is similar to the data you provided earlier, here's how it would work:RCopy code# Sample data (for illustration)
+analysis_data <- data.frame(
+  region = c("Federal", "Federal", "Federal", "Federal"),
+  contract = c("Writing service", "Writing service", "Writing service", "Writing service"),
+  buyer = c("National Gallery of Canada", "National Gallery of Canada", "National Gallery of Canada", "National Gallery of Canada"),
+  supplier = c("Rhea Yates", "Rhea Yates", "Perreault Writing Company Ltd.", "Perreault Writing Company Ltd."),
+  amount = c(10000, 10000, 10000, 10000),
+  award_date = as.Date(c("2024-04-18", "2024-04-18", "2024-04-09", "2024-04-09")),
+  start_date = as.Date(c("2024-04-18", "2024-04-18", "2024-04-09", "2024-04-09")),
+  end_date = as.Date(c("2025-03-31", "2025-03-31", "2025-03-31", "2025-03-31")),
+  link = c("https://theijf.org/procurement/pr_100218_ngc", "https://theijf.org/procurement/pr_100218_ngc", "https://theijf.org/procurement/pr_100269_ngc", "https://theijf.org/procurement/pr_100269_ngc"),
+  duration_days = c(347, 347, 356, 356),
+  per_day = c(28.81844, 28.81844, 28.08989, 28.08989)
+)
+
+# Identify all duplicate rows
+duplicate_rows <- analysis_data[duplicated(analysis_data) | duplicated(analysis_data, fromLast = TRUE), ]
+
+# View duplicate rows
+print(duplicate_rows)
+Output:yamlCopy code   region         contract                     buyer                      supplier amount award_date start_date   end_date                                       link duration_days per_day
+1 Federal Writing service National Gallery of Canada                   Rhea Yates  10000 2024-04-18 2024-04-18 2025-03-31 https://theijf.org/procurement/pr_100218_ngc           347 28.81844
+2 Federal Writing service National Gallery of Canada                   Rhea Yates  10000 2024-04-18 2024-04-18 2025-03-31 https://theijf.org/procurement/pr_100218_ngc           347 28.81844
+3 Federal Writing service National Gallery of Canada Perreault Writing Company Ltd.  10000 2024-04-09 2024-04-09 2025-03-31 https://theijf.org/procurement/pr_100269_ngc           356 28.08989
+4 Federal Writing service National Gallery of Canada Perreault Writing Company Ltd.  10000 2024-04-09 2024-04-09 2025-03-31 https://theijf.org/procurement/pr_100269_ngc           356 28.08989
+In this example, all rows are duplicates because each pair of rows is identical.Understanding the Results:Why Duplicates Occur: Duplicates can occur due to data entry errors, merging datasets without proper keys, or data extraction processes that inadvertently include the same records multiple times.Next Steps: After identifying the duplicates:Investigate: Determine the cause of duplication.Decide on Action: You might choose to keep the first occurrence, aggregate data, or remove duplicates entirely.Removing Duplicates:RCopy code# Remove all duplicate rows, keeping only unique rows
+analysis_data_unique <- analysis_data[!duplicated(analysis_data), ]
+
+# Or using dplyr
+analysis_data_unique <- distinct(analysis_data)
+Additional Tips:Partial Duplicates: If you want to find duplicates based on a subset of columns (e.g., duplicates in 'contract', 'buyer', and 'supplier'), you can modify the duplicated() function:RCopy code# Identify duplicates based on specific columns
+duplicate_rows <- analysis_data[duplicated(analysis_data[, c("contract", "buyer", "supplier")]) | duplicated(analysis_data[, c("contract", "buyer", "supplier")], fromLast = TRUE), ]
+Counting Duplicates:RCopy code# Count the number of duplicates for each unique row
+duplicate_counts <- analysis_data %>%
+  group_by_all() %>%
+  summarise(count = n()) %>%
+  filter(count > 1)
+
+# View duplicate counts
+print(duplicate_counts)
+Let me know if you need further assistance or if there's anything else you'd like to explore!
+Human: add two tests, make sure that no contracts have start or award dates from before 2015 and that no contracts have end_dates that are beyond 2099
+Human: add two tests, make sure that no contracts have start or award dates from before 2015 and that no contracts have end_dates that are beyond 2099
+ChatGPT: Certainly! Here are the two additional tests to add to your test suite. These tests will ensure that:No contracts have start_date or award_date from before January 1, 2015.No contracts have end_date beyond December 31, 2099.RCopy code# Test that 'start_date' and 'award_date' are not before 2015
+test_that("No 'start_date' or 'award_date' before 2015", {
+  expect_true(all(analysis_data$start_date >= as.Date("2015-01-01")))
+  expect_true(all(analysis_data$award_date >= as.Date("2015-01-01")))
+})
+
+# Test that 'end_date' is not beyond 2099
+test_that("No 'end_date' beyond 2099", {
+  expect_true(all(analysis_data$end_date <= as.Date("2099-12-31")))
+})
+Explanation:Test for start_date and award_date not before 2015:RCopy codetest_that("No 'start_date' or 'award_date' before 2015", {
+  expect_true(all(analysis_data$start_date >= as.Date("2015-01-01")))
+  expect_true(all(analysis_data$award_date >= as.Date("2015-01-01")))
+})
+Purpose: Ensures that all contracts have start_date and award_date on or after January 1, 2015.Logic:as.Date("2015-01-01") converts the string to a Date object.analysis_data$start_date >= as.Date("2015-01-01") returns a logical vector.all() checks if all elements of the logical vector are TRUE.expect_true() asserts that the condition is TRUE, causing the test to pass if it is and fail otherwise.Test for end_date not beyond 2099:RCopy codetest_that("No 'end_date' beyond 2099", {
+  expect_true(all(analysis_data$end_date <= as.Date("2099-12-31")))
+})
+Purpose: Ensures that all contracts have end_date on or before December 31, 2099.Logic:Similar to the previous test but checks that end_date is less than or equal to 2099-12-31.Additional Considerations:Date Formats: Ensure that your start_date, award_date, and end_date columns are of Date class. If they are stored as character strings, convert them before running the tests:RCopy codeanalysis_data$start_date <- as.Date(analysis_data$start_date)
+analysis_data$award_date <- as.Date(analysis_data$award_date)
+analysis_data$end_date <- as.Date(analysis_data$end_date)
+Handling Test Failures:If any of these tests fail, it indicates that there are contracts in your dataset that do not meet the specified date criteria.You might want to identify and handle these records. For example, you can filter them out or investigate why they fall outside the expected date ranges.Example of Filtering Out Invalid Dates:If you wish to remove contracts that do not meet these date criteria, you can filter your dataset as follows:RCopy code# Filter out contracts with 'start_date' or 'award_date' before 2015
+analysis_data <- analysis_data[
+  analysis_data$start_date >= as.Date("2015-01-01") &
+  analysis_data$award_date >= as.Date("2015-01-01"), ]
+
+# Filter out contracts with 'end_date' beyond 2099
+analysis_data <- analysis_data[analysis_data$end_date <= as.Date("2099-12-31"), ]
+Recap of All Tests:For completeness, here's how your test suite might look with all the tests included:RCopy codelibrary(testthat)
+
+# Test that each column is the right data type
+test_that("Columns have the correct data types", {
+  expect_type(analysis_data$region, "character")
+  expect_type(analysis_data$contract, "character")
+  expect_type(analysis_data$buyer, "character")
+  expect_type(analysis_data$supplier, "character")
+  expect_type(analysis_data$amount, "double")  # or "integer" if applicable
+  expect_s3_class(analysis_data$award_date, "Date")
+  expect_s3_class(analysis_data$start_date, "Date")
+  expect_s3_class(analysis_data$end_date, "Date")
+  expect_type(analysis_data$link, "character")
+  expect_type(analysis_data$duration_days, "double")  # or "integer" if applicable
+  expect_type(analysis_data$per_day, "double")
+})
+
+# Test that 'duration_days' is greater than 0
+test_that("duration_days > 0", {
+  expect_true(all(analysis_data$duration_days > 0))
+})
+
+# Test that 'amount' is greater than 0
+test_that("amount > 0", {
+  expect_true(all(analysis_data$amount > 0))
+})
+
+# Test that there are no missing values in the dataset
+test_that("No missing values in dataset", {
+  expect_true(all(!is.na(analysis_data)))
+})
+
+# Test that 'start_date' is before or equal to 'end_date'
+test_that("start_date <= end_date", {
+  expect_true(all(analysis_data$start_date <= analysis_data$end_date))
+})
+
+# Test that 'award_date' is before or equal to 'start_date'
+test_that("award_date <= start_date", {
+  expect_true(all(analysis_data$award_date <= analysis_data$start_date))
+})
+
+# Test that 'duration_days' equals 'end_date' - 'start_date' + 1
+test_that("duration_days is correct", {
+  calculated_duration <- as.numeric(analysis_data$end_date - analysis_data$start_date) + 1
+  expect_equal(analysis_data$duration_days, calculated_duration)
+})
+
+# Test that 'per_day' equals 'amount' divided by 'duration_days'
+test_that("per_day equals amount / duration_days", {
+  calculated_per_day <- analysis_data$amount / analysis_data$duration_days
+  expect_equal(analysis_data$per_day, calculated_per_day, tolerance = 1e-6)
+})
+
+# Test that 'link' contains valid URLs
+test_that("link contains valid URLs", {
+  expect_true(all(grepl("^https?://", analysis_data$link)))
+})
+
+# Test that there are no duplicate rows
+test_that("No duplicate rows", {
+  expect_equal(nrow(analysis_data), nrow(unique(analysis_data)))
+})
+
+# Test that 'buyer' and 'supplier' are not empty strings
+test_that("'buyer' and 'supplier' are not empty", {
+  expect_true(all(nzchar(analysis_data$buyer)))
+  expect_true(all(nzchar(analysis_data$supplier)))
+})
+
+# Test that 'per_day' is greater than 0
+test_that("per_day > 0", {
+  expect_true(all(analysis_data$per_day > 0))
+})
+
+# Test that 'region' contains expected values
+expected_regions <- c("Federal", "Provincial", "Municipal")
+test_that("'region' contains expected values", {
+  expect_true(all(analysis_data$region %in% expected_regions))
+})
+
+# Test that date columns are valid dates
+test_that("Date columns are valid dates", {
+  expect_true(all(!is.na(analysis_data$award_date)))
+  expect_true(all(!is.na(analysis_data$start_date)))
+  expect_true(all(!is.na(analysis_data$end_date)))
+})
+
+# Test that 'start_date' and 'award_date' are not before 2015
+test_that("No 'start_date' or 'award_date' before 2015", {
+  expect_true(all(analysis_data$start_date >= as.Date("2015-01-01")))
+  expect_true(all(analysis_data$award_date >= as.Date("2015-01-01")))
+})
+
+# Test that 'end_date' is not beyond 2099
+test_that("No 'end_date' beyond 2099", {
+  expect_true(all(analysis_data$end_date <= as.Date("2099-12-31")))
+})
+Final Notes:Data Cleaning: If your data fails any of these tests, you may need to clean it accordingly. For instance, you might need to remove or correct entries with invalid dates.Logging Test Results: Consider logging the test results or using testthat's reporting features to keep track of any issues that arise.Automating Tests: You can integrate these tests into your data processing pipeline to automatically check data integrity whenever the dataset is updated.Feel free to let me know if you have any questions or need further assistance!
+ChatGPT: Certainly! Here are the two additional tests to add to your test suite. These tests will ensure that:No contracts have start_date or award_date from before January 1, 2015.No contracts have end_date beyond December 31, 2099.RCopy code# Test that 'start_date' and 'award_date' are not before 2015
+test_that("No 'start_date' or 'award_date' before 2015", {
+  expect_true(all(analysis_data$start_date >= as.Date("2015-01-01")))
+  expect_true(all(analysis_data$award_date >= as.Date("2015-01-01")))
+})
+
+# Test that 'end_date' is not beyond 2099
+test_that("No 'end_date' beyond 2099", {
+  expect_true(all(analysis_data$end_date <= as.Date("2099-12-31")))
+})
+Explanation:Test for start_date and award_date not before 2015:RCopy codetest_that("No 'start_date' or 'award_date' before 2015", {
+  expect_true(all(analysis_data$start_date >= as.Date("2015-01-01")))
+  expect_true(all(analysis_data$award_date >= as.Date("2015-01-01")))
+})
+Purpose: Ensures that all contracts have start_date and award_date on or after January 1, 2015.Logic:as.Date("2015-01-01") converts the string to a Date object.analysis_data$start_date >= as.Date("2015-01-01") returns a logical vector.all() checks if all elements of the logical vector are TRUE.expect_true() asserts that the condition is TRUE, causing the test to pass if it is and fail otherwise.Test for end_date not beyond 2099:RCopy codetest_that("No 'end_date' beyond 2099", {
+  expect_true(all(analysis_data$end_date <= as.Date("2099-12-31")))
+})
+Purpose: Ensures that all contracts have end_date on or before December 31, 2099.Logic:Similar to the previous test but checks that end_date is less than or equal to 2099-12-31.Additional Considerations:Date Formats: Ensure that your start_date, award_date, and end_date columns are of Date class. If they are stored as character strings, convert them before running the tests:RCopy codeanalysis_data$start_date <- as.Date(analysis_data$start_date)
+analysis_data$award_date <- as.Date(analysis_data$award_date)
+analysis_data$end_date <- as.Date(analysis_data$end_date)
+Handling Test Failures:If any of these tests fail, it indicates that there are contracts in your dataset that do not meet the specified date criteria.You might want to identify and handle these records. For example, you can filter them out or investigate why they fall outside the expected date ranges.Example of Filtering Out Invalid Dates:If you wish to remove contracts that do not meet these date criteria, you can filter your dataset as follows:RCopy code# Filter out contracts with 'start_date' or 'award_date' before 2015
+analysis_data <- analysis_data[
+  analysis_data$start_date >= as.Date("2015-01-01") &
+  analysis_data$award_date >= as.Date("2015-01-01"), ]
+
+# Filter out contracts with 'end_date' beyond 2099
+analysis_data <- analysis_data[analysis_data$end_date <= as.Date("2099-12-31"), ]
+Recap of All Tests:For completeness, here's how your test suite might look with all the tests included:RCopy codelibrary(testthat)
+
+# Test that each column is the right data type
+test_that("Columns have the correct data types", {
+  expect_type(analysis_data$region, "character")
+  expect_type(analysis_data$contract, "character")
+  expect_type(analysis_data$buyer, "character")
+  expect_type(analysis_data$supplier, "character")
+  expect_type(analysis_data$amount, "double")  # or "integer" if applicable
+  expect_s3_class(analysis_data$award_date, "Date")
+  expect_s3_class(analysis_data$start_date, "Date")
+  expect_s3_class(analysis_data$end_date, "Date")
+  expect_type(analysis_data$link, "character")
+  expect_type(analysis_data$duration_days, "double")  # or "integer" if applicable
+  expect_type(analysis_data$per_day, "double")
+})
+
+# Test that 'duration_days' is greater than 0
+test_that("duration_days > 0", {
+  expect_true(all(analysis_data$duration_days > 0))
+})
+
+# Test that 'amount' is greater than 0
+test_that("amount > 0", {
+  expect_true(all(analysis_data$amount > 0))
+})
+
+# Test that there are no missing values in the dataset
+test_that("No missing values in dataset", {
+  expect_true(all(!is.na(analysis_data)))
+})
+
+# Test that 'start_date' is before or equal to 'end_date'
+test_that("start_date <= end_date", {
+  expect_true(all(analysis_data$start_date <= analysis_data$end_date))
+})
+
+# Test that 'award_date' is before or equal to 'start_date'
+test_that("award_date <= start_date", {
+  expect_true(all(analysis_data$award_date <= analysis_data$start_date))
+})
+
+# Test that 'duration_days' equals 'end_date' - 'start_date' + 1
+test_that("duration_days is correct", {
+  calculated_duration <- as.numeric(analysis_data$end_date - analysis_data$start_date) + 1
+  expect_equal(analysis_data$duration_days, calculated_duration)
+})
+
+# Test that 'per_day' equals 'amount' divided by 'duration_days'
+test_that("per_day equals amount / duration_days", {
+  calculated_per_day <- analysis_data$amount / analysis_data$duration_days
+  expect_equal(analysis_data$per_day, calculated_per_day, tolerance = 1e-6)
+})
+
+# Test that 'link' contains valid URLs
+test_that("link contains valid URLs", {
+  expect_true(all(grepl("^https?://", analysis_data$link)))
+})
+
+# Test that there are no duplicate rows
+test_that("No duplicate rows", {
+  expect_equal(nrow(analysis_data), nrow(unique(analysis_data)))
+})
+
+# Test that 'buyer' and 'supplier' are not empty strings
+test_that("'buyer' and 'supplier' are not empty", {
+  expect_true(all(nzchar(analysis_data$buyer)))
+  expect_true(all(nzchar(analysis_data$supplier)))
+})
+
+# Test that 'per_day' is greater than 0
+test_that("per_day > 0", {
+  expect_true(all(analysis_data$per_day > 0))
+})
+
+# Test that 'region' contains expected values
+expected_regions <- c("Federal", "Provincial", "Municipal")
+test_that("'region' contains expected values", {
+  expect_true(all(analysis_data$region %in% expected_regions))
+})
+
+# Test that date columns are valid dates
+test_that("Date columns are valid dates", {
+  expect_true(all(!is.na(analysis_data$award_date)))
+  expect_true(all(!is.na(analysis_data$start_date)))
+  expect_true(all(!is.na(analysis_data$end_date)))
+})
+
+# Test that 'start_date' and 'award_date' are not before 2015
+test_that("No 'start_date' or 'award_date' before 2015", {
+  expect_true(all(analysis_data$start_date >= as.Date("2015-01-01")))
+  expect_true(all(analysis_data$award_date >= as.Date("2015-01-01")))
+})
+
+# Test that 'end_date' is not beyond 2099
+test_that("No 'end_date' beyond 2099", {
+  expect_true(all(analysis_data$end_date <= as.Date("2099-12-31")))
+})
+Final Notes:Data Cleaning: If your data fails any of these tests, you may need to clean it accordingly. For instance, you might need to remove or correct entries with invalid dates.Logging Test Results: Consider logging the test results or using testthat's reporting features to keep track of any issues that arise.Automating Tests: You can integrate these tests into your data processing pipeline to automatically check data integrity whenever the dataset is updated.Feel free to let me know if you have any questions or need further assistance!
+Human: undefined
+Human: undefined
