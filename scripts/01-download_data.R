@@ -97,6 +97,7 @@ list_of_data_frames <- lapply(csv_files, read_csv)
 # Combine all data frames into one
 all_data <- bind_rows(list_of_data_frames)
 
+View(all_data)
 
 # Save the combined data to a single CSV file
 combined_csv_path <- file.path(host_download_dir, "combined_data.csv")
