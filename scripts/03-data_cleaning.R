@@ -230,6 +230,7 @@ ggplot(top_ten, aes(x = reorder(word, total_amount), y = total_amount)) +
   ) +
   theme_minimal()
 
+cleaned <- df
 
 #### Save data ####
 write_csv(cleaned, "data/analysis_data/cleaned_data.csv")
