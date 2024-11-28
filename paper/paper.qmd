@@ -164,6 +164,27 @@ TODO Military Spending Per year
 #| fig-cap: template
 #| fig-align: center
 
+df_filtered <- df %>%
+  filter(format(award_date, "%Y") != "2019")
+
+df_filtered$year <- format(df_filtered$award_date, "%Y")
+
+# Filter for military spending (where buyer is "National Defence")
+public_services_df <- df_filtered %>%
+  filter(buyer == "Public Services and Procurement Canada")
+
+# Summarize total spending per year
+public_spending_per_year <- public_services_df %>%
+  group_by(year) %>%
+  summarize(total_spending = sum(amount, na.rm = TRUE))
+
+# Create the bar chart
+ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(title = "Public Services Spending Per Year", x = "Year", y = "Total Spending") +
+  theme_minimal() +
+  scale_y_continuous(labels = dollar_format(prefix = "$")) +
+  theme(plot.title = element_text(hjust = 0.5))
 
 
 ```
