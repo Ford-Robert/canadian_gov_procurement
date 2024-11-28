@@ -316,8 +316,12 @@ ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
 
 
 ```{r}
+df_filtered <- df %>%
+  filter(format(award_date, "%Y") != "2019")
+
 # Add "year" column to the dataframe
 df$year <- format(df$award_date, "%Y")
+
 
 # Define selected buyers
 selected_buyers <- c(
@@ -410,6 +414,8 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending, fill = buyer)) +
 
 
 ```{r}
+df_filtered <- df %>%
+  filter(format(award_date, "%Y") != "2019")
 
 df$year <- format(df$award_date, "%Y")
 
