@@ -102,7 +102,8 @@ banned_words <- c(
   "office", "quebec", "centre", "mechanical", "north", "security", "supplies", "general", "human", "contracting",
   "supply", "world", "industrial", "institute", "incorporated", "maritime", "electronics", "translation",
   "groupe", "professional", "power", "language", "corps", "it", "partnership", "joint", "training",
-  "military", "lighting", "program", "defence", "jpo", "ii", "lightning", "space", "macdonald", "land"
+  "military", "lighting", "program", "defence", "jpo", "ii", "lightning", "space", "macdonald", "land", "systemscanada",
+  "in", "aeronautical"
 )
 
 word_pairs_to_concatenate <- list(
@@ -158,11 +159,11 @@ word_counts <- word_counts %>%
 
 #View(word_counts)
 
-View(cleaned)
+#View(cleaned)
 
 df <- cleaned
 
-View(df)
+#View(df)
 
 word_dict <- c()
 
