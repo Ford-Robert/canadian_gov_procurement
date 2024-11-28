@@ -316,9 +316,10 @@ ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
 
 
 ```{r}
+# Add "year" column to the dataframe
 df$year <- format(df$award_date, "%Y")
 
-# Filter data for the specified buyers
+# Define selected buyers
 selected_buyers <- c(
   "National Defence",
   "Public Services and Procurement Canada",
@@ -327,24 +328,30 @@ selected_buyers <- c(
   "Fisheries and Oceans Canada"
 )
 
+# Create a new column to categorize buyers
+df$buyer_category <- ifelse(df$buyer %in% selected_buyers, df$buyer, "Other")
+
+# Summarize data
 stacked_df <- df %>%
-  filter(buyer %in% selected_buyers) %>%
-  group_by(year, buyer) %>%
+  group_by(year, buyer_category) %>%
   summarize(total_spending = sum(amount, na.rm = TRUE)) %>%
   ungroup()
 
 # Ensure the order of the stacks matches the specified order
-stacked_df$buyer <- factor(stacked_df$buyer, levels = selected_buyers)
+stacked_df$buyer_category <- factor(stacked_df$buyer_category, levels = c(selected_buyers, "Other"))
 
 # Create the stacked bar chart
-ggplot(data = stacked_df, aes(x = year, y = total_spending, fill = buyer)) +
+ggplot(data = stacked_df, aes(x = year, y = total_spending, fill = buyer_category)) +
   geom_bar(stat = "identity") +
   scale_fill_manual(
-    values = c("National Defence" = "steelblue",
-               "Public Services and Procurement Canada" = "orange",
-               "Shared Services Canada" = "green",
-               "Public Health Agency of Canada" = "purple",
-               "Fisheries and Oceans Canada" = "red")
+    values = c(
+      "National Defence" = "steelblue",
+      "Public Services and Procurement Canada" = "orange",
+      "Shared Services Canada" = "green",
+      "Public Health Agency of Canada" = "purple",
+      "Fisheries and Oceans Canada" = "red",
+      "Other" = "gray"
+    )
   ) +
   labs(
     title = "Spending by Selected Buyers Per Year",
@@ -353,9 +360,8 @@ ggplot(data = stacked_df, aes(x = year, y = total_spending, fill = buyer)) +
     fill = "Buyer"
   ) +
   theme_minimal() +
-  scale_y_continuous(labels = dollar_format(prefix = "$")) +
+  scale_y_continuous(labels = scales::dollar_format(prefix = "$")) +
   theme(plot.title = element_text(hjust = 0.5))
-
 ```
 ```{r}
 df$year <- format(df$award_date, "%Y")
@@ -395,6 +401,7 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending, fill = buyer)) +
     fill = "Buyer"
   ) +
   theme_minimal() +
+  scale_y_continuous(labels = dollar_format(prefix = "$")) +
   theme(plot.title = element_text(hjust = 0.5))
 
 
@@ -452,5 +459,18 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending, fill = buyer_categor
   ) +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5))
+
+```
+
+
+```{r}
+hist(df$amount,
+     breaks = 30,  # Number of bins; adjust as needed
+     main = "Distribution of Award Amounts",
+     xlab = "Award Amount (CAD)",
+     ylab = "Frequency",
+     col = "skyblue",
+     border = "black")
+
 
 ```
