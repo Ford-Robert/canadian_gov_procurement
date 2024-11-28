@@ -12,12 +12,29 @@ library(rstanarm)
 
 #### Read data ####
 df <- read_csv("data/analysis_data/cleaned_data.csv")
+View(df)
 
-u_supps <- data.frame(unique(df$supplier))
+u_dsupps <- df %>%
+  filter(buyer == "National Defence", amount >= 100000) %>%
+  group_by(supplier) %>%
+  summarize(total_amount = sum(amount, na.rm = TRUE), .groups = "drop")
+
+# Display the unique suppliers
+View(u_dsupps)
+
+u_contracts <- data.frame(unique(df$contract))
+
+max.print(u_contracts)
 
 u_buyers <- data.frame(unique(df$buyer))
 
+u_supps <- data.frame(unique(df$supplier))
+
+View(u_supps)
+
 public_health <- df[df$buyer == "Public Health Agency of Canada", ]
+
+View(public_health)
 
 defence <- df[df$buyer == "National Defence", ]
 
