@@ -21,7 +21,7 @@ library(zoo)
 
 df <- read_csv(here::here("data/analysis_data/cleaned_data.csv"))
 
-df <- df %>% select(-link)
+View(df)
 
 ```
 
@@ -464,13 +464,41 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending, fill = buyer_categor
 
 
 ```{r}
-hist(df$amount,
-     breaks = 30,  # Number of bins; adjust as needed
-     main = "Distribution of Award Amounts",
-     xlab = "Award Amount (CAD)",
-     ylab = "Frequency",
-     col = "skyblue",
-     border = "black")
+#View(df)
 
+
+# Define the bin width
+bin_width <- 100000
+
+# Determine the range of 'amount'
+min_amount <- floor(min(df$amount, na.rm = TRUE) / bin_width) * bin_width
+max_amount <- ceiling(1000000000 / bin_width) * bin_width
+
+# Create a sequence of breaks
+breaks <- seq(min_amount, max_amount, by = bin_width)
+
+
+# Categorize 'amount' into bins
+df$amount_bin <- cut(df$amount, breaks = breaks, right = FALSE, include.lowest = TRUE)
+
+# Count the number of contracts in each bin
+contract_counts <- table(df$amount_bin)
+
+# Convert to a dataframe for better readability
+contract_counts_df <- as.data.frame(contract_counts)
+colnames(contract_counts_df) <- c("Amount_Range", "Contract_Count")
+
+# View the counts
+print(contract_counts_df)
+
+
+# Basic Bar Plot
+barplot(contract_counts,
+        main = "Number of Contracts per 1,000,000 CAD Bin",
+        xlab = "Award Amount (CAD)",
+        ylab = "Number of Contracts",
+        col = "skyblue",
+        las = 2,  # Make label text perpendicular to axis
+        cex.names = 0.7)  # Adjust label size if needed
 
 ```
