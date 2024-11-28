@@ -90,6 +90,8 @@ cleaned <- unique(cleaned)
 library(dplyr)
 library(stringr)
 
+df <- cleaned
+
 # Create a list of words to remove
 banned_words <- c(
   "inc", "ltd", "limited", "company", "co", "corporation", "corp", "llc", "the", "and", "of", "canada", "sa",
@@ -106,11 +108,14 @@ banned_words <- c(
   "in", "aeronautical"
 )
 
+# 2. Define Word Pairs to Concatenate
+# Each element is a vector of words to concatenate
 word_pairs_to_concatenate <- list(
   c("vancouver", "shipyards")
   # Add more pairs here if needed, e.g., c("another", "pair")
 )
 
+# Function to concatenate specific word pairs
 concatenate_specific_pairs <- function(words, word_pairs) {
   for(pair in word_pairs) {
     # Check if all words in the pair are present
@@ -126,8 +131,8 @@ concatenate_specific_pairs <- function(words, word_pairs) {
   return(words)
 }
 
-
-cleaned <- cleaned %>%
+# 3. Process Supplier Names
+df <- df %>%
   mutate(
     # Lowercase all characters and remove punctuation
     processed_supplier = supplier %>%
@@ -146,28 +151,10 @@ cleaned <- cleaned %>%
     })
   )
 
-
-word_counts <- cleaned %>%
-  unnest(processed_supplier) %>%                 # Expand the lists into rows
-  group_by(processed_supplier) %>%               # Group by each word
-  summarize(count = n()) %>%                     # Count occurrences
-  arrange(desc(count))                           # Sort by descending frequency
-
-# Rename columns for clarity
-word_counts <- word_counts %>%
-  rename(word = processed_supplier)
-
-#View(word_counts)
-
-#View(cleaned)
-
-df <- cleaned
-
-#View(df)
-
+# 4. Initialize an Empty Named Vector for the Dictionary
 word_dict <- c()
 
-# 4. Loop Through Each Supplier and Accumulate Amounts
+# 5. Loop Through Each Supplier and Accumulate Amounts
 for (i in 1:nrow(df)) {
   words <- df$processed_supplier[[i]]
   amt <- df$amount[i]
@@ -181,19 +168,19 @@ for (i in 1:nrow(df)) {
   }
 }
 
-# 5. Convert the Dictionary to a Dataframe
+# 6. Convert the Dictionary to a Dataframe
 word_df <- data.frame(
   word = names(word_dict),
   total_amount = as.numeric(word_dict),
   stringsAsFactors = FALSE
 )
 
-# 6. Identify the Top Ten Words by Total Amount
+# 7. Identify the Top Ten Words by Total Amount
 top_ten <- word_df %>%
   arrange(desc(total_amount)) %>%
   slice_head(n = 10)
 
-# 7. Associate Each Top Word with a Supplier Name
+# 8. Associate Each Top Word with a Supplier Name
 # Initialize a vector to store representative supplier names
 top_ten$supplier_name <- NA
 
@@ -212,25 +199,63 @@ for (i in 1:nrow(top_ten)) {
   }
 }
 
-# 8. Display the Top Ten Words with Their Total Amounts and Supplier Names
-print(top_ten)
+# 9. Prepare Data for Stacked Bar Chart
+# For each top ten word, find all occurrences and sum amounts by buyer
 
-# 9. Create a Bar Chart for the Top Ten Suppliers
-# For better visualization, arrange in ascending order
-top_ten <- top_ten %>%
-  arrange(total_amount)
+# Create a long dataframe with one row per word per buyer
+long_df <- df %>%
+  mutate(word = processed_supplier) %>%
+  unnest(word) %>%
+  filter(word %in% top_ten$word)
 
-ggplot(top_ten, aes(x = reorder(word, total_amount), y = total_amount)) +
-  geom_bar(stat = "identity", fill = "steelblue") +
+# Now, aggregate amounts by word and buyer
+aggregated_df <- long_df %>%
+  group_by(word, buyer) %>%
+  summarize(total_amount = sum(amount), .groups = 'drop')
+
+# To ensure all top ten words are present even if some buyers didn't contribute
+aggregated_df <- aggregated_df %>%
+  right_join(
+    expand.grid(word = top_ten$word, buyer = unique(df$buyer)),
+    by = c("word", "buyer")
+  ) %>%
+  mutate(total_amount = ifelse(is.na(total_amount), 0, total_amount))
+
+write.csv(aggregated_df, "data/analysis_data/top_ten_suppliers.csv", row.names = FALSE)
+
+# 10. Create a Stacked Bar Chart for the Top Ten Suppliers
+# Merge with top_ten to get supplier names if needed
+aggregated_df <- aggregated_df %>%
+  left_join(top_ten %>% select(word, supplier_name), by = "word")
+
+# Create the bar chart with legend removed
+ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fill = buyer)) +
+  geom_bar(stat = "identity") +
   coord_flip() +
   labs(
-    title = "Top 10 Words by Aggregated Amount Awarded",
-    x = "Word",
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
     y = "Total Amount Awarded"
+    # Remove the legend title by not specifying 'fill' in labs
   ) +
-  theme_minimal()
+  theme_minimal() +
+  theme(legend.position = "none")
+
+# 10. Transform `processed_supplier` into a Character Column for CSV
+df <- df %>%
+  mutate(
+    processed_supplier = sapply(processed_supplier, function(x) {
+      if(length(x) > 0) {
+        paste(x, collapse = " ")
+      } else {
+        ""  # Represent empty lists as empty strings
+      }
+    })
+  )
 
 cleaned <- df
+
+#View(cleaned)
 
 #### Save data ####
 write_csv(cleaned, "data/analysis_data/cleaned_data.csv")
