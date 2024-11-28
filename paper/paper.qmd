@@ -156,13 +156,52 @@ df <- df %>%
 ```
 
 TODO Military Spending Per year
-
 ```{r fig-mil-spending}
 #| message: false
 #| echo: false
 #| warning: false
 #| fig-cap: template
 #| fig-align: center
+
+#TODO Make right color
+
+df_filtered <- df %>%
+  filter(format(award_date, "%Y") != "2019")
+
+# Convert award_date to Date type and extract the year
+df_filtered$award_date <- as.Date(df_filtered$award_date, format = "%Y-%m-%d")
+df_filtered$year <- format(df_filtered$award_date, "%Y")
+
+# Filter for military spending (where buyer is "National Defence")
+military_df <- df_filtered %>%
+  filter(buyer == "National Defence")
+
+# Summarize total spending per year
+military_spending_per_year <- military_df %>%
+  group_by(year) %>%
+  summarize(total_spending = sum(amount, na.rm = TRUE))
+
+# Create the bar chart
+ggplot(data = military_spending_per_year, aes(x = year, y = total_spending)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(title = "Military Spending Per Year", x = "Year", y = "Total Spending") +
+  theme_minimal() +
+  scale_y_continuous(labels = dollar_format(prefix = "$")) +
+  theme(plot.title = element_text(hjust = 0.5))
+
+```
+
+
+
+TODO Public Services Spending
+```{r fig-public-spending}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+#TODO Make right color
 
 df_filtered <- df %>%
   filter(format(award_date, "%Y") != "2019")
@@ -188,6 +227,9 @@ ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
 
 
 ```
+
+
+
 
 ## Measurement
 
