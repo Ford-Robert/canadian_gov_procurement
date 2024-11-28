@@ -66,5 +66,5 @@ print(model_summaries)
 
 
 #### Save model ####
-saveRDS(models, file = "models/buyer_group_linear_models.rds")
+saveRDS(models, file = "models/buyer_models.rds")
 
