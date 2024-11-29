@@ -509,7 +509,7 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer
 #View(df)
 
 df_filtered <- df %>%
-  filter(amount <= 200000)
+  filter(amount <= 100000)
 
 # Optional: Check how many rows are left
 num_less_than_200k <- nrow(df_filtered)
@@ -557,6 +557,93 @@ barplot(
   cex.names = 0.8  # Adjust label size for readability
 )
 ```
+```{r}
+# Step 1: Filter the data for contracts <= 100,000 CAD
+df_filtered <- df %>%
+  filter(amount <= 100000)
+
+# Optional: Check how many rows are left
+num_less_than_100k <- nrow(df_filtered)
+total_contracts <- nrow(df)
+
+percent_less_than <- num_less_than_100k / total_contracts
+
+print(paste0("Percentage of contracts <= 100,000 CAD: ", round(percent_less_than * 100, 2), "%"))
+
+# Step 2: Create bins spanning every 10,000 CAD up to 100,000
+bin_width <- 10000  # 10,000 CAD
+
+# Create a sequence of break points from 0 to 100,000
+breaks <- seq(0, 100000, by = bin_width)
+
+# Assign each amount to a bin
+df_filtered <- df_filtered %>%
+  mutate(amount_bin = cut(amount, breaks = breaks, right = FALSE, include.lowest = TRUE))
+
+# Step 3: Count the number of contracts in each bin
+contract_counts_df <- df_filtered %>%
+  group_by(amount_bin) %>%
+  summarize(Contract_Count = n()) %>%
+  ungroup()
+
+# Ensure that all bins are represented, even if count is zero
+all_bins <- levels(df_filtered$amount_bin)
+contract_counts_df <- contract_counts_df %>%
+  right_join(data.frame(amount_bin = all_bins), by = "amount_bin") %>%
+  replace_na(list(Contract_Count = 0)) %>%
+  arrange(amount_bin)
+
+# Step 4: Create readable labels for x-axis in thousands
+contract_counts_df <- contract_counts_df %>%
+  mutate(
+    # Extract lower and upper bounds from amount_bin
+    lower = as.numeric(gsub("\\[|\\)", "", sapply(strsplit(as.character(amount_bin), ","), `[`, 1))),
+    upper = as.numeric(gsub("\\[|\\)|\\]", "", sapply(strsplit(as.character(amount_bin), ","), `[`, 2))),
+    amount_label = paste0(lower / 1000, "-", upper / 1000, "")
+  )
+
+# Step 5: Scale the y-axis counts to thousands if applicable
+max_count <- max(contract_counts_df$Contract_Count)
+if (max_count >= 1000) {
+  contract_counts_df <- contract_counts_df %>%
+    mutate(Contract_Count_k = Contract_Count / 1000)
+  y_label_unit <- "Thousands"
+} else {
+  contract_counts_df <- contract_counts_df %>%
+    mutate(Contract_Count_k = Contract_Count)  # No scaling
+  y_label_unit <- "Number of Contracts"
+}
+
+# Step 6: Create the ggplot2 bar chart
+ggplot(contract_counts_df, aes(x = amount_label, y = Contract_Count_k)) +
+  geom_bar(stat = "identity", fill = "skyblue", color = "black") +
+  scale_y_continuous(
+    labels = if (max_count >= 1000) {
+      label_number(scale = 1, accuracy = 1)
+    } else {
+      label_number(accuracy = 1)
+    },
+    expand = expansion(mult = c(0, 0.05))
+  ) +
+  labs(
+    title = "Number of Contracts per 10,000 CAD Award Amount Range",
+    x = "Award Amount (Thousands)",
+    y = paste0("Number of Contracts ", if (max_count >= 1000) "(Thousands)" else ""),
+    caption = "Data includes contracts <= 100,000 CAD."
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+    axis.text.y = element_text(size = 12),
+    axis.title = element_text(size = 14),
+    plot.caption = element_text(hjust = 0.5, size = 10, face = "italic")
+  )
+
+
+
+```
+
 
 ```{r}
 
