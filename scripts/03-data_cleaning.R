@@ -255,7 +255,10 @@ df <- df %>%
 
 cleaned <- df
 
-#View(cleaned)
+View(cleaned)
+
+# -------------------------------------------------------------------------
+
 
 #### Save data ####
 write_csv(cleaned, "data/analysis_data/cleaned_data.csv")
