@@ -4,11 +4,13 @@
 # Date: 23 November 2024
 # Contact: robert.ford@mail.utoronto.ca
 # License: MIT
+# Pre-requisites: 
+# - The `tidyverse` package must be installed and loaded
+# Other information? Make sure you are in the `canadian_gov_procurement` rproj
 
 
 #### Workspace setup ####
 library(tidyverse)
-library(rstanarm)
 
 #### Read data ####
 df <- read_csv("data/analysis_data/cleaned_data.csv")

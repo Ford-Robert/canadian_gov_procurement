@@ -4,6 +4,10 @@
 # Date: 22 November 2024
 # Contact: robert.ford@mail.utoronto.ca
 # License: MIT
+# Pre-requisites: 
+# - The `tidyverse` package must be installed and loaded
+# - The `testthat` package must be installed and loaded
+# Any other information needed? Make sure you are in the `canadian_gov_procurement` rproj
 
 
 

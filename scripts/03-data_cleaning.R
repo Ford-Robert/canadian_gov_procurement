@@ -4,10 +4,17 @@
 # Date: 22 November 2024
 # Contact: robert.ford@mail.utoronto.ca
 # License: MIT
+# Pre-requisites: 
+# - The `tidyverse` package must be installed and loaded
+# - The `dplyr` package must be installed and loaded
+# - The `stringr` package must be installed and loaded
+# Other information? Make sure you are in the `canadian_gov_procurement` rproj
 
 
 #### Workspace setup ####
 library(tidyverse)
+library(dplyr)
+library(stringr)
 
 #### Clean data ####
 combined <- read_csv("data/raw_data/combined_data.csv")
@@ -85,10 +92,6 @@ head(duplicate_rows)
 
 
 cleaned <- unique(cleaned)
-
-# Load necessary libraries
-library(dplyr)
-library(stringr)
 
 df <- cleaned
 

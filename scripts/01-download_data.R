@@ -1,30 +1,36 @@
 #### Preamble ####
-# Purpose: A webscraper to grab ijf procurement awards data, and collate into one combined dataset
+# Purpose: A webscraper to grab IJF procurement awards data, and collate into one combined dataset
 # Author: Robert Ford
 # Date: 21 November 2024
 # Contact: robert.ford@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: Docker, Firefox Web driver
-# See appendix TODO for more details
-# Data was collected on: 24 November 2024
+# Pre-requisites: 
+# - The application Docker, and Firefox Web driver must be installed
+# - The `RSelenium` package must be installed and loaded
+# - The `rvest` package must be installed and loaded
+# - The `dplyr` package must be installed and loaded
+# - The `readr` package must be installed and loaded
 
-#TODO RE-RUN!
+# See appendix of paper for detailed step by step instructions
+# Be sure to fill in all instances of USER_PATH with where ever you have stored this rproj on your machine
 
+# -! IMPORTANT !- You must FIRST run this code in your terminal which is cd in this file:
+# docker run -d -p 4444:4444 -p 5900:5900 -v /USER_PATH/canadian_gov_procurement/data/raw_data:/home/seluser/Downloads selenium/standalone-firefox:3.141.59
+
+
+# Data was last collected on: 24 November 2024
 #### Workspace setup ####
 library(RSelenium)
 library(rvest)
 library(dplyr)
 library(readr)
-library(readr)
-library(dplyr)
-#docker run -d -p 4444:4444 -p 5900:5900 -v /Users/robert_ford/canadian_gov_procurement/data/raw_data:/home/seluser/Downloads selenium/standalone-firefox:3.141.59
 
 # Paths
 # Path inside the container
 download_dir <- "/home/seluser/Downloads"
 
 # Path on the host
-host_download_dir <- "/Users/robert_ford/canadian_gov_procurement/data/raw_data"
+host_download_dir <- "/USER_PATH/canadian_gov_procurement/data/raw_data"
 
 # Set up Firefox profile with download preferences
 fprof <- makeFirefoxProfile(list(
@@ -80,7 +86,6 @@ for (page in 1:total_pages) {
     })
   }
 }
-
 
 host_download_dir <- "data/raw_data"
 

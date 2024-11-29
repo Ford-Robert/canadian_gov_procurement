@@ -4,6 +4,11 @@
 # Date: 28 November 2024
 # Contact: robert.ford@mail.utoronto.ca
 # License: MIT
+# Pre-requisites: 
+# - The `tidyverse` package must be installed and loaded
+# - The `dplyr` package must be installed and loaded
+# - 
+# Other information? Make sure you are in the `canadian_gov_procurement` rproj
 
 
 
@@ -13,6 +18,8 @@ library(dplyr)
 
 #### Read data ####
 df <- read_csv("data/analysis_data/cleaned_data.csv")
+
+#TODO Simplify Down to one model
 
 ### Model data ####
 # Define the specific buyers
