@@ -56,6 +56,16 @@ contracts_expiring <- df %>%
   ) %>%
   ungroup()
 
+space_total <- df %>%
+  filter(buyer == "Canadian Space Agency") %>%
+  summarize(total_amount = sum(amount, na.rm = TRUE)) %>%
+  pull(total_amount)
+
+print(space_total)
+
+print(2199059594/ space_total)
+
+
 View(contracts_expiring)
 View(public_health)
 View(defence)
