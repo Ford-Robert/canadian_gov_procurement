@@ -32,7 +32,7 @@ u_buyers <- data.frame(unique(df$buyer))
 
 u_supps <- data.frame(unique(df$supplier))
 
-View(u_supps)
+View(u_buyers)
 
 public_health <- df[df$buyer == "Public Health Agency of Canada", ]
 
@@ -58,15 +58,30 @@ contracts_expiring <- df %>%
   ) %>%
   ungroup()
 
-space_total <- df %>%
+dept_total <- df %>%
   filter(buyer == "Canadian Space Agency") %>%
   summarize(total_amount = sum(amount, na.rm = TRUE)) %>%
   pull(total_amount)
 
-print(space_total)
+supp_total <- df %>%
+  filter(processed_supplier == "dettwiler") %>%
+  summarize(total_amount = sum(amount, na.rm = TRUE)) %>%
+  pull(total_amount)
 
-print(2199059594/ space_total)
+total_spend <- df %>%
+  summarize(total_amount = sum(amount, na.rm = TRUE)) %>%
+  pull(total_amount)
 
+print(supp_total / dept_total)
+
+print(dept_total)
+
+print(dept_total/ total_spend)
+
+
+war_planes <- 1792979385 + 11219370646 + 3718137594 + 4482200974 + 4322729867
+
+print(war_planes)
 
 View(contracts_expiring)
 View(public_health)
