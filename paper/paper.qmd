@@ -26,8 +26,10 @@ library(kableExtra)
 library(zoo)
 
 df <- read_csv(here::here("data/analysis_data/cleaned_data.csv"))
-aggregated_df <- (here::here("data/analysis_data/top_ten_suppliers.csv"))
+aggregated_df <- read_csv(here::here("data/analysis_data/top_ten_suppliers.csv"))
 models <- read_csv(here::here("models/buyer_models.rds"))
+
+View(df)
 ```
 
 
@@ -126,8 +128,7 @@ TODO Top Ten Suppliers
 #| fig-cap: template
 #| fig-align: center
 
-aggregated_df <- aggregated_df %>%
-  left_join(top_ten %>% select(word, supplier_name), by = "word")
+#TODO Fix colors and supplier names
 
 # Create the bar chart with legend removed
 ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fill = buyer)) +
@@ -142,17 +143,7 @@ ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fil
   theme_minimal() +
   theme(legend.position = "none")
 
-# 10. Transform `processed_supplier` into a Character Column for CSV
-df <- df %>%
-  mutate(
-    processed_supplier = sapply(processed_supplier, function(x) {
-      if(length(x) > 0) {
-        paste(x, collapse = " ")
-      } else {
-        ""  # Represent empty lists as empty strings
-      }
-    })
-  )
+
 ```
 
 TODO Military Spending Per year
@@ -228,6 +219,8 @@ ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
 
 ```
 
+
+TODO add spending by selected buyers graph
 
 
 
