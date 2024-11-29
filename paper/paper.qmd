@@ -56,7 +56,6 @@ Estimand?
 # Data {#sec-data}
 
 TODO Description of each variable head of table
-
 ```{r fig-head}
 #| message: false
 #| echo: false
@@ -78,7 +77,6 @@ TODO Description of variables that were created, duration_days, processed_suppli
 ## Shape
 
 TODO Talk about top 5 buyers and other
-
 ```{r fig-top-buyers}
 #| message: false
 #| echo: false
@@ -118,33 +116,6 @@ ggplot(buyer_totals_grouped, aes(x = reorder(buyer_group, total_amount), y = tot
 
 ```
 
-
-TODO Top Ten Suppliers
-
-```{r fig-top-supps}
-#| message: false
-#| echo: false
-#| warning: false
-#| fig-cap: template
-#| fig-align: center
-
-#TODO Fix colors and supplier names
-
-# Create the bar chart with legend removed
-ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fill = buyer)) +
-  geom_bar(stat = "identity") +
-  coord_flip() +
-  labs(
-    title = "Top 10 Suppliers by Aggregated Amount Awarded",
-    x = "Supplier",
-    y = "Total Amount Awarded"
-    # Remove the legend title by not specifying 'fill' in labs
-  ) +
-  theme_minimal() +
-  theme(legend.position = "none")
-
-
-```
 
 TODO Military Spending Per year
 ```{r fig-mil-spending}
@@ -222,15 +193,38 @@ ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
 
 TODO add spending by selected buyers graph
 
+TODO Top Ten Suppliers
+```{r fig-top-supps}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+#TODO Fix colors and supplier names
+
+# Create the bar chart with legend removed
+ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded"
+    # Remove the legend title by not specifying 'fill' in labs
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+
+```
 
 
 ## Measurement
 
 TODO How IJF collected all this data
 
-
-
-
+T
 
 
 # Model
@@ -250,6 +244,7 @@ TODO Cite R and packages used to run model
 
 TODO Why I chose those variables
 
+TODO Model Diagnostics
 
 # Results
 
@@ -262,15 +257,31 @@ TODO Add model summary tables
 
 ## First discussion point {#sec-first-point}
 
+TODO What was done
 
 ## Second discussion point
 
+TODO What did we learn about Canada
+    Military spending has exploded in the last couple of years, and other departments have fallen significantly
+    The vast majority of contracts are smaller than 200,000, and the most common size of contract is between 10-20k
 
 ## Third discussion point
 
 
-## Weaknesses and next steps
+## Weaknesses
 
+TODO Model was weak, need more data to improve model
+    Analysis on the Suppliers Names needs to be more rigorous
+
+
+## Next Steps
+
+TODO Next Steps: Need to collect more data:
+      From Past spending beyond 2020
+      Other types of Government Spending; Seeing how much of spending is done through private contracts and how much through in house spending on salaries and other things like that
+      Do analysis on the what the contracts descriptions say
+      Why does public health Canada spending go to zero
+      Why are contracts so small
 
 
 \newpage
@@ -278,6 +289,25 @@ TODO Add model summary tables
 \appendix
 
 # Appendix {-}
+
+# Web Scraping
+These are step by step instructions on how to Web Scrape the IFJ procurement data page, because as of November 2024 there is no easy/automated way of downloading the 330 pages of 1000 rows worth of data.
+
+Note: It is important that docker, java, python and firefox are installed on your machine as RSelenium requires these packages. To download Selenium and create a docker image, open the docker application and search for the Selenium package.
+
+1. Run a compatible Selenium docker image. You must make sure that the version of Selenium you are using is compatible with Firefox or whichever browser you choose. You must launch docker from your terminal whose directory matches that of the r file’s path to 01-download_data.R . You can check if the docker image has successfully been launched using the docker application's nice GUI. It is also important in this step to define the path of the local directory that the data should be saved into, this is shown as USER_PATH in the script. 
+
+Terminal Command: 
+
+user:canadian_gov_procurement USER_PATH$ docker run -d -p 4444:4444 -p 5900:5900 -v /USER_PATH/canadian_gov_procurement/data/raw_data:/home/seluser/Downloads selenium/standalone-firefox:3.141.59 
+
+2. It is possible that the tags used to find the buttons on the web-site may change over time. So visit the IJF procurement data website and right click and inspect the download and next page buttons. This code uses the aria labels to locate these buttons, but there are many ways to identify them using html and css elements. 
+
+3. Now the 01-down-load-data.R file can be executed. Be sure to modify USER_PATH in both to download_dir and host_down_load_dir to match the path of you docker and personal computer path. 
+
+4. The for-loop simply runs "click download -> click next page" process 329 times, however IJF may add more pages so modify total_pages to scrape the number of pages IJF has. In the event of an error mid-way through scraping take note of which page failed to download (page that you are on is printed to the console) and simply set the start of the for-loop. After restarting the loop be sure to verify that the next downloaded page is the correct one, otherwise you will have to restart the process from step 1.
+
+5. Done! Enjoy!
 
 
 # Additional data details
@@ -288,10 +318,9 @@ TODO processed_supplier
 
 # Model details {#sec-model-details}
 
-## Posterior predictive check
-
 ## Diagnostics
 
+TODO Add Diagnostics
 
 \newpage
 
