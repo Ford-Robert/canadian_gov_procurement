@@ -218,6 +218,11 @@ ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fil
 
 
 ```
+TODO mention that detwiler makes up 88+% spending of the Space Agency
+
+TODO add pie chart showing top suppliers and other of National defence spending
+
+TODO add small contracts distribution chart
 
 
 ## Measurement
@@ -291,9 +296,10 @@ TODO Next Steps: Need to collect more data:
 # Appendix {-}
 
 # Web Scraping
-These are step by step instructions on how to Web Scrape the IFJ procurement data page, because as of November 2024 there is no easy/automated way of downloading the 330 pages of 1000 rows worth of data.
 
-Note: It is important that docker, java, python and firefox are installed on your machine as RSelenium requires these packages. To download Selenium and create a docker image, open the docker application and search for the Selenium package.
+These are step by step instructions on how to Web Scrape the IFJ procurement data page, because as of November 2024 there is no easy/automated way of downloading the 330 pages of data.
+
+Note: It is important that docker, java, python and Firefox are installed on your machine as RSelenium requires these packages. To download Selenium and create a docker image, open the docker application and search for the Selenium package for the browser you wish to use, in this case Firefox.
 
 1. Run a compatible Selenium docker image. You must make sure that the version of Selenium you are using is compatible with Firefox or whichever browser you choose. You must launch docker from your terminal whose directory matches that of the r file’s path to 01-download_data.R . You can check if the docker image has successfully been launched using the docker application's nice GUI. It is also important in this step to define the path of the local directory that the data should be saved into, this is shown as USER_PATH in the script. 
 
@@ -305,9 +311,9 @@ user:canadian_gov_procurement USER_PATH$ docker run -d -p 4444:4444 -p 5900:5900
 
 3. Now the 01-down-load-data.R file can be executed. Be sure to modify USER_PATH in both to download_dir and host_down_load_dir to match the path of you docker and personal computer path. 
 
-4. The for-loop simply runs "click download -> click next page" process 329 times, however IJF may add more pages so modify total_pages to scrape the number of pages IJF has. In the event of an error mid-way through scraping take note of which page failed to download (page that you are on is printed to the console) and simply set the start of the for-loop. After restarting the loop be sure to verify that the next downloaded page is the correct one, otherwise you will have to restart the process from step 1.
+4. The for-loop simply runs "click download -> click next page" process 329 times, however IJF may add more pages so modify total_pages to scrape the number of pages IJF is offering. In the event of an error mid-way through scraping take note of which page failed to download (page that you are on is printed to the console) and simply set the start of the for-loop. After restarting the loop be sure to verify that the next downloaded page is the correct one, otherwise you will have to restart the process from step 1.
 
-5. Done! Enjoy!
+5. Done!
 
 
 # Additional data details
@@ -327,4 +333,4 @@ TODO Add Diagnostics
 
 # References
 
-
+TODO Ref RSelenuim
