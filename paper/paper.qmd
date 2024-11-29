@@ -333,4 +333,19 @@ TODO Add Diagnostics
 
 # References
 
-TODO Ref RSelenuim
+TODO Ref:
+
+RSelenuim
+VGAM
+stringr
+dplyr
+tidyverse
+zoo
+kableExtra
+knitr
+scales
+lubridate
+ggplot2
+rvest
+readr
+testthat
