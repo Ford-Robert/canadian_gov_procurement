@@ -77,14 +77,14 @@ TODO Description of variables that were created, duration_days, processed_suppli
 ## Shape
 
 TODO Talk about top 5 buyers and other
-```{r fig-top-buyers}
+
+```{r fig-pie-buyers}
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: Top 5 Buyers by Total Amount Spent and Others (Pie Chart)
 #| fig-align: center
 
-#TODO color each buyer with the correct color
 
 # Summarize total amount spent by each buyer
 buyer_totals <- df %>%
@@ -102,18 +102,38 @@ buyer_totals_grouped <- buyer_totals %>%
   mutate(buyer_group = ifelse(buyer %in% top_five_buyers, buyer, "Other")) %>%
   group_by(buyer_group) %>%
   summarise(total_amount = sum(total_amount, na.rm = TRUE)) %>%
-  arrange(desc(total_amount))
+  arrange(desc(total_amount)) %>%
+  mutate(percentage = total_amount / sum(total_amount) * 100)
 
-# Plot the bar chart
-ggplot(buyer_totals_grouped, aes(x = reorder(buyer_group, total_amount), y = total_amount)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
-  coord_flip() +
-  labs(title = "Top 5 Buyers by Total Amount Spent and Others",
-       x = "Buyer",
-       y = "Total Amount Spent (CAD)") +
-  scale_y_continuous(labels = comma) +
-  theme_minimal()
+# TODO: Assign specific colors to each buyer group
+# Example color assignments (replace with desired colors)
+buyer_colors <- c(
+  "National Defence" = "#1f77b4",
+  "Public Services and Procurement Canada" = "#ff7f0e",
+  "Shared Services Canada" = "#2ca02c",
+  "Public Health Agency of Canada" = "#d62728",
+  "Fisheries and Oceans Canada" = "#9467bd",
+  "Other"  = "#8c564b"
+)
 
+# Plot the pie chart
+ggplot(buyer_totals_grouped, aes(x = "", y = total_amount, fill = buyer_group)) +
+  geom_bar(stat = "identity", width = 1, color = "white") +
+  coord_polar(theta = "y") +
+  labs(
+    title = "Top 5 Buyers by Total Amount Spent and Others",
+    fill = "Buyer"
+  ) +
+  scale_fill_manual(values = buyer_colors) +
+  theme_void() + # Removes background, grid, and numeric labels
+  theme(
+    legend.position = "right",
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold")
+  ) +
+  geom_text(aes(label = paste0(round(percentage, 1), "%")),
+            position = position_stack(vjust = 0.5),
+            color = "white",
+            size = 4)
 ```
 
 
@@ -192,6 +212,96 @@ ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
 
 
 TODO add spending by selected buyers graph
+```{r fig-top-buyers}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+# Filter out records from 2019
+df_filtered <- df %>%
+  filter(format(award_date, "%Y") != "2019")
+
+# Extract the year from award_date
+df_filtered$year <- format(df_filtered$award_date, "%Y")
+
+# Define the selected buyers
+selected_buyers <- c(
+  "National Defence",
+  "Public Services and Procurement Canada",
+  "Shared Services Canada",
+  "Public Health Agency of Canada",
+  "Fisheries and Oceans Canada"
+)
+
+# Add a new column for buyer categories
+df_filtered <- df_filtered %>%
+  mutate(buyer_category = ifelse(buyer %in% selected_buyers, buyer, "Other"))
+
+# Summarize total spending per year for each buyer category
+grouped_df <- df_filtered %>%
+  group_by(year, buyer_category) %>%
+  summarize(total_spending = sum(amount, na.rm = TRUE)) %>%
+  ungroup()
+
+# Ensure the order of the groups matches the specified order, with "Other" last
+grouped_df$buyer_category <- factor(
+  grouped_df$buyer_category,
+  levels = c(selected_buyers, "Other")
+)
+
+# Scale the total_spending to billions
+grouped_df <- grouped_df %>%
+  mutate(total_spending_billion = total_spending / 1e9)
+
+# Create the grouped bar chart
+ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer_category)) +
+  geom_bar(
+    stat = "identity",
+    position = position_dodge(width = 0.9), # Adjust dodge width
+    width = 0.8 # Adjust bar width
+  ) +
+  scale_fill_manual(
+    values = c(
+      "National Defence" = "steelblue",
+      "Public Services and Procurement Canada" = "orange",
+      "Shared Services Canada" = "green",
+      "Public Health Agency of Canada" = "purple",
+      "Fisheries and Oceans Canada" = "red",
+      "Other" = "gray"
+    )
+  ) +
+  scale_y_continuous(
+    labels = comma_format(accuracy = 1), # Formats y-axis labels without decimal places
+    breaks = pretty_breaks(n = 5), # Ensures approximately 5 breaks like 5, 10, 15
+    expand = expansion(mult = c(0, 0.05)) # Adds a small space above the highest bar
+  ) +
+  labs(
+    title = "Spending by Selected and Other Buyers Per Year",
+    subtitle = "Amounts are in Billions of CAD",
+    x = "Year",
+    y = "Total Spending (Billions)",
+    fill = "Buyer",
+    caption = "."
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5, size = 12),
+    axis.text.x = element_text(angle = 45, hjust = 1), # Rotate x-axis labels for readability
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 14),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 12),
+    plot.caption = element_text(hjust = 0.5, size = 10, face = "italic") # Centered caption
+  )
+
+
+
+```
+
+
 
 TODO Top Ten Suppliers
 ```{r fig-top-supps}
