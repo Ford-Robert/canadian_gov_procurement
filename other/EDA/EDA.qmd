@@ -295,7 +295,7 @@ ggplot(data = military_spending_per_year, aes(x = year, y = total_spending)) +
 
 df$year <- format(df$award_date, "%Y")
 
-# Filter for military spending (where buyer is "National Defence")
+# Filter for public services
 public_services_df <- df %>%
   filter(buyer == "Public Services and Procurement Canada")
 
@@ -320,7 +320,7 @@ df_filtered <- df %>%
   filter(format(award_date, "%Y") != "2019")
 
 # Add "year" column to the dataframe
-df$year <- format(df$award_date, "%Y")
+df_filtered$year <- format(df$award_date, "%Y")
 
 
 # Define selected buyers
@@ -333,10 +333,10 @@ selected_buyers <- c(
 )
 
 # Create a new column to categorize buyers
-df$buyer_category <- ifelse(df$buyer %in% selected_buyers, df$buyer, "Other")
+df_filtered$buyer_category <- ifelse(df_filtered$buyer %in% selected_buyers, df_filtered$buyer, "Other")
 
 # Summarize data
-stacked_df <- df %>%
+stacked_df <- df_filtered %>%
   group_by(year, buyer_category) %>%
   summarize(total_spending = sum(amount, na.rm = TRUE)) %>%
   ungroup()
@@ -417,7 +417,7 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending, fill = buyer)) +
 df_filtered <- df %>%
   filter(format(award_date, "%Y") != "2019")
 
-df$year <- format(df$award_date, "%Y")
+df_filtered$year <- format(df_filtered$award_date, "%Y")
 
 # Define the selected buyers
 selected_buyers <- c(
@@ -429,11 +429,11 @@ selected_buyers <- c(
 )
 
 # Add a new column for buyer categories
-df <- df %>%
+df_filtered <- df_filtered %>%
   mutate(buyer_category = ifelse(buyer %in% selected_buyers, buyer, "Other"))
 
 # Summarize total spending per year for each buyer category
-grouped_df <- df %>%
+grouped_df <- df_filtered %>%
   group_by(year, buyer_category) %>%
   summarize(total_spending = sum(amount, na.rm = TRUE)) %>%
   ungroup()
@@ -472,39 +472,105 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending, fill = buyer_categor
 ```{r}
 #View(df)
 
+df_filtered <- df %>%
+  filter(amount <= 200000)
 
+# Optional: Check how many rows are left
+num_less_than_200k <- nrow(df_filtered)
+total_contracts <- nrow(df)
+
+percent_less_than <- num_less_than_200k / total_contracts
+
+print(percent_less_than)
+
+
+# Step 3: Create bins spanning every 10,000 CAD up to 200,000
 # Define the bin width
-bin_width <- 100000
+bin_width <- 10000  # 10,000 CAD
 
-# Determine the range of 'amount'
-min_amount <- floor(min(df$amount, na.rm = TRUE) / bin_width) * bin_width
-max_amount <- ceiling(1000000000 / bin_width) * bin_width
+# Create a sequence of break points from 0 to 200,000
+breaks <- seq(0, 200000, by = bin_width)
 
-# Create a sequence of breaks
-breaks <- seq(min_amount, max_amount, by = bin_width)
+# To ensure that the upper limit includes 200,000, set 'right = FALSE'
+# This means intervals are [0,10000), [10000,20000), ..., [190000,200000]
+df_filtered <- df_filtered %>%
+  mutate(amount_bin = cut(amount, breaks = breaks, right = FALSE, include.lowest = TRUE))
 
+# Step 4: Count the number of contracts in each bin
+contract_counts_df <- df_filtered %>%
+  group_by(amount_bin) %>%
+  summarize(Contract_Count = n()) %>%
+  ungroup()
 
-# Categorize 'amount' into bins
-df$amount_bin <- cut(df$amount, breaks = breaks, right = FALSE, include.lowest = TRUE)
-
-# Count the number of contracts in each bin
-contract_counts <- table(df$amount_bin)
-
-# Convert to a dataframe for better readability
-contract_counts_df <- as.data.frame(contract_counts)
-colnames(contract_counts_df) <- c("Amount_Range", "Contract_Count")
-
-# View the counts
+# View the binned counts
 print(contract_counts_df)
 
 
-# Basic Bar Plot
-barplot(contract_counts,
-        main = "Number of Contracts per 1,000,000 CAD Bin",
-        xlab = "Award Amount (CAD)",
-        ylab = "Number of Contracts",
-        col = "skyblue",
-        las = 2,  # Make label text perpendicular to axis
-        cex.names = 0.7)  # Adjust label size if needed
+contract_counts_df$amount_bin <- as.character(contract_counts_df$amount_bin)
+
+# Create the bar plot
+barplot(
+  height = contract_counts_df$Contract_Count,
+  names.arg = contract_counts_df$amount_bin,
+  las = 2,  # Rotate x-axis labels to perpendicular
+  col = "skyblue",
+  border = "black",
+  main = "Number of Contracts per 10,000 CAD Award Amount Range",
+  xlab = "Award Amount (CAD)",
+  ylab = "Number of Contracts",
+  cex.names = 0.8  # Adjust label size for readability
+)
+```
+
+```{r}
+
+df_filtered <- df %>%
+  filter(buyer == "National Defence", amount <= 200000)
+
+# Optional: Check how many rows are left
+num_less_than_200k <- nrow(df_filtered)
+total_contracts <- nrow(df)
+
+percent_less_than <- num_less_than_200k / total_contracts
+
+print(percent_less_than)
+
+
+# Step 3: Create bins spanning every 10,000 CAD up to 200,000
+# Define the bin width
+bin_width <- 10000  # 10,000 CAD
+
+# Create a sequence of break points from 0 to 200,000
+breaks <- seq(0, 200000, by = bin_width)
+
+# To ensure that the upper limit includes 200,000, set 'right = FALSE'
+# This means intervals are [0,10000), [10000,20000), ..., [190000,200000]
+df_filtered <- df_filtered %>%
+  mutate(amount_bin = cut(amount, breaks = breaks, right = FALSE, include.lowest = TRUE))
+
+# Step 4: Count the number of contracts in each bin
+contract_counts_df <- df_filtered %>%
+  group_by(amount_bin) %>%
+  summarize(Contract_Count = n()) %>%
+  ungroup()
+
+# View the binned counts
+print(contract_counts_df)
+
+
+contract_counts_df$amount_bin <- as.character(contract_counts_df$amount_bin)
+
+# Create the bar plot
+barplot(
+  height = contract_counts_df$Contract_Count,
+  names.arg = contract_counts_df$amount_bin,
+  las = 2,  # Rotate x-axis labels to perpendicular
+  col = "skyblue",
+  border = "black",
+  main = "Number of Contracts per 10,000 CAD Award Amount Range",
+  xlab = "Award Amount (CAD)",
+  ylab = "Number of Contracts",
+  cex.names = 0.8  # Adjust label size for readability
+)
 
 ```
