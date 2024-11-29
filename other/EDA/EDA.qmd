@@ -414,9 +414,19 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending, fill = buyer)) +
 
 
 ```{r}
+library(ggplot2)
+library(dplyr)
+library(scales) # For formatting y-axis labels
+
+library(ggplot2)
+library(dplyr)
+library(scales) # For formatting y-axis labels
+
+# Filter out records from 2019
 df_filtered <- df %>%
   filter(format(award_date, "%Y") != "2019")
 
+# Extract the year from award_date
 df_filtered$year <- format(df_filtered$award_date, "%Y")
 
 # Define the selected buyers
@@ -444,9 +454,17 @@ grouped_df$buyer_category <- factor(
   levels = c(selected_buyers, "Other")
 )
 
+# Scale the total_spending to billions
+grouped_df <- grouped_df %>%
+  mutate(total_spending_billion = total_spending / 1e9)
+
 # Create the grouped bar chart
-ggplot(data = grouped_df, aes(x = year, y = total_spending, fill = buyer_category)) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.8)) +
+ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer_category)) +
+  geom_bar(
+    stat = "identity",
+    position = position_dodge(width = 0.9), # Adjust dodge width
+    width = 0.8 # Adjust bar width
+  ) +
   scale_fill_manual(
     values = c(
       "National Defence" = "steelblue",
@@ -457,14 +475,32 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending, fill = buyer_categor
       "Other" = "gray"
     )
   ) +
+  scale_y_continuous(
+    labels = comma_format(accuracy = 1), # Formats y-axis labels without decimal places
+    breaks = pretty_breaks(n = 5), # Ensures approximately 5 breaks like 5, 10, 15
+    expand = expansion(mult = c(0, 0.05)) # Adds a small space above the highest bar
+  ) +
   labs(
     title = "Spending by Selected and Other Buyers Per Year",
+    subtitle = "Amounts are in Billions of CAD",
     x = "Year",
-    y = "Total Spending",
-    fill = "Buyer"
+    y = "Total Spending (Billions)",
+    fill = "Buyer",
+    caption = "."
   ) +
   theme_minimal() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5, size = 12),
+    axis.text.x = element_text(angle = 45, hjust = 1), # Rotate x-axis labels for readability
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 14),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 12),
+    plot.caption = element_text(hjust = 0.5, size = 10, face = "italic") # Centered caption
+  )
+
+
 
 ```
 
