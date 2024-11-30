@@ -566,6 +566,9 @@ df_filtered <- df %>%
 num_less_than_100k <- nrow(df_filtered)
 total_contracts <- nrow(df)
 
+
+print(num_less_than_100k)
+
 percent_less_than <- num_less_than_100k / total_contracts
 
 print(paste0("Percentage of contracts <= 100,000 CAD: ", round(percent_less_than * 100, 2), "%"))
@@ -646,54 +649,124 @@ ggplot(contract_counts_df, aes(x = amount_label, y = Contract_Count_k)) +
 
 
 ```{r}
+# Step 1: Create a new column 'contract_size' categorizing contracts
+df <- df %>%
+  mutate(
+    contract_size = ifelse(amount <= 100000, "Small Contracts (≤ 100k)", "Big Contracts (> 100k)")
+  )
 
-df_filtered <- df %>%
-  filter(buyer == "National Defence", amount <= 200000)
-
-# Optional: Check how many rows are left
-num_less_than_200k <- nrow(df_filtered)
-total_contracts <- nrow(df)
-
-percent_less_than <- num_less_than_200k / total_contracts
-
-print(percent_less_than)
-
-
-# Step 3: Create bins spanning every 10,000 CAD up to 200,000
-# Define the bin width
-bin_width <- 10000  # 10,000 CAD
-
-# Create a sequence of break points from 0 to 200,000
-breaks <- seq(0, 200000, by = bin_width)
-
-# To ensure that the upper limit includes 200,000, set 'right = FALSE'
-# This means intervals are [0,10000), [10000,20000), ..., [190000,200000]
-df_filtered <- df_filtered %>%
-  mutate(amount_bin = cut(amount, breaks = breaks, right = FALSE, include.lowest = TRUE))
-
-# Step 4: Count the number of contracts in each bin
-contract_counts_df <- df_filtered %>%
-  group_by(amount_bin) %>%
-  summarize(Contract_Count = n()) %>%
+# Summarize total amount spent per contract size category
+total_spent_df <- df %>%
+  group_by(contract_size) %>%
+  summarize(
+    total_amount_spent = sum(amount, na.rm = TRUE)
+  ) %>%
   ungroup()
 
-# View the binned counts
-print(contract_counts_df)
+# Convert the total amount to billions of CAD
+total_spent_df <- total_spent_df %>%
+  mutate(total_amount_billion = total_amount_spent / 1e9)
+
+# Optional: Display the summarized data
+print(total_spent_df)
+
+# Create the bar chart
+ggplot(total_spent_df, aes(x = contract_size, y = total_amount_billion, fill = contract_size)) +
+  geom_bar(stat = "identity", width = 0.6) +
+  geom_text(aes(label = paste0(round(total_amount_billion, 2), "B")), 
+            vjust = -0.5, 
+            size = 5) +  # Adds labels above the bars
+  scale_fill_manual(
+    values = c("Small Contracts (≤ 100k)" = "steelblue", "Big Contracts (> 100k)" = "tomato")
+  ) +
+  scale_y_continuous(
+    labels = scales::number_format(scale = 1, suffix = "B"),  # Displays y-axis in billions
+    expand = expansion(mult = c(0, 0.1))  # Adds space above the bars for labels
+  ) +
+  labs(
+    title = "Total Amount Spent on Contracts",
+    subtitle = "Comparison between Small (≤ 100k CAD) and Big (> 100k CAD) Contracts",
+    x = "Contract Size",
+    y = "Total Amount Spent (Billions of CAD)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 18, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5, size = 14),
+    axis.text.x = element_text(angle = 0, hjust = 0.5, size = 14),
+    axis.text.y = element_text(size = 12),
+    axis.title = element_text(size = 16),
+    legend.position = "none",  # Removes the legend as it's redundant
+    plot.caption = element_text(hjust = 0.5, size = 10, face = "italic")
+  )
+ 
 
 
-contract_counts_df$amount_bin <- as.character(contract_counts_df$amount_bin)
+```
 
-# Create the bar plot
-barplot(
-  height = contract_counts_df$Contract_Count,
-  names.arg = contract_counts_df$amount_bin,
-  las = 2,  # Rotate x-axis labels to perpendicular
-  col = "skyblue",
-  border = "black",
-  main = "Number of Contracts per 10,000 CAD Award Amount Range",
-  xlab = "Award Amount (CAD)",
-  ylab = "Number of Contracts",
-  cex.names = 0.8  # Adjust label size for readability
-)
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(scales)
+
+# Assuming 'df' is your data frame and has a column 'amount'
+
+# Step 1: Categorize contracts based on amount
+df <- df %>%
+  mutate(
+    contract_size = ifelse(amount <= 100000, "Small Contracts (≤ 100k)", "Big Contracts (> 100k)")
+  )
+
+# Step 2: Ensure the order of contract_size (Small on left, Big on right)
+df$contract_size <- factor(df$contract_size, levels = c("Small Contracts (≤ 100k)", "Big Contracts (> 100k)"))
+
+# Step 3: Summarize total amount spent per contract size category
+total_spent_df <- df %>%
+  group_by(contract_size) %>%
+  summarize(
+    total_amount_spent = sum(amount, na.rm = TRUE)
+  ) %>%
+  ungroup()
+
+# Step 4: Convert total amount to billions of CAD
+total_spent_df <- total_spent_df %>%
+  mutate(total_amount_billion = total_amount_spent / 1e9)
+
+# Optional: Display the summarized data
+print(total_spent_df)
+
+# Step 5: Create the ggplot2 bar chart
+ggplot(total_spent_df, aes(x = contract_size, y = total_amount_billion, fill = contract_size)) +
+  geom_bar(stat = "identity", width = 0.6) +
+  geom_text(aes(label = paste0(round(total_amount_billion, 2), "B")), 
+            vjust = -0.5, 
+            size = 5) +
+  scale_fill_manual(
+    values = c("Small Contracts (≤ 100k)" = "steelblue", "Big Contracts (> 100k)" = "tomato")
+  ) +
+  scale_y_continuous(
+    labels = scales::number_format(scale = 1, suffix = "B"),  # Y-axis in billions
+    expand = expansion(mult = c(0, 0.1))  # Adds space above the bars for labels
+  ) +
+  labs(
+    title = "Total Amount Spent on Contracts",
+    subtitle = "Comparison between Small (≤ 100k CAD) and Big (> 100k CAD) Contracts",
+    x = "Contract Size",
+    y = "Total Amount Spent (Billions of CAD)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 18, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5, size = 14),
+    axis.text.x = element_text(angle = 0, hjust = 0.5, size = 14),
+    axis.text.y = element_text(size = 12),
+    axis.title = element_text(size = 16),
+    legend.position = "none",  # Removes the legend as it's redundant
+    plot.caption = element_text(hjust = 0.5, size = 10, face = "italic"),
+    panel.grid.major.y = element_line(color = "grey80", linetype = "dashed")  # Adds dashed grid lines
+  )
+
+
 
 ```
