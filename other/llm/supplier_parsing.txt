@@ -87,91 +87,6 @@ These lists should be an additional column in the dataframe
 Do this without altering any existing columns.
 
 Now i will be able to aggregate all examples of "skyline" to see how much money they have recieved. Do you think this is a valid approach? how would you implement it in R.
-Human: i have a dataframe in r that details Canadian procurements. here is the head of this dataframe:
-	
-region
-contract
-buyer
-supplier
-amount
-award_date
-start_date
-end_date
-link
-duration_days
-per_day
-1
-Federal
-Other professional services not elsewhere specified
-National Defence
-SkyAlyne Canada Limited Partnership
-11219370646
-2024-05-28
-2024-05-28
-2049-05-28
-https://theijf.org/procurement/cw2358846_dnd
-9131
-1228712.150
-2
-Federal
-Engineering consultants-Other
-National Defence
-CAE Military Aviation Training Inc.
-4482200974
-2022-03-01
-2022-03-01
-2028-12-31
-https://theijf.org/procurement/w8485_7va01_001_zd_dnd
-2497
-1795034.431
-3
-Federal
-Aircraft parts
-National Defence
-F-35 Lightning II Joint Program Office (JPO)
-4322729867
-2022-12-22
-2022-12-22
-2051-12-31
-https://theijf.org/procurement/w847a_180210_dnd
-10601
-407766.236
-4
-Federal
-Aircraft
-National Defence
-Airbus Defence and Space SA
-3718137594
-2023-06-19
-2023-06-19
-2032-06-18
-https://theijf.org/procurement/w847a_200275_dnd
-3287
-1131164.464
-5
-Federal
-Ships and boats Parts
-National Defence
-Vancouver Shipyards Co Ltd
-3397262476
-2024-07-18
-2020-06-10
-2028-03-30
-https://theijf.org/procurement/w847s_180070b_001_jss_dnd
-2850
-1192021.921
-
-I want to parse through the suppliers so that i can analyse how much each supplier is being awarded. However the spellings of these suppliers varys alot and in different ways. To address this I want you to write an r script that will do the following:
-
-First lowercase all the characters in suppliers. 
-remove all punctuation
-Split each word, and store in a list
-Create a filter mechanism that allows me to ban certain words from being stored in their lists, like "inc" because that is not a company name and it shows up everywhere. 
-These lists should be an additional column in the dataframe
-
-Do this without altering any existing columns.
-
-Now i will be able to aggregate all examples of "skyline" to see how much money they have recieved. Do you think this is a valid approach? how would you implement it in R.
 ChatGPT: Yes, your approach is valid for standardizing supplier names to facilitate aggregation and analysis. By normalizing the supplier names—lowercasing, removing punctuation, splitting into words, and filtering out common words—you can better identify and group similar supplier entities despite variations in their recorded names.Here's how you can implement this in R:rCopy code# Load necessary libraries
 library(dplyr)
 library(stringr)
@@ -1616,5 +1531,3 @@ ggplot(top_ten, aes(x = reorder(word, total_amount), y = total_amount)) +
   ) +
   theme_minimal()
 Benefits of This Approach:Efficiency: Leveraging dplyr and tidyr functions can be faster and more readable, especially for larger datasets.Conciseness: Reduces the need for explicit loops, making the code cleaner.Flexibility: Easier to modify and extend for additional analyses.ConclusionBy following the simplified script above, you can efficiently identify the top ten most significant words in your supplier names based on the total amount awarded. This approach allows you to aggregate and visualize the data without the complexity of graph-based methods. Feel free to adjust the script to better fit your actual dataset and specific requirements.Let me know if you need any further assistance or modifications!
-Human: undefined
-Human: undefined
