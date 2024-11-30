@@ -11,7 +11,7 @@
 # - The `dplyr` package must be installed and loaded
 # - The `readr` package must be installed and loaded
 
-# See appendix of paper for detailed step by step instructions
+# See appendix A of paper for detailed step by step instructions
 # Be sure to fill in all instances of USER_PATH with where ever you have stored this rproj on your machine
 
 # -! IMPORTANT !- You must FIRST run this code in your terminal which is cd in this file:
