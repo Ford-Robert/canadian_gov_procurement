@@ -24,6 +24,12 @@ u_dsupps <- df %>%
 # Display the unique suppliers
 View(u_dsupps)
 
+one_dollar <- df %>%
+  filter(amount == 1) %>%
+  summarize(number_of_one_dollar_contracts = n())
+
+print(one_dollar)
+
 u_contracts <- data.frame(unique(df$contract))
 
 max.print(u_contracts)
