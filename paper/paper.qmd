@@ -427,9 +427,6 @@ ggplot(contract_counts_df, aes(x = amount_label, y = Contract_Count_k)) +
     axis.title = element_text(size = 14),
     plot.caption = element_text(hjust = 0.5, size = 10, face = "italic")
   )
-
-
-
 ```
 
 TODO Bar chart that shows how much money is awarded in small contracts (<=200k) versus how much money is awarded big contracts
@@ -516,14 +513,16 @@ user:canadian_gov_procurement USER_PATH$ docker run -d -p 4444:4444 -p 5900:5900
 
 3. Now the 01-down-load-data.R file can be executed. Be sure to modify USER_PATH in both to download_dir and host_down_load_dir to match the path of you docker and personal computer path. 
 
-4. The for-loop simply runs "click download -> click next page" process 329 times, however IJF may add more pages so modify total_pages to scrape the number of pages IJF is offering. In the event of an error mid-way through scraping take note of which page failed to download (page that you are on is printed to the console) and simply set the start of the for-loop. After restarting the loop be sure to verify that the next downloaded page is the correct one, otherwise you will have to restart the process from step 1.
+4. The for-loop simply runs "click download -> click next page" process 329 times, however IJF may add more pages so modify total_pages to scrape the number of pages IJF is offering. In the event of an error mid-way through scraping take note of which page failed to download (page that you are on is printed to the console) and simply set the start of the for-loop. After restarting the loop be sure to verify that the next downloaded page is the correct one, otherwise you will have to restart the process from step 1. While it may be tempting to reduce the Sys.sleep times to download faster (11 seconds delay per loop and 329 loops that's about 1 hour!), I found reducing the time cause errors as the pages were slow to load and thus ruining the process.
 
 5. Done!
-
 
 # Additional data details
 
 TODO Removal of negative values, adding 1 day to contract lengths of 0, see cleaning script
+
+
+# Proccessing Supplier
 
 TODO processed_supplier
 
