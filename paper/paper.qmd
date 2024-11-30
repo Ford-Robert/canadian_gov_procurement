@@ -63,7 +63,7 @@ TODO Description of each variable head of table
 #| fig-cap: template
 #| fig-align: center
 
-df_table <- df %>% select(-contract, -start_date, -end_date)
+df_table <- df %>% select(-contract, -start_date, -end_date, -link)
 
 kable(head(df_table, 5), caption = "Sample of the Data") %>%
   kable_styling(font_size = 10, latex_options = c("scale_down"))
@@ -431,7 +431,68 @@ ggplot(contract_counts_df, aes(x = amount_label, y = Contract_Count_k)) +
 
 TODO Bar chart that shows how much money is awarded in small contracts (<=200k) versus how much money is awarded big contracts
 
+```{r fig-small-big}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
 
+# Step 1: Create a new column 'contract_size' categorizing contracts
+df <- df %>%
+  mutate(
+    contract_size = ifelse(amount <= 100000, "Small Contracts (≤ 100k)", "Big Contracts (> 100k)")
+  )
+
+# Summarize total amount spent per contract size category
+total_spent_df <- df %>%
+  group_by(contract_size) %>%
+  summarize(
+    total_amount_spent = sum(amount, na.rm = TRUE)
+  ) %>%
+  ungroup()
+
+# Convert the total amount to billions of CAD
+total_spent_df <- total_spent_df %>%
+  mutate(total_amount_billion = total_amount_spent / 1e9)
+
+# Optional: Display the summarized data
+print(total_spent_df)
+
+# Create the bar chart
+ggplot(total_spent_df, aes(x = contract_size, y = total_amount_billion, fill = contract_size)) +
+  geom_bar(stat = "identity", width = 0.6) +
+  geom_text(aes(label = paste0(round(total_amount_billion, 2), "B")), 
+            vjust = -0.5, 
+            size = 5) +  # Adds labels above the bars
+  scale_fill_manual(
+    values = c("Small Contracts (≤ 100k)" = "steelblue", "Big Contracts (> 100k)" = "tomato")
+  ) +
+  scale_y_continuous(
+    labels = scales::number_format(scale = 1, suffix = "B"),  # Displays y-axis in billions
+    expand = expansion(mult = c(0, 0.1))  # Adds space above the bars for labels
+  ) +
+  labs(
+    title = "Total Amount Spent on Contracts",
+    subtitle = "Comparison between Small (≤ 100k CAD) and Big (> 100k CAD) Contracts",
+    x = "Contract Size",
+    y = "Total Amount Spent (Billions of CAD)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 18, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5, size = 14),
+    axis.text.x = element_text(angle = 0, hjust = 0.5, size = 14),
+    axis.text.y = element_text(size = 12),
+    axis.title = element_text(size = 16),
+    legend.position = "none",  # Removes the legend as it's redundant
+    plot.caption = element_text(hjust = 0.5, size = 10, face = "italic")
+  )
+ 
+
+
+
+```
 
 
 # Model
