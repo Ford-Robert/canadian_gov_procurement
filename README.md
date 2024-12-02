@@ -19,7 +19,15 @@ The repo is structured as:
 
 ## Statement on LLM usage
 
-Aspects of the code were written with the help of the auto-complete tool, Codriver. The abstract and introduction were written with the help of ChatHorse and the entire chat history is available in inputs/llms/usage.txt.
+Code usage:
+
+Every file in `scripts` was written with the help of ChatGPT-4o. The code for most of the graphs and tables in `paper.qmd` and `EDA.qmd` was written with ChatGPT-4o.
+
+Paper usage:
+
+The Introduction, Limitations sub-section of Methods, Results and Discussion sections were written with the assistance of ChatGTP-4o. I began by writing a detailed outline containing all of the main points. Then GPT filled in the outline by writing paragraphs for each point. Then I would rewrite each paragraph, keeping bits I liked and changing the wording of bits that I didn't. Most importantly removing all of the bland or repetitive sentences that GPT loves generating.
+
+All chat logs used in the creation of this rproj can be found `other/llm`
 
 ## Some checks
 
