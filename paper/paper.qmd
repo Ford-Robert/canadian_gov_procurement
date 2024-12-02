@@ -24,34 +24,41 @@ library(scales)
 library(knitr)
 library(kableExtra)
 library(zoo)
+library(broom)
 
 df <- read_csv(here::here("data/analysis_data/cleaned_data.csv"))
 aggregated_df <- read_csv(here::here("data/analysis_data/top_ten_suppliers.csv"))
-models <- read_csv(here::here("models/buyer_models.rds"))
+model <- read_rds(here::here("models/gen_model.rds"))
+mil_model <- read_rds(here::here("models/mil_model.rds"))
 
-View(df)
+aView(df)
 ```
 
 
 # Introduction
 
-TODO Broader context of Canadian spending, talk about huge new military spending package announced this year
+In recent years, Canada's federal spending landscape has undergone significant transformations, particularly with a marked increase in military expenditures. The government has announced substantial new military spending packages, [REF] 
 
-TODO What are procurement, how are they awarded, what are Buyers and Suppliers
+Federal procurements involve the acquisition of goods and services by government departments, Buyers, from companies, Suppliers. These procurements are essential for a wide range of government functions from; acquiring defense equipment, building infrastructure, procuring healthcare supplies, technological services and engineering consultants for example. This paper will analyse federal procurement data to dissect government procurements over the last four years. 
 
-TODO Gap that needs to be filled; What is the Government buying from private companies and how is their consumption changing over time
+The primary questions this paper aims to address are: What is the government buying? Who are the primary suppliers? How are spending patterns shifting across different departments and over time? 
 
-TODO What was done
+I collected and processed detailed data on over 301,000 contracts awarded since January 2020. The dataset includes variables such as contract amounts, durations, award dates, Buyers, and Suppliers. We derived additional metrics to facilitate our analysis, such as Baseline Days (the number of days since January 1, 2020) and Duration Days (the length of each contract), and standardized supplier names to ensure consistency. 
 
-TODO What was found
+Some significant findings presented in this paper include: military procurement spending has surged in the past few years. Where the Department of National Defence now dominates federal procurement spending, with expenditures exceeding $56 billion since 2020. This increase in spending is in part thanks to large contracts, including a $11.2 billion contract to SkyAlyne for fighter pilot training—the largest in our dataset—and multi-billion-dollar contracts for fighter jets and naval vessels. 
 
-TODO Why is it important
+While  other government departments have experienced a notable decrease in procurement spending. For instance, the Public Health Agency of Canada's spending, which was substantial in 2020 due to the COVID-19 pandemic, has declined significantly in subsequent years. 
 
-TODO Paper layout, description of each section with jump links
+These findings are important for several reasons. They provide critical insights into how government spending priorities are shifting, which has implications for economic policy, industry stakeholders, and public transparency. Understanding the concentration of spending in large military contracts can inform discussions on national defense strategies, budget allocations, and the impact on domestic industries. 
+
+The paper is structured as follows: [Section 2] details the data collection and processing methodologies, including the sources of procurement data and the steps taken to clean and standardize the dataset. Then I present a series of graphs to demonstrate government procurements from various angles. [Section 3] describes the linear regression models used to assess trends in contract amounts over time and contract duration. [Section 4] presents the results of the analysis, highlighting key trends in military and non-military procurement spending. [Section 5] discusses the limitations of the study, including data constraints and methodological considerations, and suggests areas for future research. Finally, Section 6 concludes with a summary of the findings and their implications for policymakers, industry stakeholders, and future studies. 
+
+By providing a comprehensive analysis of federal procurement spending, this paper aims to fill the existing gap in understanding how government consumption of private sector goods and services is changing over time. The insights gained from this study can inform policy decisions, contribute to academic discourse, and enhance transparency regarding government spending practices. 
+
 
 TODO Cite R and all other packages
 
-Estimand?
+TODO Estimand?
 
 # Data {#sec-data}
 
@@ -63,7 +70,7 @@ TODO Description of each variable head of table
 #| fig-cap: template
 #| fig-align: center
 
-df_table <- df %>% select(-contract, -start_date, -end_date, -link)
+df_table <- df %>% select(-contract, -start_date, -end_date, -link, -duration_days, -per_day, -processed_supplier)
 
 kable(head(df_table, 5), caption = "Sample of the Data") %>%
   kable_styling(font_size = 10, latex_options = c("scale_down"))
@@ -518,7 +525,45 @@ TODO Model Diagnostics
 
 TODO Add model summary tables
 
+```{r fig-results}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
 
+# Tidy up the model results
+model_tidy <- model %>% tidy() %>% mutate(model = "Excluding Military Contracts")
+mil_model_tidy <- mil_model %>% tidy() %>% mutate(model = "Military Contracts Only")
+
+# Combine the results into one table
+combined_results <- bind_rows(model_tidy, mil_model_tidy)
+
+combined_results <- combined_results %>%
+  mutate(
+    term = case_when(
+      term == "(Intercept)" ~ "Intercept",
+      term == "baseline_days" ~ "Baseline Days",
+      term == "duration_days" ~ "Duration Days",
+      TRUE ~ term # Keep any other terms as-is
+    )
+  )
+
+# Format the table for Quarto using kableExtra
+combined_results %>%
+  select(model, term, estimate, std.error, statistic, p.value) %>%
+  rename(
+    Model = model,
+    Term = term,
+    Estimate = estimate,
+    `Std. Error` = std.error,
+    `t-Statistic` = statistic,
+    `p-Value` = p.value
+  ) %>%
+  kable(format = "html", digits = 3, align = "c", caption = "Model Results Summary") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+```
 
 
 # Discussion
@@ -586,6 +631,11 @@ TODO Removal of negative values, adding 1 day to contract lengths of 0, see clea
 # Proccessing Supplier
 
 TODO processed_supplier
+Talk about what I did thourougly
+
+Talk about next steps. 11th top supplier, and how there are still tons of useless words in there. Even how to approach I used may never work. Because at some point we will ban too many word and some suppliers with super generic names will be eliminated entirely.
+
+Propose alternate methods
 
 # Model details {#sec-model-details}
 
