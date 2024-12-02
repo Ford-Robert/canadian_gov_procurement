@@ -30,8 +30,6 @@ df <- read_csv(here::here("data/analysis_data/cleaned_data.csv"))
 aggregated_df <- read_csv(here::here("data/analysis_data/top_ten_suppliers.csv"))
 model <- read_rds(here::here("models/gen_model.rds"))
 mil_model <- read_rds(here::here("models/mil_model.rds"))
-
-aView(df)
 ```
 
 
