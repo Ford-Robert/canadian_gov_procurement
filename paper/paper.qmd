@@ -62,48 +62,84 @@ TODO Estimand?
 
 The data was collected using R and other packages [REF]. A web scraping script was used to collect all Federal Award Data from the IJF [REF]. The variables this paper focuses collected from the IJF are; Contract, Buyer, Supplier, Amount, Award Date, Start Date, and End Date.  
 
-Contract: A few words detailing  a brief description of what the contract signed was for 
+- **Contract**: A few words detailing a brief description of what the contract signed was for.
+- **Buyer**: The name of the government department who awarded the contract.
+- **Supplier**: The name of the company that fulfilled the contract by agreeing to provide the good or service to the Buyer.
+- **Amount**: The value of the contract in Canadian Dollars.
+- **Award Date**: The day the Buyer awarded the contract to the supplier.
+- **Start Date**: When the contract is due to start.
+- **End Date**: When the contract is due to end.
 
-Buyer: The name of government department who awarded the contract 
+The head of the IFJ Database:
 
-Supplier: The name of the company that fulfilled the contract by agreeing to provide the good or service to the Buyer 
-
-Amount: The value of the contract in Canadian Dollars 
-
-Award Date: The day the Buyer awarded the contract to the supplier 
-
-Start Date: When the contract is due to start 
-
-End Date: When the contract is due to end 
-
-I derived three additional variables using the IJF variables: 
-
-Baseline Days: Number of days since 1st January 2020 
-
-Duration Days: End Date subtracted from the Start Date to calculate the duration of the contract 
-
-Processed Supplier: The name of suppliers regularized to allow for aggregation and comparison 
-
-
-Baseline Days and Duration Days are used as predictors in the linear model, as Dates are not valid entries into a linear model.
- 
-Processed Supplier is required as many companies have slightly different spellings, such as [“General Dynamics”, “GENERAL DYNAMICS”, “General Dynamics Mission Systems”, “GENERAL DYNAMICS MISSION SYSTEMS INC”]. See Appendix TODO for how I processed and regularized the suppliers. 
-
-Here is the head of the data that was used in this analysis for a sense of what these variables represent. 
-TODO Fix table
-```{r fig-head}
+```{r fig-head1}
 #| message: false
 #| echo: false
 #| warning: false
 #| fig-cap: template
 #| fig-align: center
+#| fig-pos: "H"
 
-df_table <- df %>% select(-contract, -start_date, -end_date, -link, -duration_days, -per_day, -processed_supplier)
+df_table1 <- df %>%
+  select(
+    Contract = contract,
+    Buyer = buyer,
+    Supplier = supplier,
+    Amount = amount,
+    `Award Date` = award_date,
+    `Start Date` = start_date,
+    `End Date` = end_date
+  )
 
-kable(head(df_table, 5), caption = "Sample of the Data") %>%
-  kable_styling(font_size = 10, latex_options = c("scale_down"))
+
+df_table1_truncated <- df_table1 %>%
+  mutate(across(where(is.character), ~ str_trunc(., 15, side = "right", ellipsis = "...")))
+
+# Display the first table
+kable(head(df_table1_truncated, 5), caption = "Sample of the Data - Part 1") %>%
+  kable_styling(
+    font_size = 10,
+    latex_options = c("scale_down")
+  )
+
 
 ```
+
+Additional Derived Variables:
+
+- **Baseline Days**: Number of days since 1st January 2020.
+- **Duration Days**: End Date subtracted from the Start Date to calculate the duration of the contract.
+- **Processed Supplier**: The name of suppliers regularized to allow for aggregation and comparison.
+
+```{r fig-head2}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+#| fig-pos: "H"
+
+df_table2 <- df %>%
+  select(
+    `Baseline Days` = baseline_days,
+    `Duration Days` = duration_days,
+    `Processed Supplier` = processed_supplier
+  )
+
+# Truncate character columns if necessary
+df_table2_truncated <- df_table2 %>%
+  mutate(across(where(is.character), ~ str_trunc(., 15, side = "right", ellipsis = "...")))
+
+# Display the second table
+kable(head(df_table2_truncated, 5), caption = "Sample of the Data - Part 2") %>%
+  kable_styling(
+    font_size = 10,
+    latex_options = c("scale_down")
+  )
+
+```
+
+Processed Supplier is required as many companies have slightly different spellings, such as [“General Dynamics”, “GENERAL DYNAMICS”, “General Dynamics Mission Systems”, “GENERAL DYNAMICS MISSION SYSTEMS INC”]. See Appendix TODO for how I processed and regularized the suppliers.
 
 The data was then cleaned. First I began by setting each variable to the correct data type. Then I removed any data point where Amount was negative or zero, because I am not sure what a negative amount means in this context and contracts that are not worth anything are not worth looking at. There were a number of contracts which started and ended on the same day, to simplify later calculation I simply added a day to their End Date, figuring that same day contracts are equivalent to one day contracts. Further data cleaning details are available in Appendix TODO. After cleaning I was left with 301,094 contracts spanning TODO to TODO.
 
