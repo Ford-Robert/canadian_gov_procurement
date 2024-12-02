@@ -24,16 +24,11 @@ df <- read_csv("data/analysis_data/cleaned_data.csv")
 
 
 ### Model data ####
-df <- df %>%
-  mutate(
-    award_date_numeric = as.numeric(award_date)
-  )
 
+# Fit the models using baseline_days
+model <- lm(amount ~ baseline_days + duration_days, data = df %>% filter(buyer != "National Defence"))
 
-
-model <- lm(amount ~ award_date_numeric + duration_days, data = df)
-
-mil_model <- lm(amount ~ award_date_numeric + duration_days, data = df %>% filter(buyer == "National Defence"))
+mil_model <- lm(amount ~ baseline_days + duration_days, data = df %>% filter(buyer == "National Defence"))
 
 model_summary <- summary(model)
 mil_model_summ <- summary(mil_model)
