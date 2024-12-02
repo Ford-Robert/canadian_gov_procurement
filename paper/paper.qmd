@@ -62,7 +62,37 @@ TODO Estimand?
 
 # Data {#sec-data}
 
-TODO Description of each variable head of table
+The data was collected using R and other packages [REF]. A web scraping script was used to collect all Federal Award Data from the IJF [REF]. The variables this paper focuses collected from the IJF are; Contract, Buyer, Supplier, Amount, Award Date, Start Date, and End Date.  
+
+Contract: A few words detailing  a brief description of what the contract signed was for 
+
+Buyer: The name of government department who awarded the contract 
+
+Supplier: The name of the company that fulfilled the contract by agreeing to provide the good or service to the Buyer 
+
+Amount: The value of the contract in Canadian Dollars 
+
+Award Date: The day the Buyer awarded the contract to the supplier 
+
+Start Date: When the contract is due to start 
+
+End Date: When the contract is due to end 
+
+I derived three additional variables using the IJF variables: 
+
+Baseline Days: Number of days since 1st January 2020 
+
+Duration Days: End Date subtracted from the Start Date to calculate the duration of the contract 
+
+Processed Supplier: The name of suppliers regularized to allow for aggregation and comparison 
+
+
+Baseline Days and Duration Days are used as predictors in the linear model, as Dates are not valid entries into a linear model.
+ 
+Processed Supplier is required as many companies have slightly different spellings, such as [“General Dynamics”, “GENERAL DYNAMICS”, “General Dynamics Mission Systems”, “GENERAL DYNAMICS MISSION SYSTEMS INC”]. See Appendix TODO for how I processed and regularized the suppliers. 
+
+Here is the head of the data that was used in this analysis for a sense of what these variables represent. 
+TODO Fix table
 ```{r fig-head}
 #| message: false
 #| echo: false
@@ -77,17 +107,15 @@ kable(head(df_table, 5), caption = "Sample of the Data") %>%
 
 ```
 
-TODO Brief talk about how cleaning was carried out
-
-TODO Description of variables that were created, duration_days, processed_supplier (brief, see appendix)
+The data was then cleaned. First I began by setting each variable to the correct data type. Then I removed any data point where Amount was negative or zero, because I am not sure what a negative amount means in this context and contracts that are not worth anything are not worth looking at. There were a number of contracts which started and ended on the same day, to simplify later calculation I simply added a day to their End Date, figuring that same day contracts are equivalent to one day contracts. Further data cleaning details are available in Appendix TODO. After cleaning I was left with 301,094 contracts spanning TODO to TODO.
 
 ## Measurement
 
-TODO How IJF collected all this data
+The data is recorded and published through various government agencies, who use different accounting standards and procedures. The three sources IFJ used to collect the federal procurement data are; Canada Buys, Buy and Sell, and Proactive Disclosures (which makes up the vast majority of the procurement data). However, because the data used in this paper is pulled from the IFJ’s Federal Awards page this data comes exclusively from the Proactive Disclosures. The Treasury Board of Canada Secretariat is responsible for publishing these Proactive Disclosures under the Access to Information Act [REF].
 
 ## Analysis
 
-TODO Talk about top 5 buyers and other
+This is a break down of total amount awarded by the top 5 biggest spending Buyers. The Other category consists the of the total awards given by the remaining 88 smallest Government Buyers.  It is clear that National Defence dwarfs the procurement budget, spending over /$56 Billion on procurements since 2020. 
 
 ```{r fig-pie-buyers}
 #| message: false
@@ -148,7 +176,8 @@ ggplot(buyer_totals_grouped, aes(x = "", y = total_amount, fill = buyer_group)) 
 ```
 
 
-TODO Military Spending Per year
+FIG show how National Defence spending has taken off in recent years, where is 2021 it had not even crested /$5 Billion, but in the last 3 years spending has exploded to /$15 Billion a year.  
+
 ```{r fig-mil-spending}
 #| message: false
 #| echo: false
@@ -186,7 +215,7 @@ ggplot(data = military_spending_per_year, aes(x = year, y = total_spending)) +
 
 
 
-TODO Public Services Spending
+Public Services and Procurements Canada is the clearinghouse for the entire federal government. This means they are responsible for managing the procurement process for buyers across the government [REF]. It is important to note that the PSPC sometimes does not publish small contracts, less than /$40,000.  PSPC spending over time shows while military spending increases the rest of the government is taking a hit.
 ```{r fig-public-spending}
 #| message: false
 #| echo: false
@@ -222,7 +251,8 @@ ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
 ```
 
 
-TODO add spending by selected buyers graph
+This FIG shows the top five Buyers spending per year since 2020. In the first 2 years military spending held steady and did not dominate the budget by any means. But since then Defence spending exploded not just nominally but compared to the rest of the budget as well. Notably the Public Health Agency of Canada’s spending while strong in 2020, decreased to nothing over the following four years. The spending in 2020 is linked to purchases of medical equipment, so it is possible they have not needed to invest in new equipment since then. But this illustrates a boarder trend among all departments except National Defence, where their spending has steadily declined in the last 4 years.
+
 ```{r fig-top-buyers}
 #| message: false
 #| echo: false
@@ -314,7 +344,8 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer
 
 
 
-TODO Top Ten Suppliers
+To find out the firms that are benefiting the most through this procurement process we can look to FIG. Unsurprisingly, the biggest suppliers are primarily are awarded contracts by the military. Interestingly the top supplier, Skyalyne, was only awarded one huge 11.2 Billion contract for fighter pilot training services. This is the largest contract in the dataset. Then considering the largest contracts awarded in the last 3 years to; the F-35 program (Fighter Planes, 4.5 Billion), General Atomics (Airplanes, 1.7 Billion), CAE (Aviation Engineering and Training, 4.4 Billion), Airbus (Airplanes, 3.7 Billion), for a grand total of 25.5 Billion. These large single contracts devoted to advanced fighter jets and training pilots to fly them is part of the reason that military spending has exploded in the last 3 years. The military also paid Vancouver Shipyards 3.4 Billion in 2024 for Ships and Boat parts. 
+
 ```{r fig-top-supps}
 #| message: false
 #| echo: false
@@ -322,7 +353,7 @@ TODO Top Ten Suppliers
 #| fig-cap: template
 #| fig-align: center
 
-#TODO Fix colors and supplier names
+#TODO Fix colors and supplier names and order of supps (highest to lowest)
 
 # Create the bar chart with legend removed
 ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fill = buyer)) +
@@ -339,13 +370,13 @@ ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fil
 
 
 ```
-TODO mention that detwiler makes up 88+% spending of the Space Agency
 
-TODO add pie chart showing top suppliers and other of National defence spending
+Dettwiler is an engineering firm that provides the Canadian Space Agency with engineering and scientific consulting. Surprisingly 86.3% of the Space Agency’s procurement budget goes to Dettwiler.
+
 
 ## Distribution
 
-TODO add small contracts distribution chart
+This graph represents 81.75% of all contracts, indicating that the vast majority of contracts awarded by the government are quite small. Furthermore, it seems that the number of contracts follows a Pareto distribution. There are 102 contracts that are worth $1, this maybe some legal formality.
 
 ```{r fig-distibution}
 #| message: false
@@ -436,7 +467,7 @@ ggplot(contract_counts_df, aes(x = amount_label, y = Contract_Count_k)) +
   )
 ```
 
-TODO Bar chart that shows how much money is awarded in small contracts (<=200k) versus how much money is awarded big contracts
+Though most contracts are small contracts (less than $100,000), the sum of these 246,000 contracts is only worth a measly 7.34 Billion. The Skyalyne contract itself outweighs all the small contracts.
 
 ```{r fig-small-big}
 #| message: false
