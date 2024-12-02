@@ -535,26 +535,57 @@ ggplot(total_spent_df, aes(x = contract_size, y = total_amount_billion, fill = c
 
 # Model
 
-TODO What the is the goal of our models
-
-Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
+This paper will use a simple linear regression to better understand the how contract award amounts are affected over time compared to their lengths. To do this the response variable will be Amount, and the two dependent variables will be the number of day since January 1st 2020 (start of the data set) and the length of the contract. The coefficients of these variables will indicate the relative importance of when the contract was issues compared to the length of contracts on determining the size of contracts. I will create two models, one to measure the coefficients for all the contracts excluding military contracts and a model for solely military contracts. This way we can compare to see if military contracts are getting larger because they are relatively longer or because recently they have purchased more expensive equipment.
 
 ## Model set-up
 
-TODO define variables used and structure
+All model construction and diagnostics were conduction using R [REF], and the following packages: 
 
-TODO Cite R and packages used to run model
+Tidyverse: For data manipulation and visualization [REF] 
 
+Dplyr: [REF] 
 
-### Model justification
+Car: [REF] 
 
-TODO Why I chose those variables
+Caret:[REF] 
 
-TODO Model Diagnostics
+ 
+
+Model Formula: 
+
+TODO 
+
+Variables:
+
+Amount:
+
+Baseline Days:
+
+Duration Days:
+
+## Limitations 
+
+One significant limitation is the assumption of a linear relationship between the predictors and the contract amount. In reality, the relationship may be more complex or nonlinear, especially over an extended period where economic factors and policy changes could introduce fluctuations not captured by a simple linear trend. 
+
+Another limitation is the potential omission of relevant variables that influence contract amounts. Factors such as inflation, changes in government procurement policies, economic cycles, or industry-specific trends can significantly affect contract values. The exclusion of these variables may lead to omitted variable bias, where the estimated effects of the included predictors are distorted because they are capturing the influence of missing factors. 
+
+Additionally, the presence of outliers or extreme values, particularly in financial data like contract amounts, can disproportionately influence the model estimates and lead to misleading conclusions. 
+
+This model treats all contracts as a  homogeneous group. But considering that contracts both for National Defence and general government awards vary widely in scope and cost that would suggest a linear model is not appropriate. A more segmented model may be appropriate. This may be difficult as dividing the data in to groups based on contract size would not be sufficient as there is still a wide variety of contracts that are of similar size. Possibly using the Contract descriptions to divide the data, but this would require more advanced Natural Language processing techniques and in many cases the descriptions are hardly descriptive. 
+
+Moreover, the model assumes that the effect of each predictor is constant over time. If the influence of contract duration or time on contract amounts changes due to evolving market conditions or government strategies, the model's fixed coefficients would not reflect these dynamic relationships.
+
+## Diagnostics
+
+TODO
 
 # Results
 
-TODO Add model summary tables
+The model general contracts indicates that the contract amount tends to decrease over time. Because Baseline days is slightly negative. This value suggests that every day that passes on average the value of non-military contracts is going down by $61.62 a day. This decline could reflect shifts in government spending priorities away from non-military departments. Additionally, as expect Duration Days is positive of the contract amount . This means that longer contracts are more expensive for the government.
+
+In contrast, the model for military contracts reveals that the contract amount increases over time. The positive coefficient for Baseline days suggests an upward trend in military contract values since 2020. In this case the model suggests that the cost of military contracts is increasing by $852.50 every day. This is trend is due to the huge increases in military procurement we observed in FIG.  
+
+The impact of contract duration on the contract amount is substantially larger in military contracts compared to non-military ones. Where military contracts cost $38,146 more per day of the length of the contract. This is again due largely by the 11 Billon Skyalyne contract, and the other large long contracts for training and fighter jets. 
 
 ```{r fig-results}
 #| message: false
@@ -601,31 +632,63 @@ combined_results %>%
 
 ## First discussion point {#sec-first-point}
 
-TODO What was done
+This study conducted an in-depth analysis of Canadian federal procurement data, with a focus on military contracts. The data was collected and processed to ensure accuracy and relevance. Using web scraping techniques, we gathered information from the Institute for Government's (IJF) Federal Award Data. The primary variables included contract descriptions, buyer and supplier names, contract amounts, and key dates such as award, start, and end dates.
+
+To facilitate the analysis, we derived additional variables: Baseline Days, representing the number of days since January 1st, 2020, and Duration Days, calculated by subtracting the start date from the end date of each contract. These transformations were necessary because date variables are not directly suitable for linear modeling. We also standardized supplier names through a Processed Supplier variable to ensure consistency, given the variations in how supplier names were recorded. 
+
+Data cleaning was a critical step. Contracts with negative or zero amounts were excluded due to their ambiguous nature. Contracts that started and ended on the same day were adjusted by extending the end date by one day to simplify duration calculations. After these refinements, the dataset comprised 301,094 contracts spanning from [TODO: start date] to [TODO: end date]. 
+
+For the modeling phase, we employed a simple linear regression to explore how contract amounts are influenced by time and contract duration. Two separate models were constructed: one encompassing all contracts excluding military contracts, and another focusing solely on military contracts. This bifurcation allowed us to compare trends between military and non-military spending. 
 
 ## Second discussion point
 
-TODO What did we learn about Canada
-    Military spending has exploded in the last couple of years, and other departments have fallen significantly
-    The vast majority of contracts are smaller than 200,000, and the most common size of contract is between 10-20k
+The analysis revealed significant trends in Canada's federal procurement spending: 
+
+Surge in Military Spending: Military spending has dramatically increased over the past couple of years. National Defence emerged as the dominant spender, allocating over $56 billion since 2020. While military spending was under $5 billion in 2021, it escalated to approximately $15 billion annually in the following years. This spike is attributed to substantial contracts for advanced military equipment and services, such as the $11.2 billion contract awarded to SkyAlyne for fighter pilot training—the largest in the dataset. Other notable contracts include multi-billion-dollar deals with Lockheed Martin, General Atomics, CAE, and Airbus for fighter planes and aviation services. 
+
+Decline in Other Departments' Spending: In contrast, other government departments have experienced significant reductions in procurement spending. For instance, the Public Health Agency of Canada's spending, which was robust in 2020 due to pandemic-related expenditures, diminished to negligible levels in the subsequent years.  
+
+Prevalence of Small Contracts: The majority of government contracts are relatively small. Approximately 81.75% of all contracts are valued under \$100,000, with the most common contract size ranging between \$10,000 and \$20,000. This pattern indicates a governmental preference for smaller contracts, possibly for regulatory reasons. There may be a rule that if a contract is below 20000 then it requires less scrutiny to be passed, in effect encouraging department to award more smaller contracts. Though it does not seem to be out of control as only TODO% of all spending in last 4 years is concentrated in contracts less than 100000. 
 
 ## Third discussion point
 
 
 ## Weaknesses
 
-TODO Model was weak, need more data to improve model
-    Analysis on the Suppliers Names needs to be more rigorous
+While the study provides valuable insights, several limitations must be acknowledged: 
+
+Supplier Name Analysis: The methodology for standardizing supplier names, requires more rigorous techniques. The method used ensured that the top 10 suppliers are accurately aggregated. However, some contracts that these suppliers may have been missed. But beyond the top 10, the names of suppliers not well parsed out, with problems like variations of “incorporated” and that sort of thing, dominating the rest of the suppliers list. 
+
+Model Limitations: The linear regression model demonstrated weaknesses, primarily due to its simplicity and the limitations of the dataset. The assumption of a linear relationship between the predictors (Baseline Days and Duration Days) and contract amounts may not capture the complexities of procurement spending, which can be influenced by many things such as; policy changes, economic conditions, and sector-specific dynamics. 
+
+Methodological Constraints: The model did not account for external variables such as inflation, exchange rates, or changes in government procurement policies, which could significantly influence contract amounts. Additionally, treating all contracts as a homogeneous group overlooks the diversity in contract types and scopes. 
 
 
 ## Next Steps
 
-TODO Next Steps: Need to collect more data:
-      From Past spending beyond 2020
-      Other types of Government Spending; Seeing how much of spending is done through private contracts and how much through in house spending on salaries and other things like that
-      Do analysis on the what the contracts descriptions say
-      Why does public health Canada spending go to zero
-      Why are contracts so small
+To address these weaknesses and build upon the findings, the following steps are recommended: 
+
+Enhance Data Analysis Techniques: 
+Supplier Name Processing: Implement advanced text processing techniques, such as fuzzy matching, to accurately standardize supplier names and improve data reliability. ADD MORE 
+
+Contract Description Analysis: Utilize text mining and content analysis methods on contract descriptions to uncover patterns in procurement objectives and priorities. ADD MORE 
+
+Expand Data Collection:
+Comprehensive Spending Data: Include other forms of government spending, such as in-house expenditures on salaries and operational costs, as this would contextualize the procurement budget in the larger scheme of federal spending overall. How much of the total federal budget goes into procurements? Are procurements more cost effective than in house spending? 
+
+Investigate Specific Trends:
+Public Health Agency Spending: Examine the factors contributing to the decline in the Public Health Agency of Canada's procurement spending. 
+
+Proliferation of Small Contracts: Analyze the rationale behind the high frequency of small contracts, exploring whether this is a strategic decision to support smaller businesses or a reflection of procurement policy regulations. 
+
+Refine Modeling Approaches:
+Advanced Statistical Models: Explore more complex modeling techniques, such as nonlinear regression, time series analysis, or machine learning models, to capture the intricate relationships between variables. 
+
+Incorporate Additional Variables: Include economic indicators, policy changes, and other relevant factors to improve the explanatory power of the models. 
+
+By undertaking these steps, future research can provide a more comprehensive and nuanced understanding of Canadian federal procurement spending. This further analysis could inform policy decisions, promote transparency, and ensure that government resources are allocated effectively and efficiently. 
+
+ 
 
 
 \newpage
@@ -662,7 +725,7 @@ TODO Removal of negative values, adding 1 day to contract lengths of 0, see clea
 # Proccessing Supplier
 
 TODO processed_supplier
-Talk about what I did thourougly
+Talk about what I did thourougly, see data_cleaning script
 
 Talk about next steps. 11th top supplier, and how there are still tons of useless words in there. Even how to approach I used may never work. Because at some point we will ban too many word and some suppliers with super generic names will be eliminated entirely.
 
