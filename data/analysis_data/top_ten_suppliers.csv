@@ -1,98 +1,931 @@
-"word","buyer","total_amount","supplier_name"
-"airbus","Canadian Space Agency",4467391,"Airbus"
-"airbus","Fisheries and Oceans Canada",35241,"Airbus"
-"airbus","National Defence",3747059046,"Airbus"
-"airbus","National Research Council Canada",42924,"Airbus"
-"airbus","Royal Canadian Mounted Police",5490111,"Airbus"
-"airbus","Shared Services Canada",1625799,"Airbus"
-"airbus","Transport Canada",39724,"Airbus"
-"atomics","National Defence",1792979385,"General Atomics Aeronautical Systems Inc."
-"bell","Agriculture and Agri-Food Canada",6764198,"Bell Canada"
-"bell","Canada Border Services Agency",6406627,"Bell Canada"
-"bell","Canada Economic Development for Quebec Regions",438698,"Bell Canada"
-"bell","Canada Energy Regulator",40000,"Bell Canada"
-"bell","Canada Revenue Agency",281777,"Bell Canada"
-"bell","Canadian Grain Commission",63178,"Bell Canada"
-"bell","Canadian Heritage",227381,"Bell Canada"
-"bell","Canadian Human Rights Commission",219812,"Bell Canada"
-"bell","Canadian Institutes of Health Research",245018,"Bell Canada"
-"bell","Canadian Radio-television and Telecommunications Commission",148609,"Bell Canada"
-"bell","Canadian Space Agency",28808,"Bell Canada"
-"bell","Canadian Transportation Agency",744292,"Bell Canada"
-"bell","Correctional Service of Canada",351443,"Bell Canada"
-"bell","Courts Administration Service",378197,"Bell Canada"
-"bell","Crown-Indigenous Relations and Northern Affairs Canada",1391105,"Bell Canada"
-"bell","Department of Justice Canada",1462122,"Bell Canada"
-"bell","Elections Canada",9127140,"Bell Canada"
-"bell","Employment and Social Development Canada",5346445,"Bell Canada"
-"bell","Environment and Climate Change Canada",29288,"Bell Canada"
-"bell","Financial Consumer Agency of Canada",651166,"Bell Canada"
-"bell","Fisheries and Oceans Canada",57643887,"Bell Canada"
-"bell","Global Affairs Canada",5561693,"Bell Canada"
-"bell","Health Canada",12204,"Bell Canada"
-"bell","Indigenous Services Canada",673846,"Bell Canada"
-"bell","Infrastructure Canada",519181,"Bell Canada"
-"bell","International Joint Commission",36612,"Bell Canada"
-"bell","National Defence",3128181603,"Bell Canada"
-"bell","National Film Board",354586,"Bell Canada"
-"bell","National Research Council Canada",1185022,"Bell Canada"
-"bell","National Security and Intelligence Review Agency",11657,"Bell Canada"
-"bell","Natural Resources Canada",173206,"Bell Canada"
-"bell","Natural Sciences and Engineering Research Council of Canada",43506,"Bell Canada"
-"bell","Office of the Auditor General of Canada",160000,"Bell Canada"
-"bell","Office of the Commissioner for Federal Judicial Affairs Canada",181930,"Bell Canada"
-"bell","Office of the Commissioner of Lobbying of Canada",106127,"Bell Canada"
-"bell","Office of the Commissioner of Official Languages",21597,"Bell Canada"
-"bell","Office of the Privacy Commissioner of Canada",236369,"Bell Canada"
-"bell","Office of the Public Sector Integrity Commissioner of Canada",85503,"Bell Canada"
-"bell","Office of the Superintendent of Financial Institutions Canada",2512743,"Bell Canada"
-"bell","Parks Canada",2166508,"Bell Canada"
-"bell","Parole Board of Canada",1083584,"Bell Canada"
-"bell","Polar Knowledge Canada",67145,"Bell Canada"
-"bell","Privy Council Office",830343,"Bell Canada"
-"bell","Public Health Agency of Canada",984353,"Bell Canada"
-"bell","Public Prosecution Service of Canada",1474436,"Bell Canada"
-"bell","Public Safety Canada",657790,"Bell Canada"
-"bell","Public Services and Procurement Canada",2375379,"Bell Canada"
-"bell","Royal Canadian Mounted Police",42009870,"Bell Canada"
-"bell","Shared Services Canada",486141419,"Bell Canada"
-"bell","Social Sciences and Humanities Research Council of Canada",43506,"Bell Canada"
-"bell","Statistics Canada",397613,"Bell Canada"
-"bell","The Correctional Investigator Canada",49987,"Bell Canada"
-"bell","Transport Canada",13924447,"Bell Canada"
-"bell","Women and Gender Equality Canada",789103,"Bell Canada"
-"cae","Canada Energy Regulator",105735,"CAE INC."
-"cae","Employment and Social Development Canada",557485,"CAE INC."
-"cae","National Defence",4596023542,"CAE INC."
-"cae","Public Health Agency of Canada",282500000,"CAE INC."
-"cae","Transport Canada",161245,"CAE INC."
-"dettwiler","Canadian Space Agency",2234491128,"MACDONALD, DETTWILER AND ASSOCIATES CORPORATION"
-"dettwiler","National Defence",458346,"MACDONALD, DETTWILER AND ASSOCIATES CORPORATION"
-"dynamics","Canada Border Services Agency",49328,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Canada Economic Development for Quebec Regions",12007,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Department of Justice Canada",136932,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Employment and Social Development Canada",18150,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Environment and Climate Change Canada",1839704,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Fisheries and Oceans Canada",1899169,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Global Affairs Canada",2010512,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Health Canada",360087,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Immigration, Refugees and Citizenship Canada",27062,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Innovation, Science and Economic Development Canada",968570,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","National Defence",2692065101,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","National Research Council Canada",77040,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Natural Resources Canada",93242,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Parks Canada",15305,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Privy Council Office",81369,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Public Safety Canada",79990,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Public Services and Procurement Canada",600308,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Royal Canadian Mounted Police",2678936,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Shared Services Canada",9238772,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Transport Canada",139697,"General Dynamics Ordnance Tactical Systems - Canada"
-"dynamics","Treasury Board of Canada Secretariat",11004,"General Dynamics Ordnance Tactical Systems - Canada"
-"f35","National Defence",4322729867,"F-35 Lightning II Joint Program Office (JPO)"
-"skyalyne","National Defence",11219370646,"SkyAlyne Canada Limited Partnership"
-"textron","Fisheries and Oceans Canada",57137242,"BELL TEXTRON CANADA LIMITED/BELL TEXTRON CANADA LIMITEE"
-"textron","National Defence",3080971748,"BELL TEXTRON CANADA LIMITED/BELL TEXTRON CANADA LIMITEE"
-"textron","Transport Canada",12527063,"BELL TEXTRON CANADA LIMITED/BELL TEXTRON CANADA LIMITEE"
-"vancouver shipyards","Fisheries and Oceans Canada",2005262151,"Vancouver Shipyards Co Ltd"
-"vancouver shipyards","National Defence",3397492439,"Vancouver Shipyards Co Ltd"
+"word","buyer","total_amount"
+"airbus","Canadian Space Agency",4467391
+"airbus","Fisheries and Oceans Canada",35241
+"airbus","National Defence",3747059046
+"airbus","National Research Council Canada",42924
+"airbus","Royal Canadian Mounted Police",5506803
+"airbus","Shared Services Canada",1625799
+"airbus","Transport Canada",39724
+"atomics","National Defence",1792979385
+"bell","Agriculture and Agri-Food Canada",6764198
+"bell","Canada Border Services Agency",6539244
+"bell","Canada Economic Development for Quebec Regions",438698
+"bell","Canada Energy Regulator",40000
+"bell","Canada Revenue Agency",702137
+"bell","Canadian Grain Commission",63178
+"bell","Canadian Heritage",227381
+"bell","Canadian Human Rights Commission",219812
+"bell","Canadian Institutes of Health Research",245018
+"bell","Canadian Radio-television and Telecommunications Commission",148609
+"bell","Canadian Space Agency",28808
+"bell","Canadian Transportation Agency",864518
+"bell","Correctional Service of Canada",351443
+"bell","Courts Administration Service",391655
+"bell","Crown-Indigenous Relations and Northern Affairs Canada",1391105
+"bell","Department of Justice Canada",2089016
+"bell","Elections Canada",9127140
+"bell","Employment and Social Development Canada",5346445
+"bell","Environment and Climate Change Canada",29288
+"bell","Financial Consumer Agency of Canada",1084613
+"bell","Fisheries and Oceans Canada",57643887
+"bell","Global Affairs Canada",5953547
+"bell","Health Canada",12204
+"bell","Indigenous Services Canada",673846
+"bell","Infrastructure Canada",519181
+"bell","International Joint Commission",36612
+"bell","National Defence",3129036306
+"bell","National Film Board",354586
+"bell","National Research Council Canada",1185022
+"bell","National Security and Intelligence Review Agency",11657
+"bell","Natural Resources Canada",1059799
+"bell","Natural Sciences and Engineering Research Council of Canada",43506
+"bell","Office of the Auditor General of Canada",160000
+"bell","Office of the Commissioner for Federal Judicial Affairs Canada",227130
+"bell","Office of the Commissioner of Lobbying of Canada",106127
+"bell","Office of the Commissioner of Official Languages",21597
+"bell","Office of the Privacy Commissioner of Canada",236369
+"bell","Office of the Public Sector Integrity Commissioner of Canada",85503
+"bell","Office of the Superintendent of Financial Institutions Canada",2512743
+"bell","Parks Canada",2166508
+"bell","Parole Board of Canada",1254310
+"bell","Polar Knowledge Canada",67145
+"bell","Privy Council Office",830343
+"bell","Public Health Agency of Canada",984353
+"bell","Public Prosecution Service of Canada",1950139
+"bell","Public Safety Canada",657790
+"bell","Public Services and Procurement Canada",2477854
+"bell","Royal Canadian Mounted Police",43896151
+"bell","Shared Services Canada",488358547
+"bell","Social Sciences and Humanities Research Council of Canada",43506
+"bell","Statistics Canada",397613
+"bell","The Correctional Investigator Canada",49987
+"bell","Transport Canada",13943783
+"bell","Women and Gender Equality Canada",812288
+"cae","Canada Energy Regulator",105735
+"cae","Employment and Social Development Canada",557485
+"cae","National Defence",4596591120
+"cae","Public Health Agency of Canada",282500000
+"cae","Transport Canada",220509
+"dettwiler","Canadian Space Agency",2234491128
+"dettwiler","National Defence",458346
+"dynamics","Canada Border Services Agency",49328
+"dynamics","Canada Economic Development for Quebec Regions",12007
+"dynamics","Correctional Service of Canada",148482
+"dynamics","Department of Justice Canada",136932
+"dynamics","Employment and Social Development Canada",18150
+"dynamics","Environment and Climate Change Canada",1839704
+"dynamics","Fisheries and Oceans Canada",1990192
+"dynamics","Global Affairs Canada",2010512
+"dynamics","Health Canada",400066
+"dynamics","Immigration, Refugees and Citizenship Canada",27062
+"dynamics","Innovation, Science and Economic Development Canada",968570
+"dynamics","National Defence",2705571886
+"dynamics","National Research Council Canada",77040
+"dynamics","Natural Resources Canada",170445
+"dynamics","Parks Canada",15305
+"dynamics","Privy Council Office",81369
+"dynamics","Public Safety Canada",79990
+"dynamics","Public Services and Procurement Canada",638905
+"dynamics","Royal Canadian Mounted Police",2678936
+"dynamics","Shared Services Canada",9238772
+"dynamics","Transport Canada",139697
+"dynamics","Treasury Board of Canada Secretariat",11004
+"f35","National Defence",4322729867
+"skyalyne","National Defence",11219370646
+"textron","Fisheries and Oceans Canada",57137242
+"textron","National Defence",3080971748
+"textron","Transport Canada",12546399
+"vancouver shipyards","Fisheries and Oceans Canada",2005312995
+"vancouver shipyards","National Defence",3397492439
+"skyalyne","Statistics Canada",0
+"vancouver shipyards","Statistics Canada",0
+"cae","Statistics Canada",0
+"f35","Statistics Canada",0
+"airbus","Statistics Canada",0
+"textron","Statistics Canada",0
+"dynamics","Statistics Canada",0
+"dettwiler","Statistics Canada",0
+"atomics","Statistics Canada",0
+"skyalyne","Canadian Institutes of Health Research",0
+"vancouver shipyards","Canadian Institutes of Health Research",0
+"cae","Canadian Institutes of Health Research",0
+"f35","Canadian Institutes of Health Research",0
+"airbus","Canadian Institutes of Health Research",0
+"textron","Canadian Institutes of Health Research",0
+"dynamics","Canadian Institutes of Health Research",0
+"dettwiler","Canadian Institutes of Health Research",0
+"atomics","Canadian Institutes of Health Research",0
+"skyalyne","The National Battlefields Commission",0
+"vancouver shipyards","The National Battlefields Commission",0
+"cae","The National Battlefields Commission",0
+"f35","The National Battlefields Commission",0
+"bell","The National Battlefields Commission",0
+"airbus","The National Battlefields Commission",0
+"textron","The National Battlefields Commission",0
+"dynamics","The National Battlefields Commission",0
+"dettwiler","The National Battlefields Commission",0
+"atomics","The National Battlefields Commission",0
+"skyalyne","Department of Justice Canada",0
+"vancouver shipyards","Department of Justice Canada",0
+"cae","Department of Justice Canada",0
+"f35","Department of Justice Canada",0
+"airbus","Department of Justice Canada",0
+"textron","Department of Justice Canada",0
+"dettwiler","Department of Justice Canada",0
+"atomics","Department of Justice Canada",0
+"skyalyne","Public Services and Procurement Canada",0
+"vancouver shipyards","Public Services and Procurement Canada",0
+"cae","Public Services and Procurement Canada",0
+"f35","Public Services and Procurement Canada",0
+"airbus","Public Services and Procurement Canada",0
+"textron","Public Services and Procurement Canada",0
+"dettwiler","Public Services and Procurement Canada",0
+"atomics","Public Services and Procurement Canada",0
+"skyalyne","Canada Revenue Agency",0
+"vancouver shipyards","Canada Revenue Agency",0
+"cae","Canada Revenue Agency",0
+"f35","Canada Revenue Agency",0
+"airbus","Canada Revenue Agency",0
+"textron","Canada Revenue Agency",0
+"dynamics","Canada Revenue Agency",0
+"dettwiler","Canada Revenue Agency",0
+"atomics","Canada Revenue Agency",0
+"skyalyne","Canada Border Services Agency",0
+"vancouver shipyards","Canada Border Services Agency",0
+"cae","Canada Border Services Agency",0
+"f35","Canada Border Services Agency",0
+"airbus","Canada Border Services Agency",0
+"textron","Canada Border Services Agency",0
+"dettwiler","Canada Border Services Agency",0
+"atomics","Canada Border Services Agency",0
+"skyalyne","Natural Resources Canada",0
+"vancouver shipyards","Natural Resources Canada",0
+"cae","Natural Resources Canada",0
+"f35","Natural Resources Canada",0
+"airbus","Natural Resources Canada",0
+"textron","Natural Resources Canada",0
+"dettwiler","Natural Resources Canada",0
+"atomics","Natural Resources Canada",0
+"skyalyne","Agriculture and Agri-Food Canada",0
+"vancouver shipyards","Agriculture and Agri-Food Canada",0
+"cae","Agriculture and Agri-Food Canada",0
+"f35","Agriculture and Agri-Food Canada",0
+"airbus","Agriculture and Agri-Food Canada",0
+"textron","Agriculture and Agri-Food Canada",0
+"dynamics","Agriculture and Agri-Food Canada",0
+"dettwiler","Agriculture and Agri-Food Canada",0
+"atomics","Agriculture and Agri-Food Canada",0
+"skyalyne","Correctional Service of Canada",0
+"vancouver shipyards","Correctional Service of Canada",0
+"cae","Correctional Service of Canada",0
+"f35","Correctional Service of Canada",0
+"airbus","Correctional Service of Canada",0
+"textron","Correctional Service of Canada",0
+"dettwiler","Correctional Service of Canada",0
+"atomics","Correctional Service of Canada",0
+"skyalyne","Treasury Board of Canada Secretariat",0
+"vancouver shipyards","Treasury Board of Canada Secretariat",0
+"cae","Treasury Board of Canada Secretariat",0
+"f35","Treasury Board of Canada Secretariat",0
+"bell","Treasury Board of Canada Secretariat",0
+"airbus","Treasury Board of Canada Secretariat",0
+"textron","Treasury Board of Canada Secretariat",0
+"dettwiler","Treasury Board of Canada Secretariat",0
+"atomics","Treasury Board of Canada Secretariat",0
+"skyalyne","Environment and Climate Change Canada",0
+"vancouver shipyards","Environment and Climate Change Canada",0
+"cae","Environment and Climate Change Canada",0
+"f35","Environment and Climate Change Canada",0
+"airbus","Environment and Climate Change Canada",0
+"textron","Environment and Climate Change Canada",0
+"dettwiler","Environment and Climate Change Canada",0
+"atomics","Environment and Climate Change Canada",0
+"skyalyne","Impact Assessment Agency of Canada",0
+"vancouver shipyards","Impact Assessment Agency of Canada",0
+"cae","Impact Assessment Agency of Canada",0
+"f35","Impact Assessment Agency of Canada",0
+"bell","Impact Assessment Agency of Canada",0
+"airbus","Impact Assessment Agency of Canada",0
+"textron","Impact Assessment Agency of Canada",0
+"dynamics","Impact Assessment Agency of Canada",0
+"dettwiler","Impact Assessment Agency of Canada",0
+"atomics","Impact Assessment Agency of Canada",0
+"skyalyne","Canadian Nuclear Safety Commission",0
+"vancouver shipyards","Canadian Nuclear Safety Commission",0
+"cae","Canadian Nuclear Safety Commission",0
+"f35","Canadian Nuclear Safety Commission",0
+"bell","Canadian Nuclear Safety Commission",0
+"airbus","Canadian Nuclear Safety Commission",0
+"textron","Canadian Nuclear Safety Commission",0
+"dynamics","Canadian Nuclear Safety Commission",0
+"dettwiler","Canadian Nuclear Safety Commission",0
+"atomics","Canadian Nuclear Safety Commission",0
+"skyalyne","Canadian Food Inspection Agency",0
+"vancouver shipyards","Canadian Food Inspection Agency",0
+"cae","Canadian Food Inspection Agency",0
+"f35","Canadian Food Inspection Agency",0
+"bell","Canadian Food Inspection Agency",0
+"airbus","Canadian Food Inspection Agency",0
+"textron","Canadian Food Inspection Agency",0
+"dynamics","Canadian Food Inspection Agency",0
+"dettwiler","Canadian Food Inspection Agency",0
+"atomics","Canadian Food Inspection Agency",0
+"skyalyne","Innovation, Science and Economic Development Canada",0
+"vancouver shipyards","Innovation, Science and Economic Development Canada",0
+"cae","Innovation, Science and Economic Development Canada",0
+"f35","Innovation, Science and Economic Development Canada",0
+"bell","Innovation, Science and Economic Development Canada",0
+"airbus","Innovation, Science and Economic Development Canada",0
+"textron","Innovation, Science and Economic Development Canada",0
+"dettwiler","Innovation, Science and Economic Development Canada",0
+"atomics","Innovation, Science and Economic Development Canada",0
+"skyalyne","National Research Council Canada",0
+"vancouver shipyards","National Research Council Canada",0
+"cae","National Research Council Canada",0
+"f35","National Research Council Canada",0
+"textron","National Research Council Canada",0
+"dettwiler","National Research Council Canada",0
+"atomics","National Research Council Canada",0
+"skyalyne","Employment and Social Development Canada",0
+"vancouver shipyards","Employment and Social Development Canada",0
+"f35","Employment and Social Development Canada",0
+"airbus","Employment and Social Development Canada",0
+"textron","Employment and Social Development Canada",0
+"dettwiler","Employment and Social Development Canada",0
+"atomics","Employment and Social Development Canada",0
+"skyalyne","Health Canada",0
+"vancouver shipyards","Health Canada",0
+"cae","Health Canada",0
+"f35","Health Canada",0
+"airbus","Health Canada",0
+"textron","Health Canada",0
+"dettwiler","Health Canada",0
+"atomics","Health Canada",0
+"skyalyne","Crown-Indigenous Relations and Northern Affairs Canada",0
+"vancouver shipyards","Crown-Indigenous Relations and Northern Affairs Canada",0
+"cae","Crown-Indigenous Relations and Northern Affairs Canada",0
+"f35","Crown-Indigenous Relations and Northern Affairs Canada",0
+"airbus","Crown-Indigenous Relations and Northern Affairs Canada",0
+"textron","Crown-Indigenous Relations and Northern Affairs Canada",0
+"dynamics","Crown-Indigenous Relations and Northern Affairs Canada",0
+"dettwiler","Crown-Indigenous Relations and Northern Affairs Canada",0
+"atomics","Crown-Indigenous Relations and Northern Affairs Canada",0
+"skyalyne","Indigenous Services Canada",0
+"vancouver shipyards","Indigenous Services Canada",0
+"cae","Indigenous Services Canada",0
+"f35","Indigenous Services Canada",0
+"airbus","Indigenous Services Canada",0
+"textron","Indigenous Services Canada",0
+"dynamics","Indigenous Services Canada",0
+"dettwiler","Indigenous Services Canada",0
+"atomics","Indigenous Services Canada",0
+"skyalyne","Parks Canada",0
+"vancouver shipyards","Parks Canada",0
+"cae","Parks Canada",0
+"f35","Parks Canada",0
+"airbus","Parks Canada",0
+"textron","Parks Canada",0
+"dettwiler","Parks Canada",0
+"atomics","Parks Canada",0
+"skyalyne","Canadian Heritage",0
+"vancouver shipyards","Canadian Heritage",0
+"cae","Canadian Heritage",0
+"f35","Canadian Heritage",0
+"airbus","Canadian Heritage",0
+"textron","Canadian Heritage",0
+"dynamics","Canadian Heritage",0
+"dettwiler","Canadian Heritage",0
+"atomics","Canadian Heritage",0
+"skyalyne","Financial Consumer Agency of Canada",0
+"vancouver shipyards","Financial Consumer Agency of Canada",0
+"cae","Financial Consumer Agency of Canada",0
+"f35","Financial Consumer Agency of Canada",0
+"airbus","Financial Consumer Agency of Canada",0
+"textron","Financial Consumer Agency of Canada",0
+"dynamics","Financial Consumer Agency of Canada",0
+"dettwiler","Financial Consumer Agency of Canada",0
+"atomics","Financial Consumer Agency of Canada",0
+"skyalyne","Financial Transactions and Reports Analysis Centre of Canada",0
+"vancouver shipyards","Financial Transactions and Reports Analysis Centre of Canada",0
+"cae","Financial Transactions and Reports Analysis Centre of Canada",0
+"f35","Financial Transactions and Reports Analysis Centre of Canada",0
+"bell","Financial Transactions and Reports Analysis Centre of Canada",0
+"airbus","Financial Transactions and Reports Analysis Centre of Canada",0
+"textron","Financial Transactions and Reports Analysis Centre of Canada",0
+"dynamics","Financial Transactions and Reports Analysis Centre of Canada",0
+"dettwiler","Financial Transactions and Reports Analysis Centre of Canada",0
+"atomics","Financial Transactions and Reports Analysis Centre of Canada",0
+"skyalyne","Privy Council Office",0
+"vancouver shipyards","Privy Council Office",0
+"cae","Privy Council Office",0
+"f35","Privy Council Office",0
+"airbus","Privy Council Office",0
+"textron","Privy Council Office",0
+"dettwiler","Privy Council Office",0
+"atomics","Privy Council Office",0
+"skyalyne","Shared Services Canada",0
+"vancouver shipyards","Shared Services Canada",0
+"cae","Shared Services Canada",0
+"f35","Shared Services Canada",0
+"textron","Shared Services Canada",0
+"dettwiler","Shared Services Canada",0
+"atomics","Shared Services Canada",0
+"skyalyne","Immigration, Refugees and Citizenship Canada",0
+"vancouver shipyards","Immigration, Refugees and Citizenship Canada",0
+"cae","Immigration, Refugees and Citizenship Canada",0
+"f35","Immigration, Refugees and Citizenship Canada",0
+"bell","Immigration, Refugees and Citizenship Canada",0
+"airbus","Immigration, Refugees and Citizenship Canada",0
+"textron","Immigration, Refugees and Citizenship Canada",0
+"dettwiler","Immigration, Refugees and Citizenship Canada",0
+"atomics","Immigration, Refugees and Citizenship Canada",0
+"skyalyne","Royal Canadian Mounted Police",0
+"vancouver shipyards","Royal Canadian Mounted Police",0
+"cae","Royal Canadian Mounted Police",0
+"f35","Royal Canadian Mounted Police",0
+"textron","Royal Canadian Mounted Police",0
+"dettwiler","Royal Canadian Mounted Police",0
+"atomics","Royal Canadian Mounted Police",0
+"skyalyne","Global Affairs Canada",0
+"vancouver shipyards","Global Affairs Canada",0
+"cae","Global Affairs Canada",0
+"f35","Global Affairs Canada",0
+"airbus","Global Affairs Canada",0
+"textron","Global Affairs Canada",0
+"dettwiler","Global Affairs Canada",0
+"atomics","Global Affairs Canada",0
+"skyalyne","Transport Canada",0
+"vancouver shipyards","Transport Canada",0
+"f35","Transport Canada",0
+"dettwiler","Transport Canada",0
+"atomics","Transport Canada",0
+"skyalyne","Fisheries and Oceans Canada",0
+"cae","Fisheries and Oceans Canada",0
+"f35","Fisheries and Oceans Canada",0
+"dettwiler","Fisheries and Oceans Canada",0
+"atomics","Fisheries and Oceans Canada",0
+"skyalyne","Natural Sciences and Engineering Research Council of Canada",0
+"vancouver shipyards","Natural Sciences and Engineering Research Council of Canada",0
+"cae","Natural Sciences and Engineering Research Council of Canada",0
+"f35","Natural Sciences and Engineering Research Council of Canada",0
+"airbus","Natural Sciences and Engineering Research Council of Canada",0
+"textron","Natural Sciences and Engineering Research Council of Canada",0
+"dynamics","Natural Sciences and Engineering Research Council of Canada",0
+"dettwiler","Natural Sciences and Engineering Research Council of Canada",0
+"atomics","Natural Sciences and Engineering Research Council of Canada",0
+"skyalyne","Canadian Intergovernmental Conference Secretariat",0
+"vancouver shipyards","Canadian Intergovernmental Conference Secretariat",0
+"cae","Canadian Intergovernmental Conference Secretariat",0
+"f35","Canadian Intergovernmental Conference Secretariat",0
+"bell","Canadian Intergovernmental Conference Secretariat",0
+"airbus","Canadian Intergovernmental Conference Secretariat",0
+"textron","Canadian Intergovernmental Conference Secretariat",0
+"dynamics","Canadian Intergovernmental Conference Secretariat",0
+"dettwiler","Canadian Intergovernmental Conference Secretariat",0
+"atomics","Canadian Intergovernmental Conference Secretariat",0
+"skyalyne","Canadian Radio-television and Telecommunications Commission",0
+"vancouver shipyards","Canadian Radio-television and Telecommunications Commission",0
+"cae","Canadian Radio-television and Telecommunications Commission",0
+"f35","Canadian Radio-television and Telecommunications Commission",0
+"airbus","Canadian Radio-television and Telecommunications Commission",0
+"textron","Canadian Radio-television and Telecommunications Commission",0
+"dynamics","Canadian Radio-television and Telecommunications Commission",0
+"dettwiler","Canadian Radio-television and Telecommunications Commission",0
+"atomics","Canadian Radio-television and Telecommunications Commission",0
+"skyalyne","Polar Knowledge Canada",0
+"vancouver shipyards","Polar Knowledge Canada",0
+"cae","Polar Knowledge Canada",0
+"f35","Polar Knowledge Canada",0
+"airbus","Polar Knowledge Canada",0
+"textron","Polar Knowledge Canada",0
+"dynamics","Polar Knowledge Canada",0
+"dettwiler","Polar Knowledge Canada",0
+"atomics","Polar Knowledge Canada",0
+"skyalyne","Office of the Superintendent of Financial Institutions Canada",0
+"vancouver shipyards","Office of the Superintendent of Financial Institutions Canada",0
+"cae","Office of the Superintendent of Financial Institutions Canada",0
+"f35","Office of the Superintendent of Financial Institutions Canada",0
+"airbus","Office of the Superintendent of Financial Institutions Canada",0
+"textron","Office of the Superintendent of Financial Institutions Canada",0
+"dynamics","Office of the Superintendent of Financial Institutions Canada",0
+"dettwiler","Office of the Superintendent of Financial Institutions Canada",0
+"atomics","Office of the Superintendent of Financial Institutions Canada",0
+"skyalyne","Public Health Agency of Canada",0
+"vancouver shipyards","Public Health Agency of Canada",0
+"f35","Public Health Agency of Canada",0
+"airbus","Public Health Agency of Canada",0
+"textron","Public Health Agency of Canada",0
+"dynamics","Public Health Agency of Canada",0
+"dettwiler","Public Health Agency of Canada",0
+"atomics","Public Health Agency of Canada",0
+"skyalyne","Courts Administration Service",0
+"vancouver shipyards","Courts Administration Service",0
+"cae","Courts Administration Service",0
+"f35","Courts Administration Service",0
+"airbus","Courts Administration Service",0
+"textron","Courts Administration Service",0
+"dynamics","Courts Administration Service",0
+"dettwiler","Courts Administration Service",0
+"atomics","Courts Administration Service",0
+"skyalyne","Immigration and Refugee Board of Canada",0
+"vancouver shipyards","Immigration and Refugee Board of Canada",0
+"cae","Immigration and Refugee Board of Canada",0
+"f35","Immigration and Refugee Board of Canada",0
+"bell","Immigration and Refugee Board of Canada",0
+"airbus","Immigration and Refugee Board of Canada",0
+"textron","Immigration and Refugee Board of Canada",0
+"dynamics","Immigration and Refugee Board of Canada",0
+"dettwiler","Immigration and Refugee Board of Canada",0
+"atomics","Immigration and Refugee Board of Canada",0
+"skyalyne","National Film Board",0
+"vancouver shipyards","National Film Board",0
+"cae","National Film Board",0
+"f35","National Film Board",0
+"airbus","National Film Board",0
+"textron","National Film Board",0
+"dynamics","National Film Board",0
+"dettwiler","National Film Board",0
+"atomics","National Film Board",0
+"skyalyne","Canadian Space Agency",0
+"vancouver shipyards","Canadian Space Agency",0
+"cae","Canadian Space Agency",0
+"f35","Canadian Space Agency",0
+"textron","Canadian Space Agency",0
+"dynamics","Canadian Space Agency",0
+"atomics","Canadian Space Agency",0
+"skyalyne","Canada School of Public Service",0
+"vancouver shipyards","Canada School of Public Service",0
+"cae","Canada School of Public Service",0
+"f35","Canada School of Public Service",0
+"bell","Canada School of Public Service",0
+"airbus","Canada School of Public Service",0
+"textron","Canada School of Public Service",0
+"dynamics","Canada School of Public Service",0
+"dettwiler","Canada School of Public Service",0
+"atomics","Canada School of Public Service",0
+"skyalyne","Infrastructure Canada",0
+"vancouver shipyards","Infrastructure Canada",0
+"cae","Infrastructure Canada",0
+"f35","Infrastructure Canada",0
+"airbus","Infrastructure Canada",0
+"textron","Infrastructure Canada",0
+"dynamics","Infrastructure Canada",0
+"dettwiler","Infrastructure Canada",0
+"atomics","Infrastructure Canada",0
+"skyalyne","Social Sciences and Humanities Research Council of Canada",0
+"vancouver shipyards","Social Sciences and Humanities Research Council of Canada",0
+"cae","Social Sciences and Humanities Research Council of Canada",0
+"f35","Social Sciences and Humanities Research Council of Canada",0
+"airbus","Social Sciences and Humanities Research Council of Canada",0
+"textron","Social Sciences and Humanities Research Council of Canada",0
+"dynamics","Social Sciences and Humanities Research Council of Canada",0
+"dettwiler","Social Sciences and Humanities Research Council of Canada",0
+"atomics","Social Sciences and Humanities Research Council of Canada",0
+"skyalyne","Parole Board of Canada",0
+"vancouver shipyards","Parole Board of Canada",0
+"cae","Parole Board of Canada",0
+"f35","Parole Board of Canada",0
+"airbus","Parole Board of Canada",0
+"textron","Parole Board of Canada",0
+"dynamics","Parole Board of Canada",0
+"dettwiler","Parole Board of Canada",0
+"atomics","Parole Board of Canada",0
+"skyalyne","Canada Energy Regulator",0
+"vancouver shipyards","Canada Energy Regulator",0
+"f35","Canada Energy Regulator",0
+"airbus","Canada Energy Regulator",0
+"textron","Canada Energy Regulator",0
+"dynamics","Canada Energy Regulator",0
+"dettwiler","Canada Energy Regulator",0
+"atomics","Canada Energy Regulator",0
+"skyalyne","Civilian Review and Complaints Commission for the RCMP",0
+"vancouver shipyards","Civilian Review and Complaints Commission for the RCMP",0
+"cae","Civilian Review and Complaints Commission for the RCMP",0
+"f35","Civilian Review and Complaints Commission for the RCMP",0
+"bell","Civilian Review and Complaints Commission for the RCMP",0
+"airbus","Civilian Review and Complaints Commission for the RCMP",0
+"textron","Civilian Review and Complaints Commission for the RCMP",0
+"dynamics","Civilian Review and Complaints Commission for the RCMP",0
+"dettwiler","Civilian Review and Complaints Commission for the RCMP",0
+"atomics","Civilian Review and Complaints Commission for the RCMP",0
+"skyalyne","Public Prosecution Service of Canada",0
+"vancouver shipyards","Public Prosecution Service of Canada",0
+"cae","Public Prosecution Service of Canada",0
+"f35","Public Prosecution Service of Canada",0
+"airbus","Public Prosecution Service of Canada",0
+"textron","Public Prosecution Service of Canada",0
+"dynamics","Public Prosecution Service of Canada",0
+"dettwiler","Public Prosecution Service of Canada",0
+"atomics","Public Prosecution Service of Canada",0
+"skyalyne","Department of Finance Canada",0
+"vancouver shipyards","Department of Finance Canada",0
+"cae","Department of Finance Canada",0
+"f35","Department of Finance Canada",0
+"bell","Department of Finance Canada",0
+"airbus","Department of Finance Canada",0
+"textron","Department of Finance Canada",0
+"dynamics","Department of Finance Canada",0
+"dettwiler","Department of Finance Canada",0
+"atomics","Department of Finance Canada",0
+"skyalyne","Public Safety Canada",0
+"vancouver shipyards","Public Safety Canada",0
+"cae","Public Safety Canada",0
+"f35","Public Safety Canada",0
+"airbus","Public Safety Canada",0
+"textron","Public Safety Canada",0
+"dettwiler","Public Safety Canada",0
+"atomics","Public Safety Canada",0
+"skyalyne","Canadian Human Rights Commission",0
+"vancouver shipyards","Canadian Human Rights Commission",0
+"cae","Canadian Human Rights Commission",0
+"f35","Canadian Human Rights Commission",0
+"airbus","Canadian Human Rights Commission",0
+"textron","Canadian Human Rights Commission",0
+"dynamics","Canadian Human Rights Commission",0
+"dettwiler","Canadian Human Rights Commission",0
+"atomics","Canadian Human Rights Commission",0
+"skyalyne","Canadian Transportation Agency",0
+"vancouver shipyards","Canadian Transportation Agency",0
+"cae","Canadian Transportation Agency",0
+"f35","Canadian Transportation Agency",0
+"airbus","Canadian Transportation Agency",0
+"textron","Canadian Transportation Agency",0
+"dynamics","Canadian Transportation Agency",0
+"dettwiler","Canadian Transportation Agency",0
+"atomics","Canadian Transportation Agency",0
+"skyalyne","Office of the Auditor General of Canada",0
+"vancouver shipyards","Office of the Auditor General of Canada",0
+"cae","Office of the Auditor General of Canada",0
+"f35","Office of the Auditor General of Canada",0
+"airbus","Office of the Auditor General of Canada",0
+"textron","Office of the Auditor General of Canada",0
+"dynamics","Office of the Auditor General of Canada",0
+"dettwiler","Office of the Auditor General of Canada",0
+"atomics","Office of the Auditor General of Canada",0
+"skyalyne","Elections Canada",0
+"vancouver shipyards","Elections Canada",0
+"cae","Elections Canada",0
+"f35","Elections Canada",0
+"airbus","Elections Canada",0
+"textron","Elections Canada",0
+"dynamics","Elections Canada",0
+"dettwiler","Elections Canada",0
+"atomics","Elections Canada",0
+"skyalyne","Federal Economic Development Agency for Southern Ontario",0
+"vancouver shipyards","Federal Economic Development Agency for Southern Ontario",0
+"cae","Federal Economic Development Agency for Southern Ontario",0
+"f35","Federal Economic Development Agency for Southern Ontario",0
+"bell","Federal Economic Development Agency for Southern Ontario",0
+"airbus","Federal Economic Development Agency for Southern Ontario",0
+"textron","Federal Economic Development Agency for Southern Ontario",0
+"dynamics","Federal Economic Development Agency for Southern Ontario",0
+"dettwiler","Federal Economic Development Agency for Southern Ontario",0
+"atomics","Federal Economic Development Agency for Southern Ontario",0
+"skyalyne","Library and Archives Canada",0
+"vancouver shipyards","Library and Archives Canada",0
+"cae","Library and Archives Canada",0
+"f35","Library and Archives Canada",0
+"bell","Library and Archives Canada",0
+"airbus","Library and Archives Canada",0
+"textron","Library and Archives Canada",0
+"dynamics","Library and Archives Canada",0
+"dettwiler","Library and Archives Canada",0
+"atomics","Library and Archives Canada",0
+"skyalyne","Office of the Commissioner for Federal Judicial Affairs Canada",0
+"vancouver shipyards","Office of the Commissioner for Federal Judicial Affairs Canada",0
+"cae","Office of the Commissioner for Federal Judicial Affairs Canada",0
+"f35","Office of the Commissioner for Federal Judicial Affairs Canada",0
+"airbus","Office of the Commissioner for Federal Judicial Affairs Canada",0
+"textron","Office of the Commissioner for Federal Judicial Affairs Canada",0
+"dynamics","Office of the Commissioner for Federal Judicial Affairs Canada",0
+"dettwiler","Office of the Commissioner for Federal Judicial Affairs Canada",0
+"atomics","Office of the Commissioner for Federal Judicial Affairs Canada",0
+"skyalyne","Public Service Commission of Canada",0
+"vancouver shipyards","Public Service Commission of Canada",0
+"cae","Public Service Commission of Canada",0
+"f35","Public Service Commission of Canada",0
+"bell","Public Service Commission of Canada",0
+"airbus","Public Service Commission of Canada",0
+"textron","Public Service Commission of Canada",0
+"dynamics","Public Service Commission of Canada",0
+"dettwiler","Public Service Commission of Canada",0
+"atomics","Public Service Commission of Canada",0
+"skyalyne","International Joint Commission",0
+"vancouver shipyards","International Joint Commission",0
+"cae","International Joint Commission",0
+"f35","International Joint Commission",0
+"airbus","International Joint Commission",0
+"textron","International Joint Commission",0
+"dynamics","International Joint Commission",0
+"dettwiler","International Joint Commission",0
+"atomics","International Joint Commission",0
+"skyalyne","Western Economic Diversification Canada",0
+"vancouver shipyards","Western Economic Diversification Canada",0
+"cae","Western Economic Diversification Canada",0
+"f35","Western Economic Diversification Canada",0
+"bell","Western Economic Diversification Canada",0
+"airbus","Western Economic Diversification Canada",0
+"textron","Western Economic Diversification Canada",0
+"dynamics","Western Economic Diversification Canada",0
+"dettwiler","Western Economic Diversification Canada",0
+"atomics","Western Economic Diversification Canada",0
+"skyalyne","Transportation Safety Board of Canada",0
+"vancouver shipyards","Transportation Safety Board of Canada",0
+"cae","Transportation Safety Board of Canada",0
+"f35","Transportation Safety Board of Canada",0
+"bell","Transportation Safety Board of Canada",0
+"airbus","Transportation Safety Board of Canada",0
+"textron","Transportation Safety Board of Canada",0
+"dynamics","Transportation Safety Board of Canada",0
+"dettwiler","Transportation Safety Board of Canada",0
+"atomics","Transportation Safety Board of Canada",0
+"skyalyne","Women and Gender Equality Canada",0
+"vancouver shipyards","Women and Gender Equality Canada",0
+"cae","Women and Gender Equality Canada",0
+"f35","Women and Gender Equality Canada",0
+"airbus","Women and Gender Equality Canada",0
+"textron","Women and Gender Equality Canada",0
+"dynamics","Women and Gender Equality Canada",0
+"dettwiler","Women and Gender Equality Canada",0
+"atomics","Women and Gender Equality Canada",0
+"skyalyne","Canadian Centre for Occupational Health and Safety",0
+"vancouver shipyards","Canadian Centre for Occupational Health and Safety",0
+"cae","Canadian Centre for Occupational Health and Safety",0
+"f35","Canadian Centre for Occupational Health and Safety",0
+"bell","Canadian Centre for Occupational Health and Safety",0
+"airbus","Canadian Centre for Occupational Health and Safety",0
+"textron","Canadian Centre for Occupational Health and Safety",0
+"dynamics","Canadian Centre for Occupational Health and Safety",0
+"dettwiler","Canadian Centre for Occupational Health and Safety",0
+"atomics","Canadian Centre for Occupational Health and Safety",0
+"skyalyne","Administrative Tribunals Support Service of Canada",0
+"vancouver shipyards","Administrative Tribunals Support Service of Canada",0
+"cae","Administrative Tribunals Support Service of Canada",0
+"f35","Administrative Tribunals Support Service of Canada",0
+"bell","Administrative Tribunals Support Service of Canada",0
+"airbus","Administrative Tribunals Support Service of Canada",0
+"textron","Administrative Tribunals Support Service of Canada",0
+"dynamics","Administrative Tribunals Support Service of Canada",0
+"dettwiler","Administrative Tribunals Support Service of Canada",0
+"atomics","Administrative Tribunals Support Service of Canada",0
+"skyalyne","Veterans Affairs Canada",0
+"vancouver shipyards","Veterans Affairs Canada",0
+"cae","Veterans Affairs Canada",0
+"f35","Veterans Affairs Canada",0
+"bell","Veterans Affairs Canada",0
+"airbus","Veterans Affairs Canada",0
+"textron","Veterans Affairs Canada",0
+"dynamics","Veterans Affairs Canada",0
+"dettwiler","Veterans Affairs Canada",0
+"atomics","Veterans Affairs Canada",0
+"skyalyne","Office of the Commissioner of Official Languages",0
+"vancouver shipyards","Office of the Commissioner of Official Languages",0
+"cae","Office of the Commissioner of Official Languages",0
+"f35","Office of the Commissioner of Official Languages",0
+"airbus","Office of the Commissioner of Official Languages",0
+"textron","Office of the Commissioner of Official Languages",0
+"dynamics","Office of the Commissioner of Official Languages",0
+"dettwiler","Office of the Commissioner of Official Languages",0
+"atomics","Office of the Commissioner of Official Languages",0
+"skyalyne","Canada Economic Development for Quebec Regions",0
+"vancouver shipyards","Canada Economic Development for Quebec Regions",0
+"cae","Canada Economic Development for Quebec Regions",0
+"f35","Canada Economic Development for Quebec Regions",0
+"airbus","Canada Economic Development for Quebec Regions",0
+"textron","Canada Economic Development for Quebec Regions",0
+"dettwiler","Canada Economic Development for Quebec Regions",0
+"atomics","Canada Economic Development for Quebec Regions",0
+"skyalyne","Canadian Grain Commission",0
+"vancouver shipyards","Canadian Grain Commission",0
+"cae","Canadian Grain Commission",0
+"f35","Canadian Grain Commission",0
+"airbus","Canadian Grain Commission",0
+"textron","Canadian Grain Commission",0
+"dynamics","Canadian Grain Commission",0
+"dettwiler","Canadian Grain Commission",0
+"atomics","Canadian Grain Commission",0
+"skyalyne","Military Police Complaints Commission of Canada",0
+"vancouver shipyards","Military Police Complaints Commission of Canada",0
+"cae","Military Police Complaints Commission of Canada",0
+"f35","Military Police Complaints Commission of Canada",0
+"bell","Military Police Complaints Commission of Canada",0
+"airbus","Military Police Complaints Commission of Canada",0
+"textron","Military Police Complaints Commission of Canada",0
+"dynamics","Military Police Complaints Commission of Canada",0
+"dettwiler","Military Police Complaints Commission of Canada",0
+"atomics","Military Police Complaints Commission of Canada",0
+"skyalyne","Atlantic Canada Opportunities Agency",0
+"vancouver shipyards","Atlantic Canada Opportunities Agency",0
+"cae","Atlantic Canada Opportunities Agency",0
+"f35","Atlantic Canada Opportunities Agency",0
+"bell","Atlantic Canada Opportunities Agency",0
+"airbus","Atlantic Canada Opportunities Agency",0
+"textron","Atlantic Canada Opportunities Agency",0
+"dynamics","Atlantic Canada Opportunities Agency",0
+"dettwiler","Atlantic Canada Opportunities Agency",0
+"atomics","Atlantic Canada Opportunities Agency",0
+"skyalyne","Canadian Northern Economic Development Agency",0
+"vancouver shipyards","Canadian Northern Economic Development Agency",0
+"cae","Canadian Northern Economic Development Agency",0
+"f35","Canadian Northern Economic Development Agency",0
+"bell","Canadian Northern Economic Development Agency",0
+"airbus","Canadian Northern Economic Development Agency",0
+"textron","Canadian Northern Economic Development Agency",0
+"dynamics","Canadian Northern Economic Development Agency",0
+"dettwiler","Canadian Northern Economic Development Agency",0
+"atomics","Canadian Northern Economic Development Agency",0
+"skyalyne","Office of the Privacy Commissioner of Canada",0
+"vancouver shipyards","Office of the Privacy Commissioner of Canada",0
+"cae","Office of the Privacy Commissioner of Canada",0
+"f35","Office of the Privacy Commissioner of Canada",0
+"airbus","Office of the Privacy Commissioner of Canada",0
+"textron","Office of the Privacy Commissioner of Canada",0
+"dynamics","Office of the Privacy Commissioner of Canada",0
+"dettwiler","Office of the Privacy Commissioner of Canada",0
+"atomics","Office of the Privacy Commissioner of Canada",0
+"skyalyne","Patented Medicine Prices Review Board Canada",0
+"vancouver shipyards","Patented Medicine Prices Review Board Canada",0
+"cae","Patented Medicine Prices Review Board Canada",0
+"f35","Patented Medicine Prices Review Board Canada",0
+"bell","Patented Medicine Prices Review Board Canada",0
+"airbus","Patented Medicine Prices Review Board Canada",0
+"textron","Patented Medicine Prices Review Board Canada",0
+"dynamics","Patented Medicine Prices Review Board Canada",0
+"dettwiler","Patented Medicine Prices Review Board Canada",0
+"atomics","Patented Medicine Prices Review Board Canada",0
+"skyalyne","Office of the Information Commissioner of Canada",0
+"vancouver shipyards","Office of the Information Commissioner of Canada",0
+"cae","Office of the Information Commissioner of Canada",0
+"f35","Office of the Information Commissioner of Canada",0
+"bell","Office of the Information Commissioner of Canada",0
+"airbus","Office of the Information Commissioner of Canada",0
+"textron","Office of the Information Commissioner of Canada",0
+"dynamics","Office of the Information Commissioner of Canada",0
+"dettwiler","Office of the Information Commissioner of Canada",0
+"atomics","Office of the Information Commissioner of Canada",0
+"skyalyne","Accessibility Standards Canada",0
+"vancouver shipyards","Accessibility Standards Canada",0
+"cae","Accessibility Standards Canada",0
+"f35","Accessibility Standards Canada",0
+"bell","Accessibility Standards Canada",0
+"airbus","Accessibility Standards Canada",0
+"textron","Accessibility Standards Canada",0
+"dynamics","Accessibility Standards Canada",0
+"dettwiler","Accessibility Standards Canada",0
+"atomics","Accessibility Standards Canada",0
+"skyalyne","National Security and Intelligence Review Agency",0
+"vancouver shipyards","National Security and Intelligence Review Agency",0
+"cae","National Security and Intelligence Review Agency",0
+"f35","National Security and Intelligence Review Agency",0
+"airbus","National Security and Intelligence Review Agency",0
+"textron","National Security and Intelligence Review Agency",0
+"dynamics","National Security and Intelligence Review Agency",0
+"dettwiler","National Security and Intelligence Review Agency",0
+"atomics","National Security and Intelligence Review Agency",0
+"skyalyne","Office of the Secretary to the Governor General",0
+"vancouver shipyards","Office of the Secretary to the Governor General",0
+"cae","Office of the Secretary to the Governor General",0
+"f35","Office of the Secretary to the Governor General",0
+"bell","Office of the Secretary to the Governor General",0
+"airbus","Office of the Secretary to the Governor General",0
+"textron","Office of the Secretary to the Governor General",0
+"dynamics","Office of the Secretary to the Governor General",0
+"dettwiler","Office of the Secretary to the Governor General",0
+"atomics","Office of the Secretary to the Governor General",0
+"skyalyne","RCMP External Review Committee",0
+"vancouver shipyards","RCMP External Review Committee",0
+"cae","RCMP External Review Committee",0
+"f35","RCMP External Review Committee",0
+"bell","RCMP External Review Committee",0
+"airbus","RCMP External Review Committee",0
+"textron","RCMP External Review Committee",0
+"dynamics","RCMP External Review Committee",0
+"dettwiler","RCMP External Review Committee",0
+"atomics","RCMP External Review Committee",0
+"skyalyne","Office of the Commissioner of Lobbying of Canada",0
+"vancouver shipyards","Office of the Commissioner of Lobbying of Canada",0
+"cae","Office of the Commissioner of Lobbying of Canada",0
+"f35","Office of the Commissioner of Lobbying of Canada",0
+"airbus","Office of the Commissioner of Lobbying of Canada",0
+"textron","Office of the Commissioner of Lobbying of Canada",0
+"dynamics","Office of the Commissioner of Lobbying of Canada",0
+"dettwiler","Office of the Commissioner of Lobbying of Canada",0
+"atomics","Office of the Commissioner of Lobbying of Canada",0
+"skyalyne","Invest in Canada",0
+"vancouver shipyards","Invest in Canada",0
+"cae","Invest in Canada",0
+"f35","Invest in Canada",0
+"bell","Invest in Canada",0
+"airbus","Invest in Canada",0
+"textron","Invest in Canada",0
+"dynamics","Invest in Canada",0
+"dettwiler","Invest in Canada",0
+"atomics","Invest in Canada",0
+"skyalyne","Veterans Review and Appeal Board",0
+"vancouver shipyards","Veterans Review and Appeal Board",0
+"cae","Veterans Review and Appeal Board",0
+"f35","Veterans Review and Appeal Board",0
+"bell","Veterans Review and Appeal Board",0
+"airbus","Veterans Review and Appeal Board",0
+"textron","Veterans Review and Appeal Board",0
+"dynamics","Veterans Review and Appeal Board",0
+"dettwiler","Veterans Review and Appeal Board",0
+"atomics","Veterans Review and Appeal Board",0
+"skyalyne","Farm Products Council of Canada",0
+"vancouver shipyards","Farm Products Council of Canada",0
+"cae","Farm Products Council of Canada",0
+"f35","Farm Products Council of Canada",0
+"bell","Farm Products Council of Canada",0
+"airbus","Farm Products Council of Canada",0
+"textron","Farm Products Council of Canada",0
+"dynamics","Farm Products Council of Canada",0
+"dettwiler","Farm Products Council of Canada",0
+"atomics","Farm Products Council of Canada",0
+"skyalyne","The Correctional Investigator Canada",0
+"vancouver shipyards","The Correctional Investigator Canada",0
+"cae","The Correctional Investigator Canada",0
+"f35","The Correctional Investigator Canada",0
+"airbus","The Correctional Investigator Canada",0
+"textron","The Correctional Investigator Canada",0
+"dynamics","The Correctional Investigator Canada",0
+"dettwiler","The Correctional Investigator Canada",0
+"atomics","The Correctional Investigator Canada",0
+"skyalyne","Office of the Public Sector Integrity Commissioner of Canada",0
+"vancouver shipyards","Office of the Public Sector Integrity Commissioner of Canada",0
+"cae","Office of the Public Sector Integrity Commissioner of Canada",0
+"f35","Office of the Public Sector Integrity Commissioner of Canada",0
+"airbus","Office of the Public Sector Integrity Commissioner of Canada",0
+"textron","Office of the Public Sector Integrity Commissioner of Canada",0
+"dynamics","Office of the Public Sector Integrity Commissioner of Canada",0
+"dettwiler","Office of the Public Sector Integrity Commissioner of Canada",0
+"atomics","Office of the Public Sector Integrity Commissioner of Canada",0
+"skyalyne","Military Grievances External Review Committee",0
+"vancouver shipyards","Military Grievances External Review Committee",0
+"cae","Military Grievances External Review Committee",0
+"f35","Military Grievances External Review Committee",0
+"bell","Military Grievances External Review Committee",0
+"airbus","Military Grievances External Review Committee",0
+"textron","Military Grievances External Review Committee",0
+"dynamics","Military Grievances External Review Committee",0
+"dettwiler","Military Grievances External Review Committee",0
+"atomics","Military Grievances External Review Committee",0
+"skyalyne","Prairies Economic Development Canada",0
+"vancouver shipyards","Prairies Economic Development Canada",0
+"cae","Prairies Economic Development Canada",0
+"f35","Prairies Economic Development Canada",0
+"bell","Prairies Economic Development Canada",0
+"airbus","Prairies Economic Development Canada",0
+"textron","Prairies Economic Development Canada",0
+"dynamics","Prairies Economic Development Canada",0
+"dettwiler","Prairies Economic Development Canada",0
+"atomics","Prairies Economic Development Canada",0
+"skyalyne","Office of the Intelligence Commissioner",0
+"vancouver shipyards","Office of the Intelligence Commissioner",0
+"cae","Office of the Intelligence Commissioner",0
+"f35","Office of the Intelligence Commissioner",0
+"bell","Office of the Intelligence Commissioner",0
+"airbus","Office of the Intelligence Commissioner",0
+"textron","Office of the Intelligence Commissioner",0
+"dynamics","Office of the Intelligence Commissioner",0
+"dettwiler","Office of the Intelligence Commissioner",0
+"atomics","Office of the Intelligence Commissioner",0
+"skyalyne","Pacific Economic Development Canada",0
+"vancouver shipyards","Pacific Economic Development Canada",0
+"cae","Pacific Economic Development Canada",0
+"f35","Pacific Economic Development Canada",0
+"bell","Pacific Economic Development Canada",0
+"airbus","Pacific Economic Development Canada",0
+"textron","Pacific Economic Development Canada",0
+"dynamics","Pacific Economic Development Canada",0
+"dettwiler","Pacific Economic Development Canada",0
+"atomics","Pacific Economic Development Canada",0
+"skyalyne","Federal Economic Development Agency for Northern Ontario",0
+"vancouver shipyards","Federal Economic Development Agency for Northern Ontario",0
+"cae","Federal Economic Development Agency for Northern Ontario",0
+"f35","Federal Economic Development Agency for Northern Ontario",0
+"bell","Federal Economic Development Agency for Northern Ontario",0
+"airbus","Federal Economic Development Agency for Northern Ontario",0
+"textron","Federal Economic Development Agency for Northern Ontario",0
+"dynamics","Federal Economic Development Agency for Northern Ontario",0
+"dettwiler","Federal Economic Development Agency for Northern Ontario",0
+"atomics","Federal Economic Development Agency for Northern Ontario",0
+"skyalyne","National Gallery of Canada",0
+"vancouver shipyards","National Gallery of Canada",0
+"cae","National Gallery of Canada",0
+"f35","National Gallery of Canada",0
+"bell","National Gallery of Canada",0
+"airbus","National Gallery of Canada",0
+"textron","National Gallery of Canada",0
+"dynamics","National Gallery of Canada",0
+"dettwiler","National Gallery of Canada",0
+"atomics","National Gallery of Canada",0
+"skyalyne","Law Commission of Canada",0
+"vancouver shipyards","Law Commission of Canada",0
+"cae","Law Commission of Canada",0
+"f35","Law Commission of Canada",0
+"bell","Law Commission of Canada",0
+"airbus","Law Commission of Canada",0
+"textron","Law Commission of Canada",0
+"dynamics","Law Commission of Canada",0
+"dettwiler","Law Commission of Canada",0
+"atomics","Law Commission of Canada",0

@@ -258,7 +258,16 @@ df <- df %>%
 
 cleaned <- df
 
-#View(cleaned)
+cleaned <- cleaned %>%
+  mutate(
+    baseline_days = as.numeric(award_date - as.Date("2020-01-01"))
+  )
+
+cleaned <- cleaned %>%
+  filter(format(award_date, "%Y") != "2019")
+
+
+View(cleaned)
 
 #### Save data ####
 write_csv(cleaned, "data/analysis_data/cleaned_data.csv")
