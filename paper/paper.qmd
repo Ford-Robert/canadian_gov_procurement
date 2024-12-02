@@ -589,7 +589,7 @@ The impact of contract duration on the contract amount is substantially larger i
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: Model Results Summary
 #| fig-align: center
 
 # Tidy up the model results
@@ -609,20 +609,37 @@ combined_results <- combined_results %>%
     )
   )
 
-# Format the table for Quarto using kableExtra
-combined_results %>%
-  select(model, term, estimate, std.error, statistic, p.value) %>%
-  rename(
-    Model = model,
-    Term = term,
-    Estimate = estimate,
-    `Std. Error` = std.error,
-    `t-Statistic` = statistic,
-    `p-Value` = p.value
-  ) %>%
-  kable(format = "html", digits = 3, align = "c", caption = "Model Results Summary") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+# Determine the output format
+output_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
 
+# Choose styling based on output format
+if (output_format == "latex") {
+  combined_results %>%
+    select(model, term, estimate, std.error, statistic, p.value) %>%
+    rename(
+      Model = model,
+      Term = term,
+      Estimate = estimate,
+      `Std. Error` = std.error,
+      `t-Statistic` = statistic,
+      `p-Value` = p.value
+    ) %>%
+    kable(booktabs = TRUE, caption = "Model Results Summary") %>%
+    kable_styling(latex_options = c("striped", "hold_position"))
+} else {
+  combined_results %>%
+    select(model, term, estimate, std.error, statistic, p.value) %>%
+    rename(
+      Model = model,
+      Term = term,
+      Estimate = estimate,
+      `Std. Error` = std.error,
+      `t-Statistic` = statistic,
+      `p-Value` = p.value
+    ) %>%
+    kable(format = "html", digits = 3, align = "c", caption = "Model Results Summary") %>%
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+}
 ```
 
 
