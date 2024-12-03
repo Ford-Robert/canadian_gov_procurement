@@ -14,7 +14,7 @@
 
 #### Workspace setup ####
 library(tidyverse)
-library(VGAM)      # For Pareto distribution
+library(actuar)     # For Pareto distribution
 library(dplyr)     # For data manipulation
 library(lubridate)
 
@@ -28,7 +28,7 @@ buyer_list <- c(
   "Canadian Institutes of Health Research",
   "The National Battlefields Commission",
   "Department of Justice Canada",
-  # "National Defence", # Excluded
+  #"National Defence", # Excluded
   "Public Services and Procurement Canada",
   "Canada Revenue Agency",
   "Canada Border Services Agency",
@@ -182,7 +182,6 @@ supplier_list <- c(
   "Ernst & Young Canada"
 )
 
-# 3. Simulate the 'buyer' column
 n <- 10000
 
 # 80% "National Defence"
@@ -205,41 +204,46 @@ contract_column <- sample(contract_list, size = n, replace = TRUE)
 supplier_column <- sample(supplier_list, size = n, replace = TRUE)
 
 # 6. Simulate the 'amount' column using Pareto distribution
-# Parameters for Pareto: x_m = 10,000; alpha = 3.5
-x_m <- 10000
-alpha <- 3.5
+# Parameters for Pareto: scale = 10,000; shape = 3.5
 
-# Using VGAM::rpareto
-amount_column <- rpareto(n, location = x_m, shape = alpha)
+scale <- 10000
+shape <- 3.5
 
-# Alternatively, if VGAM::rpareto is not available, use inverse transform sampling
-# U <- runif(n)
-# amount_column <- x_m / (U)^(1/alpha)
+# Using actuar::rpareto
+amount_column <- actuar::rpareto(n, scale = scale, shape = shape)
 
 # 7. Simulate 'award_date' and 'start_date'
 # Define date range
 start_date_min <- as.Date("2018-01-01")
 start_date_max <- as.Date("2024-12-31")
 
-# Generate random dates
+# Generate random award_start_dates
 award_start_dates <- as.Date(runif(n, min = as.numeric(start_date_min), max = as.numeric(start_date_max)), origin = "1970-01-01")
 
-# 8. Simulate 'duration_days'
-# Based on sample data, durations range roughly between 2,500 to 10,500 days
-# Use a skewed distribution, e.g., log-normal
-# Parameters can be adjusted to fit desired range
+# 8. Simulate 'end_date' first, then calculate 'duration_days'
 
-# Using log-normal with meanlog and sdlog chosen to cover the range
+# Define minimum and maximum duration in days
+min_duration <- 2000
+max_duration <- 12000
+
+# Using log-normal distribution for duration_days
+# Adjust meanlog and sdlog to achieve desired range
+
+# Calculate meanlog and sdlog to center around 5000 days
 meanlog <- log(5000) - (0.5 * (log(5000) / 2)) # Adjusted for skewness
 sdlog <- 0.5
 
-duration_days_column <- round(rlnorm(n, meanlog = meanlog, sdlog = sdlog))
+# 8. Simulate 'end_date' first, then calculate 'duration_days'
 
-# To ensure duration_days are within a reasonable range (e.g., 2000 to 12000)
-duration_days_column <- pmin(pmax(duration_days_column, 2000), 12000)
+# Generate duration_days uniformly between 2000 and 12000
+duration_days_random <- sample(min_duration:max_duration, size = n, replace = TRUE)
 
-# 9. Calculate 'end_date'
-end_dates <- award_start_dates + days(duration_days_column)
+# Generate 'end_date' by adding duration_days_random to 'award_start_dates'
+end_dates <- award_start_dates + days(duration_days_random)
+
+# 9. Calculate 'duration_days_column'
+duration_days_column <- as.numeric(end_dates - award_start_dates)
+
 
 # 10. Calculate 'per_day'
 per_day_column <- amount_column / duration_days_column
@@ -263,8 +267,7 @@ simulated_df <- data.frame(
 )
 
 # Optional: View the first few rows of the simulated dataframe
-head(simulated_df)
+view(simulated_df)
 
+# Save the simulated data
 write.csv(simulated_df, "data/simulated_data/simulated_data.csv", row.names = FALSE)
-
-
