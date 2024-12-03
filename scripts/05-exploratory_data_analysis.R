@@ -78,6 +78,14 @@ total_spend <- df %>%
   summarize(total_amount = sum(amount, na.rm = TRUE)) %>%
   pull(total_amount)
 
+longest_contract <- df %>%
+  arrange(desc(duration_days)) %>%
+  slice(20)
+
+# Display the contract with the longest duration
+View(longest_contract)
+
+
 print(supp_total / dept_total)
 
 print(dept_total)
