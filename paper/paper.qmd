@@ -5,7 +5,7 @@ author:
 thanks: "Code and data are available at: https://github.com/Ford-Robert"
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "TODO First sentence. TODO Second sentence. TODO Third sentence. TODO Fourth sentence."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -57,7 +57,7 @@ The primary questions this paper aims to address are: What is the government buy
 
 I collected and processed detailed data on over 301,000 contracts awarded since January 2020. The dataset includes variables such as contract amounts, durations, award dates, Buyers, and Suppliers. We derived additional metrics to facilitate our analysis, such as Baseline Days (the number of days since January 1, 2020) and Duration Days (the length of each contract), and standardized supplier names to ensure consistency. 
 
-Some significant findings presented in this paper include: military procurement spending has surged in the past few years. Where the Department of National Defence now dominates federal procurement spending, with expenditures exceeding $56 billion since 2020. This increase in spending is in part thanks to large contracts, including a $11.2 billion contract to SkyAlyne for fighter pilot training—the largest in our dataset—and multi-billion-dollar contracts for fighter jets and naval vessels. 
+Some significant findings presented in this paper include: military procurement spending has surged in the past few years. Where the Department of National Defence now dominates federal procurement spending, with expenditures exceeding \$56 billion since 2020. This increase in spending is in part thanks to large contracts, including a \$11.2 billion contract to SkyAlyne for fighter pilot training—the largest in our dataset—and multi-billion-dollar contracts for fighter jets and naval vessels. 
 
 While  other government departments have experienced a notable decrease in procurement spending. For instance, the Public Health Agency of Canada's spending, which was substantial in 2020 due to the COVID-19 pandemic, has declined significantly in subsequent years. 
 
@@ -171,7 +171,7 @@ The data is recorded and published through various government agencies, who use 
 
 ## Analysis
 
-This is a break down of total amount awarded by the top 5 biggest spending Buyers. The Other category consists the of the total awards given by the remaining 88 smallest Government Buyers.  It is clear that National Defence dwarfs the procurement budget, spending over /$56 Billion on procurements since 2020. 
+This is a break down of total amount awarded by the top 5 biggest spending Buyers. The Other category consists the of the total awards given by the remaining 88 smallest Government Buyers.  It is clear that National Defence dwarfs the procurement budget, spending over \$56 Billion on procurements since 2020. 
 
 ```{r fig-pie-buyers}
 #| message: false
@@ -231,7 +231,7 @@ ggplot(buyer_totals_grouped, aes(x = "", y = total_amount, fill = buyer_group)) 
 ```
 
 
-FIG show how National Defence spending has taken off in recent years, where is 2021 it had not even crested /$5 Billion, but in the last 3 years spending has exploded to /$15 Billion a year.  
+FIG show how National Defence spending has taken off in recent years, where is 2021 it had not even crested \$5 Billion, but in the last 3 years spending has exploded to \$15 Billion a year.  
 
 ```{r fig-mil-spending}
 #| message: false
@@ -272,7 +272,7 @@ ggplot(data = military_spending_per_year, aes(x = year, y = total_spending)) +
 
 
 
-Public Services and Procurements Canada is the clearinghouse for the entire federal government. This means they are responsible for managing the procurement process for buyers across the government [REF]. It is important to note that the PSPC sometimes does not publish small contracts, less than /$40,000.  PSPC spending over time shows while military spending increases the rest of the government is taking a hit.
+Public Services and Procurements Canada is the clearinghouse for the entire federal government. This means they are responsible for managing the procurement process for buyers across the government [REF]. It is important to note that the PSPC sometimes does not publish small contracts, less than \$40,000.  PSPC spending over time shows while military spending increases the rest of the government is taking a hit.
 ```{r fig-public-spending}
 #| message: false
 #| echo: false
@@ -487,7 +487,7 @@ Dettwiler is an engineering firm that provides the Canadian Space Agency with en
 
 ## Distribution
 
-This graph represents 81.75% of all contracts, indicating that the vast majority of contracts awarded by the government are quite small. Furthermore, it seems that the number of contracts follows a Pareto distribution. There are 102 contracts that are worth $1, this maybe some legal formality.
+This graph represents 81.75% of all contracts, indicating that the vast majority of contracts awarded by the government are quite small. Furthermore, it seems that the number of contracts follows a Pareto distribution. There are 102 contracts that are worth \$1, this maybe some legal formality.
 
 ```{r fig-distibution}
 #| message: false
@@ -567,7 +567,7 @@ ggplot(contract_counts_df, aes(x = amount_label, y = Contract_Count_k)) +
   theme_minimal()
 ```
 
-Though most contracts are small contracts (less than $100,000), the sum of these 246,000 contracts is only worth a measly 7.34 Billion. The Skyalyne contract itself outweighs all the small contracts.
+Though most contracts are small contracts (less than \$100,000), the sum of these 246,000 contracts is only worth a measly 7.34 Billion. The Skyalyne contract itself outweighs all the small contracts.
 
 ```{r fig-small-big}
 #| message: false
@@ -678,11 +678,11 @@ The model diagnostics highlight the limitations of these two linear models, see 
 
 # Results
 
-The model general contracts indicates that the contract amount tends to decrease over time. Because Baseline days is slightly negative. This value suggests that every day that passes on average the value of non-military contracts is going down by $61.62 a day. This decline could reflect shifts in government spending priorities away from non-military departments. Additionally, as expect Duration Days is positive of the contract amount . This means that longer contracts are more expensive for the government.
+The model general contracts indicates that the contract amount tends to decrease over time. Because Baseline days is slightly negative. This value suggests that every day that passes on average the value of non-military contracts is going down by \$61.62 a day. This decline could reflect shifts in government spending priorities away from non-military departments. Additionally, as expect Duration Days is positive of the contract amount . This means that longer contracts are more expensive for the government.
 
-In contrast, the model for military contracts reveals that the contract amount increases over time. The positive coefficient for Baseline days suggests an upward trend in military contract values since 2020. In this case the model suggests that the cost of military contracts is increasing by $852.50 every day. This is trend is due to the huge increases in military procurement we observed in FIG.  
+In contrast, the model for military contracts reveals that the contract amount increases over time. The positive coefficient for Baseline days suggests an upward trend in military contract values since 2020. In this case the model suggests that the cost of military contracts is increasing by \$852.50 every day. This is trend is due to the huge increases in military procurement we observed in FIG.  
 
-The impact of contract duration on the contract amount is substantially larger in military contracts compared to non-military ones. Where military contracts cost $38,146 more per day of the length of the contract. This is again due largely by the 11 Billon Skyalyne contract, and the other large long contracts for training and fighter jets. 
+The impact of contract duration on the contract amount is substantially larger in military contracts compared to non-military ones. Where military contracts cost \$38,146 more per day of the length of the contract. This is again due largely by the 11 Billon Skyalyne contract, and the other large long contracts for training and fighter jets. 
 
 ```{r fig-results}
 #| message: false
@@ -759,11 +759,11 @@ For the modeling phase, we employed a simple linear regression to explore how co
 
 The analysis revealed significant trends in Canada's federal procurement spending: 
 
-Surge in Military Spending: Military spending has dramatically increased over the past couple of years. National Defence emerged as the dominant spender, allocating over $56 billion since 2020. While military spending was under $5 billion in 2021, it escalated to approximately $15 billion annually in the following years. This spike is attributed to substantial contracts for advanced military equipment and services, such as the $11.2 billion contract awarded to SkyAlyne for fighter pilot training—the largest in the dataset. Other notable contracts include multi-billion-dollar deals with Lockheed Martin, General Atomics, CAE, and Airbus for fighter planes and aviation services. 
+Surge in Military Spending: Military spending has dramatically increased over the past couple of years. National Defence emerged as the dominant spender, allocating over \$56 billion since 2020. While military spending was under \$5 billion in 2021, it escalated to approximately \$15 billion annually in the following years. This spike is attributed to substantial contracts for advanced military equipment and services, such as the \$11.2 billion contract awarded to SkyAlyne for fighter pilot training—the largest in the dataset. Other notable contracts include multi-billion-dollar deals with Lockheed Martin, General Atomics, CAE, and Airbus for fighter planes and aviation services. 
 
 Decline in Other Departments' Spending: In contrast, other government departments have experienced significant reductions in procurement spending. For instance, the Public Health Agency of Canada's spending, which was robust in 2020 due to pandemic-related expenditures, diminished to negligible levels in the subsequent years.  
 
-Prevalence of Small Contracts: The majority of government contracts are relatively small. Approximately 81.75% of all contracts are valued under \$100,000, with the most common contract size ranging between \$10,000 and \$20,000. This pattern indicates a governmental preference for smaller contracts, possibly for regulatory reasons. There may be a rule that if a contract is below 20000 then it requires less scrutiny to be passed, in effect encouraging department to award more smaller contracts. Though it does not seem to be out of control as only TODO% of all spending in last 4 years is concentrated in contracts less than 100000. 
+Prevalence of Small Contracts: The majority of government contracts are relatively small. Approximately 81.75% of all contracts are valued under \$100,000, with the most common contract size ranging between \$10,000 and \$20,000. This pattern indicates a governmental preference for smaller contracts, possibly for regulatory reasons. There may be a rule that if a contract is below \$20,000 then it requires less scrutiny to be passed, in effect encouraging department to award more smaller contracts. Though this does not seem to be out of control as only TODO% of all spending in last 4 years is concentrated in contracts less than \$100,000. 
 
 ## Third discussion point
 
