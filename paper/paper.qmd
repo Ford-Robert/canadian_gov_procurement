@@ -25,6 +25,8 @@ library(knitr)
 library(kableExtra)
 library(zoo)
 library(broom)
+library(car)
+library(caret)
 
 df <- read_csv(here::here("data/analysis_data/cleaned_data.csv"))
 aggregated_df <- read_csv(here::here("data/analysis_data/top_ten_suppliers.csv"))
@@ -261,9 +263,9 @@ military_spending_per_year <- military_df %>%
 # Create the bar chart
 ggplot(data = military_spending_per_year, aes(x = year, y = total_spending)) +
   geom_bar(stat = "identity", fill = def_c) +
-  labs(x = "Year", y = "Total Spending (in Billions)") +
+  labs(x = "Year", y = "Total Spending (Billions)") +
   theme_minimal() +
-  scale_y_continuous(labels = dollar_format(prefix = "$")) +
+  scale_y_continuous() +
   theme(plot.title = element_text(hjust = 0.5))
 
 ```
@@ -298,9 +300,9 @@ public_spending_per_year <- public_services_df %>%
 # Create the bar chart
 ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
   geom_bar(stat = "identity", fill = public_c) +
-  labs(x = "Year", y = "Total Spending (in Billions)") +
+  labs(x = "Year", y = "Total Spending (Billions)") +
   theme_minimal() +
-  scale_y_continuous(labels = dollar_format(prefix = "$")) +
+  scale_y_continuous() +
   theme(plot.title = element_text(hjust = 0.5))
 
 
@@ -372,9 +374,9 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer
   guide = guide_legend(nrow = 3)
   ) +
   scale_y_continuous(
-    labels = comma_format(accuracy = 1), # Formats y-axis labels without decimal places
-    breaks = pretty_breaks(n = 5), # Ensures approximately 5 breaks like 5, 10, 15
-    expand = expansion(mult = c(0, 0.05)) # Adds a small space above the highest bar
+    labels = comma_format(accuracy = 1),
+    breaks = pretty_breaks(n = 5),
+    expand = expansion(mult = c(0, 0.05))
   ) +
   labs(
     x = "Year",
@@ -491,7 +493,7 @@ This graph represents 81.75% of all contracts, indicating that the vast majority
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: Distribution of Contracts that are less than $100,000
 #| fig-align: center
 
 df_filtered <- df %>%
@@ -502,8 +504,6 @@ num_less_than_100k <- nrow(df_filtered)
 total_contracts <- nrow(df)
 
 percent_less_than <- num_less_than_100k / total_contracts
-
-print(paste0("Percentage of contracts <= 100,000 CAD: ", round(percent_less_than * 100, 2), "%"))
 
 # Step 2: Create bins spanning every 10,000 CAD up to 100,000
 bin_width <- 10000  # 10,000 CAD
@@ -551,7 +551,7 @@ if (max_count >= 1000) {
 
 # Step 6: Create the ggplot2 bar chart
 ggplot(contract_counts_df, aes(x = amount_label, y = Contract_Count_k)) +
-  geom_bar(stat = "identity", fill = "skyblue", color = "black") +
+  geom_bar(stat = "identity", fill = "skyblue") +
   scale_y_continuous(
     labels = if (max_count >= 1000) {
       label_number(scale = 1, accuracy = 1)
@@ -561,19 +561,10 @@ ggplot(contract_counts_df, aes(x = amount_label, y = Contract_Count_k)) +
     expand = expansion(mult = c(0, 0.05))
   ) +
   labs(
-    title = "Number of Contracts per 10,000 CAD Award Amount Range",
     x = "Award Amount (Thousands)",
-    y = paste0("Number of Contracts ", if (max_count >= 1000) "(Thousands)" else ""),
-    caption = "Data includes contracts <= 100,000 CAD."
+    y = paste0("Number of Contracts ", if (max_count >= 1000) "(Thousands)" else "")
   ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
-    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
-    axis.text.y = element_text(size = 12),
-    axis.title = element_text(size = 14),
-    plot.caption = element_text(hjust = 0.5, size = 10, face = "italic")
-  )
+  theme_minimal()
 ```
 
 Though most contracts are small contracts (less than $100,000), the sum of these 246,000 contracts is only worth a measly 7.34 Billion. The Skyalyne contract itself outweighs all the small contracts.
@@ -582,13 +573,18 @@ Though most contracts are small contracts (less than $100,000), the sum of these
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: Total Amount Spent on Contracts
 #| fig-align: center
 
 # Step 1: Create a new column 'contract_size' categorizing contracts
 df <- df %>%
   mutate(
-    contract_size = ifelse(amount <= 100000, "Small Contracts (≤ 100k)", "Big Contracts (> 100k)")
+    contract_size = factor(
+      ifelse(amount <= 100000, 
+             "Small Contracts (≤ $100,000)", 
+             "Big Contracts (> $100,000)"),
+      levels = c("Small Contracts (≤ $100,000)", "Big Contracts (> $100,000)")  # Specify order
+    )
   )
 
 # Summarize total amount spent per contract size category
@@ -610,27 +606,19 @@ ggplot(total_spent_df, aes(x = contract_size, y = total_amount_billion, fill = c
             vjust = -0.5, 
             size = 5) +  # Adds labels above the bars
   scale_fill_manual(
-    values = c("Small Contracts (≤ 100k)" = "steelblue", "Big Contracts (> 100k)" = "tomato")
+    values = c("Small Contracts (≤ $100,000)" = "skyblue", "Big Contracts (> $100,000)" = "skyblue")
   ) +
   scale_y_continuous(
     labels = scales::number_format(scale = 1, suffix = "B"),  # Displays y-axis in billions
     expand = expansion(mult = c(0, 0.1))  # Adds space above the bars for labels
   ) +
   labs(
-    title = "Total Amount Spent on Contracts",
-    subtitle = "Comparison between Small (≤ 100k CAD) and Big (> 100k CAD) Contracts",
     x = "Contract Size",
-    y = "Total Amount Spent (Billions of CAD)"
+    y = "Total Amount Spent (Billions)"
   ) +
   theme_minimal() +
   theme(
-    plot.title = element_text(hjust = 0.5, size = 18, face = "bold"),
-    plot.subtitle = element_text(hjust = 0.5, size = 14),
-    axis.text.x = element_text(angle = 0, hjust = 0.5, size = 14),
-    axis.text.y = element_text(size = 12),
-    axis.title = element_text(size = 16),
-    legend.position = "none",  # Removes the legend as it's redundant
-    plot.caption = element_text(hjust = 0.5, size = 10, face = "italic")
+    legend.position = "none"
   )
  
 
@@ -684,7 +672,7 @@ Moreover, the model assumes that the effect of each predictor is constant over t
 
 ## Diagnostics
 
-TODO
+The model diagnostics highlight the limitations of these two linear models, see Appendix TODO for relevant diagnostic plots. The Residuals Vs. Fitted plots indicate large clumps in the first quadrant. This indicates a significant bias in the predictions for both models. The QQ-Normal plots indicate that the majority of the residuals follow a normal distribution. However, there is a significant tail off in the end likely due to a large number of outliers which conclusively violates the normality assumption. The Scale-Location plot for the General Model indicates a funnel shape near the origin, indicates the assumption of homoscedasticity is violated. While the National Defence Model has a clump there is no clear pattern so the assumption of homoscedasticity maybe intact. For all predictors across both models their VIF values are very close to 1, indicating no multicollinearity. Both Cook's distance plots show there is a significant number of outliers in both models.
 
 \newpage
 
@@ -862,7 +850,170 @@ Propose alternate methods
 
 ## Diagnostics
 
-TODO Add Diagnostics
+```{r fig-resid-model}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: Residual Vs Fitted for General Model
+
+plot(model, which = 1)
+
+```
+
+```{r fig-resid-mil}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: Residual Vs Fitted for Military Model
+
+plot(mil_model, which = 1)
+```
+
+
+
+
+```{r fig-qq-model}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: QQ-Normal General Model
+
+# Q-Q Plot for full model
+plot(model, which = 2)
+
+```
+
+
+
+```{r fig-qq-mil}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: QQ-Normal National Defence Model
+
+# Q-Q Plot for National Defence model
+plot(mil_model, which = 2)
+```
+
+
+
+```{r fig-sl-model}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: Scale-Location Plot for General model
+
+# Scale-Location Plot for full model
+plot(model, which = 3)
+
+```
+
+
+
+```{r fig-sl-mil}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: Scale-Location Plot for National Defence model
+
+# Scale-Location Plot for National Defence model
+plot(mil_model, which = 3)
+```
+
+
+
+```{r fig-rl-model}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: Residuals vs Leverage for Full model
+
+# Residuals vs Leverage for full model
+plot(model, which = 5)
+```
+
+
+
+```{r fig-rl-mil}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: Residuals vs Leverage for National Defence model
+
+
+# Residuals vs Leverage for National Defence model
+plot(mil_model, which = 5)
+```
+
+
+```{r fig-cooks-model}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: Cook's Distance for full model
+
+#Identify influential data points using Cook's Distance.
+# Cook's Distance for full model
+plot(model, which = 4)
+```
+
+
+
+```{r fig-cooks-mil}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: Cook's Distance for National Defence model
+
+#Identify influential data points using Cook's Distance.
+# Cook's Distance for National Defence model
+plot(mil_model, which = 4)
+```
+
+
+```{r}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-cap: VIF Table
+
+
+vif_model <- vif(model)
+vif_mil_model <- vif(mil_model)
+
+# Create a data frame with VIF values
+vif_table <- data.frame(
+  Predictor = names(vif_model),
+  Model = round(as.numeric(vif_model), 6),
+  Mil_Model = round(as.numeric(vif_mil_model), 6)
+)
+
+
+
+predictor_names <- c(
+  "baseline_days" = "Baseline Days",
+  "duration_days" = "Duration Days"
+)
+
+vif_table$Predictor <- predictor_names[vif_table$Predictor]
+
+# Display the table using knitr's kable for better formatting
+kable(vif_table, ,
+      col.names = c("Predictor", "General Model", "National Defence Model"),
+      align = 'c')
+
+```
 
 \newpage
 
