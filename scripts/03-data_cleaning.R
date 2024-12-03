@@ -224,6 +224,9 @@ aggregated_df <- aggregated_df %>%
   ) %>%
   mutate(total_amount = ifelse(is.na(total_amount), 0, total_amount))
 
+
+aggregated_df <- aggregated_df[aggregated_df$total_amount > 0, ]
+
 write.csv(aggregated_df, "data/analysis_data/top_ten_suppliers.csv", row.names = FALSE)
 
 # 10. Create a Stacked Bar Chart for the Top Ten Suppliers
@@ -231,18 +234,6 @@ write.csv(aggregated_df, "data/analysis_data/top_ten_suppliers.csv", row.names =
 aggregated_df <- aggregated_df %>%
   left_join(top_ten %>% select(word, supplier_name), by = "word")
 
-# Create the bar chart with legend removed
-ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fill = buyer)) +
-  geom_bar(stat = "identity") +
-  coord_flip() +
-  labs(
-    title = "Top 10 Suppliers by Aggregated Amount Awarded",
-    x = "Supplier",
-    y = "Total Amount Awarded"
-    # Remove the legend title by not specifying 'fill' in labs
-  ) +
-  theme_minimal() +
-  theme(legend.position = "none")
 
 # 10. Transform `processed_supplier` into a Character Column for CSV
 df <- df %>%
