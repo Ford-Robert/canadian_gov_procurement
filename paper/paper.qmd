@@ -32,6 +32,7 @@ model <- read_rds(here::here("models/gen_model.rds"))
 mil_model <- read_rds(here::here("models/mil_model.rds"))
 ```
 
+\newpage
 
 # Introduction
 
@@ -58,6 +59,8 @@ TODO Cite R and all other packages
 
 TODO Estimand?
 
+\newpage
+
 # Data {#sec-data}
 
 The data was collected using R and other packages [REF]. A web scraping script was used to collect all Federal Award Data from the IJF [REF]. The variables this paper focuses collected from the IJF are; Contract, Buyer, Supplier, Amount, Award Date, Start Date, and End Date.  
@@ -71,12 +74,11 @@ The data was collected using R and other packages [REF]. A web scraping script w
 - **End Date**: When the contract is due to end.
 
 The head of the IFJ Database:
-
 ```{r fig-head1}
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: Sample of the Data
 #| fig-align: center
 #| fig-pos: "H"
 
@@ -89,6 +91,9 @@ df_table1 <- df %>%
     `Award Date` = award_date,
     `Start Date` = start_date,
     `End Date` = end_date
+  ) %>%
+  mutate(
+    Amount = comma(Amount)  # Format Amount with commas
   )
 
 
@@ -96,7 +101,7 @@ df_table1_truncated <- df_table1 %>%
   mutate(across(where(is.character), ~ str_trunc(., 15, side = "right", ellipsis = "...")))
 
 # Display the first table
-kable(head(df_table1_truncated, 5), caption = "Sample of the Data - Part 1") %>%
+kable(head(df_table1_truncated, 5)) %>%
   kable_styling(
     font_size = 10,
     latex_options = c("scale_down")
@@ -115,7 +120,7 @@ Additional Derived Variables:
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: Sample of Derived Data
 #| fig-align: center
 #| fig-pos: "H"
 
@@ -124,6 +129,10 @@ df_table2 <- df %>%
     `Baseline Days` = baseline_days,
     `Duration Days` = duration_days,
     `Processed Supplier` = processed_supplier
+  ) %>%
+  mutate(
+    `Baseline Days` = comma(`Baseline Days`),  # Format Baseline Days with commas
+    `Duration Days` = comma(`Duration Days`)   # Format Duration Days with commas
   )
 
 # Truncate character columns if necessary
@@ -131,7 +140,7 @@ df_table2_truncated <- df_table2 %>%
   mutate(across(where(is.character), ~ str_trunc(., 15, side = "right", ellipsis = "...")))
 
 # Display the second table
-kable(head(df_table2_truncated, 5), caption = "Sample of the Data - Part 2") %>%
+kable(head(df_table2_truncated, 5)) %>%
   kable_styling(
     font_size = 10,
     latex_options = c("scale_down")
@@ -155,9 +164,12 @@ This is a break down of total amount awarded by the top 5 biggest spending Buyer
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: Top 5 Buyers by Total Amount Spent and Others (Pie Chart)
+#| fig-cap: Top 5 Buyers by Total Amount Spent and Others
 #| fig-align: center
+#| fig-pos: "H"
 
+
+colors <- c("#377eb8", "#e41a1c", "#4daf4a", "#ff7f00", "#984ea3", "#808080")
 
 # Summarize total amount spent by each buyer
 buyer_totals <- df %>%
@@ -181,12 +193,12 @@ buyer_totals_grouped <- buyer_totals %>%
 # TODO: Assign specific colors to each buyer group
 # Example color assignments (replace with desired colors)
 buyer_colors <- c(
-  "National Defence" = "#1f77b4",
-  "Public Services and Procurement Canada" = "#ff7f0e",
-  "Shared Services Canada" = "#2ca02c",
-  "Public Health Agency of Canada" = "#d62728",
-  "Fisheries and Oceans Canada" = "#9467bd",
-  "Other"  = "#8c564b"
+  "National Defence" = "#e41a1c",
+  "Public Services and Procurement Canada" = "#984ea3",
+  "Shared Services Canada" = "#ff7f00",
+  "Public Health Agency of Canada" = "#4daf4a",
+  "Fisheries and Oceans Canada" = "#377eb8",
+  "Other"  = "#808080"
 )
 
 # Plot the pie chart
@@ -194,7 +206,6 @@ ggplot(buyer_totals_grouped, aes(x = "", y = total_amount, fill = buyer_group)) 
   geom_bar(stat = "identity", width = 1, color = "white") +
   coord_polar(theta = "y") +
   labs(
-    title = "Top 5 Buyers by Total Amount Spent and Others",
     fill = "Buyer"
   ) +
   scale_fill_manual(values = buyer_colors) +
@@ -206,7 +217,7 @@ ggplot(buyer_totals_grouped, aes(x = "", y = total_amount, fill = buyer_group)) 
   geom_text(aes(label = paste0(round(percentage, 1), "%")),
             position = position_stack(vjust = 0.5),
             color = "white",
-            size = 4)
+            size = 2.5)
 ```
 
 
@@ -216,8 +227,9 @@ FIG show how National Defence spending has taken off in recent years, where is 2
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: Military Spending Per Year in Billions
 #| fig-align: center
+#| fig-pos: "H"
 
 #TODO Make right color
 
@@ -232,15 +244,16 @@ df_filtered$year <- format(df_filtered$award_date, "%Y")
 military_df <- df_filtered %>%
   filter(buyer == "National Defence")
 
-# Summarize total spending per year
+
+
 military_spending_per_year <- military_df %>%
   group_by(year) %>%
-  summarize(total_spending = sum(amount, na.rm = TRUE))
+  summarize(total_spending = sum(amount, na.rm = TRUE) / 1e9)
 
 # Create the bar chart
 ggplot(data = military_spending_per_year, aes(x = year, y = total_spending)) +
-  geom_bar(stat = "identity", fill = "steelblue") +
-  labs(title = "Military Spending Per Year", x = "Year", y = "Total Spending") +
+  geom_bar(stat = "identity", fill = "#e41a1c") +
+  labs(x = "Year", y = "Total Spending (in Billions)") +
   theme_minimal() +
   scale_y_continuous(labels = dollar_format(prefix = "$")) +
   theme(plot.title = element_text(hjust = 0.5))
@@ -254,8 +267,9 @@ Public Services and Procurements Canada is the clearinghouse for the entire fede
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: Public Services Spending Per Year in Billions
 #| fig-align: center
+#| fig-pos: "H"
 
 #TODO Make right color
 
@@ -271,12 +285,12 @@ public_services_df <- df_filtered %>%
 # Summarize total spending per year
 public_spending_per_year <- public_services_df %>%
   group_by(year) %>%
-  summarize(total_spending = sum(amount, na.rm = TRUE))
+  summarize(total_spending = sum(amount, na.rm = TRUE)  / 1e9 )
 
 # Create the bar chart
 ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
-  geom_bar(stat = "identity", fill = "steelblue") +
-  labs(title = "Public Services Spending Per Year", x = "Year", y = "Total Spending") +
+  geom_bar(stat = "identity", fill = "#984ea3") +
+  labs(x = "Year", y = "Total Spending (in Billions)") +
   theme_minimal() +
   scale_y_continuous(labels = dollar_format(prefix = "$")) +
   theme(plot.title = element_text(hjust = 0.5))
@@ -293,6 +307,7 @@ This FIG shows the top five Buyers spending per year since 2020. In the first 2 
 #| warning: false
 #| fig-cap: template
 #| fig-align: center
+#| fig-pos: "H"
 
 # Filter out records from 2019
 df_filtered <- df %>%
@@ -386,6 +401,7 @@ To find out the firms that are benefiting the most through this procurement proc
 #| warning: false
 #| fig-cap: template
 #| fig-align: center
+#| fig-pos: "H"
 
 #TODO Fix colors and supplier names and order of supps (highest to lowest)
 
@@ -528,9 +544,6 @@ total_spent_df <- df %>%
 total_spent_df <- total_spent_df %>%
   mutate(total_amount_billion = total_amount_spent / 1e9)
 
-# Optional: Display the summarized data
-print(total_spent_df)
-
 # Create the bar chart
 ggplot(total_spent_df, aes(x = contract_size, y = total_amount_billion, fill = contract_size)) +
   geom_bar(stat = "identity", width = 0.6) +
@@ -566,6 +579,7 @@ ggplot(total_spent_df, aes(x = contract_size, y = total_amount_billion, fill = c
 
 ```
 
+\newpage
 
 # Model
 
@@ -612,6 +626,8 @@ Moreover, the model assumes that the effect of each predictor is constant over t
 ## Diagnostics
 
 TODO
+
+\newpage
 
 # Results
 
@@ -678,6 +694,7 @@ if (output_format == "latex") {
 }
 ```
 
+\newpage
 
 # Discussion
 
@@ -809,3 +826,4 @@ ggplot2
 rvest
 readr
 testthat
+colorbrewerV2
