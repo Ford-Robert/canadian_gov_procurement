@@ -75,12 +75,6 @@ vif(model)
 # VIF for National Defence model
 vif(mil_model)
 
-#Perform the Shapiro-Wilk test to check if residuals are normally distributed.
-# Shapiro-Wilk test for full model residuals
-shapiro.test(residuals(model))
-
-# Shapiro-Wilk test for National Defence model residuals
-shapiro.test(residuals(mil_model))
 
 #Identify influential data points using Cook's Distance.
 # Cook's Distance for full model
@@ -91,7 +85,7 @@ n <- nrow(df)
 k <- length(coef(model)) - 1
 cooks_threshold <- 4 / (n - k - 1)
 influential_full <- which(cooks.distance(model) > cooks_threshold)
-influential_full
+length(influential_full)
 
 # Cook's Distance for National Defence model
 plot(mil_model, which = 4)
@@ -100,31 +94,7 @@ n_mil <- nrow(df %>% filter(buyer == "National Defence"))
 k_mil <- length(coef(mil_model)) - 1
 cooks_threshold_mil <- 4 / (n_mil - k_mil - 1)
 influential_mil <- which(cooks.distance(mil_model) > cooks_threshold_mil)
-influential_mil
-
-
-#Use k-fold cross-validation to assess the model's predictive performance.
-# Install and load the 'caret' package if not already installed
-
-# Define training control with 10-fold cross-validation
-train_control <- trainControl(method = "cv", number = 10)
-
-# Cross-validation for full model
-set.seed(123)  # For reproducibility
-cv_model <- train(amount ~ award_date_numeric + duration_days,
-                  data = df,
-                  method = "lm",
-                  trControl = train_control)
-print(cv_model)
-
-# Cross-validation for National Defence model
-df_mil <- df %>% filter(buyer == "National Defence")
-set.seed(123)  # For reproducibility
-cv_mil_model <- train(amount ~ award_date_numeric + duration_days,
-                      data = df_mil,
-                      method = "lm",
-                      trControl = train_control)
-print(cv_mil_model)
+length(influential_mil)
 
 
 
