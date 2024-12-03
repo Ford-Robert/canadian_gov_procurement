@@ -34,9 +34,33 @@ View(df)
 #| fig-align: center
 
 
-
 ```
 
+
+```{r fig-template96}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+#TODO Fix colors and supplier names and order of supps (highest to lowest)
+View(aggregated_df)
+
+# Create the bar chart with legend removed
+ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded"
+    # Remove the legend title by not specifying 'fill' in labs
+  ) +
+  theme_minimal() +
+  theme(legend.position = "right")
+
+```
 
 ```{r fig-head}
 #| message: false
