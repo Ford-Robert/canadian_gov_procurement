@@ -33,12 +33,12 @@ mil_model <- read_rds(here::here("models/mil_model.rds"))
 
 
 #colors!
-def_c <- "#e41a1c"
-fish_c <- "#377eb8"
+def_c <- "#fb8072"
+fish_c <- "#80b1d3"
 health_c <- "#4daf4a"
-services_c <- "#ff7f00"
-public_c <- "#984ea3"
-space_c <- "#ffff33"
+services_c <- "#fdb462"
+public_c <- "#bebada"
+space_c <- "#ffffb3"
 
 
 ```
@@ -368,7 +368,8 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer
   "Public Health Agency of Canada" = health_c,
   "Fisheries and Oceans Canada" = fish_c,
   "Other"  = "gray"
-    )
+    ),
+  guide = guide_legend(nrow = 3)
   ) +
   scale_y_continuous(
     labels = comma_format(accuracy = 1), # Formats y-axis labels without decimal places
@@ -382,10 +383,7 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer
     caption = "."
   ) +
   theme_minimal() +
-  theme(
-    legend.text = element_text(size = 8), # Adjusts the size of legend text
-    legend.title = element_text(size = 9), # Adjusts the size of legend title
-    legend.key.size = unit(0.6, "lines") # Reduces the size of legend symbols
+  theme(legend.position = "bottom"
   )
 
 
@@ -403,6 +401,39 @@ To find out the firms that are benefiting the most through this procurement proc
 #| fig-cap: Top 10 Suppliers by Total Amount Awarded
 #| fig-align: center
 #| fig-pos: "H"
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c(
+  "cae" = "CAE", 
+  "skyalyne" = "Skyalyne", 
+  "vancouver shipyards" = "Vancouver Shipyards", 
+  "f35" = "F-35 Joint Program", 
+  "bell" = "Bell", 
+  "airbus" = "Airbus", 
+  "textron" = "Textron Avaition", 
+  "dynamics" = "General Dynamics",
+  "dettwiler" = "Dettwiler and Associates", 
+  "atomics" = "Atomics Aeronautical Systems"
+)
+
+selected_buyers <- c(
+  "National Defence", 
+  "Canadian Space Agency", 
+  "Shared Services Canada", 
+  "Public Health Agency of Canada", 
+  "Fisheries and Oceans Canada"
+)
+
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+aggregated_totals <- aggregated_df %>%
+  group_by(word) %>%
+  summarise(total_amount = sum(total_amount, na.rm = TRUE)) %>%
+  arrange(desc(total_amount))
+
 # Merge total aggregated amounts back into aggregated_df
 aggregated_df <- aggregated_df %>%
   left_join(aggregated_totals, by = "word", suffix = c("", "_total"))
@@ -423,7 +454,7 @@ ggplot(aggregated_df_top10, aes(x = reorder(word, total_amount_total), y = total
   labs(
     x = "Supplier",
     y = "Total Amount Awarded (in Billions)",
-    fill = "Buyer"  # Adds a title to the legend
+    fill = "Buyer"
   ) +
   scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
   scale_fill_manual(
@@ -435,11 +466,12 @@ ggplot(aggregated_df_top10, aes(x = reorder(word, total_amount_total), y = total
       "Fisheries and Oceans Canada" = fish_c,
       "Other" = "gray"  # Assign a default color for other buyers if necessary
         ), 
-    breaks = selected_buyers  # Restricts legend to selected buyers
+    breaks = selected_buyers,
+    guide = guide_legend(nrow = 2)
   ) +
   theme_minimal() +
   theme(
-    legend.position = "right"  # Positions the legend on the right
+    legend.position = "bottom"  # Positions the legend on the right
   )
 
 
