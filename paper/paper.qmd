@@ -30,6 +30,17 @@ df <- read_csv(here::here("data/analysis_data/cleaned_data.csv"))
 aggregated_df <- read_csv(here::here("data/analysis_data/top_ten_suppliers.csv"))
 model <- read_rds(here::here("models/gen_model.rds"))
 mil_model <- read_rds(here::here("models/mil_model.rds"))
+
+
+#colors!
+def_c <- "#e41a1c"
+fish_c <- "#377eb8"
+health_c <- "#4daf4a"
+services_c <- "#ff7f00"
+public_c <- "#984ea3"
+space_c <- "#ffff33"
+
+
 ```
 
 \newpage
@@ -168,9 +179,6 @@ This is a break down of total amount awarded by the top 5 biggest spending Buyer
 #| fig-align: center
 #| fig-pos: "H"
 
-
-colors <- c("#377eb8", "#e41a1c", "#4daf4a", "#ff7f00", "#984ea3", "#808080")
-
 # Summarize total amount spent by each buyer
 buyer_totals <- df %>%
   group_by(buyer) %>%
@@ -193,12 +201,12 @@ buyer_totals_grouped <- buyer_totals %>%
 # TODO: Assign specific colors to each buyer group
 # Example color assignments (replace with desired colors)
 buyer_colors <- c(
-  "National Defence" = "#e41a1c",
-  "Public Services and Procurement Canada" = "#984ea3",
-  "Shared Services Canada" = "#ff7f00",
-  "Public Health Agency of Canada" = "#4daf4a",
-  "Fisheries and Oceans Canada" = "#377eb8",
-  "Other"  = "#808080"
+  "National Defence" = def_c,
+  "Public Services and Procurement Canada" = public_c,
+  "Shared Services Canada" = services_c,
+  "Public Health Agency of Canada" = health_c,
+  "Fisheries and Oceans Canada" = fish_c,
+  "Other"  = "gray"
 )
 
 # Plot the pie chart
@@ -252,7 +260,7 @@ military_spending_per_year <- military_df %>%
 
 # Create the bar chart
 ggplot(data = military_spending_per_year, aes(x = year, y = total_spending)) +
-  geom_bar(stat = "identity", fill = "#e41a1c") +
+  geom_bar(stat = "identity", fill = def_c) +
   labs(x = "Year", y = "Total Spending (in Billions)") +
   theme_minimal() +
   scale_y_continuous(labels = dollar_format(prefix = "$")) +
@@ -289,7 +297,7 @@ public_spending_per_year <- public_services_df %>%
 
 # Create the bar chart
 ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
-  geom_bar(stat = "identity", fill = "#984ea3") +
+  geom_bar(stat = "identity", fill = public_c) +
   labs(x = "Year", y = "Total Spending (in Billions)") +
   theme_minimal() +
   scale_y_continuous(labels = dollar_format(prefix = "$")) +
@@ -305,7 +313,7 @@ This FIG shows the top five Buyers spending per year since 2020. In the first 2 
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: Spending by Top 5 Buyers and Others Per Year
 #| fig-align: center
 #| fig-pos: "H"
 
@@ -354,12 +362,12 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer
   ) +
   scale_fill_manual(
     values = c(
-      "National Defence" = "steelblue",
-      "Public Services and Procurement Canada" = "orange",
-      "Shared Services Canada" = "green",
-      "Public Health Agency of Canada" = "purple",
-      "Fisheries and Oceans Canada" = "red",
-      "Other" = "gray"
+  "National Defence" = def_c,
+  "Public Services and Procurement Canada" = public_c,
+  "Shared Services Canada" = services_c,
+  "Public Health Agency of Canada" = health_c,
+  "Fisheries and Oceans Canada" = fish_c,
+  "Other"  = "gray"
     )
   ) +
   scale_y_continuous(
@@ -368,8 +376,6 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer
     expand = expansion(mult = c(0, 0.05)) # Adds a small space above the highest bar
   ) +
   labs(
-    title = "Spending by Selected and Other Buyers Per Year",
-    subtitle = "Amounts are in Billions of CAD",
     x = "Year",
     y = "Total Spending (Billions)",
     fill = "Buyer",
@@ -377,14 +383,9 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer
   ) +
   theme_minimal() +
   theme(
-    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
-    plot.subtitle = element_text(hjust = 0.5, size = 12),
-    axis.text.x = element_text(angle = 45, hjust = 1), # Rotate x-axis labels for readability
-    axis.text = element_text(size = 12),
-    axis.title = element_text(size = 14),
-    legend.title = element_text(size = 14),
-    legend.text = element_text(size = 12),
-    plot.caption = element_text(hjust = 0.5, size = 10, face = "italic") # Centered caption
+    legend.text = element_text(size = 8), # Adjusts the size of legend text
+    legend.title = element_text(size = 9), # Adjusts the size of legend title
+    legend.key.size = unit(0.6, "lines") # Reduces the size of legend symbols
   )
 
 
@@ -399,24 +400,50 @@ To find out the firms that are benefiting the most through this procurement proc
 #| message: false
 #| echo: false
 #| warning: false
-#| fig-cap: template
+#| fig-cap: Top 10 Suppliers by Total Amount Awarded
 #| fig-align: center
 #| fig-pos: "H"
+# Merge total aggregated amounts back into aggregated_df
+aggregated_df <- aggregated_df %>%
+  left_join(aggregated_totals, by = "word", suffix = c("", "_total"))
 
-#TODO Fix colors and supplier names and order of supps (highest to lowest)
+# Get the top 10 suppliers
+top_suppliers <- aggregated_totals %>%
+  top_n(10, total_amount)
 
-# Create the bar chart with legend removed
-ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fill = buyer)) +
+# Filter aggregated_df to include only the top 10 suppliers
+aggregated_df_top10 <- aggregated_df %>%
+  filter(word %in% top_suppliers$word)
+
+# Use this ordering in the plot
+# Use this ordering in the plot (reversed order)
+ggplot(aggregated_df_top10, aes(x = reorder(word, total_amount_total), y = total_amount / 1e9, fill = buyer)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   labs(
-    title = "Top 10 Suppliers by Aggregated Amount Awarded",
     x = "Supplier",
-    y = "Total Amount Awarded"
-    # Remove the legend title by not specifying 'fill' in labs
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c,
+      "Other" = "gray"  # Assign a default color for other buyers if necessary
+        ), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
   ) +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+
+
+
 
 
 ```
