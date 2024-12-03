@@ -21,7 +21,7 @@ library(zoo)
 
 df <- read_csv(here::here("data/analysis_data/cleaned_data.csv"))
 
-View(df)
+#View(df)
 
 ```
 
@@ -33,9 +33,42 @@ View(df)
 #| fig-cap: template
 #| fig-align: center
 
+df <- df %>%
+  mutate(Month = month(award_date, label = TRUE, abbr = FALSE))
+
+# Aggregate total amount awarded per month
+monthly_trends <- df %>%
+  group_by(Month) %>%
+  summarize(Total_Amount = sum(amount, na.rm = TRUE)) %>%
+  ungroup()
+
+# Order the months correctly
+monthly_trends$Month <- factor(monthly_trends$Month, levels = month.name)
+
+# Plot the bar chart
+ggplot(monthly_trends, aes(x = Month, y = Total_Amount / 1e9)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(
+    title = "Total Amount Awarded by Month",
+    x = "Month",
+    y = "Total Amount Awarded (Billions)"
+  ) +
+  theme_minimal() +
+  scale_y_continuous(labels = comma)
 
 ```
 
+
+
+```{r fig-template101}
+#| message: false
+#| echo: false
+#| warning: false
+#| fig-cap: template
+#| fig-align: center
+
+
+```
 
 ```{r fig-template96}
 #| message: false
