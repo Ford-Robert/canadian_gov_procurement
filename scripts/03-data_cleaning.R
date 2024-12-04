@@ -71,10 +71,10 @@ cleaned <- cleaned[cleaned$duration_days > 0, ]
 
 cleaned <- cleaned[cleaned$amount > 0, ]
 
-# Filter out contracts with 'start_date' or 'award_date' before 2015
+# Filter out contracts with 'start_date' or 'award_date' before 2020
 cleaned <- cleaned[
-  cleaned$start_date >= as.Date("2015-01-01") &
-    cleaned$award_date >= as.Date("2015-01-01"), ]
+  cleaned$start_date >= as.Date("2020-01-01") &
+    cleaned$award_date >= as.Date("2020-01-01"), ]
 
 # Filter out contracts with 'end_date' beyond 2099
 cleaned <- cleaned[cleaned$end_date <= as.Date("2099-12-31"), ]
@@ -253,9 +253,6 @@ cleaned <- cleaned %>%
   mutate(
     baseline_days = as.numeric(award_date - as.Date("2020-01-01"))
   )
-
-cleaned <- cleaned %>%
-  filter(format(award_date, "%Y") != "2019")
 
 
 View(cleaned)
