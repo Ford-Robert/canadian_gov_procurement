@@ -8,6 +8,7 @@
 # - The `tidyverse` package must be installed and loaded
 # - The `dplyr` package must be installed and loaded
 # - The `stringr` package must be installed and loaded
+# - The `arrow` package must be installed and loaded
 # Other information? Make sure you are in the `canadian_gov_procurement` rproj
 
 
@@ -15,6 +16,7 @@
 library(tidyverse)
 library(dplyr)
 library(stringr)
+library(arrow)
 
 #### Clean data ####
 combined <- read_csv("data/raw_data/combined_data.csv")
@@ -259,3 +261,4 @@ View(cleaned)
 
 #### Save data ####
 write_csv(cleaned, "data/analysis_data/cleaned_data.csv")
+write_parquet(cleaned, "data/analysis_data/analysis_dataset.parquet")
