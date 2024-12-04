@@ -1,11 +1,11 @@
 ---
-title: "Procurements of the Canadian Government, Runaway Military Contracts"
+title: "Procurements of the Canadian Government, Ballooning Military Awards for Fighter Jets"
 author: 
   - Robert Ford
 thanks: "Code and data are available at: https://github.com/Ford-Robert . Special thanks to Professor Rohan Alexander for motivating this project, providing key support and insight, and demostrating the crucial skills required in modern statistical analysis. Check out his excellent book: https://tellingstorieswithdata.com/"
 date: today
 date-format: long
-abstract: "TODO First sentence. TODO Second sentence. TODO Third sentence. TODO Fourth sentence."
+abstract: "This paper gathers data on Canadain Federal Procurement Awards, uses a series of visualizations to analyse the data, builds two linear models to compare general government procurements and military procurements. Over the last three years the Canadian military has tripled their spending in an effort to aquire next generation fighter jets and train pilots, while every other government agency has atrophied. This spending concerns every Canadian citizen and often goes undercovered compared to analysis of the governments general budget."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -69,7 +69,7 @@ By providing an analysis of federal procurement spending, this paper aims to inf
 
 # Data {#sec-data}
 
-Data was analyzed through the R programming software [@citeR], and `RSelenium` [@rselenium] with `rvest` [@rvest] were used to support a web scraping script to download all data. Additional packages such as `tidyverse` [@tidyverse], `knitr` [@knitr], `actuar` [@actuar], `readr` [@readr], `stringr` [@stringr], `broom` [@broom] and `dplyr` [@dplyr] were used to help clean, simulate, analyze, and test the data. The presentation of this data using tables and graphs was made possible by r-packages; `ggplot2` [@ggplot2], `lubridate` [@lubridate], `kableExtra` [@kable], and `zoo` [@zoo]. All colours are taken from `RColorBrewer` [@colorbrewer]
+Data was analyzed through the R programming software [@citeR], and `RSelenium` [@rselenium] with `rvest` [@rvest] were used to support a web scraping script to download all data. Additional packages such as `tidyverse` [@tidyverse], `knitr` [@knitr], `actuar` [@actuar], `arrow` [@arrow], `readr` [@readr], `stringr` [@stringr], `broom` [@broom] and `dplyr` [@dplyr] were used to help clean, simulate, analyze, and test the data. The presentation of this data using tables and graphs was made possible by r-packages; `ggplot2` [@ggplot2], `lubridate` [@lubridate], `kableExtra` [@kable], and `zoo` [@zoo]. All colours are taken from `RColorBrewer` [@colorbrewer]
 
 A web scraping script was used to collect all Federal Award Data from the IJF [@ijfprocure]. The variables this paper focuses are; Contract, Buyer, Supplier, Amount, Award Date, Start Date, and End Date.  
 
@@ -825,6 +825,9 @@ Though this is the draw back of this method. If I wanted to get the top 15 or to
 This problem would only get worse the further down the list you go and at some point it may be impossible to continue with this method. To make matters worse when adding new data you may already be banning all the words in their names and would have no idea. Because at least when you are looking to add a banned word you can check to see if that word is the last word for a lot of companies, but you won't get that opportunity for novel companies. In short I am sure the top 10 companies that I am displaying truly are the top 10, however using this method I cannot say what the top 11 or more companies are and if new data is introduced then all bets are off.
 
 To create a more rigorous supplier name processing method I would completely delete this method and start again. Some good candidates that I have looked into for better supplier name parsing would be: Fuzzy Matching and String Distance Algorithms, Natural Language Processing (Tokenization, Named Entity Recognition (NER)). It would be nice to apply these algorithms to the contract descriptions as well, in that case you could gain further insights into what the government is buying.
+
+# Contract Surveys {#sec-surveys}
+
 
 
 # Model Diagnostics {#sec-diagnostics}
