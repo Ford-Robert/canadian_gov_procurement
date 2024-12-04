@@ -1,0 +1,1318 @@
+3 December 2024
+GPT-4o
+________
+
+Human: #### Preamble ####
+# Purpose: Simulates Government Contract Data
+# Author: Robert Ford
+# Date: 25 November 2024
+# Contact: robert.ford@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: 
+# - The tidyverse package must be installed and loaded
+# - The VGAM package must be installed and loaded
+# - The dplyr package must be installed and loaded
+# - The lubridate package must be installed and loaded
+# Any other information? Make sure you are in the canadian_gov_procurement rproj
+
+
+#### Workspace setup ####
+library(tidyverse)
+library(VGAM)      # For Pareto distribution
+library(dplyr)     # For data manipulation
+library(lubridate)
+
+#### Simulate data ####
+# Set seed for reproducibility
+set.seed(123)
+
+# 1. Define the buyer list excluding "National Defence"
+buyer_list <- c(
+  "Statistics Canada",
+  "Canadian Institutes of Health Research",
+  "The National Battlefields Commission",
+  "Department of Justice Canada",
+  # "National Defence", # Excluded
+  "Public Services and Procurement Canada",
+  "Canada Revenue Agency",
+  "Canada Border Services Agency",
+  "Natural Resources Canada",
+  "Agriculture and Agri-Food Canada",
+  "Correctional Service of Canada",
+  "Treasury Board of Canada Secretariat",
+  "Environment and Climate Change Canada",
+  "Impact Assessment Agency of Canada",
+  "Canadian Nuclear Safety Commission",
+  "Canadian Food Inspection Agency",
+  "Innovation, Science and Economic Development Canada",
+  "National Research Council Canada",
+  "Employment and Social Development Canada",
+  "Health Canada",
+  "Crown-Indigenous Relations and Northern Affairs Canada",
+  "Indigenous Services Canada",
+  "Parks Canada",
+  "Canadian Heritage",
+  "Financial Consumer Agency of Canada",
+  "Financial Transactions and Reports Analysis Centre of Canada",
+  "Privy Council Office",
+  "Shared Services Canada",
+  "Immigration, Refugees and Citizenship Canada",
+  "Royal Canadian Mounted Police",
+  "Global Affairs Canada",
+  "Transport Canada",
+  "Fisheries and Oceans Canada",
+  "Natural Sciences and Engineering Research Council of Canada",
+  "Canadian Intergovernmental Conference Secretariat",
+  "Canadian Radio-television and Telecommunications Commission",
+  "Polar Knowledge Canada",
+  "Office of the Superintendent of Financial Institutions Canada",
+  "Public Health Agency of Canada",
+  "Courts Administration Service",
+  "Immigration and Refugee Board of Canada",
+  "National Film Board",
+  "Canadian Space Agency",
+  "Canada School of Public Service",
+  "Infrastructure Canada",
+  "Social Sciences and Humanities Research Council of Canada",
+  "Parole Board of Canada",
+  "Canada Energy Regulator",
+  "Civilian Review and Complaints Commission for the RCMP",
+  "Public Prosecution Service of Canada",
+  "Department of Finance Canada",
+  "Public Safety Canada",
+  "Canadian Human Rights Commission",
+  "Canadian Transportation Agency",
+  "Office of the Auditor General of Canada",
+  "Elections Canada",
+  "Federal Economic Development Agency for Southern Ontario",
+  "Library and Archives Canada",
+  "Office of the Commissioner for Federal Judicial Affairs Canada",
+  "Public Service Commission of Canada",
+  "International Joint Commission",
+  "Western Economic Diversification Canada",
+  "Transportation Safety Board of Canada",
+  "Women and Gender Equality Canada",
+  "Canadian Centre for Occupational Health and Safety",
+  "Administrative Tribunals Support Service of Canada",
+  "Veterans Affairs Canada",
+  "Office of the Commissioner of Official Languages",
+  "Canada Economic Development for Quebec Regions",
+  "Canadian Grain Commission",
+  "Military Police Complaints Commission of Canada",
+  "Atlantic Canada Opportunities Agency",
+  "Canadian Northern Economic Development Agency",
+  "Office of the Privacy Commissioner of Canada",
+  "Patented Medicine Prices Review Board Canada",
+  "Office of the Information Commissioner of Canada",
+  "Accessibility Standards Canada",
+  "National Security and Intelligence Review Agency",
+  "Office of the Secretary to the Governor General",
+  "RCMP External Review Committee",
+  "Office of the Commissioner of Lobbying of Canada",
+  "Invest in Canada",
+  "Veterans Review and Appeal Board",
+  "Farm Products Council of Canada",
+  "The Correctional Investigator Canada",
+  "Office of the Public Sector Integrity Commissioner of Canada",
+  "Military Grievances External Review Committee",
+  "Prairies Economic Development Canada",
+  "Office of the Intelligence Commissioner",
+  "Pacific Economic Development Canada",
+  "Federal Economic Development Agency for Northern Ontario",
+  "National Gallery of Canada",
+  "Law Commission of Canada"
+)
+
+# Total number of buyers excluding "National Defence"
+num_buyers <- length(buyer_list)
+
+# 2. Define other lists
+# Define a list of contract descriptions
+contract_list <- c(
+  "Engineering consultants-Other",
+  "Other professional services not elsewhere specified",
+  "Aircraft parts",
+  "Aircraft",
+  "Ships and boats Parts",
+  "IT Services",
+  "Construction Services",
+  "Medical Supplies",
+  "Office Equipment",
+  "Maintenance Services",
+  "Transportation Services",
+  "Security Services",
+  "Environmental Services",
+  "Training Services",
+  "Research and Development",
+  "Legal Services",
+  "Financial Services",
+  "Marketing Services",
+  "Logistics Services",
+  "Telecommunications Services"
+)
+
+# Define a list of supplier names (example list, can be expanded)
+supplier_list <- c(
+  "SkyAlyne Canada Limited Partnership",
+  "CAE Military Aviation Training Inc.",
+  "F-35 Lightning II Joint Program Office (JPO)",
+  "Airbus Defence and Space SA",
+  "Vancouver Shipyards Co Ltd",
+  "Bell Helicopter Textron Canada",
+  "Lockheed Martin Canada",
+  "Rheinmetall Canada Inc.",
+  "General Dynamics Canada",
+  "L3Harris Canada",
+  "Rheinmetall Defence Canada",
+  "Thales Canada Limited",
+  "BAE Systems Canada",
+  "Rheinmetall Canada Limited",
+  "MDA Corporation",
+  "Rogers Communications Canada",
+  "IBM Canada",
+  "SNC-Lavalin",
+  "Bombardier Inc.",
+  "CGI Group Inc.",
+  "Northrop Grumman Canada",
+  "Raytheon Canada",
+  "Microsoft Canada",
+  "Amazon Web Services Canada",
+  "Google Canada",
+  "IBM Global Services",
+  "Deloitte Canada",
+  "Accenture Canada",
+  "PwC Canada",
+  "KPMG Canada",
+  "Ernst & Young Canada"
+)
+
+# 3. Simulate the 'buyer' column
+n <- 10000
+
+# 80% "National Defence"
+num_national_defence <- round(0.8 * n)
+num_other_buyers <- n - num_national_defence
+
+# Sample other buyers
+other_buyers_sample <- sample(buyer_list, size = num_other_buyers, replace = TRUE)
+
+# Combine buyers
+buyer_column <- c(rep("National Defence", num_national_defence), other_buyers_sample)
+
+# Shuffle the buyer column
+buyer_column <- sample(buyer_column, size = n, replace = FALSE)
+
+# 4. Simulate the 'contract' column
+contract_column <- sample(contract_list, size = n, replace = TRUE)
+
+# 5. Simulate the 'supplier' column
+supplier_column <- sample(supplier_list, size = n, replace = TRUE)
+
+# 6. Simulate the 'amount' column using Pareto distribution
+# Parameters for Pareto: x_m = 10,000; alpha = 3.5
+x_m <- 10000
+alpha <- 3.5
+
+# Using VGAM::rpareto
+amount_column <- rpareto(n, location = x_m, shape = alpha)
+
+# Alternatively, if VGAM::rpareto is not available, use inverse transform sampling
+# U <- runif(n)
+# amount_column <- x_m / (U)^(1/alpha)
+
+# 7. Simulate 'award_date' and 'start_date'
+# Define date range
+start_date_min <- as.Date("2018-01-01")
+start_date_max <- as.Date("2024-12-31")
+
+# Generate random dates
+award_start_dates <- as.Date(runif(n, min = as.numeric(start_date_min), max = as.numeric(start_date_max)), origin = "1970-01-01")
+
+# 8. Simulate 'duration_days'
+# Based on sample data, durations range roughly between 2,500 to 10,500 days
+# Use a skewed distribution, e.g., log-normal
+# Parameters can be adjusted to fit desired range
+
+# Using log-normal with meanlog and sdlog chosen to cover the range
+meanlog <- log(5000) - (0.5 * (log(5000) / 2)) # Adjusted for skewness
+sdlog <- 0.5
+
+duration_days_column <- round(rlnorm(n, meanlog = meanlog, sdlog = sdlog))
+
+# To ensure duration_days are within a reasonable range (e.g., 2000 to 12000)
+duration_days_column <- pmin(pmax(duration_days_column, 2000), 12000)
+
+# 9. Calculate 'end_date'
+end_dates <- award_start_dates + days(duration_days_column)
+
+# 10. Calculate 'per_day'
+per_day_column <- amount_column / duration_days_column
+
+# 11. Set 'region' column as "Federal"
+region_column <- rep("Federal", n)
+
+# 12. Assemble the dataframe
+simulated_df <- data.frame(
+  region = region_column,
+  contract = contract_column,
+  buyer = buyer_column,
+  supplier = supplier_column,
+  amount = round(amount_column, 2),
+  award_date = award_start_dates,
+  start_date = award_start_dates,
+  end_date = end_dates,
+  duration_days = duration_days_column,
+  per_day = round(per_day_column, 3),
+  stringsAsFactors = FALSE
+)
+
+# Optional: View the first few rows of the simulated dataframe
+head(simulated_df)
+
+write.csv(simulated_df, "data/simulated_data/simulated_data.csv", row.names = FALSE)
+
+
+
+In this script i get the following error: 
+> # Using VGAM::rpareto
+> amount_column <- rpareto(n, location = x_m, shape = alpha)
+Error in rpareto(n, location = x_m, shape = alpha) : 
+  unused argument (location = x_m)
+
+why is that, and how do i fix it?
+Human: #### Preamble ####
+# Purpose: Simulates Government Contract Data
+# Author: Robert Ford
+# Date: 25 November 2024
+# Contact: robert.ford@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: 
+# - The tidyverse package must be installed and loaded
+# - The VGAM package must be installed and loaded
+# - The dplyr package must be installed and loaded
+# - The lubridate package must be installed and loaded
+# Any other information? Make sure you are in the canadian_gov_procurement rproj
+
+
+#### Workspace setup ####
+library(tidyverse)
+library(VGAM)      # For Pareto distribution
+library(dplyr)     # For data manipulation
+library(lubridate)
+
+#### Simulate data ####
+# Set seed for reproducibility
+set.seed(123)
+
+# 1. Define the buyer list excluding "National Defence"
+buyer_list <- c(
+  "Statistics Canada",
+  "Canadian Institutes of Health Research",
+  "The National Battlefields Commission",
+  "Department of Justice Canada",
+  # "National Defence", # Excluded
+  "Public Services and Procurement Canada",
+  "Canada Revenue Agency",
+  "Canada Border Services Agency",
+  "Natural Resources Canada",
+  "Agriculture and Agri-Food Canada",
+  "Correctional Service of Canada",
+  "Treasury Board of Canada Secretariat",
+  "Environment and Climate Change Canada",
+  "Impact Assessment Agency of Canada",
+  "Canadian Nuclear Safety Commission",
+  "Canadian Food Inspection Agency",
+  "Innovation, Science and Economic Development Canada",
+  "National Research Council Canada",
+  "Employment and Social Development Canada",
+  "Health Canada",
+  "Crown-Indigenous Relations and Northern Affairs Canada",
+  "Indigenous Services Canada",
+  "Parks Canada",
+  "Canadian Heritage",
+  "Financial Consumer Agency of Canada",
+  "Financial Transactions and Reports Analysis Centre of Canada",
+  "Privy Council Office",
+  "Shared Services Canada",
+  "Immigration, Refugees and Citizenship Canada",
+  "Royal Canadian Mounted Police",
+  "Global Affairs Canada",
+  "Transport Canada",
+  "Fisheries and Oceans Canada",
+  "Natural Sciences and Engineering Research Council of Canada",
+  "Canadian Intergovernmental Conference Secretariat",
+  "Canadian Radio-television and Telecommunications Commission",
+  "Polar Knowledge Canada",
+  "Office of the Superintendent of Financial Institutions Canada",
+  "Public Health Agency of Canada",
+  "Courts Administration Service",
+  "Immigration and Refugee Board of Canada",
+  "National Film Board",
+  "Canadian Space Agency",
+  "Canada School of Public Service",
+  "Infrastructure Canada",
+  "Social Sciences and Humanities Research Council of Canada",
+  "Parole Board of Canada",
+  "Canada Energy Regulator",
+  "Civilian Review and Complaints Commission for the RCMP",
+  "Public Prosecution Service of Canada",
+  "Department of Finance Canada",
+  "Public Safety Canada",
+  "Canadian Human Rights Commission",
+  "Canadian Transportation Agency",
+  "Office of the Auditor General of Canada",
+  "Elections Canada",
+  "Federal Economic Development Agency for Southern Ontario",
+  "Library and Archives Canada",
+  "Office of the Commissioner for Federal Judicial Affairs Canada",
+  "Public Service Commission of Canada",
+  "International Joint Commission",
+  "Western Economic Diversification Canada",
+  "Transportation Safety Board of Canada",
+  "Women and Gender Equality Canada",
+  "Canadian Centre for Occupational Health and Safety",
+  "Administrative Tribunals Support Service of Canada",
+  "Veterans Affairs Canada",
+  "Office of the Commissioner of Official Languages",
+  "Canada Economic Development for Quebec Regions",
+  "Canadian Grain Commission",
+  "Military Police Complaints Commission of Canada",
+  "Atlantic Canada Opportunities Agency",
+  "Canadian Northern Economic Development Agency",
+  "Office of the Privacy Commissioner of Canada",
+  "Patented Medicine Prices Review Board Canada",
+  "Office of the Information Commissioner of Canada",
+  "Accessibility Standards Canada",
+  "National Security and Intelligence Review Agency",
+  "Office of the Secretary to the Governor General",
+  "RCMP External Review Committee",
+  "Office of the Commissioner of Lobbying of Canada",
+  "Invest in Canada",
+  "Veterans Review and Appeal Board",
+  "Farm Products Council of Canada",
+  "The Correctional Investigator Canada",
+  "Office of the Public Sector Integrity Commissioner of Canada",
+  "Military Grievances External Review Committee",
+  "Prairies Economic Development Canada",
+  "Office of the Intelligence Commissioner",
+  "Pacific Economic Development Canada",
+  "Federal Economic Development Agency for Northern Ontario",
+  "National Gallery of Canada",
+  "Law Commission of Canada"
+)
+
+# Total number of buyers excluding "National Defence"
+num_buyers <- length(buyer_list)
+
+# 2. Define other lists
+# Define a list of contract descriptions
+contract_list <- c(
+  "Engineering consultants-Other",
+  "Other professional services not elsewhere specified",
+  "Aircraft parts",
+  "Aircraft",
+  "Ships and boats Parts",
+  "IT Services",
+  "Construction Services",
+  "Medical Supplies",
+  "Office Equipment",
+  "Maintenance Services",
+  "Transportation Services",
+  "Security Services",
+  "Environmental Services",
+  "Training Services",
+  "Research and Development",
+  "Legal Services",
+  "Financial Services",
+  "Marketing Services",
+  "Logistics Services",
+  "Telecommunications Services"
+)
+
+# Define a list of supplier names (example list, can be expanded)
+supplier_list <- c(
+  "SkyAlyne Canada Limited Partnership",
+  "CAE Military Aviation Training Inc.",
+  "F-35 Lightning II Joint Program Office (JPO)",
+  "Airbus Defence and Space SA",
+  "Vancouver Shipyards Co Ltd",
+  "Bell Helicopter Textron Canada",
+  "Lockheed Martin Canada",
+  "Rheinmetall Canada Inc.",
+  "General Dynamics Canada",
+  "L3Harris Canada",
+  "Rheinmetall Defence Canada",
+  "Thales Canada Limited",
+  "BAE Systems Canada",
+  "Rheinmetall Canada Limited",
+  "MDA Corporation",
+  "Rogers Communications Canada",
+  "IBM Canada",
+  "SNC-Lavalin",
+  "Bombardier Inc.",
+  "CGI Group Inc.",
+  "Northrop Grumman Canada",
+  "Raytheon Canada",
+  "Microsoft Canada",
+  "Amazon Web Services Canada",
+  "Google Canada",
+  "IBM Global Services",
+  "Deloitte Canada",
+  "Accenture Canada",
+  "PwC Canada",
+  "KPMG Canada",
+  "Ernst & Young Canada"
+)
+
+# 3. Simulate the 'buyer' column
+n <- 10000
+
+# 80% "National Defence"
+num_national_defence <- round(0.8 * n)
+num_other_buyers <- n - num_national_defence
+
+# Sample other buyers
+other_buyers_sample <- sample(buyer_list, size = num_other_buyers, replace = TRUE)
+
+# Combine buyers
+buyer_column <- c(rep("National Defence", num_national_defence), other_buyers_sample)
+
+# Shuffle the buyer column
+buyer_column <- sample(buyer_column, size = n, replace = FALSE)
+
+# 4. Simulate the 'contract' column
+contract_column <- sample(contract_list, size = n, replace = TRUE)
+
+# 5. Simulate the 'supplier' column
+supplier_column <- sample(supplier_list, size = n, replace = TRUE)
+
+# 6. Simulate the 'amount' column using Pareto distribution
+# Parameters for Pareto: x_m = 10,000; alpha = 3.5
+x_m <- 10000
+alpha <- 3.5
+
+# Using VGAM::rpareto
+amount_column <- rpareto(n, location = x_m, shape = alpha)
+
+# Alternatively, if VGAM::rpareto is not available, use inverse transform sampling
+# U <- runif(n)
+# amount_column <- x_m / (U)^(1/alpha)
+
+# 7. Simulate 'award_date' and 'start_date'
+# Define date range
+start_date_min <- as.Date("2018-01-01")
+start_date_max <- as.Date("2024-12-31")
+
+# Generate random dates
+award_start_dates <- as.Date(runif(n, min = as.numeric(start_date_min), max = as.numeric(start_date_max)), origin = "1970-01-01")
+
+# 8. Simulate 'duration_days'
+# Based on sample data, durations range roughly between 2,500 to 10,500 days
+# Use a skewed distribution, e.g., log-normal
+# Parameters can be adjusted to fit desired range
+
+# Using log-normal with meanlog and sdlog chosen to cover the range
+meanlog <- log(5000) - (0.5 * (log(5000) / 2)) # Adjusted for skewness
+sdlog <- 0.5
+
+duration_days_column <- round(rlnorm(n, meanlog = meanlog, sdlog = sdlog))
+
+# To ensure duration_days are within a reasonable range (e.g., 2000 to 12000)
+duration_days_column <- pmin(pmax(duration_days_column, 2000), 12000)
+
+# 9. Calculate 'end_date'
+end_dates <- award_start_dates + days(duration_days_column)
+
+# 10. Calculate 'per_day'
+per_day_column <- amount_column / duration_days_column
+
+# 11. Set 'region' column as "Federal"
+region_column <- rep("Federal", n)
+
+# 12. Assemble the dataframe
+simulated_df <- data.frame(
+  region = region_column,
+  contract = contract_column,
+  buyer = buyer_column,
+  supplier = supplier_column,
+  amount = round(amount_column, 2),
+  award_date = award_start_dates,
+  start_date = award_start_dates,
+  end_date = end_dates,
+  duration_days = duration_days_column,
+  per_day = round(per_day_column, 3),
+  stringsAsFactors = FALSE
+)
+
+# Optional: View the first few rows of the simulated dataframe
+head(simulated_df)
+
+write.csv(simulated_df, "data/simulated_data/simulated_data.csv", row.names = FALSE)
+
+
+
+In this script i get the following error: 
+> # Using VGAM::rpareto
+> amount_column <- rpareto(n, location = x_m, shape = alpha)
+Error in rpareto(n, location = x_m, shape = alpha) : 
+  unused argument (location = x_m)
+
+why is that, and how do i fix it?
+ChatGPT: The error you're encountering stems from a mismatch between the arguments you're passing to the rpareto function and the parameters that the function actually accepts in the VGAM package. Let's delve into the specifics and explore how to resolve this issue.Understanding the ErrorError Message:arduinoCopy codeError in rpareto(n, location = x_m, shape = alpha) : 
+  unused argument (location = x_m)
+Cause:Incorrect Function Parameters: The rpareto function in the VGAM package does not recognize the location parameter. Instead, it expects different parameter names, such as shape and scale.Function Availability: It's also possible that the VGAM package does not provide an rpareto function at all. In R, different packages might offer functions with the same name but different parameterizations.Solution OptionsThere are multiple ways to address this issue:1. Use the Correct Parameters for VGAM::rparetoIf the VGAM package does provide an rpareto function but with different parameter names, you need to adjust your function call accordingly. Typically, Pareto distributions are parameterized using shape and scale instead of location and shape.Steps:Check the Documentation: Verify the exact parameters that VGAM::rpareto expects by consulting the VGAM documentation.Adjust Parameters: If VGAM::rpareto expects shape and scale, modify your function call as follows:rCopy code# Using VGAM::rpareto with correct parameters
+amount_column <- VGAM::rpareto(n, scale = x_m, shape = alpha)
+Note: If the VGAM package does not have an rpareto function, you'll need to explore alternative methods.2. Utilize the actuar PackageThe actuar package is specifically designed for actuarial science and provides robust functions for various distributions, including the Pareto distribution.Steps:Install and Load the actuar Package:rCopy codeinstall.packages("actuar")
+library(actuar)
+Use actuar::rpareto:
+The actuar package's rpareto function uses the parameters scale and shape.rCopy codeamount_column <- actuar::rpareto(n, scale = x_m, shape = alpha)
+Advantages:Flexibility: The actuar package is well-maintained and widely used for distributions common in actuarial calculations.Consistency: Ensures that parameter names and functionalities align with standard actuarial practices.3. Implement Inverse Transform SamplingIf you prefer not to introduce another package or want a quick fix, you can use the inverse transform sampling method, which you've already partially implemented in your script.Steps:Uncomment and Use the Inverse Transform Sampling Code:rCopy code# Using inverse transform sampling
+U <- runif(n)
+amount_column <- x_m / (U)^(1/alpha)
+Ensure Correctness:This method correctly generates Pareto-distributed random variables.It avoids dependencies on external packages.Advantages:Simplicity: No need to install or load additional packages.Control: Offers direct control over the sampling process.4. Define a Custom rpareto FunctionFor full control and to avoid relying on external packages, you can define your own rpareto function.Example Implementation:rCopy coderpareto_custom <- function(n, scale, shape) {
+  U <- runif(n)
+  scale / (U)^(1 / shape)
+}
+
+# Use the custom function
+amount_column <- rpareto_custom(n, scale = x_m, shape = alpha)
+Advantages:Customization: Tailor the function to your specific needs.Portability: Easily share and reuse the function without package dependencies.Recommended ApproachGiven the context of your script and the error encountered, Option 2: Utilize the actuar Package is highly recommended for the following reasons:Reliability: The actuar package is specifically designed for actuarial and statistical applications, ensuring accurate and efficient computations.Ease of Use: Minimal changes are required in your existing script.Community Support: Well-documented and supported by the R community.Revised Script Snippet Using actuarHere's how you can modify your script to use the actuar package:rCopy code#### Preamble ####
+# Purpose: Simulates Government Contract Data
+# Author: Robert Ford
+# Date: 25 November 2024
+# Contact: robert.ford@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: 
+# - The `tidyverse` package must be installed and loaded
+# - The `VGAM` package must be installed and loaded
+# - The `dplyr` package must be installed and loaded
+# - The `lubridate` package must be installed and loaded
+# - The `actuar` package must be installed and loaded
+# Any other information? Make sure you are in the `canadian_gov_procurement` rproj
+
+#### Workspace setup ####
+library(tidyverse)
+library(VGAM)      # For Pareto distribution (if needed)
+library(dplyr)     # For data manipulation
+library(lubridate)
+library(actuar)    # Added for Pareto distribution
+
+#### Simulate data ####
+# Set seed for reproducibility
+set.seed(123)
+
+# ... [rest of your script remains unchanged] ...
+
+# 6. Simulate the 'amount' column using Pareto distribution
+# Parameters for Pareto: scale = 10,000; shape = 3.5
+scale <- 10000
+shape <- 3.5
+
+# Using actuar::rpareto
+amount_column <- actuar::rpareto(n, scale = scale, shape = shape)
+
+# 7. Simulate 'award_date' and 'start_date'
+# ... [rest of your script continues] ...
+Final Notes:Package Installation: Ensure that the actuar package is installed. If not, install it using install.packages("actuar").Function Parameters: Always verify the parameter names and their order when switching between different packages or functions.Reproducibility: Keep the set.seed(123) to maintain reproducibility of your simulations.By implementing these changes, your script should run without the previously encountered error, and the Pareto-distributed amount values will be correctly simulated.
+ChatGPT: The error you're encountering stems from a mismatch between the arguments you're passing to the rpareto function and the parameters that the function actually accepts in the VGAM package. Let's delve into the specifics and explore how to resolve this issue.Understanding the ErrorError Message:arduinoCopy codeError in rpareto(n, location = x_m, shape = alpha) : 
+  unused argument (location = x_m)
+Cause:Incorrect Function Parameters: The rpareto function in the VGAM package does not recognize the location parameter. Instead, it expects different parameter names, such as shape and scale.Function Availability: It's also possible that the VGAM package does not provide an rpareto function at all. In R, different packages might offer functions with the same name but different parameterizations.Solution OptionsThere are multiple ways to address this issue:1. Use the Correct Parameters for VGAM::rparetoIf the VGAM package does provide an rpareto function but with different parameter names, you need to adjust your function call accordingly. Typically, Pareto distributions are parameterized using shape and scale instead of location and shape.Steps:Check the Documentation: Verify the exact parameters that VGAM::rpareto expects by consulting the VGAM documentation.Adjust Parameters: If VGAM::rpareto expects shape and scale, modify your function call as follows:rCopy code# Using VGAM::rpareto with correct parameters
+amount_column <- VGAM::rpareto(n, scale = x_m, shape = alpha)
+Note: If the VGAM package does not have an rpareto function, you'll need to explore alternative methods.2. Utilize the actuar PackageThe actuar package is specifically designed for actuarial science and provides robust functions for various distributions, including the Pareto distribution.Steps:Install and Load the actuar Package:rCopy codeinstall.packages("actuar")
+library(actuar)
+Use actuar::rpareto:
+The actuar package's rpareto function uses the parameters scale and shape.rCopy codeamount_column <- actuar::rpareto(n, scale = x_m, shape = alpha)
+Advantages:Flexibility: The actuar package is well-maintained and widely used for distributions common in actuarial calculations.Consistency: Ensures that parameter names and functionalities align with standard actuarial practices.3. Implement Inverse Transform SamplingIf you prefer not to introduce another package or want a quick fix, you can use the inverse transform sampling method, which you've already partially implemented in your script.Steps:Uncomment and Use the Inverse Transform Sampling Code:rCopy code# Using inverse transform sampling
+U <- runif(n)
+amount_column <- x_m / (U)^(1/alpha)
+Ensure Correctness:This method correctly generates Pareto-distributed random variables.It avoids dependencies on external packages.Advantages:Simplicity: No need to install or load additional packages.Control: Offers direct control over the sampling process.4. Define a Custom rpareto FunctionFor full control and to avoid relying on external packages, you can define your own rpareto function.Example Implementation:rCopy coderpareto_custom <- function(n, scale, shape) {
+  U <- runif(n)
+  scale / (U)^(1 / shape)
+}
+
+# Use the custom function
+amount_column <- rpareto_custom(n, scale = x_m, shape = alpha)
+Advantages:Customization: Tailor the function to your specific needs.Portability: Easily share and reuse the function without package dependencies.Recommended ApproachGiven the context of your script and the error encountered, Option 2: Utilize the actuar Package is highly recommended for the following reasons:Reliability: The actuar package is specifically designed for actuarial and statistical applications, ensuring accurate and efficient computations.Ease of Use: Minimal changes are required in your existing script.Community Support: Well-documented and supported by the R community.Revised Script Snippet Using actuarHere's how you can modify your script to use the actuar package:rCopy code#### Preamble ####
+# Purpose: Simulates Government Contract Data
+# Author: Robert Ford
+# Date: 25 November 2024
+# Contact: robert.ford@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: 
+# - The `tidyverse` package must be installed and loaded
+# - The `VGAM` package must be installed and loaded
+# - The `dplyr` package must be installed and loaded
+# - The `lubridate` package must be installed and loaded
+# - The `actuar` package must be installed and loaded
+# Any other information? Make sure you are in the `canadian_gov_procurement` rproj
+
+#### Workspace setup ####
+library(tidyverse)
+library(VGAM)      # For Pareto distribution (if needed)
+library(dplyr)     # For data manipulation
+library(lubridate)
+library(actuar)    # Added for Pareto distribution
+
+#### Simulate data ####
+# Set seed for reproducibility
+set.seed(123)
+
+# ... [rest of your script remains unchanged] ...
+
+# 6. Simulate the 'amount' column using Pareto distribution
+# Parameters for Pareto: scale = 10,000; shape = 3.5
+scale <- 10000
+shape <- 3.5
+
+# Using actuar::rpareto
+amount_column <- actuar::rpareto(n, scale = scale, shape = shape)
+
+# 7. Simulate 'award_date' and 'start_date'
+# ... [rest of your script continues] ...
+Final Notes:Package Installation: Ensure that the actuar package is installed. If not, install it using install.packages("actuar").Function Parameters: Always verify the parameter names and their order when switching between different packages or functions.Reproducibility: Keep the set.seed(123) to maintain reproducibility of your simulations.By implementing these changes, your script should run without the previously encountered error, and the Pareto-distributed amount values will be correctly simulated.
+Human: award_start_dates <- as.Date(runif(n, min = as.numeric(start_date_min), max = as.numeric(start_date_max)), origin = "1970-01-01")
+
+# 8. Simulate 'duration_days'
+# Based on sample data, durations range roughly between 2,500 to 10,500 days
+# Use a skewed distribution, e.g., log-normal
+# Parameters can be adjusted to fit desired range
+
+# Using log-normal with meanlog and sdlog chosen to cover the range
+meanlog <- log(5000) - (0.5 * (log(5000) / 2)) # Adjusted for skewness
+sdlog <- 0.5
+
+duration_days_column <- as.numeric(cleaned$end_date - cleaned$start_date)
+
+# To ensure duration_days are within a reasonable range (e.g., 2000 to 12000)
+duration_days_column <- pmin(pmax(duration_days_column, 2000), 12000)
+
+# 9. Calculate 'end_date'
+end_dates <- award_start_dates + days(duration_days_column
+
+change this code so that end_date is calculated randomly, then duration days is calculated afterwards
+Human: award_start_dates <- as.Date(runif(n, min = as.numeric(start_date_min), max = as.numeric(start_date_max)), origin = "1970-01-01")
+
+# 8. Simulate 'duration_days'
+# Based on sample data, durations range roughly between 2,500 to 10,500 days
+# Use a skewed distribution, e.g., log-normal
+# Parameters can be adjusted to fit desired range
+
+# Using log-normal with meanlog and sdlog chosen to cover the range
+meanlog <- log(5000) - (0.5 * (log(5000) / 2)) # Adjusted for skewness
+sdlog <- 0.5
+
+duration_days_column <- as.numeric(cleaned$end_date - cleaned$start_date)
+
+# To ensure duration_days are within a reasonable range (e.g., 2000 to 12000)
+duration_days_column <- pmin(pmax(duration_days_column, 2000), 12000)
+
+# 9. Calculate 'end_date'
+end_dates <- award_start_dates + days(duration_days_column
+
+change this code so that end_date is calculated randomly, then duration days is calculated afterwards
+ChatGPT: To modify your script so that the end_date is calculated randomly first and then the duration_days is derived from the difference between end_date and award_start_date, you can follow these steps:Simulate award_start_dates as before.Generate end_dates by adding a randomly generated duration to award_start_dates. This ensures that end_date is always after award_start_date.Calculate duration_days_column as the difference between end_date and award_start_date.Here's how you can implement these changes in your R script:rCopy code#### Preamble ####
+# Purpose: Simulates Government Contract Data
+# Author: Robert Ford
+# Date: 25 November 2024
+# Contact: robert.ford@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: 
+# - The `tidyverse` package must be installed and loaded
+# - The `VGAM` package must be installed and loaded
+# - The `dplyr` package must be installed and loaded
+# - The `lubridate` package must be installed and loaded
+# - The `actuar` package must be installed and loaded
+# Any other information? Make sure you are in the `canadian_gov_procurement` rproj
+
+#### Workspace setup ####
+library(tidyverse)
+library(VGAM)      # For Pareto distribution (if needed)
+library(dplyr)     # For data manipulation
+library(lubridate)
+library(actuar)    # Added for Pareto distribution
+
+#### Simulate data ####
+# Set seed for reproducibility
+set.seed(123)
+
+# 1. Define the buyer list excluding "National Defence"
+buyer_list <- c(
+  "Statistics Canada",
+  "Canadian Institutes of Health Research",
+  "The National Battlefields Commission",
+  "Department of Justice Canada",
+  # "National Defence", # Excluded
+  "Public Services and Procurement Canada",
+  "Canada Revenue Agency",
+  "Canada Border Services Agency",
+  "Natural Resources Canada",
+  "Agriculture and Agri-Food Canada",
+  "Correctional Service of Canada",
+  "Treasury Board of Canada Secretariat",
+  "Environment and Climate Change Canada",
+  "Impact Assessment Agency of Canada",
+  "Canadian Nuclear Safety Commission",
+  "Canadian Food Inspection Agency",
+  "Innovation, Science and Economic Development Canada",
+  "National Research Council Canada",
+  "Employment and Social Development Canada",
+  "Health Canada",
+  "Crown-Indigenous Relations and Northern Affairs Canada",
+  "Indigenous Services Canada",
+  "Parks Canada",
+  "Canadian Heritage",
+  "Financial Consumer Agency of Canada",
+  "Financial Transactions and Reports Analysis Centre of Canada",
+  "Privy Council Office",
+  "Shared Services Canada",
+  "Immigration, Refugees and Citizenship Canada",
+  "Royal Canadian Mounted Police",
+  "Global Affairs Canada",
+  "Transport Canada",
+  "Fisheries and Oceans Canada",
+  "Natural Sciences and Engineering Research Council of Canada",
+  "Canadian Intergovernmental Conference Secretariat",
+  "Canadian Radio-television and Telecommunications Commission",
+  "Polar Knowledge Canada",
+  "Office of the Superintendent of Financial Institutions Canada",
+  "Public Health Agency of Canada",
+  "Courts Administration Service",
+  "Immigration and Refugee Board of Canada",
+  "National Film Board",
+  "Canadian Space Agency",
+  "Canada School of Public Service",
+  "Infrastructure Canada",
+  "Social Sciences and Humanities Research Council of Canada",
+  "Parole Board of Canada",
+  "Canada Energy Regulator",
+  "Civilian Review and Complaints Commission for the RCMP",
+  "Public Prosecution Service of Canada",
+  "Department of Finance Canada",
+  "Public Safety Canada",
+  "Canadian Human Rights Commission",
+  "Canadian Transportation Agency",
+  "Office of the Auditor General of Canada",
+  "Elections Canada",
+  "Federal Economic Development Agency for Southern Ontario",
+  "Library and Archives Canada",
+  "Office of the Commissioner for Federal Judicial Affairs Canada",
+  "Public Service Commission of Canada",
+  "International Joint Commission",
+  "Western Economic Diversification Canada",
+  "Transportation Safety Board of Canada",
+  "Women and Gender Equality Canada",
+  "Canadian Centre for Occupational Health and Safety",
+  "Administrative Tribunals Support Service of Canada",
+  "Veterans Affairs Canada",
+  "Office of the Commissioner of Official Languages",
+  "Canada Economic Development for Quebec Regions",
+  "Canadian Grain Commission",
+  "Military Police Complaints Commission of Canada",
+  "Atlantic Canada Opportunities Agency",
+  "Canadian Northern Economic Development Agency",
+  "Office of the Privacy Commissioner of Canada",
+  "Patented Medicine Prices Review Board Canada",
+  "Office of the Information Commissioner of Canada",
+  "Accessibility Standards Canada",
+  "National Security and Intelligence Review Agency",
+  "Office of the Secretary to the Governor General",
+  "RCMP External Review Committee",
+  "Office of the Commissioner of Lobbying of Canada",
+  "Invest in Canada",
+  "Veterans Review and Appeal Board",
+  "Farm Products Council of Canada",
+  "The Correctional Investigator Canada",
+  "Office of the Public Sector Integrity Commissioner of Canada",
+  "Military Grievances External Review Committee",
+  "Prairies Economic Development Canada",
+  "Office of the Intelligence Commissioner",
+  "Pacific Economic Development Canada",
+  "Federal Economic Development Agency for Northern Ontario",
+  "National Gallery of Canada",
+  "Law Commission of Canada"
+)
+
+# Total number of buyers excluding "National Defence"
+num_buyers <- length(buyer_list)
+
+# 2. Define other lists
+# Define a list of contract descriptions
+contract_list <- c(
+  "Engineering consultants-Other",
+  "Other professional services not elsewhere specified",
+  "Aircraft parts",
+  "Aircraft",
+  "Ships and boats Parts",
+  "IT Services",
+  "Construction Services",
+  "Medical Supplies",
+  "Office Equipment",
+  "Maintenance Services",
+  "Transportation Services",
+  "Security Services",
+  "Environmental Services",
+  "Training Services",
+  "Research and Development",
+  "Legal Services",
+  "Financial Services",
+  "Marketing Services",
+  "Logistics Services",
+  "Telecommunications Services"
+)
+
+# Define a list of supplier names (example list, can be expanded)
+supplier_list <- c(
+  "SkyAlyne Canada Limited Partnership",
+  "CAE Military Aviation Training Inc.",
+  "F-35 Lightning II Joint Program Office (JPO)",
+  "Airbus Defence and Space SA",
+  "Vancouver Shipyards Co Ltd",
+  "Bell Helicopter Textron Canada",
+  "Lockheed Martin Canada",
+  "Rheinmetall Canada Inc.",
+  "General Dynamics Canada",
+  "L3Harris Canada",
+  "Rheinmetall Defence Canada",
+  "Thales Canada Limited",
+  "BAE Systems Canada",
+  "Rheinmetall Canada Limited",
+  "MDA Corporation",
+  "Rogers Communications Canada",
+  "IBM Canada",
+  "SNC-Lavalin",
+  "Bombardier Inc.",
+  "CGI Group Inc.",
+  "Northrop Grumman Canada",
+  "Raytheon Canada",
+  "Microsoft Canada",
+  "Amazon Web Services Canada",
+  "Google Canada",
+  "IBM Global Services",
+  "Deloitte Canada",
+  "Accenture Canada",
+  "PwC Canada",
+  "KPMG Canada",
+  "Ernst & Young Canada"
+)
+
+# 3. Simulate the 'buyer' column
+n <- 10000
+
+# 80% "National Defence"
+num_national_defence <- round(0.8 * n)
+num_other_buyers <- n - num_national_defence
+
+# Sample other buyers
+other_buyers_sample <- sample(buyer_list, size = num_other_buyers, replace = TRUE)
+
+# Combine buyers
+buyer_column <- c(rep("National Defence", num_national_defence), other_buyers_sample)
+
+# Shuffle the buyer column
+buyer_column <- sample(buyer_column, size = n, replace = FALSE)
+
+# 4. Simulate the 'contract' column
+contract_column <- sample(contract_list, size = n, replace = TRUE)
+
+# 5. Simulate the 'supplier' column
+supplier_column <- sample(supplier_list, size = n, replace = TRUE)
+
+# 6. Simulate the 'amount' column using Pareto distribution
+# Parameters for Pareto: scale = 10,000; shape = 3.5
+
+scale <- 10000
+shape <- 3.5
+
+# Using actuar::rpareto
+amount_column <- actuar::rpareto(n, scale = scale, shape = shape)
+
+# 7. Simulate 'award_date' and 'start_date'
+# Define date range
+start_date_min <- as.Date("2018-01-01")
+start_date_max <- as.Date("2024-12-31")
+
+# Generate random award_start_dates
+award_start_dates <- as.Date(runif(n, min = as.numeric(start_date_min), max = as.numeric(start_date_max)), origin = "1970-01-01")
+
+# 8. Simulate 'end_date' first, then calculate 'duration_days'
+
+# Define minimum and maximum duration in days
+min_duration <- 2000
+max_duration <- 12000
+
+# Using log-normal distribution for duration_days
+# Adjust meanlog and sdlog to achieve desired range
+
+# Calculate meanlog and sdlog to center around 5000 days
+meanlog <- log(5000) - (0.5 * (log(5000) / 2)) # Adjusted for skewness
+sdlog <- 0.5
+
+# Generate duration_days using log-normal distribution
+duration_days_random <- round(rlnorm(n, meanlog = meanlog, sdlog = sdlog))
+
+# Ensure duration_days are within [2000, 12000]
+duration_days_random <- pmin(pmax(duration_days_random, min_duration), max_duration)
+
+# Generate 'end_date' by adding duration_days_random to 'award_start_dates'
+end_dates <- award_start_dates + days(duration_days_random)
+
+# 9. Calculate 'duration_days_column'
+duration_days_column <- as.numeric(end_dates - award_start_dates)
+
+# 10. Calculate 'per_day'
+per_day_column <- amount_column / duration_days_column
+
+# 11. Set 'region' column as "Federal"
+region_column <- rep("Federal", n)
+
+# 12. Assemble the dataframe
+simulated_df <- data.frame(
+  region = region_column,
+  contract = contract_column,
+  buyer = buyer_column,
+  supplier = supplier_column,
+  amount = round(amount_column, 2),
+  award_date = award_start_dates,
+  start_date = award_start_dates,
+  end_date = end_dates,
+  duration_days = duration_days_column,
+  per_day = round(per_day_column, 3),
+  stringsAsFactors = FALSE
+)
+
+# Optional: View the first few rows of the simulated dataframe
+head(simulated_df)
+
+# Save the simulated data
+write.csv(simulated_df, "data/simulated_data/simulated_data.csv", row.names = FALSE)
+Explanation of Changes:Simulate end_date First:Duration Generation: Generated duration_days_random using a log-normal distribution, constrained between 2000 and 12000 days.End Date Calculation: Added duration_days_random to award_start_dates to get end_dates.Duration Calculation: Calculated duration_days_column as the difference between end_dates and award_start_dates. Since end_dates are generated by adding duration_days_random to award_start_dates, this should equal duration_days_random.Fixed Code Errors:Removed the reference to cleaned$end_date and cleaned$start_date, which were undefined in your original script.Added the missing closing parenthesis in the end_dates calculation line.Consistent Variable Naming:Used duration_days_random for the initial duration generation.Ensured duration_days_column correctly represents the duration after calculation.Comments and Documentation:Updated comments to reflect the changes in the simulation steps.Clarified the purpose of each code block for better understanding.Alternative Approach: Using Uniform Distribution for DurationIf you prefer to generate duration_days using a uniform distribution instead of a log-normal distribution, you can modify the duration generation step as follows:rCopy code# 8. Simulate 'end_date' first, then calculate 'duration_days'
+
+# Generate duration_days uniformly between 2000 and 12000
+duration_days_random <- sample(min_duration:max_duration, size = n, replace = TRUE)
+
+# Generate 'end_date' by adding duration_days_random to 'award_start_dates'
+end_dates <- award_start_dates + days(duration_days_random)
+
+# 9. Calculate 'duration_days_column'
+duration_days_column <- as.numeric(end_dates - award_start_dates)
+Pros of Using Uniform Distribution:Simplicity: Easier to implement without adjusting parameters.Predictability: Each duration within the range has an equal probability of being selected.Cons of Using Uniform Distribution:Lack of Realism: Durations might not reflect real-world skewness or variability.Final Notes:Package Installation: Ensure that all required packages (tidyverse, VGAM, dplyr, lubridate, and actuar) are installed. If not, install them using install.packages("package_name").rCopy codeinstall.packages(c("tidyverse", "VGAM", "dplyr", "lubridate", "actuar"))
+Reproducibility: The set.seed(123) ensures that your simulations are reproducible. You can change the seed value if you want different results.Data Storage: The simulated data is saved as a CSV file in the data/simulated_data/ directory. Ensure that this directory exists or create it before running the script to avoid errors.rCopy codedir.create("data/simulated_data", recursive = TRUE, showWarnings = FALSE)
+Validation: After running the script, it's a good practice to validate the simulated data to ensure it meets your expectations. For example, you can check the summary statistics or visualize the distribution of duration_days and amount.rCopy codesummary(simulated_df$duration_days)
+summary(simulated_df$amount)
+
+# Visualize duration_days distribution
+ggplot(simulated_df, aes(x = duration_days)) +
+  geom_histogram(binwidth = 500, fill = "blue", color = "black") +
+  theme_minimal() +
+  labs(title = "Distribution of Contract Duration Days", x = "Duration (days)", y = "Frequency")
+
+# Visualize amount distribution
+ggplot(simulated_df, aes(x = amount)) +
+  geom_histogram(binwidth = 50000, fill = "green", color = "black") +
+  theme_minimal() +
+  labs(title = "Distribution of Contract Amounts", x = "Amount ($)", y = "Frequency")
+By implementing these changes, your script will now generate end_date first and then calculate duration_days accordingly. This approach ensures that each contract has a realistic duration and end date based on the randomly assigned start date.
+ChatGPT: To modify your script so that the end_date is calculated randomly first and then the duration_days is derived from the difference between end_date and award_start_date, you can follow these steps:Simulate award_start_dates as before.Generate end_dates by adding a randomly generated duration to award_start_dates. This ensures that end_date is always after award_start_date.Calculate duration_days_column as the difference between end_date and award_start_date.Here's how you can implement these changes in your R script:rCopy code#### Preamble ####
+# Purpose: Simulates Government Contract Data
+# Author: Robert Ford
+# Date: 25 November 2024
+# Contact: robert.ford@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: 
+# - The `tidyverse` package must be installed and loaded
+# - The `VGAM` package must be installed and loaded
+# - The `dplyr` package must be installed and loaded
+# - The `lubridate` package must be installed and loaded
+# - The `actuar` package must be installed and loaded
+# Any other information? Make sure you are in the `canadian_gov_procurement` rproj
+
+#### Workspace setup ####
+library(tidyverse)
+library(VGAM)      # For Pareto distribution (if needed)
+library(dplyr)     # For data manipulation
+library(lubridate)
+library(actuar)    # Added for Pareto distribution
+
+#### Simulate data ####
+# Set seed for reproducibility
+set.seed(123)
+
+# 1. Define the buyer list excluding "National Defence"
+buyer_list <- c(
+  "Statistics Canada",
+  "Canadian Institutes of Health Research",
+  "The National Battlefields Commission",
+  "Department of Justice Canada",
+  # "National Defence", # Excluded
+  "Public Services and Procurement Canada",
+  "Canada Revenue Agency",
+  "Canada Border Services Agency",
+  "Natural Resources Canada",
+  "Agriculture and Agri-Food Canada",
+  "Correctional Service of Canada",
+  "Treasury Board of Canada Secretariat",
+  "Environment and Climate Change Canada",
+  "Impact Assessment Agency of Canada",
+  "Canadian Nuclear Safety Commission",
+  "Canadian Food Inspection Agency",
+  "Innovation, Science and Economic Development Canada",
+  "National Research Council Canada",
+  "Employment and Social Development Canada",
+  "Health Canada",
+  "Crown-Indigenous Relations and Northern Affairs Canada",
+  "Indigenous Services Canada",
+  "Parks Canada",
+  "Canadian Heritage",
+  "Financial Consumer Agency of Canada",
+  "Financial Transactions and Reports Analysis Centre of Canada",
+  "Privy Council Office",
+  "Shared Services Canada",
+  "Immigration, Refugees and Citizenship Canada",
+  "Royal Canadian Mounted Police",
+  "Global Affairs Canada",
+  "Transport Canada",
+  "Fisheries and Oceans Canada",
+  "Natural Sciences and Engineering Research Council of Canada",
+  "Canadian Intergovernmental Conference Secretariat",
+  "Canadian Radio-television and Telecommunications Commission",
+  "Polar Knowledge Canada",
+  "Office of the Superintendent of Financial Institutions Canada",
+  "Public Health Agency of Canada",
+  "Courts Administration Service",
+  "Immigration and Refugee Board of Canada",
+  "National Film Board",
+  "Canadian Space Agency",
+  "Canada School of Public Service",
+  "Infrastructure Canada",
+  "Social Sciences and Humanities Research Council of Canada",
+  "Parole Board of Canada",
+  "Canada Energy Regulator",
+  "Civilian Review and Complaints Commission for the RCMP",
+  "Public Prosecution Service of Canada",
+  "Department of Finance Canada",
+  "Public Safety Canada",
+  "Canadian Human Rights Commission",
+  "Canadian Transportation Agency",
+  "Office of the Auditor General of Canada",
+  "Elections Canada",
+  "Federal Economic Development Agency for Southern Ontario",
+  "Library and Archives Canada",
+  "Office of the Commissioner for Federal Judicial Affairs Canada",
+  "Public Service Commission of Canada",
+  "International Joint Commission",
+  "Western Economic Diversification Canada",
+  "Transportation Safety Board of Canada",
+  "Women and Gender Equality Canada",
+  "Canadian Centre for Occupational Health and Safety",
+  "Administrative Tribunals Support Service of Canada",
+  "Veterans Affairs Canada",
+  "Office of the Commissioner of Official Languages",
+  "Canada Economic Development for Quebec Regions",
+  "Canadian Grain Commission",
+  "Military Police Complaints Commission of Canada",
+  "Atlantic Canada Opportunities Agency",
+  "Canadian Northern Economic Development Agency",
+  "Office of the Privacy Commissioner of Canada",
+  "Patented Medicine Prices Review Board Canada",
+  "Office of the Information Commissioner of Canada",
+  "Accessibility Standards Canada",
+  "National Security and Intelligence Review Agency",
+  "Office of the Secretary to the Governor General",
+  "RCMP External Review Committee",
+  "Office of the Commissioner of Lobbying of Canada",
+  "Invest in Canada",
+  "Veterans Review and Appeal Board",
+  "Farm Products Council of Canada",
+  "The Correctional Investigator Canada",
+  "Office of the Public Sector Integrity Commissioner of Canada",
+  "Military Grievances External Review Committee",
+  "Prairies Economic Development Canada",
+  "Office of the Intelligence Commissioner",
+  "Pacific Economic Development Canada",
+  "Federal Economic Development Agency for Northern Ontario",
+  "National Gallery of Canada",
+  "Law Commission of Canada"
+)
+
+# Total number of buyers excluding "National Defence"
+num_buyers <- length(buyer_list)
+
+# 2. Define other lists
+# Define a list of contract descriptions
+contract_list <- c(
+  "Engineering consultants-Other",
+  "Other professional services not elsewhere specified",
+  "Aircraft parts",
+  "Aircraft",
+  "Ships and boats Parts",
+  "IT Services",
+  "Construction Services",
+  "Medical Supplies",
+  "Office Equipment",
+  "Maintenance Services",
+  "Transportation Services",
+  "Security Services",
+  "Environmental Services",
+  "Training Services",
+  "Research and Development",
+  "Legal Services",
+  "Financial Services",
+  "Marketing Services",
+  "Logistics Services",
+  "Telecommunications Services"
+)
+
+# Define a list of supplier names (example list, can be expanded)
+supplier_list <- c(
+  "SkyAlyne Canada Limited Partnership",
+  "CAE Military Aviation Training Inc.",
+  "F-35 Lightning II Joint Program Office (JPO)",
+  "Airbus Defence and Space SA",
+  "Vancouver Shipyards Co Ltd",
+  "Bell Helicopter Textron Canada",
+  "Lockheed Martin Canada",
+  "Rheinmetall Canada Inc.",
+  "General Dynamics Canada",
+  "L3Harris Canada",
+  "Rheinmetall Defence Canada",
+  "Thales Canada Limited",
+  "BAE Systems Canada",
+  "Rheinmetall Canada Limited",
+  "MDA Corporation",
+  "Rogers Communications Canada",
+  "IBM Canada",
+  "SNC-Lavalin",
+  "Bombardier Inc.",
+  "CGI Group Inc.",
+  "Northrop Grumman Canada",
+  "Raytheon Canada",
+  "Microsoft Canada",
+  "Amazon Web Services Canada",
+  "Google Canada",
+  "IBM Global Services",
+  "Deloitte Canada",
+  "Accenture Canada",
+  "PwC Canada",
+  "KPMG Canada",
+  "Ernst & Young Canada"
+)
+
+# 3. Simulate the 'buyer' column
+n <- 10000
+
+# 80% "National Defence"
+num_national_defence <- round(0.8 * n)
+num_other_buyers <- n - num_national_defence
+
+# Sample other buyers
+other_buyers_sample <- sample(buyer_list, size = num_other_buyers, replace = TRUE)
+
+# Combine buyers
+buyer_column <- c(rep("National Defence", num_national_defence), other_buyers_sample)
+
+# Shuffle the buyer column
+buyer_column <- sample(buyer_column, size = n, replace = FALSE)
+
+# 4. Simulate the 'contract' column
+contract_column <- sample(contract_list, size = n, replace = TRUE)
+
+# 5. Simulate the 'supplier' column
+supplier_column <- sample(supplier_list, size = n, replace = TRUE)
+
+# 6. Simulate the 'amount' column using Pareto distribution
+# Parameters for Pareto: scale = 10,000; shape = 3.5
+
+scale <- 10000
+shape <- 3.5
+
+# Using actuar::rpareto
+amount_column <- actuar::rpareto(n, scale = scale, shape = shape)
+
+# 7. Simulate 'award_date' and 'start_date'
+# Define date range
+start_date_min <- as.Date("2018-01-01")
+start_date_max <- as.Date("2024-12-31")
+
+# Generate random award_start_dates
+award_start_dates <- as.Date(runif(n, min = as.numeric(start_date_min), max = as.numeric(start_date_max)), origin = "1970-01-01")
+
+# 8. Simulate 'end_date' first, then calculate 'duration_days'
+
+# Define minimum and maximum duration in days
+min_duration <- 2000
+max_duration <- 12000
+
+# Using log-normal distribution for duration_days
+# Adjust meanlog and sdlog to achieve desired range
+
+# Calculate meanlog and sdlog to center around 5000 days
+meanlog <- log(5000) - (0.5 * (log(5000) / 2)) # Adjusted for skewness
+sdlog <- 0.5
+
+# Generate duration_days using log-normal distribution
+duration_days_random <- round(rlnorm(n, meanlog = meanlog, sdlog = sdlog))
+
+# Ensure duration_days are within [2000, 12000]
+duration_days_random <- pmin(pmax(duration_days_random, min_duration), max_duration)
+
+# Generate 'end_date' by adding duration_days_random to 'award_start_dates'
+end_dates <- award_start_dates + days(duration_days_random)
+
+# 9. Calculate 'duration_days_column'
+duration_days_column <- as.numeric(end_dates - award_start_dates)
+
+# 10. Calculate 'per_day'
+per_day_column <- amount_column / duration_days_column
+
+# 11. Set 'region' column as "Federal"
+region_column <- rep("Federal", n)
+
+# 12. Assemble the dataframe
+simulated_df <- data.frame(
+  region = region_column,
+  contract = contract_column,
+  buyer = buyer_column,
+  supplier = supplier_column,
+  amount = round(amount_column, 2),
+  award_date = award_start_dates,
+  start_date = award_start_dates,
+  end_date = end_dates,
+  duration_days = duration_days_column,
+  per_day = round(per_day_column, 3),
+  stringsAsFactors = FALSE
+)
+
+# Optional: View the first few rows of the simulated dataframe
+head(simulated_df)
+
+# Save the simulated data
+write.csv(simulated_df, "data/simulated_data/simulated_data.csv", row.names = FALSE)
+Explanation of Changes:Simulate end_date First:Duration Generation: Generated duration_days_random using a log-normal distribution, constrained between 2000 and 12000 days.End Date Calculation: Added duration_days_random to award_start_dates to get end_dates.Duration Calculation: Calculated duration_days_column as the difference between end_dates and award_start_dates. Since end_dates are generated by adding duration_days_random to award_start_dates, this should equal duration_days_random.Fixed Code Errors:Removed the reference to cleaned$end_date and cleaned$start_date, which were undefined in your original script.Added the missing closing parenthesis in the end_dates calculation line.Consistent Variable Naming:Used duration_days_random for the initial duration generation.Ensured duration_days_column correctly represents the duration after calculation.Comments and Documentation:Updated comments to reflect the changes in the simulation steps.Clarified the purpose of each code block for better understanding.Alternative Approach: Using Uniform Distribution for DurationIf you prefer to generate duration_days using a uniform distribution instead of a log-normal distribution, you can modify the duration generation step as follows:rCopy code# 8. Simulate 'end_date' first, then calculate 'duration_days'
+
+# Generate duration_days uniformly between 2000 and 12000
+duration_days_random <- sample(min_duration:max_duration, size = n, replace = TRUE)
+
+# Generate 'end_date' by adding duration_days_random to 'award_start_dates'
+end_dates <- award_start_dates + days(duration_days_random)
+
+# 9. Calculate 'duration_days_column'
+duration_days_column <- as.numeric(end_dates - award_start_dates)
+Pros of Using Uniform Distribution:Simplicity: Easier to implement without adjusting parameters.Predictability: Each duration within the range has an equal probability of being selected.Cons of Using Uniform Distribution:Lack of Realism: Durations might not reflect real-world skewness or variability.Final Notes:Package Installation: Ensure that all required packages (tidyverse, VGAM, dplyr, lubridate, and actuar) are installed. If not, install them using install.packages("package_name").rCopy codeinstall.packages(c("tidyverse", "VGAM", "dplyr", "lubridate", "actuar"))
+Reproducibility: The set.seed(123) ensures that your simulations are reproducible. You can change the seed value if you want different results.Data Storage: The simulated data is saved as a CSV file in the data/simulated_data/ directory. Ensure that this directory exists or create it before running the script to avoid errors.rCopy codedir.create("data/simulated_data", recursive = TRUE, showWarnings = FALSE)
+Validation: After running the script, it's a good practice to validate the simulated data to ensure it meets your expectations. For example, you can check the summary statistics or visualize the distribution of duration_days and amount.rCopy codesummary(simulated_df$duration_days)
+summary(simulated_df$amount)
+
+# Visualize duration_days distribution
+ggplot(simulated_df, aes(x = duration_days)) +
+  geom_histogram(binwidth = 500, fill = "blue", color = "black") +
+  theme_minimal() +
+  labs(title = "Distribution of Contract Duration Days", x = "Duration (days)", y = "Frequency")
+
+# Visualize amount distribution
+ggplot(simulated_df, aes(x = amount)) +
+  geom_histogram(binwidth = 50000, fill = "green", color = "black") +
+  theme_minimal() +
+  labs(title = "Distribution of Contract Amounts", x = "Amount ($)", y = "Frequency")
+By implementing these changes, your script will now generate end_date first and then calculate duration_days accordingly. This approach ensures that each contract has a realistic duration and end date based on the randomly assigned start date.
+Human: undefined
+Human: undefined

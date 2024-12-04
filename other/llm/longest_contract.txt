@@ -1,0 +1,217 @@
+3 December 2024
+GPT-4o
+________
+
+
+Human: #### Preamble ####
+# Purpose: EDA
+# Author: Robert Ford
+# Date: 23 November 2024
+# Contact: robert.ford@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: 
+# - The tidyverse package must be installed and loaded
+# Other information? Make sure you are in the canadian_gov_procurement rproj
+
+
+#### Workspace setup ####
+library(tidyverse)
+
+#### Read data ####
+df <- read_csv("data/analysis_data/cleaned_data.csv")
+View(df)
+
+u_dsupps <- df %>%
+  filter(buyer == "National Defence", amount >= 100000) %>%
+  group_by(supplier) %>%
+  summarize(total_amount = sum(amount, na.rm = TRUE), .groups = "drop")
+
+# Display the unique suppliers
+View(u_dsupps)
+
+one_dollar <- df %>%
+  filter(amount == 1) %>%
+  summarize(number_of_one_dollar_contracts = n())
+
+print(one_dollar)
+
+u_contracts <- data.frame(unique(df$contract))
+
+max.print(u_contracts)
+
+u_buyers <- data.frame(unique(df$buyer))
+
+u_supps <- data.frame(unique(df$supplier))
+
+View(u_buyers)
+
+public_health <- df[df$buyer == "Public Health Agency of Canada", ]
+
+View(public_health)
+
+defence <- df[df$buyer == "National Defence", ]
+
+# Ensure 'amount' is numeric and 'end_date' is in Date format
+df <- df %>%
+  mutate(
+    # Remove dollar signs and commas from 'amount' and convert to numeric
+    amount = as.numeric(gsub("[$,]", "", amount)),
+    # Convert 'end_date' to Date format (assuming format like "Aug. 21, 2024")
+    end_date = as.Date(end_date, format = "%b. %d, %Y")
+  )
+
+# Group by 'end_date' and calculate the number of contracts and sum of amounts
+contracts_expiring <- df %>%
+  group_by(end_date) %>%
+  summarise(
+    number_of_contracts_expiring = n(),
+    sum_of_amounts = sum(amount, na.rm = TRUE)
+  ) %>%
+  ungroup()
+
+dept_total <- df %>%
+  filter(buyer == "Canadian Space Agency") %>%
+  summarize(total_amount = sum(amount, na.rm = TRUE)) %>%
+  pull(total_amount)
+
+supp_total <- df %>%
+  filter(processed_supplier == "dettwiler") %>%
+  summarize(total_amount = sum(amount, na.rm = TRUE)) %>%
+  pull(total_amount)
+
+total_spend <- df %>%
+  summarize(total_amount = sum(amount, na.rm = TRUE)) %>%
+  pull(total_amount)
+
+print(supp_total / dept_total)
+
+print(dept_total)
+
+print(dept_total/ total_spend)
+
+
+war_planes <- 1792979385 + 11219370646 + 3718137594 + 4482200974 + 4322729867
+
+print(war_planes)
+
+View(contracts_expiring)
+View(public_health)
+View(defence)
+
+I want to add some code that will tell me the contract that has the biggest duration days?
+ChatGPT: To identify the contract with the longest duration in your dataset, you'll need to calculate the duration of each contract in days and then determine which contract has the maximum duration. Below are the steps and corresponding R code to achieve this:1. Ensure start_date is in Date FormatFirst, confirm that the start_date column is properly formatted as a Date object. If it's not already in Date format, you'll need to convert it. This step is crucial for accurately calculating the duration.rCopy code# Convert 'start_date' to Date format if it's not already
+df <- df %>%
+  mutate(
+    start_date = as.Date(start_date, format = "%b. %d, %Y")
+  )
+Replace the format string with the appropriate format that matches your start_date data. For example, if your dates are in the format "2024-08-21", you can use format = "%Y-%m-%d".2. Calculate Contract Duration in DaysNext, create a new column duration_days that represents the duration of each contract in days by calculating the difference between end_date and start_date.rCopy code# Calculate the duration of each contract in days
+df <- df %>%
+  mutate(
+    duration_days = as.numeric(difftime(end_date, start_date, units = "days"))
+  )
+3. Identify the Contract with the Longest DurationNow, you can identify the contract with the longest duration by sorting the dataframe in descending order based on duration_days and selecting the top entry.rCopy code# Find the contract with the maximum duration
+longest_contract <- df %>%
+  arrange(desc(duration_days)) %>%
+  slice(1)
+
+# Display the contract with the longest duration
+View(longest_contract)
+Alternatively, if you prefer using filter:rCopy code# Alternatively, filter to get the contract with the maximum duration
+longest_contract <- df %>%
+  filter(duration_days == max(duration_days, na.rm = TRUE))
+
+# Display the contract with the longest duration
+View(longest_contract)
+4. (Optional) View Summary InformationIf you want to see more details or a summary of the durations, you can use the following code:rCopy code# Summary of contract durations
+summary(df$duration_days)
+
+# View contracts sorted by duration
+View(df %>% arrange(desc(duration_days)))
+Full Integration into Your Existing ScriptHere's how you can integrate the above steps into your existing script:rCopy code#### Read data ####
+df <- read_csv("data/analysis_data/cleaned_data.csv")
+View(df)
+
+# Existing data processing steps...
+# [Your existing code here]
+
+# Ensure 'start_date' is in Date format
+df <- df %>%
+  mutate(
+    start_date = as.Date(start_date, format = "%b. %d, %Y"),  # Adjust format as needed
+    end_date = as.Date(end_date, format = "%b. %d, %Y"),
+    # Remove dollar signs and commas from 'amount' and convert to numeric
+    amount = as.numeric(gsub("[$,]", "", amount)),
+    # Calculate duration in days
+    duration_days = as.numeric(difftime(end_date, start_date, units = "days"))
+  )
+
+# Find the contract with the maximum duration
+longest_contract <- df %>%
+  arrange(desc(duration_days)) %>%
+  slice(1)
+
+# Display the contract with the longest duration
+View(longest_contract)
+
+# Continue with your existing code...
+# [Rest of your code]
+Notes:Date Formats: Ensure that the format parameter in as.Date() matches the format of your start_date and end_date columns. Common formats include:"Y-m-d" for "2024-08-21""%d/%m/%Y" for "21/08/2024"Adjust the format string as necessary based on your data.Handling Missing Values: The na.rm = TRUE parameter in the max() function ensures that missing values (NA) are ignored when determining the maximum duration.Multiple Contracts with Same Duration: If there are multiple contracts with the exact same maximum duration, the filter approach will return all of them, whereas the slice(1) approach will return the first one.By following these steps, you'll be able to identify and inspect the contract with the longest duration in your procurement dataset.
+ChatGPT: To identify the contract with the longest duration in your dataset, you'll need to calculate the duration of each contract in days and then determine which contract has the maximum duration. Below are the steps and corresponding R code to achieve this:1. Ensure start_date is in Date FormatFirst, confirm that the start_date column is properly formatted as a Date object. If it's not already in Date format, you'll need to convert it. This step is crucial for accurately calculating the duration.rCopy code# Convert 'start_date' to Date format if it's not already
+df <- df %>%
+  mutate(
+    start_date = as.Date(start_date, format = "%b. %d, %Y")
+  )
+Replace the format string with the appropriate format that matches your start_date data. For example, if your dates are in the format "2024-08-21", you can use format = "%Y-%m-%d".2. Calculate Contract Duration in DaysNext, create a new column duration_days that represents the duration of each contract in days by calculating the difference between end_date and start_date.rCopy code# Calculate the duration of each contract in days
+df <- df %>%
+  mutate(
+    duration_days = as.numeric(difftime(end_date, start_date, units = "days"))
+  )
+3. Identify the Contract with the Longest DurationNow, you can identify the contract with the longest duration by sorting the dataframe in descending order based on duration_days and selecting the top entry.rCopy code# Find the contract with the maximum duration
+longest_contract <- df %>%
+  arrange(desc(duration_days)) %>%
+  slice(1)
+
+# Display the contract with the longest duration
+View(longest_contract)
+Alternatively, if you prefer using filter:rCopy code# Alternatively, filter to get the contract with the maximum duration
+longest_contract <- df %>%
+  filter(duration_days == max(duration_days, na.rm = TRUE))
+
+# Display the contract with the longest duration
+View(longest_contract)
+4. (Optional) View Summary InformationIf you want to see more details or a summary of the durations, you can use the following code:rCopy code# Summary of contract durations
+summary(df$duration_days)
+
+# View contracts sorted by duration
+View(df %>% arrange(desc(duration_days)))
+Full Integration into Your Existing ScriptHere's how you can integrate the above steps into your existing script:rCopy code#### Read data ####
+df <- read_csv("data/analysis_data/cleaned_data.csv")
+View(df)
+
+# Existing data processing steps...
+# [Your existing code here]
+
+# Ensure 'start_date' is in Date format
+df <- df %>%
+  mutate(
+    start_date = as.Date(start_date, format = "%b. %d, %Y"),  # Adjust format as needed
+    end_date = as.Date(end_date, format = "%b. %d, %Y"),
+    # Remove dollar signs and commas from 'amount' and convert to numeric
+    amount = as.numeric(gsub("[$,]", "", amount)),
+    # Calculate duration in days
+    duration_days = as.numeric(difftime(end_date, start_date, units = "days"))
+  )
+
+# Find the contract with the maximum duration
+longest_contract <- df %>%
+  arrange(desc(duration_days)) %>%
+  slice(1)
+
+# Display the contract with the longest duration
+View(longest_contract)
+
+# Continue with your existing code...
+# [Rest of your code]
+Notes:Date Formats: Ensure that the format parameter in as.Date() matches the format of your start_date and end_date columns. Common formats include:"Y-m-d" for "2024-08-21""%d/%m/%Y" for "21/08/2024"Adjust the format string as necessary based on your data.Handling Missing Values: The na.rm = TRUE parameter in the max() function ensures that missing values (NA) are ignored when determining the maximum duration.Multiple Contracts with Same Duration: If there are multiple contracts with the exact same maximum duration, the filter approach will return all of them, whereas the slice(1) approach will return the first one.By following these steps, you'll be able to identify and inspect the contract with the longest duration in your procurement dataset.
+Human: undefined
+Human: undefined

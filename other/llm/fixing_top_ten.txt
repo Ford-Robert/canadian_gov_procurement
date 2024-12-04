@@ -1,0 +1,760 @@
+3 December 2024
+GPT-4o
+________
+
+Human: # Create the bar chart with legend removed
+ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded"
+    # Remove the legend title by not specifying 'fill' in labs
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+For this graph I want to be able to change the colours based on the buyer. I also want to be able to rename the suppliers for example from cae to CAE. Also i want to change the x-axis so that it shows number in billions
+Human: # Create the bar chart with legend removed
+ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded"
+    # Remove the legend title by not specifying 'fill' in labs
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+For this graph I want to be able to change the colours based on the buyer. I also want to be able to rename the suppliers for example from cae to CAE. Also i want to change the x-axis so that it shows number in billions
+ChatGPT: Here’s an updated code block that implements your requirements:Adds functionality to customize colors based on the buyer.Renames the suppliers (for instance, changing "cae" to "CAE").Updates the x-axis to display numbers in billions.rCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c("cae" = "CAE", "supplier2" = "Supplier 2") # Add other mappings as needed
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Plot
+ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)"
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(values = c("Buyer1" = "#1b9e77", "Buyer2" = "#d95f02")) +  # Custom color for buyers
+  theme_minimal() +
+  theme(legend.position = "none")
+Explanation of Changes:Renaming Suppliers:Created a supplier_rename mapping using mutate to replace specific supplier names with desired values.Display in Billions:Divided total_amount by 10910^9109 to convert it to billions.Adjusted the y-axis label accordingly.Custom Colors for Buyers:Used scale_fill_manual() to assign specific colors to different buyers. Update the values to your preferred colors.Legend Removed:Explicitly removed the legend with theme(legend.position = "none").You can customize the color palette and add more supplier mappings in the supplier_rename list as needed. Let me know if further refinements are needed!
+ChatGPT: Here’s an updated code block that implements your requirements:Adds functionality to customize colors based on the buyer.Renames the suppliers (for instance, changing "cae" to "CAE").Updates the x-axis to display numbers in billions.rCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c("cae" = "CAE", "supplier2" = "Supplier 2") # Add other mappings as needed
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Plot
+ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)"
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(values = c("Buyer1" = "#1b9e77", "Buyer2" = "#d95f02")) +  # Custom color for buyers
+  theme_minimal() +
+  theme(legend.position = "none")
+Explanation of Changes:Renaming Suppliers:Created a supplier_rename mapping using mutate to replace specific supplier names with desired values.Display in Billions:Divided total_amount by 10910^9109 to convert it to billions.Adjusted the y-axis label accordingly.Custom Colors for Buyers:Used scale_fill_manual() to assign specific colors to different buyers. Update the values to your preferred colors.Legend Removed:Explicitly removed the legend with theme(legend.position = "none").You can customize the color palette and add more supplier mappings in the supplier_rename list as needed. Let me know if further refinements are needed!
+Human: I also want to add a legend for the buyers
+Human: I also want to add a legend for the buyers
+ChatGPT: To add a legend for the buyers while retaining custom colors and other adjustments, you can modify the code as follows:Updated Code with Buyer LegendrCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c("cae" = "CAE", "supplier2" = "Supplier 2") # Add other mappings as needed
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Plot
+ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c("Buyer1" = "#1b9e77", "Buyer2" = "#d95f02") # Custom colors for buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+Key Changes:Legend Title for Buyers:Added fill = "Buyer" in the labs() function to display a title for the legend.Enable Legend Display:Removed legend.position = "none" to ensure the legend is displayed.Positioned the legend to the right using legend.position = "right" (default location, but you can adjust this as needed).Custom Colors for Buyers:Used scale_fill_manual() to define specific colors for each buyer category. Update the color values if needed.Supplier Renaming:The renaming logic from the previous version remains unchanged.This code will include a clear legend with buyer names and their corresponding colors, enhancing the visual representation of the plot. Let me know if you'd like to tweak any other details!
+ChatGPT: To add a legend for the buyers while retaining custom colors and other adjustments, you can modify the code as follows:Updated Code with Buyer LegendrCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c("cae" = "CAE", "supplier2" = "Supplier 2") # Add other mappings as needed
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Plot
+ggplot(aggregated_df, aes(x = reorder(word, total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c("Buyer1" = "#1b9e77", "Buyer2" = "#d95f02") # Custom colors for buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+Key Changes:Legend Title for Buyers:Added fill = "Buyer" in the labs() function to display a title for the legend.Enable Legend Display:Removed legend.position = "none" to ensure the legend is displayed.Positioned the legend to the right using legend.position = "right" (default location, but you can adjust this as needed).Custom Colors for Buyers:Used scale_fill_manual() to define specific colors for each buyer category. Update the color values if needed.Supplier Renaming:The renaming logic from the previous version remains unchanged.This code will include a clear legend with buyer names and their corresponding colors, enhancing the visual representation of the plot. Let me know if you'd like to tweak any other details!
+Human: I only want to display a certain number of buyers in the legend
+Human: I only want to display a certain number of buyers in the legend
+ChatGPT: To limit the number of buyers displayed in the legend, you can filter or modify the data to include only the desired buyers for the legend. Alternatively, you can explicitly specify which buyers to include in the legend using the scale_fill_manual() function.Here's the updated code:Limit Buyers in LegendrCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c("cae" = "CAE", "supplier2" = "Supplier 2") # Add other mappings as needed
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Specify which buyers to include in the legend
+selected_buyers <- c("Buyer1", "Buyer2")  # Replace with the buyers you want in the legend
+
+# Filter the dataframe to include only selected buyers
+filtered_df <- aggregated_df %>%
+  filter(buyer %in% selected_buyers)
+
+# Plot
+ggplot(filtered_df, aes(x = reorder(word, total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c("Buyer1" = "#1b9e77", "Buyer2" = "#d95f02"),  # Custom colors for selected buyers
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+Explanation:Filtering for Selected Buyers:filtered_df ensures only the specified buyers (selected_buyers) are included in the plot and legend.Restrict Legend Entries:scale_fill_manual() uses the breaks argument to explicitly restrict the legend to display only the specified buyers.Custom Colors:Only the buyers listed in selected_buyers will appear in the legend, with their corresponding custom colors.This approach ensures the legend remains focused on the buyers you choose, while still displaying the complete dataset in the chart (if desired). If you only want the legend to reflect specific buyers while keeping all data in the plot, let me know—I can adjust the logic further!
+ChatGPT: To limit the number of buyers displayed in the legend, you can filter or modify the data to include only the desired buyers for the legend. Alternatively, you can explicitly specify which buyers to include in the legend using the scale_fill_manual() function.Here's the updated code:Limit Buyers in LegendrCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c("cae" = "CAE", "supplier2" = "Supplier 2") # Add other mappings as needed
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Specify which buyers to include in the legend
+selected_buyers <- c("Buyer1", "Buyer2")  # Replace with the buyers you want in the legend
+
+# Filter the dataframe to include only selected buyers
+filtered_df <- aggregated_df %>%
+  filter(buyer %in% selected_buyers)
+
+# Plot
+ggplot(filtered_df, aes(x = reorder(word, total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c("Buyer1" = "#1b9e77", "Buyer2" = "#d95f02"),  # Custom colors for selected buyers
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+Explanation:Filtering for Selected Buyers:filtered_df ensures only the specified buyers (selected_buyers) are included in the plot and legend.Restrict Legend Entries:scale_fill_manual() uses the breaks argument to explicitly restrict the legend to display only the specified buyers.Custom Colors:Only the buyers listed in selected_buyers will appear in the legend, with their corresponding custom colors.This approach ensures the legend remains focused on the buyers you choose, while still displaying the complete dataset in the chart (if desired). If you only want the legend to reflect specific buyers while keeping all data in the plot, let me know—I can adjust the logic further!
+Human: # Create a custom mapping for supplier renaming
+supplier_rename <- c("cae" = "CAE", "skyalyne" = "Skyalyne", 
+                     "vancouver shipyards = Vancouver Shipyards", 
+                     "f35" = "F-35 Joint Program", "bell" = "Bell", "airbus" = "Airbus", 
+                     "textron" = "Textron Avaition", "dynamics" = "General Dynamics",
+                     "dettwiler" = "Dettwiler and Associates", 
+                     "atomics" = "Atomics Aeronautical Systems")
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Specify which buyers to include in the legend
+selected_buyers <- c("National Defence", "Canadian Space Agency", "Shared Services Canada", "Public Health Agency of Canada", "Fisheries and Oceans Canada")
+
+# Filter the dataframe to include only selected buyers
+filtered_df <- aggregated_df %>%
+  filter(buyer %in% selected_buyers)
+
+# Plot
+ggplot(filtered_df, aes(x = reorder(word, total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c("National Defence" = def_c, "Canadian Space Agency" = space_c, "Shared Services Canada" = services_c, "Public Health Agency of Canada" = health_c, "Fisheries and Oceans Canada" = fish_c), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+
+this now works but i want the bars to be ordered from highest to lowest
+Human: # Create a custom mapping for supplier renaming
+supplier_rename <- c("cae" = "CAE", "skyalyne" = "Skyalyne", 
+                     "vancouver shipyards = Vancouver Shipyards", 
+                     "f35" = "F-35 Joint Program", "bell" = "Bell", "airbus" = "Airbus", 
+                     "textron" = "Textron Avaition", "dynamics" = "General Dynamics",
+                     "dettwiler" = "Dettwiler and Associates", 
+                     "atomics" = "Atomics Aeronautical Systems")
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Specify which buyers to include in the legend
+selected_buyers <- c("National Defence", "Canadian Space Agency", "Shared Services Canada", "Public Health Agency of Canada", "Fisheries and Oceans Canada")
+
+# Filter the dataframe to include only selected buyers
+filtered_df <- aggregated_df %>%
+  filter(buyer %in% selected_buyers)
+
+# Plot
+ggplot(filtered_df, aes(x = reorder(word, total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c("National Defence" = def_c, "Canadian Space Agency" = space_c, "Shared Services Canada" = services_c, "Public Health Agency of Canada" = health_c, "Fisheries and Oceans Canada" = fish_c), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+
+this now works but i want the bars to be ordered from highest to lowest
+ChatGPT: To order the bars from highest to lowest by total_amount, you need to reorder the word factor within the aes() call, based on the total_amount values. Here's the updated code to ensure the bars are ordered correctly:rCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c(
+  "cae" = "CAE", 
+  "skyalyne" = "Skyalyne", 
+  "vancouver shipyards" = "Vancouver Shipyards", 
+  "f35" = "F-35 Joint Program", 
+  "bell" = "Bell", 
+  "airbus" = "Airbus", 
+  "textron" = "Textron Avaition", 
+  "dynamics" = "General Dynamics",
+  "dettwiler" = "Dettwiler and Associates", 
+  "atomics" = "Atomics Aeronautical Systems"
+)
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Specify which buyers to include in the legend
+selected_buyers <- c(
+  "National Defence", 
+  "Canadian Space Agency", 
+  "Shared Services Canada", 
+  "Public Health Agency of Canada", 
+  "Fisheries and Oceans Canada"
+)
+
+# Filter the dataframe to include only selected buyers
+filtered_df <- aggregated_df %>%
+  filter(buyer %in% selected_buyers)
+
+# Plot
+ggplot(filtered_df, aes(x = reorder(word, -total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c
+    ), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+Key Changes:Reordering by Total Amount:Updated the aes() function to include reorder(word, -total_amount). The negative sign (-) ensures descending order.Additional Adjustments:
+ChatGPT: To order the bars from highest to lowest by total_amount, you need to reorder the word factor within the aes() call, based on the total_amount values. Here's the updated code to ensure the bars are ordered correctly:rCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c(
+  "cae" = "CAE", 
+  "skyalyne" = "Skyalyne", 
+  "vancouver shipyards" = "Vancouver Shipyards", 
+  "f35" = "F-35 Joint Program", 
+  "bell" = "Bell", 
+  "airbus" = "Airbus", 
+  "textron" = "Textron Avaition", 
+  "dynamics" = "General Dynamics",
+  "dettwiler" = "Dettwiler and Associates", 
+  "atomics" = "Atomics Aeronautical Systems"
+)
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Specify which buyers to include in the legend
+selected_buyers <- c(
+  "National Defence", 
+  "Canadian Space Agency", 
+  "Shared Services Canada", 
+  "Public Health Agency of Canada", 
+  "Fisheries and Oceans Canada"
+)
+
+# Filter the dataframe to include only selected buyers
+filtered_df <- aggregated_df %>%
+  filter(buyer %in% selected_buyers)
+
+# Plot
+ggplot(filtered_df, aes(x = reorder(word, -total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c
+    ), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+Key Changes:Reordering by Total Amount:Updated the aes() function to include reorder(word, -total_amount). The negative sign (-) ensures descending order.Additional Adjustments:
+Human: i want to use all the data un aggregated buyer but i dont want to include all the buyers in the legend
+Human: i want to use all the data un aggregated buyer but i dont want to include all the buyers in the legend
+ChatGPT: To use the full dataset but limit the buyers displayed in the legend, you can use the scale_fill_manual() function with the breaks argument to specify which buyers should appear in the legend, without filtering out data from the plot. Here's how you can do it:Updated CoderCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c(
+  "cae" = "CAE", 
+  "skyalyne" = "Skyalyne", 
+  "vancouver shipyards" = "Vancouver Shipyards", 
+  "f35" = "F-35 Joint Program", 
+  "bell" = "Bell", 
+  "airbus" = "Airbus", 
+  "textron" = "Textron Avaition", 
+  "dynamics" = "General Dynamics",
+  "dettwiler" = "Dettwiler and Associates", 
+  "atomics" = "Atomics Aeronautical Systems"
+)
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Specify which buyers to include in the legend
+selected_buyers <- c(
+  "National Defence", 
+  "Canadian Space Agency", 
+  "Shared Services Canada", 
+  "Public Health Agency of Canada", 
+  "Fisheries and Oceans Canada"
+)
+
+# Plot
+ggplot(aggregated_df, aes(x = reorder(word, -total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c,
+      "Other" = "gray"  # Assign a default color for other buyers if necessary
+    ), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+Key Adjustments:Include All Data:The aggregated_df is passed directly to ggplot() without filtering, so all buyers are included in the plot.Limit Legend Entries:The breaks argument in scale_fill_manual() ensures only the buyers in selected_buyers appear in the legend.Assign Colors to All Buyers:Buyers not included in selected_buyers will not appear in the legend but will still have a default color in the chart (e.g., "gray" or another color).Descending Order:The bars are ordered by -total_amount to display suppliers from highest to lowest.This setup displays all data in the plot but keeps the legend concise by including only the specified buyers. Let me know if you'd like further refinements!
+ChatGPT: To use the full dataset but limit the buyers displayed in the legend, you can use the scale_fill_manual() function with the breaks argument to specify which buyers should appear in the legend, without filtering out data from the plot. Here's how you can do it:Updated CoderCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c(
+  "cae" = "CAE", 
+  "skyalyne" = "Skyalyne", 
+  "vancouver shipyards" = "Vancouver Shipyards", 
+  "f35" = "F-35 Joint Program", 
+  "bell" = "Bell", 
+  "airbus" = "Airbus", 
+  "textron" = "Textron Avaition", 
+  "dynamics" = "General Dynamics",
+  "dettwiler" = "Dettwiler and Associates", 
+  "atomics" = "Atomics Aeronautical Systems"
+)
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Specify which buyers to include in the legend
+selected_buyers <- c(
+  "National Defence", 
+  "Canadian Space Agency", 
+  "Shared Services Canada", 
+  "Public Health Agency of Canada", 
+  "Fisheries and Oceans Canada"
+)
+
+# Plot
+ggplot(aggregated_df, aes(x = reorder(word, -total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c,
+      "Other" = "gray"  # Assign a default color for other buyers if necessary
+    ), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+Key Adjustments:Include All Data:The aggregated_df is passed directly to ggplot() without filtering, so all buyers are included in the plot.Limit Legend Entries:The breaks argument in scale_fill_manual() ensures only the buyers in selected_buyers appear in the legend.Assign Colors to All Buyers:Buyers not included in selected_buyers will not appear in the legend but will still have a default color in the chart (e.g., "gray" or another color).Descending Order:The bars are ordered by -total_amount to display suppliers from highest to lowest.This setup displays all data in the plot but keeps the legend concise by including only the specified buyers. Let me know if you'd like further refinements!
+Human: now fix the order so that the largest amount (of all buyers for each suppier) is at the top and it goes down
+Human: now fix the order so that the largest amount (of all buyers for each suppier) is at the top and it goes down
+ChatGPT: To order the suppliers by the total aggregated amount (across all buyers) so that the supplier with the largest total is at the top, you need to compute the aggregated total for each supplier and use it to reorder the bars in the plot. Here's the updated code:Updated CoderCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c(
+  "cae" = "CAE", 
+  "skyalyne" = "Skyalyne", 
+  "vancouver shipyards" = "Vancouver Shipyards", 
+  "f35" = "F-35 Joint Program", 
+  "bell" = "Bell", 
+  "airbus" = "Airbus", 
+  "textron" = "Textron Avaition", 
+  "dynamics" = "General Dynamics",
+  "dettwiler" = "Dettwiler and Associates", 
+  "atomics" = "Atomics Aeronautical Systems"
+)
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Compute total aggregated amount for each supplier
+aggregated_totals <- aggregated_df %>%
+  group_by(word) %>%
+  summarise(total_amount = sum(total_amount, na.rm = TRUE)) %>%
+  arrange(desc(total_amount))
+
+# Use this ordering in the plot
+ggplot(aggregated_df, aes(x = reorder(word, -total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c,
+      "Other" = "gray"  # Assign a default color for other buyers if necessary
+    ), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+Explanation of Changes:Aggregate Total for Each Supplier:Grouped by word (supplier) to calculate the total total_amount across all buyers for each supplier.Reorder Suppliers by Aggregated Total:Used reorder(word, -total_amount) within the aes() function to ensure the suppliers are ordered in descending order of their total aggregated amounts.All Buyers Included:No filtering is applied to the data, so all buyers are included in the plot.Legend Restriction:The scale_fill_manual() ensures only specified buyers are included in the legend.This approach guarantees the suppliers are displayed from the highest to the lowest total amount (aggregated across buyers) while retaining all data in the plot. Let me know if you need further customization!
+ChatGPT: To order the suppliers by the total aggregated amount (across all buyers) so that the supplier with the largest total is at the top, you need to compute the aggregated total for each supplier and use it to reorder the bars in the plot. Here's the updated code:Updated CoderCopy code# Ensure necessary libraries are loaded
+library(ggplot2)
+library(dplyr)
+
+# Create a custom mapping for supplier renaming
+supplier_rename <- c(
+  "cae" = "CAE", 
+  "skyalyne" = "Skyalyne", 
+  "vancouver shipyards" = "Vancouver Shipyards", 
+  "f35" = "F-35 Joint Program", 
+  "bell" = "Bell", 
+  "airbus" = "Airbus", 
+  "textron" = "Textron Avaition", 
+  "dynamics" = "General Dynamics",
+  "dettwiler" = "Dettwiler and Associates", 
+  "atomics" = "Atomics Aeronautical Systems"
+)
+
+# Adjust the dataframe with supplier renaming
+aggregated_df <- aggregated_df %>%
+  mutate(word = ifelse(word %in% names(supplier_rename), supplier_rename[word], word))
+
+# Compute total aggregated amount for each supplier
+aggregated_totals <- aggregated_df %>%
+  group_by(word) %>%
+  summarise(total_amount = sum(total_amount, na.rm = TRUE)) %>%
+  arrange(desc(total_amount))
+
+# Use this ordering in the plot
+ggplot(aggregated_df, aes(x = reorder(word, -total_amount), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Suppliers by Aggregated Amount Awarded",
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)",
+    fill = "Buyer"  # Adds a title to the legend
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c,
+      "Other" = "gray"  # Assign a default color for other buyers if necessary
+    ), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"  # Positions the legend on the right
+  )
+Explanation of Changes:Aggregate Total for Each Supplier:Grouped by word (supplier) to calculate the total total_amount across all buyers for each supplier.Reorder Suppliers by Aggregated Total:Used reorder(word, -total_amount) within the aes() function to ensure the suppliers are ordered in descending order of their total aggregated amounts.All Buyers Included:No filtering is applied to the data, so all buyers are included in the plot.Legend Restriction:The scale_fill_manual() ensures only specified buyers are included in the legend.This approach guarantees the suppliers are displayed from the highest to the lowest total amount (aggregated across buyers) while retaining all data in the plot. Let me know if you need further customization!
+Human: ggplot(aggregated_df_top10, aes(x = reorder(word, total_amount_total), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)"
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c,
+      "Other" = "gray"  # Assign a default color for other buyers if necessary
+        ), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom"  # Positions the legend on the right
+  )
+
+i want to modify the legend so that it shows in two rows
+Human: ggplot(aggregated_df_top10, aes(x = reorder(word, total_amount_total), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)"
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c,
+      "Other" = "gray"  # Assign a default color for other buyers if necessary
+        ), 
+    breaks = selected_buyers  # Restricts legend to selected buyers
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom"  # Positions the legend on the right
+  )
+
+i want to modify the legend so that it shows in two rows
+ChatGPT: To display the legend in two rows, you can use the guide_legend() function and adjust the nrow parameter. Here's the updated code:Updated Code with Legend in Two RowsrCopy codeggplot(aggregated_df_top10, aes(x = reorder(word, total_amount_total), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)"
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c,
+      "Other" = "gray"  # Assign a default color for other buyers if necessary
+    ), 
+    breaks = selected_buyers,  # Restricts legend to selected buyers
+    guide = guide_legend(nrow = 2)  # Specify two rows for the legend
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",  # Positions the legend at the bottom
+    legend.title = element_text(size = 10),  # Customize legend title size if needed
+    legend.text = element_text(size = 9)  # Customize legend text size if needed
+  )
+Key Adjustments:Legend Rows:Added guide = guide_legend(nrow = 2) in scale_fill_manual() to split the legend into two rows.Legend Position:Positioned the legend at the bottom using legend.position = "bottom".Optional Text Adjustments:Adjusted the size of the legend title and text using legend.title and legend.text in the theme() function.The legend will now be displayed in two rows, improving its appearance and making it more compact. Let me know if you'd like further customizations!
+ChatGPT: To display the legend in two rows, you can use the guide_legend() function and adjust the nrow parameter. Here's the updated code:Updated Code with Legend in Two RowsrCopy codeggplot(aggregated_df_top10, aes(x = reorder(word, total_amount_total), y = total_amount / 1e9, fill = buyer)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(
+    x = "Supplier",
+    y = "Total Amount Awarded (in Billions)"
+  ) +
+  scale_y_continuous(labels = scales::comma) +  # Format y-axis with commas
+  scale_fill_manual(
+    values = c(
+      "National Defence" = def_c, 
+      "Canadian Space Agency" = space_c, 
+      "Shared Services Canada" = services_c, 
+      "Public Health Agency of Canada" = health_c, 
+      "Fisheries and Oceans Canada" = fish_c,
+      "Other" = "gray"  # Assign a default color for other buyers if necessary
+    ), 
+    breaks = selected_buyers,  # Restricts legend to selected buyers
+    guide = guide_legend(nrow = 2)  # Specify two rows for the legend
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",  # Positions the legend at the bottom
+    legend.title = element_text(size = 10),  # Customize legend title size if needed
+    legend.text = element_text(size = 9)  # Customize legend text size if needed
+  )
+Key Adjustments:Legend Rows:Added guide = guide_legend(nrow = 2) in scale_fill_manual() to split the legend into two rows.Legend Position:Positioned the legend at the bottom using legend.position = "bottom".Optional Text Adjustments:Adjusted the size of the legend title and text using legend.title and legend.text in the theme() function.The legend will now be displayed in two rows, improving its appearance and making it more compact. Let me know if you'd like further customizations!
+Human: undefined
+Human: undefined
