@@ -5,7 +5,7 @@ author:
 thanks: "Code and data are available at: https://github.com/Ford-Robert . Special thanks to Professor Rohan Alexander for motivating this project, providing key support and insight, and demostrating the crucial skills required in modern statistical analysis. Check out his excellent book: https://tellingstorieswithdata.com/"
 date: today
 date-format: long
-abstract: "This paper gathers data on Canadain Federal Procurement Awards, uses a series of visualizations to analyse the data, builds two linear models to compare general government procurements and military procurements. Over the last three years the Canadian military has tripled their spending in an effort to aquire next generation fighter jets and train pilots, while every other government agency has atrophied. This spending concerns every Canadian citizen and often goes undercovered compared to analysis of the governments general budget."
+abstract: "This paper gathers data on Canadain Federal Procurement Awards, and uses a series of visualizations to analyse the data. I then build two linear models to compare differences between general government procurements and military procurements. Over the last three years the Canadian military has tripled their spending in an effort to aquire next generation fighter jets and train pilots, while every other government agency has atrophied. This spending concerns every Canadian citizen and often goes undercovered compared to analysis of the governments general budget."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -49,21 +49,21 @@ space_c <- "#ffffb3"
 
 # Introduction
 
-In recent years, Canada's federal spending landscape has undergone significant transformations, particularly with a marked increase in Military spending. The government has announced substantial new military spending packages, [REF]. This paper will use data collected by the Investigative Journalism Foundation [@ijf] detailing Canada's Federal Procurement Awards [@ijfprocure] to analyse government procurements over the last four years.
+In recent years, Canada's federal spending landscape has undergone significant transformations, particularly with a marked increase in Military spending. The government has announced substantial new military spending packages, as it aims to ramp up spending to 2% of GDP to meet NATO requirements [@nato]. This paper will use data collected by the Investigative Journalism Foundation [@ijf] detailing Canada's Federal Procurement Awards [@ijfprocure] to analyse government procurements over the last four years.
 
-Federal procurements involve the acquisition of goods and services by government departments, Buyers, from companies, Suppliers. These procurements are essential for a wide range of government functions from; acquiring defense equipment, building infrastructure, procuring healthcare supplies, technological services and engineering consultants to name a few.
+Federal procurements involve the acquisition of goods and services by government departments (Buyers) from companies (Suppliers). These procurements are essential for a wide range of government functions from; acquiring defense equipment, building infrastructure, procuring healthcare supplies, technological services and engineering consultants to name a few.
 
-The primary questions this paper aims to address are: What is the government buying? Who are the primary suppliers? How are spending patterns shifting across different departments and over time? 
+The primary questions this paper aims to address are: What is the government buying? Who are the primary suppliers? How are spending patterns shifting across different departments over time? 
 
 I collected and processed data on well over 300,000 contracts awarded since January 2020. The dataset includes variables such as contract amounts, durations, award dates, Buyers, and Suppliers. We derived additional metrics to facilitate our analysis, such as Baseline Days (the number of days since January 1, 2020) and Duration Days (the length of each contract), and standardized supplier names to ensure consistency. 
 
-Some significant findings presented in this paper include: military procurement spending has surged in the last two years. Where the Department of National Defence now dominates federal procurement spending, with expenditures exceeding \$56 billion since 2020. This increase in spending is in part thanks to large contracts, including a \$11.2 billion contract to SkyAlyne for fighter pilot training (the largest contract in our dataset) and multi-billion-dollar contracts for fighter jets and naval vessels. While  other government departments have experienced a notable decrease in procurement spending. For instance, the Public Health Agency of Canada's spending, which was substantial in 2020 due to the COVID-19 pandemic, has declined significantly almost nothing in subsequent years. 
+A significant finding presented in this paper is military procurement spending has surged in the last two years. Where the Department of National Defence now dominates federal procurement spending, with expenditures exceeding \$56 billion since 2020. This increase in spending is in part thanks to large contracts, including a \$11.2 billion contract to SkyAlyne for fighter pilot training (the largest contract in this dataset) and multi-billion-dollar contracts for fighter jets and naval vessels. While other government departments have experienced a notable decrease in procurement spending. For instance, the Public Health Agency of Canada's spending, which was substantial in 2020 due to the COVID-19 pandemic, has declined significantly to almost nothing in recent years. 
 
-These findings are important for several reasons. They provide critical insights into how government spending priorities are shifting, which has implications for economic policy, industry stakeholders, and public transparency. Understanding the concentration of spending in large military contracts can inform discussions on national defense strategies, budget allocations, and the impact on domestic industries. 
+These findings are important as they provide an understanding into how government spending priorities are shifting, which has implications for economic policy, industry stakeholders, and public transparency. Understanding the concentration of spending in large military contracts can inform discussions on national defense strategies, budget allocations, and the impact on domestic industries. 
 
-The paper is structured as follows: @sec-data details the data collection and processing methodologies, including the sources of procurement data and the steps taken to clean and standardize the dataset. Then I present a series of graphs to demonstrate government procurements from various angles to provide a clear picture of spending over the last four years. @sec-model describes the linear regression models used to assess trends in contract amounts over time and contract duration. @sec-results presents the results of the analysis, highlighting key trends in military and non-military procurement spending. @sec-discussion discusses the limitations of the study, including data constraints and methodological considerations, and suggests areas for future research. Finally, @sec-discussion concludes with a summary of the findings and their implications for policymakers, industry stakeholders, and future studies. Additional information about how the data was extracted using web scraping, how the data was cleaned, and how suppliers names were processed can be found in @sec-appendix. Model diagnostics can be found at @sec-diagnostics.
+The paper is structured as follows: @sec-data details the data collection and processing methodologies, including the sources of procurement data and the steps taken to clean and standardize the dataset. Then I present a series of graphs to demonstrate government procurements from various angles to provide a clear picture of spending over the last four years. @sec-model describes the linear regression models used to assess trends in contract amounts over time and contract duration. @sec-results presents the results of the analysis, highlighting key trends in military and non-military procurement spending. @sec-discussion discusses the limitations of the study, including data constraints and methodological considerations, and suggests areas for future research. Additional information about how the data was extracted using web scraping (@sec-appendix-web-scraping), how the data was cleaned (@sec-appendix-data-cleaning), and how suppliers names were processed can be found in @sec-appendix-supplier. Model diagnostics can be found at @sec-diagnostics.
 
-By providing an analysis of federal procurement spending, this paper aims to inform readers on how government consumption of private sector goods and services is changing over time. The insights gained from this study can inform policy decisions, contribute to academic discourse, and enhance transparency regarding government spending practices.
+By providing an analysis of federal procurement spending, this paper aims to inform readers on how government consumption of private sector goods and services is changing over time. The information gained from this study can inform policy decisions, contribute to academic discourse, and enhance transparency regarding government spending practices.
 
 \newpage
 
@@ -156,17 +156,16 @@ kable(head(df_table2_truncated, 5)) %>%
 
 ```
 
-Processed Supplier is required as many companies have slightly different spellings, such as [“General Dynamics”, “GENERAL DYNAMICS”, “General Dynamics Mission Systems”, “GENERAL DYNAMICS MISSION SYSTEMS INC”]. See @sec-appendix for more details on how I processed and regularized the suppliers.
+Processed Supplier is required as many companies have slightly different spellings, such as [“General Dynamics”, “GENERAL DYNAMICS”, “General Dynamics Mission Systems”, “GENERAL DYNAMICS MISSION SYSTEMS INC”]. See @sec-appendix-supplier for more details on how I processed and regularized the suppliers.
 
-The data was then cleaned. First I began by setting each variable to the correct data type. Then I removed any data point where Amount was negative or zero, because I am not sure what a negative amount means in this context and contracts that are not worth anything are not worth looking at. There were a number of contracts which started and ended on the same day, to simplify later calculation I simply added a day to their End Date, figuring that same day contracts are equivalent to one day contracts. Further data cleaning details are available in @sec-appendix. After cleaning I was left with 320,175 contracts spanning January 2020 to November 2024.
+The data was then cleaned. First I began by setting each variable to the correct data type. Then I removed any data point where Amount was negative or zero, because I am not sure what a negative amount means in this context and contracts that are not worth anything are not worth looking at. There were a number of contracts which started and ended on the same day, to simplify later calculation I simply added a day to their End Date, figuring that same day contracts are equivalent to one day contracts. Further data cleaning details are available in @sec-appendix-data-cleaning. After cleaning I was left with 320,175 contracts spanning January 2020 to November 2024.
 
 ## Measurement
 
-The data is recorded and published through various government agencies, who use different accounting standards and procedures. The three sources IJF used to collect the federal procurement data are; Canada Buys, Buy and Sell, and Proactive Disclosures (which makes up the vast majority of the procurement data). However, because the data used in this paper is pulled from the IJF’s Federal Awards page this data comes exclusively from the Proactive Disclosures. The Treasury Board of Canada Secretariat is responsible for publishing these Proactive Disclosures under the Access to Information Act [REF].
+The data is recorded and published through various government agencies, who use different accounting standards and procedures. The three sources IJF used to collect the federal procurement data are; Canada Buys, Buy and Sell, and Proactive Disclosures (which makes up the vast majority of the procurement data). However, because the data used in this paper is pulled from the IJF’s Federal Awards [@ijfprocure] page, this data comes exclusively from Proactive Disclosures. The Treasury Board of Canada Secretariat is responsible for publishing these Proactive Disclosures under the Access to Information Act. To gather more data on procurements in Canada I propose that the government requires Sellers to fill out a survey, and to publish this survey to the public. This survey would be designed to gain information into: the purpose and scope of a contract, relationship with Buyers, procurement process feedback, challenges on seller side, and future opportunities. See [@sec-survey] for my design of what this survey should look like.
 
 ## Analysis
 
-@fig-pie-buyers is a break down of total amount awarded by the top 5 biggest spending Buyers. The Other category consists the of the total awards given by the remaining 88 smallest Government Buyers.  It is clear that National Defence dwarfs the procurement budget, spending over \$56 Billion on procurements since 2020, making up nearly half of all government procurement.
 
 ```{r fig-pie-buyers}
 #| message: false
@@ -223,9 +222,8 @@ ggplot(buyer_totals_grouped, aes(x = "", y = total_amount, fill = buyer_group)) 
             color = "white",
             size = 2.5)
 ```
+@fig-pie-buyers is a break down of the total amount awarded by the top 5 biggest spending Buyers. The Other category consists the of the total awards given by the remaining 88 smallest Government Buyers.  It is clear that National Defence dwarfs the procurement budget, spending over \$56 Billion on procurements since 2020, making up nearly half of all government procurement.
 
-
-@fig-mil-spending shows how National Defence spending has taken off in recent years, where is 2021 it had not even crested \$5 Billion, but in the last 3 years spending has exploded to \$15 Billion a year. From 2021 to 2022, military procurements increased by more than 300%. Though it is important to note that these amounts reflect the amount awarded in any given year, while many awarded contracts last for years. Especially large contracts which can last decades. Meaning the payouts for these lengthy contracts could be amortized over the length of the contract.
 
 ```{r fig-mil-spending}
 #| message: false
@@ -261,8 +259,10 @@ ggplot(data = military_spending_per_year, aes(x = year, y = total_spending)) +
   theme(plot.title = element_text(hjust = 0.5))
 
 ```
+@fig-mil-spending shows how National Defence spending has taken off in recent years, where is 2021 it had not even crested \$5 Billion, but in the last 3 years spending has exploded to \$15 Billion a year. From 2021 to 2022, military procurements have increased by more than 300%. Though it is important to note that these amounts reflect the amount awarded in any given year, while many awarded contracts can last for years. Especially large contracts which can last decades. Meaning the payouts for these lengthy contracts could be amortized over the length of the contract.
 
-Public Services and Procurements Canada (PSPC) is the clearinghouse for the entire federal government. This means they are responsible for managing the procurement process for buyers across the government [REF]. It is important to note that the PSPC sometimes does not publish contracts less than \$40,000. @fig-public-spending shows PSPC spending over time, indicating that general government procurements are taking a hit while military spending balloons.
+
+
 ```{r fig-public-spending}
 #| message: false
 #| echo: false
@@ -295,8 +295,8 @@ ggplot(data = public_spending_per_year, aes(x = year, y = total_spending)) +
 
 
 ```
+Public Services and Procurements Canada (PSPC) is the clearinghouse for the entire federal government. This means they are responsible for managing the procurement process for buyers across the government. It is important to note that the PSPC sometimes does not publish contracts less than \$40,000. @fig-public-spending shows PSPC spending over time, indicating that general government procurements have taken a hit in recent years.
 
-@fig-top-buyers shows the top five Buyers spending per year since 2020. In the first 2 years military spending held steady and did not dominate the budget by any means. But since then Defence spending exploded not just nominally but compared to the rest of the budget as well. Notably the Public Health Agency of Canada's spending while strong in 2020, decreased to nothing over the following four years. The spending in 2020 is linked to purchases of medical equipment, likely for combating the pandemic. Maybe this over investment has meant that that the Public Health Agency has not needed to invest in equipment in the subsequent years. Though investments across all government agencies, excluding the military, are falling and are lowest in 2024. Note that the 2024 data only goes to November, so more spending may happen in December.
 
 ```{r fig-top-buyers}
 #| message: false
@@ -378,8 +378,10 @@ ggplot(data = grouped_df, aes(x = year, y = total_spending_billion, fill = buyer
 
 
 ```
+@fig-top-buyers shows the top five Buyers spending per year since 2020. In the first 2 years military spending held steady and did not dominate the budget. But since then Defence spending exploded not just nominally but compared to the rest of the budget as well. Notably the Public Health Agency of Canada's spending while strong in 2020, decreased to nothing over the following four years. The spending in 2020 is linked to purchases of medical equipment, likely for combating the pandemic. Maybe the over investment that year has meant that that the Public Health Agency has not needed to invest in equipment in the subsequent years. Though investments across all government agencies, excluding the military, are falling and are at their lowest in 2024. Note that the 2024 data only goes to November, so more spending may happen in December.
 
-To find out the firms that are benefiting the most through this procurement process we can look to @fig-top-supps. Unsurprisingly, the biggest suppliers are primarily are awarded contracts by the military. Interestingly the top supplier, SkyAlyne, was only awarded one huge \$11.2 Billion contract for fighter pilot training services. This is the largest contract in the dataset. Then considering the largest contracts awarded since 2022 to; the F-35 program (Fighter Planes, \$4.5 Billion), General Atomics (Airplanes, \$1.7 Billion), CAE (Aviation Engineering and Training, \$4.4 Billion), Airbus (Airplanes, \$3.7 Billion), and Textron Aviation (Aircraft parts, \$3.1 Billion ) for a grand total of \$28.6 Billion. These few large contracts devoted to advanced fighter jets, training pilots, and parts are a significant portion of surge in military spending. Remember military procurement spending since 2022 has been about \$15 Billion dollar a year up from \$5 Billion in 2021, as per @fig-mil-spending. That equates to roughly \$30 Billion in extra spending (\$10 Billion extra over the \$5 Billion year for 3 years), \$28.6 Billion of which went to aviation projects.The military also paid Vancouver Shipyards \$3.4 Billion in 2024 for Ships and Boat parts.
+
+To find out the firms that are benefiting the most through this procurement process we can look to @fig-top-supps. Unsurprisingly, the biggest suppliers are primarily those awarded contracts by the military. Interestingly the top supplier, SkyAlyne, was only awarded one huge \$11.2 Billion contract for fighter pilot training services. This is the largest contract in the dataset. Now consider some of the largestest contracts awarded since 2022 to; the F-35 program (Fighter Planes, \$4.5 Billion), General Atomics (Airplanes, \$1.7 Billion), CAE (Aviation Engineering and Training, \$4.4 Billion), Airbus (Airplanes, \$3.7 Billion), and Textron Aviation (Aircraft parts, \$3.1 Billion ) for a grand total of \$28.6 Billion. These large contracts devoted to advanced fighter jets, training pilots, and aircraft parts are a significant portion of the surge in military spending. Remember military procurement spending since 2022 has been about \$15 Billion dollar a year up from \$5 Billion in 2021, as per @fig-mil-spending. That equates to roughly \$30 Billion in extra spending (\$10 Billion extra over the \$5 Billion year for 3 years), \$28.6 Billion of which went to aviation projects.The military also paid Vancouver Shipyards \$3.4 Billion in 2024 for Ships and Boat parts.
 
 ```{r fig-top-supps}
 #| message: false
@@ -433,7 +435,6 @@ top_suppliers <- aggregated_totals %>%
 aggregated_df_top10 <- aggregated_df %>%
   filter(word %in% top_suppliers$word)
 
-
 # Use this ordering in the plot
 # Use this ordering in the plot (reversed order)
 ggplot(aggregated_df_top10, aes(x = reorder(word, total_amount_total), y = total_amount / 1e9, fill = buyer)) +
@@ -468,7 +469,7 @@ ggplot(aggregated_df_top10, aes(x = reorder(word, total_amount_total), y = total
 
 ```
 
-Dettwiler is an engineering firm that provides the Canadian Space Agency with engineering and scientific consulting. Surprisingly 86.3% of the Space Agency's procurement budget goes to Dettwiler.
+Dettwiler is an engineering firm that provides the Canadian Space Agency with engineering and scientific consulting. Surprisingly 86.3% of the Space Agency's procurement budget goes to Dettwiler alone, about \$2.2 Billion.
 
 
 ## Contract Distribution
@@ -553,7 +554,7 @@ ggplot(contract_counts_df, aes(x = amount_label, y = Contract_Count_k)) +
   theme_minimal()
 ```
 
-Though most contracts are small contracts (less than \$100,000), the sum of these 246,000 contracts is only worth a measly 7.34 Billion. The SkyAlyne contract itself outweighs all the small contracts.
+Though, most contracts are small contracts (less than \$100,000), the sum of these 246,000 contracts is only worth a measly \$7.34 Billion. The SkyAlyne contract itself handily outweighs all the small contracts.
 
 ```{r fig-small-big}
 #| message: false
@@ -616,7 +617,7 @@ ggplot(total_spent_df, aes(x = contract_size, y = total_amount_billion, fill = c
 
 # Model {#sec-model}
 
-This paper will use a simple linear regression to better understand the how contract award amounts are affected over time compared to their lengths. To do this the response variable will be Amount, and the two dependent variables will be the number of day since January 1st 2020 (start of the data set) and the length of the contract. The coefficients of these variables will indicate the relative importance of when the contract was issues compared to the length of contracts on determining the size of contracts. I will create two models, one to measure the coefficients for all the contracts excluding military contracts and a model for solely military contracts. This way we can compare to see if military contracts are getting larger because they are relatively longer or because recently they have purchased more expensive equipment.
+This paper will use a simple linear regression to better understand the how contract award amounts are affected over time compared to their lengths. To do this the response variable will be Amount, and the two dependent variables will be the number of days since January 1st 2020 (start of the data set) and the length of the contract. The coefficients of these variables will indicate the relative importance between when the contract was issues compared to the length of contracts. I will create two models, one to measure the coefficients for all the contracts excluding military contracts and a model for solely military contracts. This way we can compare to see if military contracts are getting larger because they are relatively longer or because recently they have purchased more expensive equipment.
 
 ## Model set-up
 
@@ -624,7 +625,7 @@ All model construction and diagnostics were conduction using R [@citeR], and the
 
 - Tidyverse: For data manipulation and visualization [@tidyverse] 
 - Dplyr: For data manipulation and transformation [@dplyr] 
-- Car: For advanced regression modeling tools and diagnostics [@car] 
+- Car: For regression modeling tools and diagnostics [@car] 
 - Caret: For classification and regression training, including model tuning and validation [@caret] 
 
 Model Formula: 
@@ -633,13 +634,15 @@ $$
 \text{Amount}_i = \beta_0 + \beta_1 \times \text{Base Line Days}_i + \beta_2 \times \text{Duration Days}_i + \epsilon_i
 $$
 
+Where i is either General Government Contracts (all but National Defence) or National Defence
+
 Variables:
 
 - Amount: The Amount awarded to a contract
 - Baseline Days: The number of days since 1st of January 2020
 - Duration Days: The number of days that the contract spans
 
-The point of Baseline Days is to measure when the contracts take place, so when Baseline days is zero then it is one of the earliest contracts, as it gets larger that describes more recent contracts.
+The point of Baseline Days is to measure when the contracts take place, so when Baseline days is zero then it is one of the earliest contracts, as it gets larger it describes more recent contracts.
 
 ## Limitations 
 
@@ -647,25 +650,25 @@ One significant limitation is the assumption of a linear relationship between th
 
 Another limitation is the potential omission of relevant variables that influence contract amounts. Factors such as inflation, changes in government procurement policies, economic cycles, or industry-specific trends can significantly affect contract values. The exclusion of these variables may lead to omitted variable bias, where the estimated effects of the included predictors are distorted because they are capturing the influence of missing factors. 
 
-Additionally, the presence of outliers or extreme values, particularly in financial data like contract amounts, can disproportionately influence the model estimates and lead to misleading conclusions. 
+Additionally, the presence of outliers or extreme values can disproportionately influence the model estimates and lead to misleading conclusions.
 
-This model treats all contracts as a  homogeneous group. But considering that contracts both for National Defence and general government awards vary widely in scope and cost that would suggest a linear model is not appropriate. A more segmented model may be appropriate. This may be difficult as dividing the data in to groups based on contract size would not be sufficient as there is still a wide variety of contracts that are of similar size. Possibly using the Contract descriptions to divide the data, but this would require more advanced Natural Language processing techniques and in many cases the descriptions are hardly descriptive. 
+This model treats all contracts as a homogeneous group. But considering that contracts both for National Defence and general government awards vary widely in scope and cost that would suggest a linear model is not appropriate. A more segmented model may be appropriate. This may be difficult as dividing the data in to groups based on contract size would not be sufficient as there is still a wide variety of contracts that are of similar size. Possibly using the Contract descriptions to divide the data, but this would require Natural Language Processing techniques, and in many cases the descriptions are hardly descriptive. 
 
-Moreover, the model assumes that the effect of each predictor is constant over time. If the influence of contract duration or time on contract amounts changes due to evolving market conditions or government strategies, the model's fixed coefficients would not reflect these dynamic relationships.
+Moreover, the model assumes that the effect of each predictor is constant over time. If the influence of contract duration or time on contract amounts changes due to market conditions or government strategies, the model's fixed coefficients would not reflect these dynamic relationships.
 
 ## Diagnostics
 
-The model diagnostics highlight the limitations of these two linear models, see @diagnostics for relevant diagnostic plots. The Residuals Vs. Fitted plots indicate large clumps in the first quadrant. This indicates a significant bias in the predictions for both models. The QQ-Normal plots indicate that the majority of the residuals follow a normal distribution. However, there is a significant tail off in the end likely due to a large number of outliers which conclusively violates the normality assumption. The Scale-Location plot for the General Model indicates a funnel shape near the origin, indicates the assumption of homoscedasticity is violated. While the National Defence Model has a clump there is no clear pattern so the assumption of homoscedasticity maybe intact. For all predictors across both models their VIF values are very close to 1, indicating no multicollinearity. Both Cook's distance plots show there is a significant number of outliers in both models.
+The model diagnostics highlight the limitations of these two linear models, see @sec-diagnostics for relevant diagnostic plots. The Residuals Vs. Fitted plots indicate large clumps in the first quadrant. This indicates a significant bias in the predictions for both models. The QQ-Normal plots indicate that the majority of the residuals follow a normal distribution. However, there is a significant tail off in the end likely due to a large number of outliers which conclusively violate the normality assumption. The Scale-Location plot for the General Model indicates a funnel shape near the origin, indicating the assumption of homoscedasticity is violated. While the National Defence Model has a clump there is no clear pattern so the assumption of homoscedasticity may be intact. For all predictors across both models their VIF values are very close to 1, indicating no multicollinearity is present. Both Cook's distance plots show there is a significant number of outliers.
 
 \newpage
 
 # Results {#sec-results}
 
-The model general contracts indicates that the contract amount tends to decrease over time. Because Baseline days is slightly negative. This value suggests that every day that passes on average the value of non-military contracts is going down by \$61.62 a day. This decline could reflect shifts in government spending priorities away from non-military departments. Additionally, as expect Duration Days is positive of the contract amount . This means that longer contracts are more expensive for the government.
+The General Government Model Baseline Days coefficient indicates that the contract amount tends to decrease over time. Because Baseline Days is slightly negative. This value suggests that every day that passes on average the value of non-military contracts is going down by \$61.62 a day. This decline could reflect shifts in government spending priorities away from non-military departments. Additionally, as expected Duration Days is positive which means that longer contracts are more expensive for the government.
 
-In contrast, the model for military contracts reveals that the contract amount increases over time. The positive coefficient for Baseline days suggests an upward trend in military contract values since 2020. In this case the model suggests that the cost of military contracts is increasing by \$852.50 every day. This is trend is due to the huge increases in military procurement we observed in @fig-mil-spending.  
+In contrast, the model for Military contracts indicates that the contract amount increases over time. The positive coefficient for Baseline days suggests an upward trend in military contract values since 2020. In this case the model suggests that the cost of military contracts is increasing by \$852.50 every day. This is trend is due to the huge increases in military procurement we observed in @fig-mil-spending.  
 
-The impact of contract duration on the contract amount is substantially larger in military contracts compared to non-military ones. Where military contracts cost \$38,146 more per day of the length of the contract. This is again due largely by the \$11 Billion SkyAlyne contract, and the other large long contracts for training and fighter jets. 
+The impact of contract duration on the contract amount is substantially larger in military contracts compared to non-military ones. Where military contracts cost \$38,146 more per day of the length of the contract. This is again due largely due to the \$11 Billion SkyAlyne contract, and the other large long contracts for training and fighter jets. 
 
 ```{r fig-results}
 #| message: false
@@ -730,58 +733,38 @@ if (output_format == "latex") {
 
 ## What Was Done
 
-This study conducted an in-depth analysis of Canadian federal procurement data, with a focus on military contracts. The data was collected and processed to ensure accuracy and relevance. Using web scraping techniques, we gathered information from the Institute for Government's (IJF) Federal Award Data. The primary variables included contract descriptions, buyer and supplier names, contract amounts, and key dates such as award, start, and end dates.
+This study conducted an analysis of Canadian federal procurement data, with a focus on military contracts. The data was collected and processed to ensure accuracy and relevance. Using web scraping techniques, we gathered information from the IJF's Federal Award Data (@ijfprocure). The primary variables included contract descriptions, buyer and supplier names, contract amounts, and key dates such as award, start, and end dates.
 
-To facilitate the analysis, we derived additional variables: Baseline Days, representing the number of days since January 1st, 2020, and Duration Days, calculated by subtracting the start date from the end date of each contract. These transformations were necessary because date variables are not directly suitable for linear modeling. We also standardized supplier names through a Processed Supplier variable to ensure consistency, given the variations in how supplier names were recorded. 
+To facilitate the analysis, we derived additional variables: Baseline Days, representing the number of days since January 1st, 2020, and Duration Days, calculated by subtracting the start date from the end date of each contract. These transformations were necessary because date variables are not directly suitable for linear modeling. We also standardized supplier names through a Processed Supplier variable to ensure consistency, given the variations in how supplier names were recorded.
 
-Data cleaning was a critical step. Contracts with negative or zero amounts were excluded due to their ambiguous nature. Contracts that started and ended on the same day were adjusted by extending the end date by one day to simplify duration calculations.
-
-For the modeling phase, we employed a simple linear regression to explore how contract amounts are influenced by time and contract duration. Two separate models were constructed: one encompassing all contracts excluding military contracts, and another focusing solely on military contracts. This bifurcation allowed us to compare trends between military and non-military spending. 
+For the modeling phase, we employed a simple linear regression to explore how contract amounts are influenced by time and contract duration. Two separate models were constructed: one encompassing all contracts excluding military contracts, and another focusing solely on military contracts. This split allowed us to compare trends between military and non-military spending. 
 
 ## State of Canadian Procurements
 
-The analysis revealed significant trends in Canada's federal procurement spending: 
+Military spending has dramatically increased over the past couple of years. National Defence is the dominant spender, allocating over \$56 billion since 2020. While military spending was under \$5 billion in 2021, it escalated to approximately \$15 billion annually in the following years. This spike is attributed to substantial contracts for advanced military equipment and services, such as the \$11.2 billion contract awarded to SkyAlyne for fighter pilot training—the largest in the dataset. Other notable contracts include multi-billion-dollar deals with the F-35 Joint Program, General Atomics, CAE, and Airbus for fighter planes and aviation services. 
 
-Surge in Military Spending: Military spending has dramatically increased over the past couple of years. National Defence emerged as the dominant spender, allocating over \$56 billion since 2020. While military spending was under \$5 billion in 2021, it escalated to approximately \$15 billion annually in the following years. This spike is attributed to substantial contracts for advanced military equipment and services, such as the \$11.2 billion contract awarded to SkyAlyne for fighter pilot training—the largest in the dataset. Other notable contracts include multi-billion-dollar deals with Lockheed Martin, General Atomics, CAE, and Airbus for fighter planes and aviation services. 
+In contrast, other government departments have experienced significant reductions in procurement spending. For instance, the Public Health Agency of Canada's spending, which was robust in 2020 due to pandemic-related expenditures, diminished to negligible levels in recent years.  
 
-Decline in Other Departments' Spending: In contrast, other government departments have experienced significant reductions in procurement spending. For instance, the Public Health Agency of Canada's spending, which was robust in 2020 due to pandemic-related expenditures, diminished to negligible levels in the subsequent years.  
-
-Prevalence of Small Contracts: The majority of government contracts are relatively small. Approximately 81.75% of all contracts are valued under \$100,000, with the most common contract size ranging between \$10,000 and \$20,000. This pattern indicates a governmental preference for smaller contracts, possibly for regulatory reasons. There may be a rule that if a contract is below \$20,000 then it requires less scrutiny to be passed, in effect encouraging department to award more smaller contracts.
+The majority of government contracts are relatively small. Approximately 81.75% of all contracts are valued under \$100,000, with the most common contract size ranging between \$10,000 and \$20,000. This pattern indicates a governmental preference for smaller contracts, possibly for regulatory reasons. Though the sum of these contracts in minuscule compared to the rest of government procurements, \$7.83 Billion to \$112.2 Billion.
 
 ## Weaknesses
 
-While the study provides valuable insights, several limitations must be acknowledged: 
+The methodology for standardizing supplier names, requires more rigorous techniques. The method used in this paper ensured that the top 10 suppliers are accurately aggregated. But beyond the top 10, the names of suppliers not well parsed out, with problems like variations of “incorporated” and that sort of thing, dominating the rest of the suppliers list. This method is also not robust to new additions to the supplier list.
 
-Supplier Name Analysis: The methodology for standardizing supplier names, requires more rigorous techniques. The method used ensured that the top 10 suppliers are accurately aggregated. However, some contracts that these suppliers may have been missed. But beyond the top 10, the names of suppliers not well parsed out, with problems like variations of “incorporated” and that sort of thing, dominating the rest of the suppliers list. 
+The linear regression model demonstrated weaknesses, primarily due to its simplicity and the limitations of the dataset. The assumption of a linear relationship between the predictors and contract amounts may not capture the complexities of procurement spending, which can be influenced by many things such as; policy changes, economic conditions, and sector-specific dynamics. 
 
-Model Limitations: The linear regression model demonstrated weaknesses, primarily due to its simplicity and the limitations of the dataset. The assumption of a linear relationship between the predictors (Baseline Days and Duration Days) and contract amounts may not capture the complexities of procurement spending, which can be influenced by many things such as; policy changes, economic conditions, and sector-specific dynamics. 
-
-Methodological Constraints: The model did not account for external variables such as inflation, exchange rates, or changes in government procurement policies, which could significantly influence contract amounts. Additionally, treating all contracts as a homogeneous group overlooks the diversity in contract types and scopes. 
+The model did not account for external variables such as inflation, exchange rates, or changes in government procurement policies, which could significantly influence contract amounts. Additionally, treating all contracts as a homogeneous group overlooks the diversity in contract types and scopes. 
 
 
 ## Next Steps
 
-To address these weaknesses and build upon the findings, the following steps are recommended: 
+To address these weaknesses and build upon this paper I want to implement more complicated text processing techniques, such as fuzzy matching, to accurately standardize supplier names and improve data reliability. Utilize text mining and content analysis methods on contract descriptions to uncover patterns in procurement objectives and priorities. 
 
-Enhance Data Analysis Techniques: 
-Supplier Name Processing: Implement advanced text processing techniques, such as fuzzy matching, to accurately standardize supplier names and improve data reliability. ADD MORE 
+Include other forms of government spending, such as in-house expenditures on salaries and operational costs, as this would contextualize the procurement budget in the larger scheme of federal spending overall. How much of the total federal budget goes into procurements? Are procurements more cost effective than in house spending? Examine the factors contributing to the decline in the Public Health Agency of Canada's procurement spending. 
 
-Contract Description Analysis: Utilize text mining and content analysis methods on contract descriptions to uncover patterns in procurement objectives and priorities. ADD MORE 
+Explore more complex modeling techniques, such as nonlinear regression, time series analysis, or machine learning models, to capture the intricate relationships between variables. Include economic indicators, policy changes, and other relevant factors to improve the explanatory power of the models. 
 
-Expand Data Collection:
-Comprehensive Spending Data: Include other forms of government spending, such as in-house expenditures on salaries and operational costs, as this would contextualize the procurement budget in the larger scheme of federal spending overall. How much of the total federal budget goes into procurements? Are procurements more cost effective than in house spending? 
-
-Investigate Specific Trends:
-Public Health Agency Spending: Examine the factors contributing to the decline in the Public Health Agency of Canada's procurement spending. 
-
-Proliferation of Small Contracts: Analyze the rationale behind the high frequency of small contracts, exploring whether this is a strategic decision to support smaller businesses or a reflection of procurement policy regulations. 
-
-Refine Modeling Approaches:
-Advanced Statistical Models: Explore more complex modeling techniques, such as nonlinear regression, time series analysis, or machine learning models, to capture the intricate relationships between variables. 
-
-Incorporate Additional Variables: Include economic indicators, policy changes, and other relevant factors to improve the explanatory power of the models. 
-
-By undertaking these steps, future research can provide a more comprehensive and nuanced understanding of Canadian federal procurement spending. This further analysis could inform policy decisions, promote transparency, and ensure that government resources are allocated effectively and efficiently. 
+By undertaking these steps, future research can provide a more complete understanding of Canadian federal procurement spending. This further analysis could inform policy decisions, promote transparency, and ensure that government resources are allocated effectively and efficiently. 
 
 \newpage
 
@@ -789,7 +772,7 @@ By undertaking these steps, future research can provide a more comprehensive and
 
 # Data Details {#sec-appendix}
 
-## Web Scraping
+## Web Scraping {#sec-appendix-web-scraping}
 
 These are step by step instructions on how to Web Scrape the IFJ procurement data page, because as of November 2024 there is no easy/automated way of downloading the 330 pages of data.
 
@@ -809,24 +792,87 @@ user:canadian_gov_procurement USER_PATH$ docker run -d -p 4444:4444 -p 5900:5900
 
 5. Done!
 
-## Data Cleaning
+## Data Cleaning {#sec-appendix-data-cleaning}
 
-I began by converting Amount into a numeric type and removing all the \$ signs. Then I converted all the date columns, Award Date, Start Date, End Date into date types. There was one date whose start year was was in 2204, this was clearly a typo so I set it to 2024. There were a significant number of contracts whose Start Date was the same as their End Date. This complicated some Per Day calculations I did, so I simply added one day to the End Dates of those contracts. I believe this hardly impacted the dataset because a same day contract and a one day contract are roughly the same in my view. I then filtered out any contracts that were awarded or started before 1st of January 2020. There were an number of contracts which had ridiculous start dates (i.e. 2156) so I removed any contracts beyond 31st of December 2099, which may still be to late. Finally I removed any duplicate rows, I believe that the IJF database has a significant number of duplicate rows. It is also possible that rows were duplicated in the web scraping process as I noticed some strange behavior on IJF's website. If you go to the last page take note of the top companies there, and then the hit Previous page button, then the Next page button you will notice that its a difference set of companies. In any case I removed any duplicate rows. Finally I processed the supplier names.
+I began by converting Amount into a `numeric type` and removing all the \$ signs. Then I converted all the date columns, Award Date, Start Date, End Date into `date type`. There was one contract whose start year was was in 2204, this was clearly a typo so I set it to 2024. There were a significant number of contracts whose Start Date was the same as their End Date. This complicated some Per Day calculations I did, so I simply added one day to the End Dates of those contracts. I believe this hardly impacted the dataset because a same day contract and a one day contract are roughly the same in my view. I then filtered out any contracts that were awarded or started before 1st of January 2020. There were an number of contracts which had ridiculous start dates (i.e. 2156) so I removed any contracts beyond 31st of December 2099, which may still be too late. Finally I removed any duplicate rows, I believe that the IJF database has a significant number of duplicate rows. Or it is also possible that rows were duplicated in the web scraping process as I noticed some strange behavior on the IJF website. If you go to the last page take note of the top companies there, and then the hit Previous page button, then the Next page button you will notice that its a difference set of companies. In any case I removed any duplicate rows. Finally I processed the supplier names.
 
 
-## Proccessing Supplier
+## Proccessing Supplier {#sec-appendix-supplier}
 
-To begin I made every suppliers name lowercase. Then I divided each word in a suppliers name and stored them in a list in the column processed_supplier. Then I made a list of 'banned' words, which are word that I will remove from each suppliers name. These banned words are thing like: incorporated, llc, the, service, basically any useless non-identifying words. But sometimes a company name is two banned words so they are left with and empty list in processed_supplier. Most notably this happened with Vancouver Shipyards, to fix this whenever the program found a list with vancouver and shipyards it would concatenate these words into one string. Then I loop through the the lists in processed_suppliers and removed any banned words. Finally I created a dictionary that would go through each processed_suppliers and pick out the individual words and set that as a key. Then I would loop through an if a key was present in a processed_suppliers list it would add the Amount of that contract to the value which would be a running sum for the suppliers with that key.
+To begin I made every suppliers name lowercase. Then I divided each word in a suppliers name and stored each word in a list in the column processed_supplier. Then I made a list of 'banned' words, which are words that I will remove from each suppliers name. These banned words are thing like: "incorporated", "llc", "the", "service", basically any useless non-identifying words. But sometimes a company name is two banned words so they are left with and empty list in processed_supplier. Most notably this happened with Vancouver Shipyards, to fix this whenever the program found a list with "vancouver" and "shipyards" it would concatenate these words into one string. Then I loop through the the lists in processed_suppliers and removed any banned words. Finally I created a dictionary that would go through each processed_suppliers and pick out the individual words and set that as a key. Then I would loop through and if a Key was present in a processed_suppliers list it would add the Amount of that contract to the Value which would be a running sum for the suppliers with that key.
 
-I would then print out the top ten keys, at first many of these top ten were not descriptive and could not be related to a specific company. Then I would add this key to the banned words list and re-run the program. Eventually I had banned enough non-descriptive words that the top ten keys were aggregating only one supplier each and could be related to a specific company. 
+I would then print out the top ten keys, at first many of these top ten were not descriptive and could not be related to a specific company. Then I would add this key to the banned words list and re-run the program. Eventually I had banned enough non-descriptive words that the top ten keys were aggregating with only one supplier each and could be related to a specific company. 
 
-Though this is the draw back of this method. If I wanted to get the top 15 or top 100 companies it would be very difficult to root out all of the confounding words. I also had to be vigilant when added a word to the banned words list because I could rule out an entire company, like what happened with Vancouver Shipyards. Then I had to create a work around that allowed be to remove the words "Vancouver" and "Shipyards", while being able to keep "Vancouver Shipyards". Essentially the problem with this method is that it is matching companies up if the share a single word in common, and that if fine for most companies (after getting rid of the banned words), but some company names are made up of generic words like Vancouver Shipyards.
+Though this is the draw back of this method. If I wanted to get the top 15 or top 100 companies it would be very difficult to root out all of the confounding words. I also had to be vigilant when added a word to the banned words list, because I could rule out an entire company, like what happened with Vancouver Shipyards. Then I had to create a work around that allowed me to remove the words "Vancouver" and "Shipyards", while being able to keep "Vancouver Shipyards". Essentially the problem with this method is that it is matching companies up if the share a single word in common, and that if fine for most companies (after getting rid of the banned words), but some company names are made up of generic words like Vancouver Shipyards.
 
-This problem would only get worse the further down the list you go and at some point it may be impossible to continue with this method. To make matters worse when adding new data you may already be banning all the words in their names and would have no idea. Because at least when you are looking to add a banned word you can check to see if that word is the last word for a lot of companies, but you won't get that opportunity for novel companies. In short I am sure the top 10 companies that I am displaying truly are the top 10, however using this method I cannot say what the top 11 or more companies are and if new data is introduced then all bets are off.
+This problem would only get worse the further down the list you go and at some point it may be impossible to continue with this method. To make matters worse when adding new data you may have already be banning all the words in their names and would have no idea. Because at least when you are looking to add a banned word you can check to see if that word is the last word for a lot of companies, but you won't get that opportunity for newly added companies. In short I am sure that the top 10 companies that I am displaying truly are the top 10. However, using this method I cannot say what the top 11 or more companies are, and if new data is introduced then all bets are off.
 
-To create a more rigorous supplier name processing method I would completely delete this method and start again. Some good candidates that I have looked into for better supplier name parsing would be: Fuzzy Matching and String Distance Algorithms, Natural Language Processing (Tokenization, Named Entity Recognition (NER)). It would be nice to apply these algorithms to the contract descriptions as well, in that case you could gain further insights into what the government is buying.
+To create a more rigorous supplier name processing method I would completely delete this method and start again. Some good candidates that I have looked into for better supplier name parsing would be: Fuzzy Matching and String Distance Algorithms, Natural Language Processing (Tokenization, Named Entity Recognition (NER)). It would be nice to apply these algorithms to the contract descriptions as well, in that case you could gain a bit more knowledge into what the government is buying.
 
-# Contract Surveys {#sec-surveys}
+# Contract Surveys {#sec-survey}
+
+A survey targeting sellers would serve multiple purposes. It would aim to gather detailed information into the nature of the contracts, understand how these contracts assist governmental functions, and identify areas for improvement in the procurement process. The survey would be designed to capture both quantitative and qualitative data.
+
+- The survey would begin by asking sellers to elaborate on the specific goods or services provided under the contract. Questions would include:
+
+Contract Description: "Please provide a detailed description of the goods or services supplied."
+Objectives Alignment: "How do your offerings align with the strategic objectives of the government department you are contracted with?"
+
+Needs Addressed: "What specific governmental needs or challenges does your product/service address?"
+These questions help in understanding not just what is being supplied, but also the relevance and importance of these goods or services to government operations.
+
+- To assess how the contract is helping the Canadian government, the survey would include questions aimed at measuring outcomes and benefits:
+
+Performance Metrics: "What key performance indicators (KPIs) are used to measure the success of your contract deliverables?"
+Quantifiable Benefits: "Can you quantify any cost savings, efficiency gains, or service improvements resulting from your contract?"
+Case Studies: "Please provide examples or case studies that highlight the positive impact of your work on government operations."
+By gathering this information, the government can evaluate the tangible benefits derived from the contracts.
+
+- To measure Collaboration and Relationship with Government Entities, the survey would ask:
+
+Communication Effectiveness: "How would you rate the communication channels with the government during the contract period?"
+Support and Resources: "Did you receive adequate support and resources from the government to fulfill your contractual obligations?"
+Feedback Mechanisms: "Were there established mechanisms for providing and receiving feedback throughout the contract duration?"
+These questions aim to identify strengths and weaknesses in collaboration, which can inform future improvements.
+
+- Procurement Process Feedback
+
+To refine the procurement process, the survey would solicit sellers' experiences and suggestions:
+
+Clarity of Guidelines: "Were the procurement guidelines and requirements clear and understandable?"
+Bidding Process: "Did you find the bidding process fair and transparent?"
+Administrative Efficiency: "How efficient was the contract administration from award to execution?"
+Improvement Suggestions: "What recommendations do you have to improve the procurement process?"
+Feedback in this area is vital for enhancing fairness, transparency, and efficiency in future procurements.
+
+- Challenges and Obstacles
+
+Identifying potential barriers faced by sellers helps in creating solutions:
+
+Obstacles Encountered: "Did you encounter any challenges or obstacles during the contract? Please specify."
+Resolution Strategies: "How were these challenges addressed, and what support did you receive in resolving them?"
+Systemic Issues: "Are there systemic issues in the procurement process that need attention?"
+Understanding challenges at the ground level enables the government to address systemic issues that may affect multiple suppliers.
+
+- Innovation and Future Opportunities
+
+Encouraging innovation and forward-thinking, the survey would include:
+
+Innovation Implementation: "Have you introduced any innovative solutions or technologies through your contract?"
+Future Collaborations: "In what ways can you contribute to future government projects or initiatives?"
+Market Trends: "Are there emerging trends or developments in your industry that the government should be aware of?"
+This section helps the government stay ahead by leveraging supplier expertise.
+
+- Survey Design Considerations
+
+Confidentiality Assurance: Ensuring respondents that their feedback will be kept confidential encourages honesty.
+Accessibility: Providing the survey in both English and French, and ensuring it's accessible on various devices, increases participation rates.
+Question Clarity: Questions should be clear, concise, and free of jargon to prevent misunderstandings.
+Balanced Question Types: A mix of open-ended questions for detailed feedback and closed-ended questions for quantitative analysis is ideal.
+Pilot Testing: Before full deployment, pilot testing the survey can help identify and rectify any issues.
+Conclusion
+
+By encompassing these elements, the idealized survey would not only collect data on how contracts are benefiting the Canadian government but also strengthen the overall procurement framework. It would provide a platform for sellers to share their experiences, challenges, and suggestions, fostering a collaborative environment that promotes efficiency, transparency, and mutual benefit.
 
 
 
