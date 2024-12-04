@@ -49,7 +49,7 @@ space_c <- "#ffffb3"
 
 # Introduction
 
-In recent years, Canada's federal spending landscape has undergone significant transformations, particularly with a marked increase in Military spending. The government has announced substantial new military spending packages, [REF]. This paper will use data collected by the Investigative Journalism Foundation (IJF) detailing Canada's Federal Procurement Awards [REF] to analyse government procurements over the last four years.
+In recent years, Canada's federal spending landscape has undergone significant transformations, particularly with a marked increase in Military spending. The government has announced substantial new military spending packages, [REF]. This paper will use data collected by the Investigative Journalism Foundation [@ijf] detailing Canada's Federal Procurement Awards [@ijfprocure] to analyse government procurements over the last four years.
 
 Federal procurements involve the acquisition of goods and services by government departments, Buyers, from companies, Suppliers. These procurements are essential for a wide range of government functions from; acquiring defense equipment, building infrastructure, procuring healthcare supplies, technological services and engineering consultants to name a few.
 
@@ -69,9 +69,9 @@ By providing an analysis of federal procurement spending, this paper aims to inf
 
 # Data {#sec-data}
 
-Data was analyzed through the R programming software [@citeR], and `RSelenium` [TODO] with `rvest` [TODO] were used to support a web scraping script to download all data. Additional packages such as `tidyverse` [@tidyverse], `knitr` [@knitr], `actuar` [TODO], `readr` [TODO], `stringr` [TODO], `broom` [TODO] and `dplyr` [@dplyr] were used to help clean, simulate, analyze, and test the data. The presentation of this data using tables and graphs was made possible by r-packages; `ggplot2` [TODO], `lubridate` [TODO], `kableExtra` [TODO], and `zoo` [TODO].
+Data was analyzed through the R programming software [@citeR], and `RSelenium` [@rselenium] with `rvest` [@rvest] were used to support a web scraping script to download all data. Additional packages such as `tidyverse` [@tidyverse], `knitr` [@knitr], `actuar` [@actuar], `readr` [@readr], `stringr` [@stringr], `broom` [@broom] and `dplyr` [@dplyr] were used to help clean, simulate, analyze, and test the data. The presentation of this data using tables and graphs was made possible by r-packages; `ggplot2` [@ggplot2], `lubridate` [@lubridate], `kableExtra` [@kable], and `zoo` [@zoo]. All colours are taken from `RColorBrewer` [@colorbrewer]
 
-A web scraping script was used to collect all Federal Award Data from the IJF [REF]. The variables this paper focuses are; Contract, Buyer, Supplier, Amount, Award Date, Start Date, and End Date.  
+A web scraping script was used to collect all Federal Award Data from the IJF [@ijfprocure]. The variables this paper focuses are; Contract, Buyer, Supplier, Amount, Award Date, Start Date, and End Date.  
 
 - **Contract**: A few words detailing a brief description of what the contract signed was for.
 - **Buyer**: The name of the government department who awarded the contract.
@@ -156,7 +156,7 @@ kable(head(df_table2_truncated, 5)) %>%
 
 ```
 
-Processed Supplier is required as many companies have slightly different spellings, such as [“General Dynamics”, “GENERAL DYNAMICS”, “General Dynamics Mission Systems”, “GENERAL DYNAMICS MISSION SYSTEMS INC”]. See Appendix TODO for how I processed and regularized the suppliers.
+Processed Supplier is required as many companies have slightly different spellings, such as [“General Dynamics”, “GENERAL DYNAMICS”, “General Dynamics Mission Systems”, “GENERAL DYNAMICS MISSION SYSTEMS INC”]. See @sec-appendix for more details on how I processed and regularized the suppliers.
 
 The data was then cleaned. First I began by setting each variable to the correct data type. Then I removed any data point where Amount was negative or zero, because I am not sure what a negative amount means in this context and contracts that are not worth anything are not worth looking at. There were a number of contracts which started and ended on the same day, to simplify later calculation I simply added a day to their End Date, figuring that same day contracts are equivalent to one day contracts. Further data cleaning details are available in @sec-appendix. After cleaning I was left with 320,175 contracts spanning January 2020 to November 2024.
 
@@ -195,7 +195,6 @@ buyer_totals_grouped <- buyer_totals %>%
   arrange(desc(total_amount)) %>%
   mutate(percentage = total_amount / sum(total_amount) * 100)
 
-# TODO: Assign specific colors to each buyer group
 # Example color assignments (replace with desired colors)
 buyer_colors <- c(
   "National Defence" = def_c,
@@ -236,8 +235,6 @@ ggplot(buyer_totals_grouped, aes(x = "", y = total_amount, fill = buyer_group)) 
 #| fig-align: center
 #| fig-pos: "H"
 
-#TODO Make right color
-
 df_filtered <- df %>%
   filter(format(award_date, "%Y") != "2019")
 
@@ -273,8 +270,6 @@ Public Services and Procurements Canada (PSPC) is the clearinghouse for the enti
 #| fig-cap: Public Services Spending Per Year in Billions
 #| fig-align: center
 #| fig-pos: "H"
-
-#TODO Make right color
 
 df_filtered <- df %>%
   filter(format(award_date, "%Y") != "2019")
@@ -625,12 +620,12 @@ This paper will use a simple linear regression to better understand the how cont
 
 ## Model set-up
 
-All model construction and diagnostics were conduction using R [REF], and the following packages: 
+All model construction and diagnostics were conduction using R [@citeR], and the following packages: 
 
-- Tidyverse: For data manipulation and visualization [REF] 
-- Dplyr: For data manipulation and transformation [REF] 
-- Car: For advanced regression modeling tools and diagnostics [REF] 
-- Caret: For classification and regression training, including model tuning and validation [REF] 
+- Tidyverse: For data manipulation and visualization [@tidyverse] 
+- Dplyr: For data manipulation and transformation [@dplyr] 
+- Car: For advanced regression modeling tools and diagnostics [@car] 
+- Caret: For classification and regression training, including model tuning and validation [@caret] 
 
 Model Formula: 
 
@@ -660,7 +655,7 @@ Moreover, the model assumes that the effect of each predictor is constant over t
 
 ## Diagnostics
 
-The model diagnostics highlight the limitations of these two linear models, see Appendix TODO for relevant diagnostic plots. The Residuals Vs. Fitted plots indicate large clumps in the first quadrant. This indicates a significant bias in the predictions for both models. The QQ-Normal plots indicate that the majority of the residuals follow a normal distribution. However, there is a significant tail off in the end likely due to a large number of outliers which conclusively violates the normality assumption. The Scale-Location plot for the General Model indicates a funnel shape near the origin, indicates the assumption of homoscedasticity is violated. While the National Defence Model has a clump there is no clear pattern so the assumption of homoscedasticity maybe intact. For all predictors across both models their VIF values are very close to 1, indicating no multicollinearity. Both Cook's distance plots show there is a significant number of outliers in both models.
+The model diagnostics highlight the limitations of these two linear models, see @diagnostics for relevant diagnostic plots. The Residuals Vs. Fitted plots indicate large clumps in the first quadrant. This indicates a significant bias in the predictions for both models. The QQ-Normal plots indicate that the majority of the residuals follow a normal distribution. However, there is a significant tail off in the end likely due to a large number of outliers which conclusively violates the normality assumption. The Scale-Location plot for the General Model indicates a funnel shape near the origin, indicates the assumption of homoscedasticity is violated. While the National Defence Model has a clump there is no clear pattern so the assumption of homoscedasticity maybe intact. For all predictors across both models their VIF values are very close to 1, indicating no multicollinearity. Both Cook's distance plots show there is a significant number of outliers in both models.
 
 \newpage
 
@@ -668,9 +663,9 @@ The model diagnostics highlight the limitations of these two linear models, see 
 
 The model general contracts indicates that the contract amount tends to decrease over time. Because Baseline days is slightly negative. This value suggests that every day that passes on average the value of non-military contracts is going down by \$61.62 a day. This decline could reflect shifts in government spending priorities away from non-military departments. Additionally, as expect Duration Days is positive of the contract amount . This means that longer contracts are more expensive for the government.
 
-In contrast, the model for military contracts reveals that the contract amount increases over time. The positive coefficient for Baseline days suggests an upward trend in military contract values since 2020. In this case the model suggests that the cost of military contracts is increasing by \$852.50 every day. This is trend is due to the huge increases in military procurement we observed in FIG.  
+In contrast, the model for military contracts reveals that the contract amount increases over time. The positive coefficient for Baseline days suggests an upward trend in military contract values since 2020. In this case the model suggests that the cost of military contracts is increasing by \$852.50 every day. This is trend is due to the huge increases in military procurement we observed in @fig-mil-spending.  
 
-The impact of contract duration on the contract amount is substantially larger in military contracts compared to non-military ones. Where military contracts cost \$38,146 more per day of the length of the contract. This is again due largely by the 11 Billon Skyalyne contract, and the other large long contracts for training and fighter jets. 
+The impact of contract duration on the contract amount is substantially larger in military contracts compared to non-military ones. Where military contracts cost \$38,146 more per day of the length of the contract. This is again due largely by the \$11 Billion SkyAlyne contract, and the other large long contracts for training and fighter jets. 
 
 ```{r fig-results}
 #| message: false
@@ -751,7 +746,7 @@ Surge in Military Spending: Military spending has dramatically increased over th
 
 Decline in Other Departments' Spending: In contrast, other government departments have experienced significant reductions in procurement spending. For instance, the Public Health Agency of Canada's spending, which was robust in 2020 due to pandemic-related expenditures, diminished to negligible levels in the subsequent years.  
 
-Prevalence of Small Contracts: The majority of government contracts are relatively small. Approximately 81.75% of all contracts are valued under \$100,000, with the most common contract size ranging between \$10,000 and \$20,000. This pattern indicates a governmental preference for smaller contracts, possibly for regulatory reasons. There may be a rule that if a contract is below \$20,000 then it requires less scrutiny to be passed, in effect encouraging department to award more smaller contracts. Though this does not seem to be out of control as only TODO% of all spending in last 4 years is concentrated in contracts less than \$100,000. 
+Prevalence of Small Contracts: The majority of government contracts are relatively small. Approximately 81.75% of all contracts are valued under \$100,000, with the most common contract size ranging between \$10,000 and \$20,000. This pattern indicates a governmental preference for smaller contracts, possibly for regulatory reasons. There may be a rule that if a contract is below \$20,000 then it requires less scrutiny to be passed, in effect encouraging department to award more smaller contracts.
 
 ## Weaknesses
 
@@ -816,17 +811,21 @@ user:canadian_gov_procurement USER_PATH$ docker run -d -p 4444:4444 -p 5900:5900
 
 ## Data Cleaning
 
-TODO Removal of negative values, adding 1 day to contract lengths of 0, see cleaning script
+I began by converting Amount into a numeric type and removing all the \$ signs. Then I converted all the date columns, Award Date, Start Date, End Date into date types. There was one date whose start year was was in 2204, this was clearly a typo so I set it to 2024. There were a significant number of contracts whose Start Date was the same as their End Date. This complicated some Per Day calculations I did, so I simply added one day to the End Dates of those contracts. I believe this hardly impacted the dataset because a same day contract and a one day contract are roughly the same in my view. I then filtered out any contracts that were awarded or started before 1st of January 2020. There were an number of contracts which had ridiculous start dates (i.e. 2156) so I removed any contracts beyond 31st of December 2099, which may still be to late. Finally I removed any duplicate rows, I believe that the IJF database has a significant number of duplicate rows. It is also possible that rows were duplicated in the web scraping process as I noticed some strange behavior on IJF's website. If you go to the last page take note of the top companies there, and then the hit Previous page button, then the Next page button you will notice that its a difference set of companies. In any case I removed any duplicate rows. Finally I processed the supplier names.
 
 
 ## Proccessing Supplier
 
-TODO processed_supplier
-Talk about what I did thoroughly, see data_cleaning script
+To begin I made every suppliers name lowercase. Then I divided each word in a suppliers name and stored them in a list in the column processed_supplier. Then I made a list of 'banned' words, which are word that I will remove from each suppliers name. These banned words are thing like: incorporated, llc, the, service, basically any useless non-identifying words. But sometimes a company name is two banned words so they are left with and empty list in processed_supplier. Most notably this happened with Vancouver Shipyards, to fix this whenever the program found a list with vancouver and shipyards it would concatenate these words into one string. Then I loop through the the lists in processed_suppliers and removed any banned words. Finally I created a dictionary that would go through each processed_suppliers and pick out the individual words and set that as a key. Then I would loop through an if a key was present in a processed_suppliers list it would add the Amount of that contract to the value which would be a running sum for the suppliers with that key.
 
-Talk about next steps. 11th top supplier, and how there are still tons of useless words in there. Even how to approach I used may never work. Because at some point we will ban too many word and some suppliers with super generic names will be eliminated entirely.
+I would then print out the top ten keys, at first many of these top ten were not descriptive and could not be related to a specific company. Then I would add this key to the banned words list and re-run the program. Eventually I had banned enough non-descriptive words that the top ten keys were aggregating only one supplier each and could be related to a specific company. 
 
-Propose alternate methods
+Though this is the draw back of this method. If I wanted to get the top 15 or top 100 companies it would be very difficult to root out all of the confounding words. I also had to be vigilant when added a word to the banned words list because I could rule out an entire company, like what happened with Vancouver Shipyards. Then I had to create a work around that allowed be to remove the words "Vancouver" and "Shipyards", while being able to keep "Vancouver Shipyards". Essentially the problem with this method is that it is matching companies up if the share a single word in common, and that if fine for most companies (after getting rid of the banned words), but some company names are made up of generic words like Vancouver Shipyards.
+
+This problem would only get worse the further down the list you go and at some point it may be impossible to continue with this method. To make matters worse when adding new data you may already be banning all the words in their names and would have no idea. Because at least when you are looking to add a banned word you can check to see if that word is the last word for a lot of companies, but you won't get that opportunity for novel companies. In short I am sure the top 10 companies that I am displaying truly are the top 10, however using this method I cannot say what the top 11 or more companies are and if new data is introduced then all bets are off.
+
+To create a more rigorous supplier name processing method I would completely delete this method and start again. Some good candidates that I have looked into for better supplier name parsing would be: Fuzzy Matching and String Distance Algorithms, Natural Language Processing (Tokenization, Named Entity Recognition (NER)). It would be nice to apply these algorithms to the contract descriptions as well, in that case you could gain further insights into what the government is buying.
+
 
 # Model Diagnostics {#sec-diagnostics}
 
@@ -851,9 +850,6 @@ plot(model, which = 1)
 plot(mil_model, which = 1)
 ```
 
-
-
-
 ```{r fig-qq-model}
 #| message: false
 #| echo: false
@@ -866,8 +862,6 @@ plot(model, which = 2)
 
 ```
 
-
-
 ```{r fig-qq-mil}
 #| message: false
 #| echo: false
@@ -878,8 +872,6 @@ plot(model, which = 2)
 # Q-Q Plot for National Defence model
 plot(mil_model, which = 2)
 ```
-
-
 
 ```{r fig-sl-model}
 #| message: false
@@ -893,8 +885,6 @@ plot(model, which = 3)
 
 ```
 
-
-
 ```{r fig-sl-mil}
 #| message: false
 #| echo: false
@@ -906,8 +896,6 @@ plot(model, which = 3)
 plot(mil_model, which = 3)
 ```
 
-
-
 ```{r fig-rl-model}
 #| message: false
 #| echo: false
@@ -918,8 +906,6 @@ plot(mil_model, which = 3)
 # Residuals vs Leverage for full model
 plot(model, which = 5)
 ```
-
-
 
 ```{r fig-rl-mil}
 #| message: false
@@ -933,7 +919,6 @@ plot(model, which = 5)
 plot(mil_model, which = 5)
 ```
 
-
 ```{r fig-cooks-model}
 #| message: false
 #| echo: false
@@ -946,8 +931,6 @@ plot(mil_model, which = 5)
 plot(model, which = 4)
 ```
 
-
-
 ```{r fig-cooks-mil}
 #| message: false
 #| echo: false
@@ -959,7 +942,6 @@ plot(model, which = 4)
 # Cook's Distance for National Defence model
 plot(mil_model, which = 4)
 ```
-
 
 ```{r}
 #| message: false
@@ -997,23 +979,4 @@ kable(vif_table, ,
 
 \newpage
 
-
 # References
-
-TODO Ref:
-
-RSelenuim
-VGAM
-stringr
-dplyr
-tidyverse
-zoo
-kableExtra
-knitr
-scales
-lubridate
-ggplot2
-rvest
-readr
-testthat
-colorbrewerV2
